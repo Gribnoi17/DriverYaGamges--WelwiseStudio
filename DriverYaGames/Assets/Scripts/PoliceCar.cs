@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Redcode.Tweens;
+using Redcode.Moroutines;
 
 public class PoliceCar : MonoBehaviour
 {
     [SerializeField] private Transform _linePoint;
+    [SerializeField] private Transform[] _wheels;
+    [SerializeField] private float _wheelAngelsSpeed;
     [SerializeField] private float _animationDuration;
     private int _lineIndex = 1;
     private Playable _animation;
+    
 
     private void Start()
     {
         SwipeDetection.SwipeEvent += OnSwipe;
+
+        Moroutine.Run(RotateWheelsEnumerable());
+
     }
 
     private void OnSwipe(Vector2 direction)
@@ -27,8 +34,23 @@ public class PoliceCar : MonoBehaviour
         MoveKeyboard(KeyCode.D, 1);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        //print("Loh");
+    }
 
-    
+    private IEnumerable RotateWheelsEnumerable()
+    {
+        while (true)
+        {
+            foreach (var wheel in _wheels)
+            {
+                wheel.rotation *= Quaternion.AngleAxis(_wheelAngelsSpeed * Time.deltaTime, Vector3.right);
+            }
+            yield return null;
+        }
+    }
+
     private void MoveKeyboard(KeyCode key, int direction)
     {
         if ((_animation == null || _animation.PlayedTime == _animationDuration) && Input.GetKeyDown(key))
@@ -55,4 +77,6 @@ public class PoliceCar : MonoBehaviour
         }
 
     }
+
+
 }
