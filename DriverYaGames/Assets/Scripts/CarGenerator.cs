@@ -16,8 +16,7 @@ public class CarGenerator : MonoBehaviour
     private float _additionalSpeed;
     private int _countRoutinesSpeedTick = 5;
     private int _countRoutinesPeriodTick = 6;
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         int _countRoutinesTick = 0;
         Moroutine.Run(Routines.Repeat(_countRoutinesSpeedTick, Routines.Delay(6f, () =>

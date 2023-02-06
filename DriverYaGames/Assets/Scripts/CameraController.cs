@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
         set => _period = value;
     }
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         transform.DoEulerAnglesY(-3.5f, _period, Ease.InOutSine, int.MaxValue, LoopType.Mirror).Play();
     }

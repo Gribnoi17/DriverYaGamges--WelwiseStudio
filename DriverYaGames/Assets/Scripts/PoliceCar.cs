@@ -10,6 +10,7 @@ public class PoliceCar : MonoBehaviour
     [SerializeField] private Transform[] _wheels;
     [SerializeField] private float _wheelAngelsSpeed;
     [SerializeField] private float _animationDuration;
+    private bool _isPlaying = true;
     private int _lineIndex = 1;
     private Playable _animation;
     
@@ -27,7 +28,6 @@ public class PoliceCar : MonoBehaviour
         MoveSwipe(direction);      
     }
 
-    // Update is called once per frame
     void Update()
     {
         MoveKeyboard(KeyCode.A, -1);
@@ -36,12 +36,13 @@ public class PoliceCar : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //print("Loh");
+        Destroy(gameObject);
+        _isPlaying = false;
     }
 
     private IEnumerable RotateWheelsEnumerable()
     {
-        while (true)
+        while (_isPlaying)
         {
             foreach (var wheel in _wheels)
             {

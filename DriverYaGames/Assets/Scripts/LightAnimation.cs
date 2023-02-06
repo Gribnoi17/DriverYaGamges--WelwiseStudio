@@ -10,10 +10,9 @@ public class LightAnimation : MonoBehaviour
     [Tooltip("До какого числа intensity будет идти анимация")]
     [SerializeField] private float _intensity;
 
-    void Start()
+    private void Start()
     {
          _light.DoIntensity(_intensity, 1f, Ease.InOutCubic, int.MaxValue, LoopType.Mirror).Play();
-
     }
 
 }

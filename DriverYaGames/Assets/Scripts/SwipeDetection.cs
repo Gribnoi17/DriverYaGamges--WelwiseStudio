@@ -19,14 +19,12 @@ public class SwipeDetection : MonoBehaviour
     private bool _isMobile;
 
 
-
-    void Start()
+    private void Start()
     {
         _isMobile = Application.isMobilePlatform;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Swipe();
     }

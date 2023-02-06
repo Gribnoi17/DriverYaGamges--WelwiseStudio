@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Car : MonoBehaviour
@@ -12,8 +10,7 @@ public class Car : MonoBehaviour
         set => _speed = value;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Drive();
         CheckDeleting();
@@ -29,4 +26,10 @@ public class Car : MonoBehaviour
         if (transform.position.z <= -85f)
             Destroy(gameObject);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
+
 }
