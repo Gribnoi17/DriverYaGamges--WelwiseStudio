@@ -1,13 +1,26 @@
+using System.Collections;
 using UnityEngine;
+
 
 public class Car : MonoBehaviour
 {
+    private const string _deathParticleName = "DeathParticle";
+
     [SerializeField] private float _speed;
+
+    private float _heightParticleRelativeCar = 0.4f;
+    private Object _deathParticleObject;
 
     public float Speed
     {
         get => _speed;
         set => _speed = value;
+    }
+
+
+    private void Start()
+    {
+        _deathParticleObject = Resources.Load(_deathParticleName);
     }
 
     private void Update()
@@ -29,7 +42,11 @@ public class Car : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        GameObject deathParticle = (GameObject)Instantiate(_deathParticleObject);
+        deathParticle.transform.position = new Vector3(transform.position.x, transform.position.y + _heightParticleRelativeCar, transform.position.z);
         Destroy(gameObject);
+
     }
+
 
 }

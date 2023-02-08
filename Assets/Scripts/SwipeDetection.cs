@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class SwipeDetection : MonoBehaviour
 {
-    //Событие
-    public static event OnSwipeInput SwipeEvent;
-    //Сигнатура подписываемых методов на событие
     public delegate void OnSwipeInput(Vector2 direction);
+    public static event OnSwipeInput SwipeEvent;
 
     private Vector2 _tapPosition;
     private Vector2 _swipeDelta;

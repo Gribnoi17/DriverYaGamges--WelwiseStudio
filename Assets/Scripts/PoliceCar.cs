@@ -13,12 +13,13 @@ public class PoliceCar : MonoBehaviour
     private bool _isPlaying = true;
     private int _lineIndex = 1;
     private Playable _animation;
+
+
     
 
     private void Start()
     {
         SwipeDetection.SwipeEvent += OnSwipe;
-
         Moroutine.Run(RotateWheelsEnumerable());
 
     }
@@ -28,10 +29,16 @@ public class PoliceCar : MonoBehaviour
         MoveSwipe(direction);      
     }
 
-    void Update()
+    private void Update()
     {
         MoveKeyboard(KeyCode.A, -1);
         MoveKeyboard(KeyCode.D, 1);
+    }
+
+
+    private void OnDestroy()
+    {
+        SwipeDetection.SwipeEvent -= OnSwipe;
     }
 
     private void OnCollisionEnter(Collision collision)
