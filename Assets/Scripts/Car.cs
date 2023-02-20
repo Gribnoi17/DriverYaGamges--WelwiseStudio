@@ -8,8 +8,8 @@ public class Car : MonoBehaviour
 
     [SerializeField] private float _speed;
 
-    private float _heightParticleRelativeCar = 0.4f;
-    private Object _deathParticleObject;
+    //private float _heightParticleRelativeCar = 0.4f;
+    //private Object _deathParticleObject;
 
     public float Speed
     {
@@ -18,10 +18,10 @@ public class Car : MonoBehaviour
     }
 
 
-    private void Start()
-    {
-        _deathParticleObject = Resources.Load(_deathParticleName);
-    }
+    //private void Start()
+    //{
+    //    _deathParticleObject = Resources.Load(_deathParticleName);
+    //}
 
     private void Update()
     {
@@ -42,8 +42,8 @@ public class Car : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject deathParticle = (GameObject)Instantiate(_deathParticleObject);
-        deathParticle.transform.position = new Vector3(transform.position.x, transform.position.y + _heightParticleRelativeCar, transform.position.z);
+        //GameObject deathParticle = (GameObject)Instantiate(_deathParticleObject);
+        //deathParticle.transform.position = new Vector3(transform.position.x, transform.position.y + _heightParticleRelativeCar, transform.position.z);
         Destroy(gameObject);
 
     }
