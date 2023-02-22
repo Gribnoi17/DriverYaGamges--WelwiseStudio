@@ -17,8 +17,12 @@ public class PoliceCar : MonoBehaviour
     private Playable _animation;
     private Animator animator;
 
+    private string left;
+    private string right;
     private void Start()
     {
+        left = "LeftTurn";
+        right = "RightTurn";
         SwipeDetection.SwipeEvent += OnSwipe;
 
         Moroutine.Run(RotateWheelsEnumerable());
@@ -61,11 +65,11 @@ public class PoliceCar : MonoBehaviour
         {
             if (direction > 0)
             {
-                animator.SetTrigger("RightTurn");
+                StartCoroutine(OnTurnRight());
             }
             else
             {
-                animator.SetTrigger("LeftTurn");
+                StartCoroutine(OnTurnLeft());
             }
             _lineIndex = Mathf.Clamp(_lineIndex + direction, 0, _linePoint.childCount - 1);
             var point = _linePoint.GetChild(_lineIndex);
@@ -79,12 +83,12 @@ public class PoliceCar : MonoBehaviour
         if (direction.x > 0)
         {
             _tempDirection = 1;
-            animator.SetTrigger("RightTurn");
+            StartCoroutine(OnTurnRight());
         }
         else
         {
             _tempDirection = -1;
-            animator.SetTrigger("LeftTurn");
+            StartCoroutine(OnTurnLeft());
         }
 
         if (_animation == null || _animation.PlayedTime == _animationDuration)
@@ -96,5 +100,19 @@ public class PoliceCar : MonoBehaviour
 
     }
 
+    IEnumerator OnTurnRight()
+    {
+        animator.SetBool("RightTurn", true);
+        yield return new WaitForSeconds(0.15f);
+        animator.SetBool("RightTurn", false);
+        StopAllCoroutines();
+    }
 
+    IEnumerator OnTurnLeft()
+    {
+        animator.SetBool("LeftTurn", true);
+        yield return new WaitForSeconds(0.15f);
+        animator.SetBool("LeftTurn", false);
+        StopAllCoroutines();
+    }
 }
