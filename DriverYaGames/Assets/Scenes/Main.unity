@@ -505,7 +505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &111393968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,8 +519,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rg: {fileID: 998968573}
-  speed: 10
-  deadZone: 0.01
+  speed: 5
+  deadZone: 0.08
+  rotateSpeed: 5
   maxX: 1.317
   minX: -1.317
 --- !u!4 &111393969
@@ -827,7 +828,7 @@ GameObject:
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &275120865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2498,7 +2499,7 @@ GameObject:
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &985670609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2559,7 +2560,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 59f06fd9cfbad824ea384480572f9048, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -3525,7 +3526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 437054, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.31
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 437054, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3562,6 +3563,10 @@ PrefabInstance:
     - target: {fileID: 437054, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 761245885, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 761245885, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
       propertyPath: _linePoint
@@ -3607,6 +3612,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 746323486296731211, guid: 7be733fca5977484eab72a8eca73b1b2,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 746323486296731211, guid: 7be733fca5977484eab72a8eca73b1b2,
+        type: 3}
       propertyPath: m_Center.x
       value: -0.016775345
       objectReference: {fileID: 0}
@@ -3618,6 +3628,11 @@ PrefabInstance:
     - target: {fileID: 746323486296731211, guid: 7be733fca5977484eab72a8eca73b1b2,
         type: 3}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108673378384319606, guid: 7be733fca5977484eab72a8eca73b1b2,
+        type: 3}
+      propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3108673378384319606, guid: 7be733fca5977484eab72a8eca73b1b2,

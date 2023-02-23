@@ -16,13 +16,8 @@ public class PoliceCar : MonoBehaviour
     private int _lineIndex = 1;
     private Playable _animation;
     private Animator animator;
-
-    private string left;
-    private string right;
     private void Start()
     {
-        left = "LeftTurn";
-        right = "RightTurn";
         SwipeDetection.SwipeEvent += OnSwipe;
 
         Moroutine.Run(RotateWheelsEnumerable());
@@ -103,7 +98,10 @@ public class PoliceCar : MonoBehaviour
     IEnumerator OnTurnRight()
     {
         animator.SetBool("RightTurn", true);
-        yield return new WaitForSeconds(0.15f);
+        animator.SetBool("None", false);
+ 
+        yield return new WaitForSeconds(0.2f);
+        animator.SetBool("None", true);
         animator.SetBool("RightTurn", false);
         StopAllCoroutines();
     }
@@ -111,7 +109,10 @@ public class PoliceCar : MonoBehaviour
     IEnumerator OnTurnLeft()
     {
         animator.SetBool("LeftTurn", true);
-        yield return new WaitForSeconds(0.15f);
+        animator.SetBool("None", false);
+
+        yield return new WaitForSeconds(0.2f);
+        animator.SetBool("None", true);
         animator.SetBool("LeftTurn", false);
         StopAllCoroutines();
     }
