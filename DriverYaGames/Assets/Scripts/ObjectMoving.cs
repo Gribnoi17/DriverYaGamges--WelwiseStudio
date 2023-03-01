@@ -4,49 +4,61 @@ using UnityEngine;
 
 public class ObjectMoving : MonoBehaviour
 {
-    public float Speed = 5f;
-    [SerializeField] private Vector3 _moveDirection;
-    [SerializeField] private float _turnOffZCoordinate;
-    [SerializeField] private Vector3 startPosition;
-    [SerializeField] private bool _spawnByPoints = false;
-    [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
+    [Header("Movement Settings")]
+    public float StartSpeed = 5f;
+    [SerializeField, Tooltip("The direction of movement")]
+    private Vector3 _moveDirection;
+    [SerializeField, Tooltip("The Z-coordinate at which the object will be reset to its start position")]
+    private float turnOffZCoordinate;
+
+    [Header("Spawn Settings")]
+    [SerializeField, Tooltip("The starting position of the object")]
+    private Vector3 _startPosition;
+    [SerializeField, Tooltip("Spawn the object at random points from the list")]
+    private bool _spawnByPoints = false;
+    [SerializeField, Tooltip("A list of points where the object can spawn if Spawn By Points is enabled")]
+    private List<Transform> _spawnPoints = new List<Transform>();
+
+    [HideInInspector] public float CurrentSpeed = 5f;
+
+    private void Start()
+    {
+        CurrentSpeed = StartSpeed;
+    }
 
     private void Update()
     {
-
         for (int i = 0; i < transform.childCount; i++)
         {
             Transform child = transform.GetChild(i);
-            child.Translate(_moveDirection * Time.deltaTime * Speed, Space.World);
-            if (child.position.z <= _turnOffZCoordinate)
+            child.Translate(_moveDirection * Time.deltaTime * CurrentSpeed, Space.World);
+            if (child.position.z <= turnOffZCoordinate)
             {
-                if(_spawnByPoints ==true)
+                if (_spawnByPoints)
                     ResetPositionByPoints(child);
                 else
                     ResetPosition(child);
             }
-        }        
+        }
     }
-
 
     private void ResetPosition(Transform pos)
     {
-        pos.position = startPosition;
+        pos.position = _startPosition;
     }
 
     private void ResetPositionByPoints(Transform pos)
     {
-        if(spawnPoints != null)
+        if (_spawnPoints != null && _spawnPoints.Count > 0)
         {
-            pos.position = spawnPoints[Random.Range(0, spawnPoints.Count)].position;
+            pos.position = _spawnPoints[Random.Range(0, _spawnPoints.Count)].position;
             StartCoroutine(ScaleUpOverTime(pos));
         }
         else
         {
-            throw new System.Exception($"У вас стоит галочка спавна по точкам, но точки не назначены в объекте {gameObject.name}") ;
+            throw new System.Exception($"The spawn by points option is enabled but there are no spawn points assigned to the {gameObject.name} object.");
         }
     }
-
 
     private IEnumerator ScaleUpOverTime(Transform trans)
     {
@@ -54,7 +66,7 @@ public class ObjectMoving : MonoBehaviour
         Vector3 startingScale = Vector3.zero;
         Vector3 targetScale = trans.localScale;
 
-        while (elapsedTime < 2f) //Время увеличения
+        while (elapsedTime < 2f) // Scaling time
         {
             trans.localScale = Vector3.Lerp(startingScale, targetScale, (elapsedTime / 2f));
             elapsedTime += Time.deltaTime;
@@ -63,6 +75,4 @@ public class ObjectMoving : MonoBehaviour
 
         trans.localScale = targetScale;
     }
-
-
 }
