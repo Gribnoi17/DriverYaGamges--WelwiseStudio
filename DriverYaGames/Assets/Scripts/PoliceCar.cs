@@ -103,7 +103,7 @@ public class PoliceCar : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         animator.SetBool("None", true);
         animator.SetBool("RightTurn", false);
-        StopAllCoroutines();
+        StopCoroutine(OnTurnRight());
     }
 
     IEnumerator OnTurnLeft()
@@ -114,6 +114,6 @@ public class PoliceCar : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         animator.SetBool("None", true);
         animator.SetBool("LeftTurn", false);
-        StopAllCoroutines();
+        StopCoroutine(OnTurnLeft());
     }
 }

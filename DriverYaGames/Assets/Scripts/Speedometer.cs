@@ -41,4 +41,9 @@ public class Speedometer : MonoBehaviour
         }
         _speedometrText.text = _currentSpeed.ToString();
     }
+
+    public int GetCurSpeed()
+    {
+        return _currentSpeed;
+    }
 }
