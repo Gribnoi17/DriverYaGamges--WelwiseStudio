@@ -13,6 +13,9 @@ public class CarGenerator : MonoBehaviour
     [SerializeField] private CameraController _camera;
     [SerializeField] private Car[] _carsPrefabs;
     [SerializeField] private float _period;
+    public float SpawnPeriod { get { return _period; } set { _period = value; } }
+
+
     private float _additionalSpeed;
     private int _countRoutinesSpeedTick = 5;
     private int _countRoutinesPeriodTick = 6;
@@ -27,7 +30,7 @@ public class CarGenerator : MonoBehaviour
         Moroutine.Run(Routines.Repeat(_countRoutinesPeriodTick, Routines.Delay(3f, () =>
         {
             _countRoutinesTick++;
-            _period -= 0.22f;
+            //_period -= 0.22f;
             //Переделать кусок кода с камерой
             if (_countRoutinesTick == 5)
                 _camera.transform.DoEulerAnglesY(3.5f, _camera.Period, Ease.InOutSine, int.MaxValue, LoopType.Mirror).Play();

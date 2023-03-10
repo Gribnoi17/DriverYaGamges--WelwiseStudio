@@ -17,6 +17,7 @@ public class ObjectMoving : MonoBehaviour
     [SerializeField, Tooltip("Spawn the object at random points from the list")]
     private bool _spawnByPoints = false;
     [SerializeField, Tooltip("A list of points where the object can spawn if Spawn By Points is enabled")]
+
     private List<Transform> _spawnPoints = new List<Transform>();
 
     [HideInInspector] public float CurrentSpeed = 5f;

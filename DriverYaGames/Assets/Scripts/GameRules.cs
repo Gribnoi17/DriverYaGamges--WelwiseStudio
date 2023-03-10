@@ -13,32 +13,35 @@ public class GameRules : MonoBehaviour
     [SerializeField] private int rateOfSpeedGrowth = 1;
     public int RateOfSpeedGrowth { get { return rateOfSpeedGrowth; } private set { rateOfSpeedGrowth = value; } }
 
-    private string regime;
+    [SerializeField] private int _startCarSpawnPeriod = 2;
+    public int StartCarSpawnPeriod { get { return _startCarSpawnPeriod; } private set { _startCarSpawnPeriod = value; } }
 
-    public string Regime { get { return regime; }  private set { regime = value; } }
+    [SerializeField] private int _minCarSpawnPeriod = 1;
+    public int MinCarSpawnPeriod { get { return _minCarSpawnPeriod; } private set { _minCarSpawnPeriod = value; } }
 
-    public Dictionary<int, string> regimeRace = new Dictionary<int, string>()
-    {
-            { 0, "FreeRace"},
-            { 1, "RaceForTime"},
-    };
 
-    private void Start()
-    {
-        //выгружаем из PlayerPrefs 
-        // int _regime и меняем нули
-        if(0 == 0)
-        {
-            regime = regimeRace[0];
-        } else if(1 == 1)
-        {
-            regime = regimeRace[1];
-        }
-    }
+    private CarGenerator carGenerator;
+
     private void Awake()
     {
         StartSpeed = startSpeed;
         MaxSpeed = maxSpeed;
         RateOfSpeedGrowth = rateOfSpeedGrowth;
+        carGenerator = FindObjectOfType<CarGenerator>();
     }
+
+
+    private void Inizializition()
+    {
+        carGenerator.SpawnPeriod = _startCarSpawnPeriod;
+    }
+
+    public void SetCarSpawnPeriod(float val)
+    {
+        if (carGenerator.SpawnPeriod > _minCarSpawnPeriod)
+            carGenerator.SpawnPeriod -= val;
+        else
+            carGenerator.SpawnPeriod = _minCarSpawnPeriod;
+    }
+
 }

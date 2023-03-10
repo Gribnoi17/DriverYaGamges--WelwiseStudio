@@ -10196,6 +10196,8 @@ MonoBehaviour:
   startSpeed: 50
   maxSpeed: 240
   rateOfSpeedGrowth: 3
+  _startCarSpawnPeriod: 2
+  _minCarSpawnPeriod: 1
 --- !u!4 &1607219374
 Transform:
   m_ObjectHideFlags: 0
