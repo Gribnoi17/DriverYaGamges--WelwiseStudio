@@ -19,8 +19,28 @@ public class GameRules : MonoBehaviour
     [SerializeField] private int _minCarSpawnPeriod = 1;
     public int MinCarSpawnPeriod { get { return _minCarSpawnPeriod; } private set { _minCarSpawnPeriod = value; } }
 
+    private string regime;
+    public string Regime { get { return regime; } private set { regime = value; } }
+
+    public Dictionary<int, string> regimeRace = new Dictionary<int, string>()
+    {
+        {0, "FreeRace" },
+        {1, "RaceForTime"}
+    };
 
     private CarGenerator carGenerator;
+
+    private void Start()
+    {
+        //0 и 1 заменятся на параметр из Player Prefs
+        if(0 == 0)
+        {
+            regime = regimeRace[0];
+        } else if(1 == 1)
+        {
+            regime = regimeRace[1];
+        }
+    }
 
     private void Awake()
     {

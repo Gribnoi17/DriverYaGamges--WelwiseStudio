@@ -7,6 +7,7 @@ using Redcode.Moroutines;
 [RequireComponent(typeof(Animator))]
 public class PoliceCar : MonoBehaviour
 {
+    
     [SerializeField] private Transform _linePoint;
     [SerializeField] private Transform[] _wheels;
     [SerializeField] private float _wheelAngelsSpeed;
@@ -21,7 +22,7 @@ public class PoliceCar : MonoBehaviour
         SwipeDetection.SwipeEvent += OnSwipe;
 
         Moroutine.Run(RotateWheelsEnumerable());
-
+     
         animator = GetComponent<Animator>();
     }
 
@@ -103,7 +104,7 @@ public class PoliceCar : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         animator.SetBool("None", true);
         animator.SetBool("RightTurn", false);
-        StopAllCoroutines();
+        StopCoroutine(OnTurnRight());
     }
 
     IEnumerator OnTurnLeft()
@@ -114,6 +115,6 @@ public class PoliceCar : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         animator.SetBool("None", true);
         animator.SetBool("LeftTurn", false);
-        StopAllCoroutines();
+        StopCoroutine(OnTurnLeft());
     }
 }
