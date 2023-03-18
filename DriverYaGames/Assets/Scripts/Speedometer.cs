@@ -9,6 +9,7 @@ public class Speedometer : MonoBehaviour
 
     private List<ObjectMoving> _movingObjects= new List<ObjectMoving>();
     private int _currentSpeed;
+    public int CurrentSpeed { get { return _currentSpeed; } set { _currentSpeed += value; } }
     private GameRules _gameRules;
     private float _periodGrowthRate;
 
@@ -56,5 +57,13 @@ public class Speedometer : MonoBehaviour
     public int GetCurSpeed()
     {
         return _currentSpeed;
+    }
+
+    public IEnumerator SpeedBoosterController()
+    {
+        _currentSpeed += 10;
+        yield return new WaitForSeconds(2);
+        _currentSpeed -= 10;
+        StopCoroutine(SpeedBoosterController());
     }
 }

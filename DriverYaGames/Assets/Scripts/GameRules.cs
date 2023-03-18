@@ -20,15 +20,15 @@ public class GameRules : MonoBehaviour
     public int MinCarSpawnPeriod { get { return _minCarSpawnPeriod; } private set { _minCarSpawnPeriod = value; } }
 
     private string regime;
-    public string Regime { get { return regime; } private set { regime = value} }
+    public string Regime { get { return regime; } private set { regime = value; } }
 
     public Dictionary<int, string> regimeRace = new Dictionary<int, string>()
     {
-        {0, "FreeRace" }
+        {0, "FreeRace" },
         {1, "RaceForTime"}
     };
 
-    private CarGenerator carGenerator;
+    private Generator carGenerator;
 
     private void Start()
     {
@@ -47,7 +47,7 @@ public class GameRules : MonoBehaviour
         StartSpeed = startSpeed;
         MaxSpeed = maxSpeed;
         RateOfSpeedGrowth = rateOfSpeedGrowth;
-        carGenerator = FindObjectOfType<CarGenerator>();
+        carGenerator = FindObjectOfType<Generator>();
     }
 
 
