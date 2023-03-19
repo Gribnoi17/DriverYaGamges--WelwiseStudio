@@ -22,27 +22,26 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         EventManager.PlayerDied += ShakeCameraPlay;
-        EventManager.PlayerDied += DeactivateBrokenScreen;
     }
 
 
     private void OnDestroy()
     {
         EventManager.PlayerDied -= ShakeCameraPlay;
-        EventManager.PlayerDied -= DeactivateBrokenScreen;
     }
 
     private void ShakeCameraPlay()
     {
         StartCoroutine(Shaking());
-        _brokenScreen.enabled = true;
-        Invoke(nameof(DeactivateBrokenScreen), 2f);
+        _brokenScreen.gameObject.SetActive(true);
+        StartCoroutine(DeactivateBrokenScreen());
     }
 
 
-    private void DeactivateBrokenScreen()
+    private IEnumerator DeactivateBrokenScreen()
     {
-        _brokenScreen.enabled = false;
+        yield return new WaitForSeconds(2f);
+        _brokenScreen.gameObject.SetActive(false);
     }
 
 
