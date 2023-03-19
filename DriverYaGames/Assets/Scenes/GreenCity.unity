@@ -3780,7 +3780,6 @@ GameObject:
   m_Component:
   - component: {fileID: 695861235}
   - component: {fileID: 695861236}
-  - component: {fileID: 695861237}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -3839,25 +3838,6 @@ MonoBehaviour:
   _startPosition: {x: 0, y: -0.045627117, z: 64.86}
   _setStartPositionToLastObject: 1
   addToSpawnPosition: {x: 0, y: 0, z: 2.82}
-  _spawnByPoints: 0
-  _spawnPoints: []
-  CurrentSpeed: 5
---- !u!114 &695861237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695861234}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6af741d2a4d643b42ab90146e3704f0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartSpeed: 5
-  _moveDirection: {x: 0, y: 0, z: -1}
-  turnOffZCoordinate: -31
-  _startPosition: {x: 0, y: -0.045627117, z: 64.86}
   _spawnByPoints: 0
   _spawnPoints: []
   CurrentSpeed: 5
@@ -16342,6 +16322,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf0775e0b36c294eabe26230760ae2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _durationShake: 0.5
+  _brokenScreen: {fileID: 0}
 --- !u!1 &1990591169
 GameObject:
   m_ObjectHideFlags: 0

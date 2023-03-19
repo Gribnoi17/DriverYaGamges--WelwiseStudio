@@ -534,7 +534,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &77916408
 PrefabInstance:
@@ -1104,7 +1104,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &298729095
 GameObject:
@@ -1502,7 +1502,7 @@ Transform:
   - {fileID: 1726634715}
   - {fileID: 674631530}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &355239221
 GameObject:
@@ -2674,7 +2674,7 @@ Transform:
   - {fileID: 702129619}
   - {fileID: 1217283981}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &695861236
 MonoBehaviour:
@@ -2692,6 +2692,7 @@ MonoBehaviour:
   _moveDirection: {x: 0, y: 0, z: -1}
   turnOffZCoordinate: -31
   _startPosition: {x: 0, y: -0.030135036, z: 42.29998}
+  _setStartPositionToLastObject: 0
   addToSpawnPosition: {x: 0, y: 0, z: 0}
   _spawnByPoints: 0
   _spawnPoints: []
@@ -3398,7 +3399,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &998968563 stripped
 GameObject:
@@ -3811,7 +3812,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1164356379
 GameObject:
@@ -4546,6 +4547,7 @@ MonoBehaviour:
   _moveDirection: {x: 0, y: 0, z: -1}
   turnOffZCoordinate: -32
   _startPosition: {x: -3.4015238, y: -0.100000024, z: 51.278564}
+  _setStartPositionToLastObject: 0
   addToSpawnPosition: {x: 0, y: 0, z: 0}
   _spawnByPoints: 0
   _spawnPoints: []
@@ -10749,6 +10751,7 @@ MonoBehaviour:
   _moveDirection: {x: 0, y: 0, z: -1}
   turnOffZCoordinate: -20
   _startPosition: {x: 0, y: 0, z: 0}
+  _setStartPositionToLastObject: 0
   addToSpawnPosition: {x: 0, y: 0, z: 0}
   _spawnByPoints: 1
   _spawnPoints:
@@ -11808,6 +11811,7 @@ MonoBehaviour:
   _moveDirection: {x: 0, y: 0, z: -1}
   turnOffZCoordinate: -32
   _startPosition: {x: 3.4023662, y: -0.1, z: 51.25}
+  _setStartPositionToLastObject: 0
   addToSpawnPosition: {x: 0, y: 0, z: 0}
   _spawnByPoints: 0
   _spawnPoints: []
