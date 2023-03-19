@@ -38,11 +38,11 @@ public class StartRace : MonoBehaviour
         }
         else if (_gameRuler.GetComponent<GameRules>().Difficult == _gameRuler.GetComponent<GameRules>().difficulty[1])
         {
-            60.ToString();
+            _timer.text = 60.ToString();
         }
         else if (_gameRuler.GetComponent<GameRules>().Difficult == _gameRuler.GetComponent<GameRules>().difficulty[2])
         {
-            120.ToString();
+            _timer.text = 120.ToString();
         }
 
         StartCoroutine(Timer());
@@ -68,7 +68,7 @@ public class StartRace : MonoBehaviour
         //READY
          yield return new WaitForSeconds(1f);
         //TO
-        yield return new WaitForSeconds(1f);
+         yield return new WaitForSeconds(1f);
         //GO!
     }
 }
