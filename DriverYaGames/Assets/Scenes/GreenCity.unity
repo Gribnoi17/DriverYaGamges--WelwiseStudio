@@ -3837,7 +3837,7 @@ MonoBehaviour:
   _moveDirection: {x: 0, y: 0, z: -1}
   turnOffZCoordinate: -31
   _startPosition: {x: 0, y: -0.045627117, z: 64.86}
-  _setStartPositionToLastObject: 0
+  _setStartPositionToLastObject: 1
   addToSpawnPosition: {x: 0, y: 0, z: 2.82}
   _spawnByPoints: 0
   _spawnPoints: []
