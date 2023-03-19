@@ -34,9 +34,9 @@ public class Generator : MonoBehaviour
             //_period -= 0.22f;
             //Переделать кусок кода с камерой
             //if (_countRoutinesTick == 5)
-              //  _camera.transform.DoEulerAnglesY(3.5f, _camera.Period, Ease.InOutSine, int.MaxValue, LoopType.Mirror).Play();
-            //if (_countRoutinesTick == 6)
-               // _camera.enabled = true;
+               // _camera.transform.DoEulerAnglesY(3.5f, _camera.Period, Ease.InOutSine, int.MaxValue, LoopType.Mirror).Play();
+           // if (_countRoutinesTick == 6)
+              //  _camera.enabled = true;
 
 
         })));
