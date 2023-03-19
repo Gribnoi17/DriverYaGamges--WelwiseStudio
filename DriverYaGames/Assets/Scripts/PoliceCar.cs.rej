@@ -1,0 +1,17 @@
+diff a/DriverYaGames/Assets/Scripts/PoliceCar.cs b/DriverYaGames/Assets/Scripts/PoliceCar.cs	(rejected hunks)
+@@ -39,8 +39,13 @@
+ 
+     private void OnCollisionEnter(Collision collision)
+     {
+-        Destroy(gameObject);
+-        _isPlaying = false;
++        if (collision.gameObject.GetComponent<Car>())
++        {
++            EventManager.OnPlayerDied();
++            gameObject.SetActive(false);
++            _isPlaying = false;
++        }
++
+     }
+ 
+     private IEnumerable RotateWheelsEnumerable()
