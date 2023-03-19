@@ -22,23 +22,33 @@ public class GameRules : MonoBehaviour
     private string regime;
     public string Regime { get { return regime; } private set { regime = value; } }
 
+    private string difficult;
+    public string Difficult { get { return difficult; } private set { difficult = value; } }
+
     public Dictionary<int, string> regimeRace = new Dictionary<int, string>()
     {
         {0, "FreeRace" },
         {1, "RaceForTime"}
     };
 
+    public Dictionary<int, string> difficulty = new Dictionary<int, string>()
+    {
+        {0, "Eazy" },
+        {1, "Normal"},
+        {2, "Hard"}
+    };
+
     private Generator carGenerator;
 
     private void Start()
     {
-        //0 и 1 заменятся на параметр из Player Prefs
-        if(0 == 0)
+        if(PlayerPrefs.GetInt("RegimeRace") == 0)
         {
-            regime = regimeRace[0];
-        } else if(1 == 1)
+            Regime = regimeRace[0];
+        } else if(PlayerPrefs.GetInt("RegimeRace") == 1)
         {
-            regime = regimeRace[1];
+            Regime = regimeRace[1];
+            Difficult = difficulty[PlayerPrefs.GetInt("Difficult")];
         }
     }
 
