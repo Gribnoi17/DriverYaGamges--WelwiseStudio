@@ -14,7 +14,7 @@ public class ObjectMoving : MonoBehaviour
     [Header("Spawn Settings")]
     [SerializeField, Tooltip("The starting position of the object")]
     private Vector3 _startPosition;
-
+    [SerializeField] private bool _setStartPositionToLastObject = false;
     [SerializeField] private Vector3 addToSpawnPosition;
 
     [SerializeField, Tooltip("Spawn the object at random points from the list")]
@@ -25,6 +25,8 @@ public class ObjectMoving : MonoBehaviour
     private List<Transform> _spawnPoints = new List<Transform>();
 
     [HideInInspector] public float CurrentSpeed = 5f;
+
+    private Transform _lastChild;
 
     private void Start()
     {
@@ -43,13 +45,18 @@ public class ObjectMoving : MonoBehaviour
                     ResetPositionByPoints(child);
                 else
                     ResetPosition(child);
+                child.SetSiblingIndex(0);
             }
         }
     }
 
     private void ResetPosition(Transform pos)
     {
-       // pos.position = new Vector3(_startPosition.x, _startPosition.y, lastChild + Mathf.Abs(_moveDirection.z * pos.localScale.z));
+        Transform lastChild = transform.GetChild(0);
+        if (_setStartPositionToLastObject)
+            pos.position = new Vector3(lastChild.position.x + addToSpawnPosition.x, lastChild.position.y + addToSpawnPosition.y, lastChild.position.z+ addToSpawnPosition.z);
+        else
+            pos.position = new Vector3(_startPosition.x, _startPosition.y, _startPosition.z);
     }
 
     private void ResetPositionByPoints(Transform pos)
