@@ -37,20 +37,57 @@ public class PanelAnimation : MonoBehaviour
 
 
     [Header("Canvas Transition")]
-
+    [SerializeField] private CanvasGroup _firstCanvas;
+    [SerializeField] private CanvasGroup _secondCanvas;
+    [SerializeField] private Button playButton;
 
 
 
     private CanvasGroup _leftPanelCanvasGroup;
-
+    private enum _panels {CarsPanel, LocationsPanel };
+    private _panels _currentOpenedPanel = _panels.CarsPanel;
     private CanvasGroup _topPanelCanvasGroup;
     private CanvasGroup _bottomPanelCanvasGroup;
-
+    private bool isTransitioningBtwCanvases = false;
+    private bool isTransitioningBtwLeftPanels = false;
 
     private void Start()
     {
         LeftPanelAnim();
+
+        _secondCanvas.alpha = 0f;
+
+        // При нажатии на кнопку Play запускаем анимацию перехода
+        playButton.onClick.AddListener(StartTransition);
     }
+
+
+    private void StartTransition()
+    {
+        if (isTransitioningBtwCanvases) return;
+        isTransitioningBtwCanvases = true;
+
+        // Анимация отодвигания первого канваса влево
+        _firstCanvas.transform
+            .DOMoveX(_firstCanvas.transform.position.x - 3000f, 1f)
+            .SetEase(Ease.OutQuart)
+            .OnComplete(() =>
+            {
+                // Когда первый канвас отодвинулся, появляем второй канвас с постепенным увеличением прозрачности
+                _secondCanvas.transform.parent.gameObject.SetActive(true);
+                _secondCanvas.gameObject.SetActive(true);
+                _secondCanvas.alpha = 0f;
+                //_secondCanvas.transform.DOMoveX(0f, 1f);
+                _secondCanvas.DOFade(1f, 1f).OnComplete(() =>
+                {
+                    // Когда второй канвас появился, скрываем первый канвас и сбрасываем его позицию
+                    _firstCanvas.gameObject.SetActive(false);
+                    _firstCanvas.transform.position = new Vector3(0f, _firstCanvas.transform.position.y, _firstCanvas.transform.position.z);
+                    isTransitioningBtwCanvases = false;
+                });
+            });
+    }
+
 
     private void LeftPanelAnim()
     {
@@ -72,29 +109,51 @@ public class PanelAnimation : MonoBehaviour
 
     public void CallLocationsPanel()
     {
-        StartCoroutine(ShowContentOfLocations());
+        if(_currentOpenedPanel == _panels.CarsPanel && isTransitioningBtwLeftPanels == false)
+        {
+            StartCoroutine(ShowContentOfLocations());
+            StartCoroutine(SetTransitionFalse());
+        }
+            
     }
 
     public void CallCarsPanel()
     {
-        StartCoroutine(ShowContentOfCars());
+        if (_currentOpenedPanel == _panels.LocationsPanel && isTransitioningBtwLeftPanels == false)
+        {
+            StartCoroutine(ShowContentOfCars());
+            StartCoroutine(SetTransitionFalse());
+        }
+            
     }
 
 
     private IEnumerator ShowContentOfLocations()
     {
-        DownScaleObjects(_contentOfCars);
+        isTransitioningBtwLeftPanels = true;
+        DownScaleObjects(_contentOfCars, _carsPanel);
         yield return new WaitForSeconds(0.4f);
         _locationsPanel.SetActive(true);
         UPScaleObjects(_contentOfLocations);
+        _currentOpenedPanel = _panels.LocationsPanel;
     }
 
     private IEnumerator ShowContentOfCars()
     {
-        DownScaleObjects(_contentOfLocations);
+        isTransitioningBtwLeftPanels = true;
+        DownScaleObjects(_contentOfLocations,_locationsPanel);
         yield return new WaitForSeconds(0.4f);
         _carsPanel.SetActive(true);
         UPScaleObjects(_contentOfCars);
+        _currentOpenedPanel = _panels.CarsPanel;
+    }
+
+    private IEnumerator SetTransitionFalse()
+    {
+        isTransitioningBtwLeftPanels = true;
+        yield return new WaitForSeconds(1f);
+        isTransitioningBtwLeftPanels = false;
+        print("закончилось");
     }
 
     private void PanelsStartAnim()
@@ -153,7 +212,7 @@ public class PanelAnimation : MonoBehaviour
     }
 
 
-    private void DownScaleObjects(List<Transform> objects)
+    private void DownScaleObjects(List<Transform> objects, GameObject panelToTurnOFF)
     {
         foreach (Transform obj in objects)
         {
@@ -162,7 +221,10 @@ public class PanelAnimation : MonoBehaviour
             Vector3 startScale = obj.localScale;
             Vector3 endScale = new Vector3(0f, 0f, 0f);
 
-            obj.DOScale(endScale, _downScaleDuration);
+            obj.DOScale(endScale, _downScaleDuration).OnComplete(() =>
+            {
+                panelToTurnOFF.SetActive(false);
+            }); ;
         }
     }
 
