@@ -41,11 +41,11 @@ public class ObjectMoving : MonoBehaviour
             child.Translate(_moveDirection * Time.deltaTime * CurrentSpeed, Space.World);
             if (child.position.z <= turnOffZCoordinate)
             {
-                child.SetSiblingIndex(0);
                 if (_spawnByPoints)
                     ResetPositionByPoints(child);
                 else
                     ResetPosition(child);
+                child.SetSiblingIndex(0);
             }
         }
     }

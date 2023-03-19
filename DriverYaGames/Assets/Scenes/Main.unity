@@ -825,7 +825,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -133983643, guid: 5b805deff1d8831428115ffd2df7311b, type: 3}
+  m_Sprite: {fileID: -2077980853, guid: 5b805deff1d8831428115ffd2df7311b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2453,7 +2453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2101186436, guid: 5b805deff1d8831428115ffd2df7311b, type: 3}
+  m_Sprite: {fileID: -743557862, guid: 5b805deff1d8831428115ffd2df7311b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2616,6 +2616,8 @@ MonoBehaviour:
   _moveDirection: {x: 0, y: 0, z: -1}
   turnOffZCoordinate: -31
   _startPosition: {x: 0, y: -0.030135036, z: 42.29998}
+  _setStartPositionToLastObject: 0
+  addToSpawnPosition: {x: 0, y: 0, z: 0}
   _spawnByPoints: 0
   _spawnPoints: []
   CurrentSpeed: 5
@@ -4468,6 +4470,8 @@ MonoBehaviour:
   _moveDirection: {x: 0, y: 0, z: -1}
   turnOffZCoordinate: -32
   _startPosition: {x: -3.4015238, y: -0.100000024, z: 51.278564}
+  _setStartPositionToLastObject: 0
+  addToSpawnPosition: {x: 0, y: 0, z: 0}
   _spawnByPoints: 0
   _spawnPoints: []
   CurrentSpeed: 5
@@ -10195,7 +10199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 50
   maxSpeed: 240
-  rateOfSpeedGrowth: 3
+  rateOfSpeedGrowth: 10
   _startCarSpawnPeriod: 2
   _minCarSpawnPeriod: 1
 --- !u!4 &1607219374
@@ -10670,6 +10674,8 @@ MonoBehaviour:
   _moveDirection: {x: 0, y: 0, z: -1}
   turnOffZCoordinate: -20
   _startPosition: {x: 0, y: 0, z: 0}
+  _setStartPositionToLastObject: 0
+  addToSpawnPosition: {x: 0, y: 0, z: 0}
   _spawnByPoints: 1
   _spawnPoints:
   - {fileID: 1807989257}
@@ -11693,6 +11699,8 @@ MonoBehaviour:
   _moveDirection: {x: 0, y: 0, z: -1}
   turnOffZCoordinate: -32
   _startPosition: {x: 3.4023662, y: -0.1, z: 51.25}
+  _setStartPositionToLastObject: 0
+  addToSpawnPosition: {x: 0, y: 0, z: 0}
   _spawnByPoints: 0
   _spawnPoints: []
   CurrentSpeed: 5
