@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Redcode.Tweens;
 using Redcode.Moroutines;
+using System;
 
 [RequireComponent(typeof(Animator))]
 public class PoliceCar : MonoBehaviour
-{
-    
+{   
     [SerializeField] private Transform _linePoint;
     [SerializeField] private Transform[] _wheels;
     [SerializeField] private float _wheelAngelsSpeed;
@@ -39,8 +39,13 @@ public class PoliceCar : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
-        _isPlaying = false;
+        if (collision.gameObject.GetComponent<Car>())
+        {
+            EventManager.OnPlayerDied();
+            gameObject.SetActive(false);
+            _isPlaying = false;
+        }
+
     }
 
     private IEnumerable RotateWheelsEnumerable()
@@ -96,7 +101,7 @@ public class PoliceCar : MonoBehaviour
 
     }
 
-    IEnumerator OnTurnRight()
+    private IEnumerator OnTurnRight()
     {
         animator.SetBool("RightTurn", true);
         animator.SetBool("None", false);
@@ -107,7 +112,7 @@ public class PoliceCar : MonoBehaviour
         StopCoroutine(OnTurnRight());
     }
 
-    IEnumerator OnTurnLeft()
+    private IEnumerator OnTurnLeft()
     {
         animator.SetBool("LeftTurn", true);
         animator.SetBool("None", false);
