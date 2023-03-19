@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
     private void ShakeCameraPlay()
     {
         StartCoroutine(Shaking());
-        _brokenScreen.enabled= true;
+        _brokenScreen.gameObject.SetActive(true);
         StartCoroutine(DeactivateBrokenScreen());
     }
 
@@ -41,7 +41,7 @@ public class CameraController : MonoBehaviour
     private IEnumerator DeactivateBrokenScreen()
     {
         yield return new WaitForSeconds(2f);
-        _brokenScreen.enabled = false;
+        _brokenScreen.gameObject.SetActive(false);
     }
 
 
