@@ -28,7 +28,7 @@ public class GameRules : MonoBehaviour
         {1, "RaceForTime"}
     };
 
-    private Generator carGenerator;
+    private CarGenerator carGenerator;
 
     private void Start()
     {
@@ -47,7 +47,7 @@ public class GameRules : MonoBehaviour
         StartSpeed = startSpeed;
         MaxSpeed = maxSpeed;
         RateOfSpeedGrowth = rateOfSpeedGrowth;
-        carGenerator = FindObjectOfType<Generator>();
+        carGenerator = FindObjectOfType<CarGenerator>();
     }
 
 

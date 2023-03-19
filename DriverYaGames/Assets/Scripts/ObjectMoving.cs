@@ -14,8 +14,12 @@ public class ObjectMoving : MonoBehaviour
     [Header("Spawn Settings")]
     [SerializeField, Tooltip("The starting position of the object")]
     private Vector3 _startPosition;
+
+    [SerializeField] private Vector3 addToSpawnPosition;
+
     [SerializeField, Tooltip("Spawn the object at random points from the list")]
     private bool _spawnByPoints = false;
+
     [SerializeField, Tooltip("A list of points where the object can spawn if Spawn By Points is enabled")]
 
     private List<Transform> _spawnPoints = new List<Transform>();
@@ -26,7 +30,7 @@ public class ObjectMoving : MonoBehaviour
     {
         CurrentSpeed = StartSpeed;
     }
-
+    
     private void Update()
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -45,7 +49,7 @@ public class ObjectMoving : MonoBehaviour
 
     private void ResetPosition(Transform pos)
     {
-        pos.position = _startPosition;
+       // pos.position = new Vector3(_startPosition.x, _startPosition.y, lastChild + Mathf.Abs(_moveDirection.z * pos.localScale.z));
     }
 
     private void ResetPositionByPoints(Transform pos)

@@ -3,24 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using Redcode.Tweens;
 using Redcode.Moroutines;
-using UnityEngine.Rendering;
+using System;
 
 [RequireComponent(typeof(Animator))]
 public class PoliceCar : MonoBehaviour
-{
-    [SerializeField] private GameObject _shield;
+{   
     [SerializeField] private Transform _linePoint;
     [SerializeField] private Transform[] _wheels;
     [SerializeField] private float _wheelAngelsSpeed;
     [SerializeField] private float _animationDuration;
-    [SerializeField] private Speedometer _spd;
 
     private bool _isPlaying = true;
     private int _lineIndex = 1;
     private Playable _animation;
     private Animator animator;
-    private bool shieldActive;
-
     private void Start()
     {
         SwipeDetection.SwipeEvent += OnSwipe;
@@ -43,39 +39,13 @@ public class PoliceCar : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Shield")
+        if (collision.gameObject.GetComponent<Car>())
         {
-            Destroy(collision.gameObject);
-            StopCoroutine(ShieldController());
-            StartCoroutine(ShieldController());
-        }else if(collision.gameObject.tag == "SpeedBooster")
-        {
-            Destroy(collision.gameObject);
-            StartCoroutine(_spd.SpeedBoosterController());
-        }else if (collision.gameObject.tag == "Car")
-        {
-            //щит включен
-            if(!shieldActive)
-            {
-                Destroy(gameObject);
-                _isPlaying = false;
-            }else
-            {
-                //убираем машину котора€ врезалась
-                Destroy(collision.gameObject);
-            }
+            EventManager.OnPlayerDied();
+            gameObject.SetActive(false);
+            _isPlaying = false;
         }
-    }
 
-    private IEnumerator ShieldController()
-    {
-        shieldActive = true;
-        if (_shield.activeSelf == false)
-            _shield.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        _shield.SetActive(false);
-        shieldActive = false;
-        StopCoroutine(ShieldController());
     }
 
     private IEnumerable RotateWheelsEnumerable()
@@ -131,7 +101,7 @@ public class PoliceCar : MonoBehaviour
 
     }
 
-    IEnumerator OnTurnRight()
+    private IEnumerator OnTurnRight()
     {
         animator.SetBool("RightTurn", true);
         animator.SetBool("None", false);
@@ -142,12 +112,12 @@ public class PoliceCar : MonoBehaviour
         StopCoroutine(OnTurnRight());
     }
 
-    IEnumerator OnTurnLeft()
+    private IEnumerator OnTurnLeft()
     {
         animator.SetBool("LeftTurn", true);
         animator.SetBool("None", false);
 
-        yield return new WaitForSeconds(0.04f) ;
+        yield return new WaitForSeconds(0.2f);
         animator.SetBool("None", true);
         animator.SetBool("LeftTurn", false);
         StopCoroutine(OnTurnLeft());
