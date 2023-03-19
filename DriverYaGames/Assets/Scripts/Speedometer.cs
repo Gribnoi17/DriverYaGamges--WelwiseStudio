@@ -8,8 +8,8 @@ public class Speedometer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _speedometrText;
 
     private List<ObjectMoving> _movingObjects= new List<ObjectMoving>();
-    private int _currentSpeed;
-    public int CurrentSpeed { get { return _currentSpeed; } set { _currentSpeed += value; } }
+    private float _currentSpeed;
+    public float CurrentSpeed { get { return _currentSpeed; } set { _currentSpeed += value; } }
     private GameRules _gameRules;
     private float _periodGrowthRate;
 
@@ -54,7 +54,7 @@ public class Speedometer : MonoBehaviour
         _speedometrText.text = _currentSpeed.ToString();
     }
 
-    public int GetCurSpeed()
+    public float GetCurSpeed()
     {
         return _currentSpeed;
     }

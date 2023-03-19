@@ -976,7 +976,8 @@ MonoBehaviour:
   _leftPanelAlphaDuration: 3
   _firstCanvas: {fileID: 353183257}
   _secondCanvas: {fileID: 164813014}
-  playButton: {fileID: 1832043282}
+  _playButton: {fileID: 1832043282}
+  _backButton: {fileID: 2078711303}
 --- !u!225 &186328286
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5934,7 +5935,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1686017038
 RectTransform:
   m_ObjectHideFlags: 0

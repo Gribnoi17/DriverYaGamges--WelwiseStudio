@@ -32,6 +32,7 @@ public class StartRace : MonoBehaviour
         StartRaceText();
 
         _timer.gameObject.SetActive(true);
+        _timer.transform.parent.gameObject.SetActive(true);
 
         if (_gameRuler.GetComponent<GameRules>().Difficult == _gameRuler.GetComponent<GameRules>().difficulty[0])
         {
@@ -53,7 +54,7 @@ public class StartRace : MonoBehaviour
             while(true)
             {
                 yield return new WaitForSeconds(1f);
-                _timer.text = Convert.ToString(Convert.ToInt32(_timer.text) - 1);
+                _timer.text = Convert.ToString(Convert.ToInt32(_timer.text) - 1).ToString();
                 if (Convert.ToInt32(_timer.text) == 0)
                     break;
 

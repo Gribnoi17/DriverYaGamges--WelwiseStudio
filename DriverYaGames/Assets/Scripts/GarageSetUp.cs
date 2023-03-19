@@ -8,7 +8,7 @@ public class GarageSetUp : MonoBehaviour
     [SerializeField] private List<GameObject> _choiceMarks;
     [Tooltip("Должны быть расположенны в таком же порядке, что и локации в панели")]
 
-    private Location _chosenLocation;
+    private Location _chosenLocation = Location.NightRoad;
 
     public enum Location
     {

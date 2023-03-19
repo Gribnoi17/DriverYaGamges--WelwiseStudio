@@ -39,8 +39,8 @@ public class PanelAnimation : MonoBehaviour
     [Header("Canvas Transition")]
     [SerializeField] private CanvasGroup _firstCanvas;
     [SerializeField] private CanvasGroup _secondCanvas;
-    [SerializeField] private Button playButton;
-
+    [SerializeField] private Button _playButton;
+    [SerializeField] private Button _backButton;
 
 
     private CanvasGroup _leftPanelCanvasGroup;
@@ -58,8 +58,25 @@ public class PanelAnimation : MonoBehaviour
         _secondCanvas.alpha = 0f;
 
         // При нажатии на кнопку Play запускаем анимацию перехода
-        playButton.onClick.AddListener(StartTransition);
+        _playButton.onClick.AddListener(StartTransition);
+        _backButton.onClick.AddListener(BackCanvasTransition);
     }
+
+    private void BackCanvasTransition()
+    {
+        if (isTransitioningBtwCanvases) return;
+        isTransitioningBtwCanvases = true;
+
+        _secondCanvas.DOFade(0f, 0.7f).OnComplete(() =>
+        {
+            _firstCanvas.alpha = 0f;
+            _firstCanvas.gameObject.SetActive(true);
+            _firstCanvas.DOFade(1f, 0.7f);
+            isTransitioningBtwCanvases = false;
+            _secondCanvas.gameObject.SetActive(false);
+        }); ;
+    }
+
 
 
     private void StartTransition()
@@ -69,7 +86,7 @@ public class PanelAnimation : MonoBehaviour
 
         // Анимация отодвигания первого канваса влево
         _firstCanvas.transform
-            .DOMoveX(_firstCanvas.transform.position.x - 3000f, 1f)
+            .DOLocalMoveX(_firstCanvas.transform.position.x - 4000f, 0.7f)
             .SetEase(Ease.OutQuart)
             .OnComplete(() =>
             {
@@ -82,7 +99,7 @@ public class PanelAnimation : MonoBehaviour
                 {
                     // Когда второй канвас появился, скрываем первый канвас и сбрасываем его позицию
                     _firstCanvas.gameObject.SetActive(false);
-                    _firstCanvas.transform.position = new Vector3(0f, _firstCanvas.transform.position.y, _firstCanvas.transform.position.z);
+                    _firstCanvas.transform.localPosition = new Vector3(0f, 0f, 0f);
                     isTransitioningBtwCanvases = false;
                 });
             });
