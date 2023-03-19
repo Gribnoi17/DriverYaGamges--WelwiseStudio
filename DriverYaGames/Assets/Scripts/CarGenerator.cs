@@ -7,12 +7,13 @@ using Redcode.Extensions;
 using Redcode.Tweens;
 using System.Threading;
 
-public class CarGenerator : MonoBehaviour
+public class Generator : MonoBehaviour
 {
     [SerializeField] private Transform _linePoint;
     [SerializeField] private CameraController _camera;
     [SerializeField] private Car[] _carsPrefabs;
     [SerializeField] private float _period;
+    [SerializeField] private Car[] _auxiliary;
     public float SpawnPeriod { get { return _period; } set { _period = value; } }
 
 
@@ -33,9 +34,9 @@ public class CarGenerator : MonoBehaviour
             //_period -= 0.22f;
             //Переделать кусок кода с камерой
             //if (_countRoutinesTick == 5)
-              //  _camera.transform.DoEulerAnglesY(3.5f, _camera.Period, Ease.InOutSine, int.MaxValue, LoopType.Mirror).Play();
-            //if (_countRoutinesTick == 6)
-               // _camera.enabled = true;
+               // _camera.transform.DoEulerAnglesY(3.5f, _camera.Period, Ease.InOutSine, int.MaxValue, LoopType.Mirror).Play();
+           // if (_countRoutinesTick == 6)
+              //  _camera.enabled = true;
 
 
         })));
@@ -46,13 +47,20 @@ public class CarGenerator : MonoBehaviour
     private IEnumerable GeneratorCarEnumerable()
     {
         yield return new WaitForSeconds(_period);
-
-        
-        var car = Instantiate(_carsPrefabs[Random.Range(0, _carsPrefabs.Length)],
+        Car car = null;
+        if(Random.Range(0, 8) == 0)
+        {
+            car = Instantiate(_auxiliary[Random.Range(0, _auxiliary.Length)],
+            _linePoint.GetChild(Random.Range(0, _linePoint.childCount)).position.WithZ(transform.position.z),
+            Quaternion.Euler(0f, 0f, 0f), transform);
+        }
+        else
+        {
+            car = Instantiate(_carsPrefabs[Random.Range(0, _carsPrefabs.Length)],
             _linePoint.GetChild(Random.Range(0, _linePoint.childCount)).position.WithZ(transform.position.z),
             Quaternion.Euler(0f, 180f, 0f), transform);
+        }
 
         car.Speed += _additionalSpeed;
-
     }
 }
