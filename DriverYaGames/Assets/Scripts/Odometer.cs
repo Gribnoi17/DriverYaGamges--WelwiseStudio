@@ -6,10 +6,11 @@ using TMPro.EditorUtilities;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Odometer : MonoBehaviour
 {
-    [SerializeField] private Text odomText;
+    [SerializeField] private TextMeshProUGUI odomText;
     [SerializeField] private GameObject getterSpeed;
     [SerializeField] private float distSpeed;
     private Speedometer _speedometr;

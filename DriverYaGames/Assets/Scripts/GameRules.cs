@@ -42,6 +42,8 @@ public class GameRules : MonoBehaviour
 
     private void Start()
     {
+        difficult = "Normal";
+
         if(PlayerPrefs.GetInt("RegimeRace") == 0)
         {
             Regime = regimeRace[0];

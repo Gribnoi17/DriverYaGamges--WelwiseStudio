@@ -55,11 +55,16 @@ public class GarageSetUp : MonoBehaviour
 
     public void LoadFreeRace()
     {
-        //PlayerPrefs.SetInt("")
+        PlayerPrefs.SetInt("RegimeRace", 0);
     }
 
     public void LoadTimeRace()
     {
+        PlayerPrefs.SetInt("RegimeRace", 1);
+
+        //{ 0, "Eazy" },
+        //{ 1, "Normal"},
+        //{ 2, "Hard"} - сделать выбор сложности по PlayerPrefs
 
     }
 

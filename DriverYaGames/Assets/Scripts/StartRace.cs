@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class StartRace : MonoBehaviour
 {
     [SerializeField] private GameObject _gameRuler;
-    [SerializeField] private Text _timer;
+    [SerializeField] private TextMeshProUGUI _timer;
     void Start()
     {
         if(_gameRuler.GetComponent<GameRules>().Regime == _gameRuler.GetComponent<GameRules>().regimeRace[0])
