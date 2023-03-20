@@ -28597,7 +28597,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1605048671, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 437054, guid: 7be733fca5977484eab72a8eca73b1b2,
         type: 3}
@@ -31054,7 +31055,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.1981132, g: 0.12783909, b: 0.12783909, a: 1}
+      maxColor: {r: 0.3679245, g: 0.24908635, b: 0.10239409, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
