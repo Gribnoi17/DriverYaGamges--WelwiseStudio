@@ -3633,6 +3633,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1442934147}
+  - {fileID: 1295366121}
   - {fileID: 1151269659}
   - {fileID: 543450652309149989}
   - {fileID: 803141613}
@@ -3649,7 +3650,6 @@ Transform:
   - {fileID: 1217283981}
   - {fileID: 2135618075}
   - {fileID: 1613134856}
-  - {fileID: 1295366121}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3670,7 +3670,7 @@ MonoBehaviour:
   turnOffZCoordinate: -31
   _startPosition: {x: 0, y: -0.045627117, z: 64.86}
   _setStartPositionToLastObject: 1
-  addToSpawnPosition: {x: 0, y: 0, z: 2.82}
+  addToSpawnPosition: {x: 0, y: 0, z: 5.64}
   _spawnByPoints: 0
   _spawnPoints: []
   CurrentSpeed: 5
@@ -5465,7 +5465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1011746535
 Transform:
   m_ObjectHideFlags: 0
@@ -7891,7 +7891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   odomText: {fileID: 3468248870135341792}
-  getterSpeed: {fileID: 0}
+  getterSpeed: {fileID: 2059040704}
   distSpeed: 30
 --- !u!114 &1458931343
 MonoBehaviour:
@@ -16293,6 +16293,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1883659648}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2059040704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3468248869513454280, guid: 5804600525f66de4abf11111389ca287,
+    type: 3}
+  m_PrefabInstance: {fileID: 3468248870135341789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2063380968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17215,10 +17221,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3032289860070108274, guid: 5804600525f66de4abf11111389ca287,
-        type: 3}
-      propertyPath: m_Enabled
+    - target: {fileID: 1618145997, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618145997, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618145997, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618145997, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618145997, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 264.49365
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618145997, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 48.117706
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618145997, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -132.24695
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618145997, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 24.058853
       objectReference: {fileID: 0}
     - target: {fileID: 3468248869941075997, guid: 5804600525f66de4abf11111389ca287,
         type: 3}
@@ -17330,11 +17363,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5222643844130616517, guid: 5804600525f66de4abf11111389ca287,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17346,7 +17374,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3468248870135341789}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2059040704}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3639305bd6ce7834990d524d5334e5f2, type: 3}

@@ -3315,16 +3315,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: car_1
       objectReference: {fileID: 0}
-    - target: {fileID: 871650330088706047, guid: 5ae5e8fa3b7dad04f9e6786adc26c13f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2885881505808965483, guid: 5ae5e8fa3b7dad04f9e6786adc26c13f,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300002, guid: 35c6246c59f16b440aaa2c34bfbbcc64, type: 3}
     - target: {fileID: 4198446133214510572, guid: 5ae5e8fa3b7dad04f9e6786adc26c13f,
         type: 3}
       propertyPath: m_RootOrder
@@ -3380,26 +3370,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45.583
       objectReference: {fileID: 0}
-    - target: {fileID: 5892211642379261110, guid: 5ae5e8fa3b7dad04f9e6786adc26c13f,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300008, guid: 35c6246c59f16b440aaa2c34bfbbcc64, type: 3}
-    - target: {fileID: 5960776854014891663, guid: 5ae5e8fa3b7dad04f9e6786adc26c13f,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300004, guid: 35c6246c59f16b440aaa2c34bfbbcc64, type: 3}
-    - target: {fileID: 6809477477817316710, guid: 5ae5e8fa3b7dad04f9e6786adc26c13f,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 35c6246c59f16b440aaa2c34bfbbcc64, type: 3}
-    - target: {fileID: 8996302634237408905, guid: 5ae5e8fa3b7dad04f9e6786adc26c13f,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300006, guid: 35c6246c59f16b440aaa2c34bfbbcc64, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4454,7 +4424,7 @@ ReflectionProbe:
   m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
-  m_Resolution: 256
+  m_Resolution: 64
   m_UpdateFrequency: 0
   m_BoxSize: {x: 10, y: 10, z: 10}
   m_BoxOffset: {x: 0, y: 0, z: 0}
@@ -4468,7 +4438,7 @@ ReflectionProbe:
     m_Bits: 4294967295
   m_IntensityMultiplier: 0.18
   m_BlendDistance: 1
-  m_HDR: 1
+  m_HDR: 0
   m_BoxProjection: 0
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
@@ -5747,11 +5717,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 627948223965782789, guid: 48e086f9b0acfbd4e9fa16b9eeeca71e,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300006, guid: 9d4d51851e8b8a242a17bc3291c028fd, type: 3}
     - target: {fileID: 871799552622969237, guid: 48e086f9b0acfbd4e9fa16b9eeeca71e,
         type: 3}
       propertyPath: m_RootOrder
@@ -5807,36 +5772,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 61.065
       objectReference: {fileID: 0}
-    - target: {fileID: 2397831807931073852, guid: 48e086f9b0acfbd4e9fa16b9eeeca71e,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 9d4d51851e8b8a242a17bc3291c028fd, type: 3}
     - target: {fileID: 4197945058910614406, guid: 48e086f9b0acfbd4e9fa16b9eeeca71e,
         type: 3}
       propertyPath: m_Name
       value: car_2
       objectReference: {fileID: 0}
-    - target: {fileID: 4197945058910614406, guid: 48e086f9b0acfbd4e9fa16b9eeeca71e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5468212396851739203, guid: 48e086f9b0acfbd4e9fa16b9eeeca71e,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300008, guid: 9d4d51851e8b8a242a17bc3291c028fd, type: 3}
-    - target: {fileID: 8219589565827284755, guid: 48e086f9b0acfbd4e9fa16b9eeeca71e,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300002, guid: 9d4d51851e8b8a242a17bc3291c028fd, type: 3}
-    - target: {fileID: 8539284453036158259, guid: 48e086f9b0acfbd4e9fa16b9eeeca71e,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300004, guid: 9d4d51851e8b8a242a17bc3291c028fd, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
