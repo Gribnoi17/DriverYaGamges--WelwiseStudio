@@ -13,6 +13,7 @@ public class PanelAnimation : MonoBehaviour
     [SerializeField] private float _animationDuration = 1.0f;
     [SerializeField] private int _currentCarIndex = 0;
     [SerializeField] private List<Transform> carsInGarage;
+    [SerializeField] private RectTransform _controlChoicePanel;
 
     [Header("Panel Anim")]
     [SerializeField] private RectTransform _topPanelTransform;
@@ -51,15 +52,82 @@ public class PanelAnimation : MonoBehaviour
     private bool isTransitioningBtwCanvases = false;
     private bool isTransitioningBtwLeftPanels = false;
 
+
+    private void Awake()
+    {
+        DOTween.Init();
+    }
+
     private void Start()
     {
-        LeftPanelAnim();
+
+        if (PlayerPrefs.HasKey("ControllerType"))
+        {
+            LeftPanelAnim();
+        }
+        else
+        {
+            _firstCanvas.gameObject.SetActive(false);
+            ControlChoicePanelAppears();
+        }
+
 
         _secondCanvas.alpha = 0f;
 
         // При нажатии на кнопку Play запускаем анимацию перехода
         _playButton.onClick.AddListener(StartTransition);
         _backButton.onClick.AddListener(BackCanvasTransition);
+    }
+
+
+
+    public void ChouseSlant()
+    {
+        PlayerPrefs.SetString("ControllerType", "Slant");
+        _controlChoicePanel.transform.parent.gameObject.SetActive(false);
+        LeftPanelAnim();
+    }
+
+
+    public void ChouseSwipe()
+    {
+        PlayerPrefs.SetString("ControllerType", "Swipe");
+        _controlChoicePanel.transform.parent.gameObject.SetActive(false);
+        LeftPanelAnim();
+    }
+
+    public void CallSettingsPanel()
+    {
+        if (isTransitioningBtwCanvases) return;
+        isTransitioningBtwCanvases = true;
+
+        // Анимация отодвигания первого канваса влево
+        _firstCanvas.transform
+            .DOLocalMoveX(_firstCanvas.transform.position.x - 4000f, 0.7f)
+            .SetEase(Ease.OutQuart)
+            .OnComplete(() =>
+            {
+                // Когда первый канвас отодвинулся, появляем второй канвас с постепенным увеличением прозрачности
+                _controlChoicePanel.transform.parent.gameObject.SetActive(true);
+                _controlChoicePanel.gameObject.SetActive(true);
+                ControlChoicePanelAppears();
+
+                _firstCanvas.gameObject.SetActive(false);
+                _firstCanvas.transform.localPosition = new Vector3(0f, 0f, 0f);
+                isTransitioningBtwCanvases = false;
+            });
+    }
+
+
+    private void ControlChoicePanelAppears()
+    {
+        Vector3 startScale = new Vector3(0f, 0f, 0f);
+        Vector3 endScale = _controlChoicePanel.localScale;
+
+        _controlChoicePanel.localScale = startScale;
+        _controlChoicePanel.transform.parent.gameObject.SetActive(true);
+
+        _controlChoicePanel.DOScale(endScale, _upScaleDuration);
     }
 
     private void BackCanvasTransition()
@@ -109,7 +177,7 @@ public class PanelAnimation : MonoBehaviour
     private void LeftPanelAnim()
     {
         PanelsStartAnim();
-
+        print("LeftAnim");
         _leftPanelCanvasGroup = _leftPanelTransform.gameObject.GetComponent<CanvasGroup>();
 
         // Устанавливаем начальную позицию панели за пределами экрана
@@ -120,8 +188,15 @@ public class PanelAnimation : MonoBehaviour
         _leftPanelCanvasGroup.alpha = 0;
 
         // Анимация появления панели
+
+        print("Блять");
+        print(_leftPanelTransform.name);
         _leftPanelTransform.DOAnchorPosX(0f, _leftPanelMoveDuration);
-        _leftPanelCanvasGroup.DOFade(1f, _leftPanelAlphaDuration);
+        _leftPanelCanvasGroup.DOFade(1f, 1f).OnComplete(() =>
+        {
+
+            print("Кончил");
+        }); ;
     }
 
     public void CallLocationsPanel()
@@ -140,8 +215,7 @@ public class PanelAnimation : MonoBehaviour
         {
             StartCoroutine(ShowContentOfCars());
             StartCoroutine(SetTransitionFalse());
-        }
-            
+        }      
     }
 
 
@@ -170,12 +244,11 @@ public class PanelAnimation : MonoBehaviour
         isTransitioningBtwLeftPanels = true;
         yield return new WaitForSeconds(1f);
         isTransitioningBtwLeftPanels = false;
-        print("закончилось");
     }
 
     private void PanelsStartAnim()
     {
-
+        //_firstCanvas.gameObject.SetActive(true);
         _topPanelCanvasGroup = _topPanelTransform.gameObject.GetComponent<CanvasGroup>();
         _bottomPanelCanvasGroup = _bottomPanelTransform.gameObject.GetComponent<CanvasGroup>();
 
@@ -186,6 +259,7 @@ public class PanelAnimation : MonoBehaviour
         _topPanelTransform.anchoredPosition -= new Vector2(_topPanelTransform.rect.width, 0);
         _topPanelTransform.DOAnchorPosX(0, _panelMoveDuration);
         _topPanelCanvasGroup.DOFade(1f, _panelAlphaDuration);
+        print("сука");
 
         // Анимация появления нижней панели
         _bottomPanelTransform.anchoredPosition += new Vector2(_bottomPanelTransform.rect.width, 0);
@@ -211,6 +285,7 @@ public class PanelAnimation : MonoBehaviour
             obj.localScale = startScale;
             obj.DOScale(endScale, _upScaleDuration);
         }
+        print("Ебаный апскейл");
     }
 
 
