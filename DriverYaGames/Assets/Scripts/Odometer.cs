@@ -2,14 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using TMPro.EditorUtilities;
+//using TMPro.EditorUtilities;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Odometer : MonoBehaviour
 {
-    [SerializeField] private Text odomText;
+    [SerializeField] private TextMeshProUGUI odomText;
     [SerializeField] private GameObject getterSpeed;
     [SerializeField] private float distSpeed;
     private Speedometer _speedometr;

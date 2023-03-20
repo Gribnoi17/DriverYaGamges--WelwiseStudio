@@ -1,4 +1,24 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:DriverYaGames/Assets/Customized Weapons - Low poly/Models/shield1.fbx.meta
+guid: 69e70b105013b9644813068955fda811
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2100000: Material
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: shield1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 7d90345e21edacd4d89a0e4565ca8d4b, type: 2}
+  materials:
+    importMaterials: 1
+========
 guid: d5ff1f5c1c85a3b4b97e383bb087d486
 ModelImporter:
   serializedVersion: 22200
@@ -24,6 +44,7 @@ ModelImporter:
   externalObjects: {}
   materials:
     materialImportMode: 0
+>>>>>>>> origin/Sava:DriverYaGames/Assets/_assets/LowpolyStreetPack/Meshes/LightShape.FBX.meta
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -57,6 +78,12 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+<<<<<<<< HEAD:DriverYaGames/Assets/Customized Weapons - Low poly/Models/shield1.fbx.meta
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+========
     sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
@@ -64,19 +91,25 @@ ModelImporter:
     importLights: 0
     nodeNameCollisionStrategy: 0
     fileIdsGeneration: 1
+>>>>>>>> origin/Sava:DriverYaGames/Assets/_assets/LowpolyStreetPack/Meshes/LightShape.FBX.meta
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     bakeAxisConversion: 0
     preserveHierarchy: 0
+<<<<<<<< HEAD:DriverYaGames/Assets/Customized Weapons - Low poly/Models/shield1.fbx.meta
+    indexFormat: 0
+========
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 1
+>>>>>>>> origin/Sava:DriverYaGames/Assets/_assets/LowpolyStreetPack/Meshes/LightShape.FBX.meta
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -84,8 +117,14 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
+<<<<<<<< HEAD:DriverYaGames/Assets/Customized Weapons - Low poly/Models/shield1.fbx.meta
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+========
     useFileScale: 0
     strictVertexDataChecks: 0
+>>>>>>>> origin/Sava:DriverYaGames/Assets/_assets/LowpolyStreetPack/Meshes/LightShape.FBX.meta
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -94,10 +133,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 1
+  copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -107,19 +146,24 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+<<<<<<<< HEAD:DriverYaGames/Assets/Customized Weapons - Low poly/Models/shield1.fbx.meta
+========
     globalScale: 0.01
+>>>>>>>> origin/Sava:DriverYaGames/Assets/_assets/LowpolyStreetPack/Meshes/LightShape.FBX.meta
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
+<<<<<<<< HEAD:DriverYaGames/Assets/Customized Weapons - Low poly/Models/shield1.fbx.meta
+========
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   importBlendShapeDeformPercent: 0
   remapMaterialsIfMaterialImportModeIsNone: 1
+>>>>>>>> origin/Sava:DriverYaGames/Assets/_assets/LowpolyStreetPack/Meshes/LightShape.FBX.meta
   additionalBone: 0
   userData: 
   assetBundleName: 
