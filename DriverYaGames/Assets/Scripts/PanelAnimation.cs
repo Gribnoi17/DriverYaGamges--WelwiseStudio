@@ -55,12 +55,13 @@ public class PanelAnimation : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1f;
         DOTween.Init();
     }
 
     private void Start()
     {
-
+        
         if (PlayerPrefs.HasKey("ControllerType"))
         {
             LeftPanelAnim();
@@ -177,7 +178,7 @@ public class PanelAnimation : MonoBehaviour
     private void LeftPanelAnim()
     {
         PanelsStartAnim();
-        print("LeftAnim");
+
         _leftPanelCanvasGroup = _leftPanelTransform.gameObject.GetComponent<CanvasGroup>();
 
         // Устанавливаем начальную позицию панели за пределами экрана
@@ -192,11 +193,7 @@ public class PanelAnimation : MonoBehaviour
         print("Блять");
         print(_leftPanelTransform.name);
         _leftPanelTransform.DOAnchorPosX(0f, _leftPanelMoveDuration);
-        _leftPanelCanvasGroup.DOFade(1f, 1f).OnComplete(() =>
-        {
-
-            print("Кончил");
-        }); ;
+        _leftPanelCanvasGroup.DOFade(1f, _leftPanelAlphaDuration);
     }
 
     public void CallLocationsPanel()
@@ -248,7 +245,7 @@ public class PanelAnimation : MonoBehaviour
 
     private void PanelsStartAnim()
     {
-        //_firstCanvas.gameObject.SetActive(true);
+        _firstCanvas.gameObject.SetActive(true);
         _topPanelCanvasGroup = _topPanelTransform.gameObject.GetComponent<CanvasGroup>();
         _bottomPanelCanvasGroup = _bottomPanelTransform.gameObject.GetComponent<CanvasGroup>();
 
@@ -259,7 +256,6 @@ public class PanelAnimation : MonoBehaviour
         _topPanelTransform.anchoredPosition -= new Vector2(_topPanelTransform.rect.width, 0);
         _topPanelTransform.DOAnchorPosX(0, _panelMoveDuration);
         _topPanelCanvasGroup.DOFade(1f, _panelAlphaDuration);
-        print("сука");
 
         // Анимация появления нижней панели
         _bottomPanelTransform.anchoredPosition += new Vector2(_bottomPanelTransform.rect.width, 0);
@@ -285,7 +281,6 @@ public class PanelAnimation : MonoBehaviour
             obj.localScale = startScale;
             obj.DOScale(endScale, _upScaleDuration);
         }
-        print("Ебаный апскейл");
     }
 
 

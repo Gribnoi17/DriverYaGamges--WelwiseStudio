@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: DriverYaGames
+  companyName: welwise studio
+  productName: Night Racer
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -497,7 +497,10 @@ PlayerSettings:
       m_Height: 720
       m_Kind: 1
       m_SubKind: 
-  m_BuildTargetBatching: []
+  m_BuildTargetBatching:
+  - m_BuildTarget: WebGL
+    m_StaticBatching: 1
+    m_DynamicBatching: 1
   m_BuildTargetShaderSettings: []
   m_BuildTargetGraphicsJobs: []
   m_BuildTargetGraphicsJobMode: []
@@ -517,7 +520,8 @@ PlayerSettings:
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
-  m_TemplateCustomTags: {}
+  m_TemplateCustomTags:
+    PRODUCT_DESCRIPTION: 
   mobileMTRendering:
     Android: 1
     iPhone: 1
@@ -525,7 +529,9 @@ PlayerSettings:
   m_BuildTargetGroupLightmapEncodingQuality:
   - m_BuildTarget: WebGL
     m_EncodingQuality: 1
-  m_BuildTargetGroupHDRCubemapEncodingQuality: []
+  m_BuildTargetGroupHDRCubemapEncodingQuality:
+  - m_BuildTarget: WebGL
+    m_EncodingQuality: 0
   m_BuildTargetGroupLightmapSettings: []
   m_BuildTargetGroupLoadStoreDebugModeSettings: []
   m_BuildTargetNormalMapEncoding: []
@@ -773,10 +779,10 @@ PlayerSettings:
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: APPLICATION:Default
+  webGLTemplate: APPLICATION:PWA
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
-  webGLCompressionFormat: 0
+  webGLCompressionFormat: 1
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
@@ -787,7 +793,7 @@ PlayerSettings:
   webGLMemoryLinearGrowthStep: 16
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
-  webGLPowerPreference: 2
+  webGLPowerPreference: 1
   scriptingDefineSymbols:
     Android: UNITY_POST_PROCESSING_STACK_V2
     EmbeddedLinux: UNITY_POST_PROCESSING_STACK_V2
