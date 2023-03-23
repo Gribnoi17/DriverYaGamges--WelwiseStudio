@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -799,7 +799,7 @@ TextureImporter:
         width: 272
         height: 271
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -820,7 +820,7 @@ TextureImporter:
         width: 246
         height: 235
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -836,9 +836,51 @@ TextureImporter:
       name: "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_37"
       rect:
         serializedVersion: 2
-        x: 1376
-        y: 242
-        width: 244
+        x: 1326
+        y: 325
+        width: 187
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a177bf84382e4804fa48c0eae65f137a
+      internalID: 1158889572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_33"
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 287
+        width: 237
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf31a2d170d1ba8489fd0719c79ebb9a
+      internalID: 1948212532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_34"
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 53
+        width: 217
         height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -847,8 +889,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a177bf84382e4804fa48c0eae65f137a
-      internalID: 1158889572
+      spriteID: fa2aa2602d9124e438a6eb95713df89c
+      internalID: -495236750
       vertices: []
       indices: 
       edges: []
