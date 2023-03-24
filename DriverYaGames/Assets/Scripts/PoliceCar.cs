@@ -74,6 +74,7 @@ public class PoliceCar : MonoBehaviour
         shieldActive = true;
         if (_shield.activeSelf == false)
             _shield.SetActive(true);
+        StartCoroutine(_spd.SpeedUnBusterOrShielPickUp());
         yield return new WaitForSeconds(3f);
         _shield.SetActive(false);
         shieldActive = false;
@@ -138,7 +139,7 @@ public class PoliceCar : MonoBehaviour
         animator.SetBool("RightTurn", true);
         animator.SetBool("None", false);
  
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.04f);
         animator.SetBool("None", true);
         animator.SetBool("RightTurn", false);
         StopCoroutine(OnTurnRight());
