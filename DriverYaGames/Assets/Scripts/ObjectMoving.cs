@@ -24,7 +24,7 @@ public class ObjectMoving : MonoBehaviour
 
     private List<Transform> _spawnPoints = new List<Transform>();
 
-    [HideInInspector] public float CurrentSpeed = 5f;
+    public float CurrentSpeed = 5f;
 
     private Transform _lastChild;
 
