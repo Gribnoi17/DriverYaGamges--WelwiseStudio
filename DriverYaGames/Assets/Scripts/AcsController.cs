@@ -22,10 +22,11 @@ public class AcsController : MonoBehaviour
 
     void Update()
     {
-        Vector3 acceleration = Input.acceleration;
+         Vector3 acceleration = Input.acceleration;
         if (acceleration.x > deadZone && rg.transform.position.x < maxX)
         {
-            rg.velocity = (new Vector3(acceleration.x * speed, 0f, 0f));
+            var dir = new Vector3(acceleration.x * speed, 0f, 0f);
+            rg.velocity = dir; 
             animator.SetBool("None", false);
             animator.SetBool("RightTurn", true);
             animator.SetBool("LeftTurn", false);
@@ -33,7 +34,8 @@ public class AcsController : MonoBehaviour
         }
         else if (acceleration.x < -deadZone && rg.transform.position.x > minX)
         {
-            rg.velocity = (new Vector3(acceleration.x * speed, 0f, 0f));
+            var dir = new Vector3(acceleration.x * speed, 0f, 0f);
+            rg.velocity = dir;
             animator.SetBool("None", false);
             animator.SetBool("LeftTurn", true);
             animator.SetBool("RightTurn", false);
@@ -41,7 +43,7 @@ public class AcsController : MonoBehaviour
         }
         else
         {
-            rg.velocity = (new Vector3(0f, 0f, 0f));
+            rg.velocity = new Vector3(0f, 0f, 0f);
                 animator.SetBool("None", true);
                 animator.SetBool("LeftTurn", false);
                 animator.SetBool("RightTurn", false);
