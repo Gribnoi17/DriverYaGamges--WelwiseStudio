@@ -11,10 +11,10 @@ public class PoliceCar : MonoBehaviour
 {
     [SerializeField] private GameObject _shield;
     [SerializeField] private Transform _linePoint;
-    [SerializeField] private Transform[] _wheels;
     [SerializeField] private float _wheelAngelsSpeed;
     [SerializeField] private float _animationDuration;
     [SerializeField] private Speedometer _spd;
+
 
     private bool _isPlaying = true;
     private int _lineIndex = 1;
@@ -24,22 +24,23 @@ public class PoliceCar : MonoBehaviour
 
     private void Start()
     {
-        SwipeDetection.SwipeEvent += OnSwipe;
-
-        Moroutine.Run(RotateWheelsEnumerable());
-     
+        _isPlaying= true;
+        SwipeDetection.SwipeEvent += OnSwipe;     
         animator = GetComponent<Animator>();
     }
 
     private void OnSwipe(Vector2 direction)
     {
         MoveSwipe(direction);
+        _isPlaying = false;
     }
 
     private void OnDestroy()
     {
         SwipeDetection.SwipeEvent -= OnSwipe;
     }
+
+
 
     private void Update()
     {
@@ -84,18 +85,6 @@ public class PoliceCar : MonoBehaviour
         _shield.SetActive(false);
         shieldActive = false;
         StopCoroutine(ShieldController());
-    }
-
-    private IEnumerable RotateWheelsEnumerable()
-    {
-        while (_isPlaying)
-        {
-            foreach (var wheel in _wheels)
-            {
-                wheel.rotation *= Quaternion.AngleAxis(_wheelAngelsSpeed * Time.deltaTime, Vector3.right);
-            }
-            yield return null;
-        }
     }
 
     private void MoveKeyboard(KeyCode key, int direction)
