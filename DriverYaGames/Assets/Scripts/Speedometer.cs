@@ -66,4 +66,12 @@ public class Speedometer : MonoBehaviour
         _currentSpeed -= 10;
         StopCoroutine(SpeedBoosterController());
     }
+
+    public IEnumerator SpeedUnBusterOrShielPickUp()
+    {
+        _currentSpeed -= 10;
+        yield return new WaitForSeconds(3);
+        _currentSpeed += 10;
+        StopCoroutine(SpeedUnBusterOrShielPickUp());
+    }
 }

@@ -15,13 +15,12 @@ public class PoliceCar : MonoBehaviour
     [SerializeField] private float _wheelAngelsSpeed;
     [SerializeField] private float _animationDuration;
     [SerializeField] private Speedometer _spd;
-    [SerializeField] private TrailRenderer[] _carTrail;
 
     private bool _isPlaying = true;
     private int _lineIndex = 1;
     private Playable _animation;
-    private Animator _animator;
-    private bool _shieldActive;
+    private Animator animator;
+    private bool shieldActive;
 
     private void Start()
     {
@@ -29,19 +28,13 @@ public class PoliceCar : MonoBehaviour
 
         Moroutine.Run(RotateWheelsEnumerable());
      
-        _animator = GetComponent<Animator>();
-    }
-
-    private void OnDestroy()
-    {
-        SwipeDetection.SwipeEvent -= OnSwipe;
+        animator = GetComponent<Animator>();
     }
 
     private void OnSwipe(Vector2 direction)
     {
         MoveSwipe(direction);      
     }
-
 
     private void Update()
     {
@@ -63,7 +56,7 @@ public class PoliceCar : MonoBehaviour
         }else if (collision.gameObject.tag == "Car")
         {
             //щит включен
-            if(!_shieldActive)
+            if(!shieldActive)
             {
                 EventManager.OnPlayerDied();
                 gameObject.SetActive(false);
@@ -78,12 +71,13 @@ public class PoliceCar : MonoBehaviour
 
     private IEnumerator ShieldController()
     {
-        _shieldActive = true;
+        shieldActive = true;
         if (_shield.activeSelf == false)
             _shield.SetActive(true);
+        StartCoroutine(_spd.SpeedUnBusterOrShielPickUp());
         yield return new WaitForSeconds(3f);
         _shield.SetActive(false);
-        _shieldActive = false;
+        shieldActive = false;
         StopCoroutine(ShieldController());
     }
 
@@ -142,23 +136,23 @@ public class PoliceCar : MonoBehaviour
 
     IEnumerator OnTurnRight()
     {
-        _animator.SetBool("RightTurn", true);
-        _animator.SetBool("None", false);
+        animator.SetBool("RightTurn", true);
+        animator.SetBool("None", false);
  
-        yield return new WaitForSeconds(0.2f);
-        _animator.SetBool("None", true);
-        _animator.SetBool("RightTurn", false);
+        yield return new WaitForSeconds(0.04f);
+        animator.SetBool("None", true);
+        animator.SetBool("RightTurn", false);
         StopCoroutine(OnTurnRight());
     }
 
     IEnumerator OnTurnLeft()
     {
-        _animator.SetBool("LeftTurn", true);
-        _animator.SetBool("None", false);
+        animator.SetBool("LeftTurn", true);
+        animator.SetBool("None", false);
 
         yield return new WaitForSeconds(0.04f) ;
-        _animator.SetBool("None", true);
-        _animator.SetBool("LeftTurn", false);
+        animator.SetBool("None", true);
+        animator.SetBool("LeftTurn", false);
         StopCoroutine(OnTurnLeft());
     }
 }
