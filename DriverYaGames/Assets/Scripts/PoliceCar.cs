@@ -33,7 +33,12 @@ public class PoliceCar : MonoBehaviour
 
     private void OnSwipe(Vector2 direction)
     {
-        MoveSwipe(direction);      
+        MoveSwipe(direction);
+    }
+
+    private void OnDestroy()
+    {
+        SwipeDetection.SwipeEvent -= OnSwipe;
     }
 
     private void Update()
@@ -118,6 +123,7 @@ public class PoliceCar : MonoBehaviour
         {
             _tempDirection = 1;
             StartCoroutine(OnTurnRight());
+            
         }
         else
         {
