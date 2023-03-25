@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SetControlType : MonoBehaviour
-{
-
+{ 
     private AcsController _acsController;
     private SwipeDetection _swipeDetection;
 
