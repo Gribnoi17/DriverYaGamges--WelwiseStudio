@@ -5006,8 +5006,8 @@ MonoBehaviour:
   - {fileID: -5929114546111682117, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
   _period: 1.75
   _auxiliary:
-  - {fileID: 2539486232239133487, guid: a789ace00dcbb8b449ec6b9d35a5e5cf, type: 3}
-  - {fileID: -8984780543693792809, guid: 2bff5e15db7d8564bb1e63cc9c3624d3, type: 3}
+  - {fileID: 4825797502949678827, guid: 4d18b9aff573d1f4f9974ab6da29d9d3, type: 3}
+  - {fileID: -2405523579888373959, guid: 9d59b959acecb2c4c8a7c9e7ee95c278, type: 3}
 --- !u!4 &346564571
 Transform:
   m_ObjectHideFlags: 0

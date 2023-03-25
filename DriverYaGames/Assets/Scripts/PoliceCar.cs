@@ -11,10 +11,10 @@ public class PoliceCar : MonoBehaviour
 {
     [SerializeField] private GameObject _shield;
     [SerializeField] private Transform _linePoint;
-    [SerializeField] private Transform[] _wheels;
     [SerializeField] private float _wheelAngelsSpeed;
     [SerializeField] private float _animationDuration;
     [SerializeField] private Speedometer _spd;
+
 
     private bool _isPlaying = true;
     private int _lineIndex = 1;
@@ -24,17 +24,23 @@ public class PoliceCar : MonoBehaviour
 
     private void Start()
     {
-        SwipeDetection.SwipeEvent += OnSwipe;
-
-        Moroutine.Run(RotateWheelsEnumerable());
-     
+        _isPlaying= true;
+        SwipeDetection.SwipeEvent += OnSwipe;     
         animator = GetComponent<Animator>();
     }
 
     private void OnSwipe(Vector2 direction)
     {
-        MoveSwipe(direction);      
+        MoveSwipe(direction);
+        _isPlaying = false;
     }
+
+    private void OnDestroy()
+    {
+        SwipeDetection.SwipeEvent -= OnSwipe;
+    }
+
+
 
     private void Update()
     {
@@ -74,22 +80,11 @@ public class PoliceCar : MonoBehaviour
         shieldActive = true;
         if (_shield.activeSelf == false)
             _shield.SetActive(true);
+        StartCoroutine(_spd.SpeedUnBusterOrShielPickUp());
         yield return new WaitForSeconds(3f);
         _shield.SetActive(false);
         shieldActive = false;
         StopCoroutine(ShieldController());
-    }
-
-    private IEnumerable RotateWheelsEnumerable()
-    {
-        while (_isPlaying)
-        {
-            foreach (var wheel in _wheels)
-            {
-                wheel.rotation *= Quaternion.AngleAxis(_wheelAngelsSpeed * Time.deltaTime, Vector3.right);
-            }
-            yield return null;
-        }
     }
 
     private void MoveKeyboard(KeyCode key, int direction)
@@ -117,6 +112,7 @@ public class PoliceCar : MonoBehaviour
         {
             _tempDirection = 1;
             StartCoroutine(OnTurnRight());
+            
         }
         else
         {
@@ -138,7 +134,7 @@ public class PoliceCar : MonoBehaviour
         animator.SetBool("RightTurn", true);
         animator.SetBool("None", false);
  
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.04f);
         animator.SetBool("None", true);
         animator.SetBool("RightTurn", false);
         StopCoroutine(OnTurnRight());
