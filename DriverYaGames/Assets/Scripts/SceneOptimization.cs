@@ -33,8 +33,7 @@ public class SceneOptimization : MonoBehaviour
 
     private void Start()
     {
-        SetPCGraphicsSettings();
-
+        PlayerPrefs.SetInt("IsMobile", 1);
         if (_sceneType == SceneType.Menu)
             GetDevice();
 
@@ -44,8 +43,9 @@ public class SceneOptimization : MonoBehaviour
             {
                 obj.SetActive(true);
             }
-
+            SetPCGraphicsSettings();
             SetExponentialFog();
+
         }
 
         else
@@ -54,7 +54,7 @@ public class SceneOptimization : MonoBehaviour
             {
                 Destroy(obj);
             }
-
+            SetMobileGraphicsSettings();
             SetLinearFog();
         }
     }
@@ -89,8 +89,11 @@ public class SceneOptimization : MonoBehaviour
 
     private void SetMobileGraphicsSettings()
     {
+        //_mainCamera.targetTexture = new RenderTexture(1280, 720, 16, RenderTextureFormat.ARGB32);
         // Установка Render Scale
-        pipelineAsset.renderScale = 0.5f;
+        QualitySettings.antiAliasing = (int)AntialiasingMode.None;
+
+        pipelineAsset.renderScale = 0.7f;
 
         pipelineAsset.msaaSampleCount = 1;
 
@@ -100,8 +103,12 @@ public class SceneOptimization : MonoBehaviour
 
     private void SetPCGraphicsSettings()
     {
+        //_mainCamera.targetTexture = new RenderTexture(1920, 1080, 20, RenderTextureFormat.ARGB32);
+
         // Установка Render Scale
-        pipelineAsset.renderScale = 1f;
+        QualitySettings.antiAliasing = (int)AntialiasingMode.FastApproximateAntialiasing;
+
+        pipelineAsset.renderScale = 1.2f;
 
         pipelineAsset.msaaSampleCount = 4;
 

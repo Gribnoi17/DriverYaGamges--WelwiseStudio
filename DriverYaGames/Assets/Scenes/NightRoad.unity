@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.99215686, g: 0.50980395, b: 0.6627451, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0.02
+  m_FogDensity: 0.06
   m_LinearFogStart: 0
   m_LinearFogEnd: 65
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -331,8 +331,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64497526}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -9.009443, y: 4.8324842, z: 46.305084}
-  m_LocalScale: {x: 8.404353, y: 0.1, z: 114.86006}
+  m_LocalPosition: {x: -9.009443, y: 4.8325, z: 154.9294}
+  m_LocalScale: {x: 8.404353, y: 0.1, z: 332.1119}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1430867818}
@@ -3994,8 +3994,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803539997}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.009443, y: 4.442484, z: 18.676085}
-  m_LocalScale: {x: 10, y: 1, z: 40}
+  m_LocalPosition: {x: -211.8751, y: 4.4425, z: 69.9991}
+  m_LocalScale: {x: 60.033768, y: 1, z: 50.264}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1430867818}
@@ -4696,9 +4696,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToDestroyOnPhone:
   - {fileID: 8997784364630465529}
+  - {fileID: 832575517}
   _sceneType: 1
   pipelineAsset: {fileID: 11400000, guid: d0e2fc18fe036412f8223b3b3d9ad574, type: 2}
-  _mainCamera: {fileID: 0}
+  _mainCamera: {fileID: 330585545}
   _fogStartDistance: 0
   _fogEndDistance: 65
   _fogDensity: 0.025
