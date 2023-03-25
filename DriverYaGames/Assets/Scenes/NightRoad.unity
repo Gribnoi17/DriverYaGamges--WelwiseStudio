@@ -2007,6 +2007,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 341824084}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1081828868 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1081828868, guid: 5804600525f66de4abf11111389ca287,
+    type: 3}
+  m_PrefabInstance: {fileID: 6804371122547150249}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1132570492
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,6 +3339,7 @@ GameObject:
   - component: {fileID: 1607219373}
   - component: {fileID: 1607219375}
   - component: {fileID: 1607219376}
+  - component: {fileID: 1607219377}
   m_Layer: 0
   m_Name: Game Rules
   m_TagString: Untagged
@@ -3381,6 +3394,7 @@ MonoBehaviour:
   odomText: {fileID: 1689681032}
   getterSpeed: {fileID: 6804371122547150251}
   distSpeed: 30
+  kilomOfMoney: 100
 --- !u!114 &1607219376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3395,6 +3409,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameRuler: {fileID: 1607219372}
   _timer: {fileID: 771853936}
+--- !u!114 &1607219377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607219372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9064fdd9710f8e74a886ffae95aff720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moneyText: {fileID: 1081828868}
+  numberOfCoinsToBeAdded: 100
 --- !u!1001 &1626458803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5320,10 +5348,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1029811561, guid: 5804600525f66de4abf11111389ca287, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 3.7580566
-      objectReference: {fileID: 0}
     - target: {fileID: 3468248869941075997, guid: 5804600525f66de4abf11111389ca287,
         type: 3}
       propertyPath: m_Pivot.x
