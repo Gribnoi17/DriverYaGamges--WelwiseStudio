@@ -51,16 +51,24 @@ public class StartRace : MonoBehaviour
 
         IEnumerator Timer()
         {
+            int _nt = Convert.ToInt32(_timer.text);
             while(true)
             {
-                yield return new WaitForSeconds(1f);
-                _timer.text = Convert.ToString(Convert.ToInt32(_timer.text) - 1).ToString();
-                if (Convert.ToInt32(_timer.text) == 0)
+                int nextTime = _nt - 1;
+                _nt = nextTime;
+                if (nextTime / 60d > 1)
+                    if(nextTime - (Math.Truncate(nextTime / 60d) * 60) < 10)
+                        _timer.text = $"{Math.Truncate(nextTime / 60d)}:0{nextTime - (Math.Truncate(nextTime / 60d) * 60)}";
+                    else
+                        _timer.text = $"{Math.Truncate(nextTime / 60d)}:{nextTime - (Math.Truncate(nextTime / 60d) * 60)}";
+                else
+                    _timer.text = Convert.ToString(Convert.ToInt32(_nt) - 1).ToString();
+
+                if (_nt == 0 || _nt < 0)
                     break;
-
+                else
+                    yield return new WaitForSeconds(1f);
             }
-
-            //вызываем финиш заезда 
             StopCoroutine(Timer());
         }
     }
