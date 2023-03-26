@@ -14,14 +14,15 @@ public class Generator : MonoBehaviour
     [SerializeField] private Car[] _carsPrefabs;
     [SerializeField] private float _period;
     [SerializeField] private Car[] _auxiliary;
-    public float SpawnPeriod { get { return _period; } set { _period = value; } }
 
+    public float SpawnPeriod { get { return _period; } set { _period = value; } }
 
     private float _additionalSpeed;
     private int _countRoutinesSpeedTick = 5;
     private int _countRoutinesPeriodTick = 6;
     private void Start()
     {
+
         int _countRoutinesTick = 0;
         Moroutine.Run(Routines.Repeat(_countRoutinesSpeedTick, Routines.Delay(6f, () =>
         {
@@ -44,11 +45,12 @@ public class Generator : MonoBehaviour
         Moroutine.Run( Routines.Repeat(-1, GeneratorCarEnumerable()));
     }
 
+
     private IEnumerable GeneratorCarEnumerable()
     {
         yield return new WaitForSeconds(_period);
         Car car = null;
-        if(Random.Range(0, 8) == 0)
+        if (Random.Range(0, 8) == 0)
         {
             car = Instantiate(_auxiliary[Random.Range(0, _auxiliary.Length)],
             _linePoint.GetChild(Random.Range(0, _linePoint.childCount)).position.WithZ(transform.position.z),

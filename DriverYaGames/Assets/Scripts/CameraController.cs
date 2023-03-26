@@ -22,14 +22,12 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         EventManager.PlayerDied += ShakeCameraPlay;
-        //EventManager.PlayerDied += DeactivateBrokenScreen;
     }
 
 
     private void OnDestroy()
     {
         EventManager.PlayerDied -= ShakeCameraPlay;
-        //EventManager.PlayerDied -= DeactivateBrokenScreen;
     }
 
     private void ShakeCameraPlay()
