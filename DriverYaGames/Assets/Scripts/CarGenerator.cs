@@ -58,9 +58,13 @@ public class Generator : MonoBehaviour
         }
         else
         {
-            car = Instantiate(_carsPrefabs[Random.Range(0, _carsPrefabs.Length)],
-            _linePoint.GetChild(Random.Range(0, _linePoint.childCount)).position.WithZ(transform.position.z),
-            Quaternion.Euler(0f, 180f, 0f), transform);
+            if (_carsPrefabs[0] != null)
+            {
+                car = Instantiate(_carsPrefabs[Random.Range(0, _carsPrefabs.Length)],
+                _linePoint.GetChild(Random.Range(0, _linePoint.childCount)).position.WithZ(transform.position.z),
+                Quaternion.Euler(0f, 180f, 0f), transform);
+            }     
+           
         }
 
         car.Speed += _additionalSpeed;
