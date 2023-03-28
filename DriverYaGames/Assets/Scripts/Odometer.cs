@@ -18,7 +18,7 @@ public class Odometer : MonoBehaviour
     private float dist;
     private float kilom;
     private float kilomForMoneyTemp;
-
+    private bool isCarAlive = true;
 
 
     private void Awake()
@@ -29,6 +29,8 @@ public class Odometer : MonoBehaviour
     }
     private void Update()
     {
+        if (isCarAlive == false)
+            return;
         kilom = _speedometr.GetCurSpeed() * (Time.deltaTime / distSpeed);
         dist += kilom;
         odomText.text = $"{Mathf.Round(dist)} km";
@@ -37,6 +39,12 @@ public class Odometer : MonoBehaviour
             kilomForMoneyTemp += kilomOfMoney;
             EventManager.OnDroveKmForMoney();
         }
+    }
+
+
+    public void IsCounting(bool state)
+    {
+        isCarAlive = state;
     }
 
 

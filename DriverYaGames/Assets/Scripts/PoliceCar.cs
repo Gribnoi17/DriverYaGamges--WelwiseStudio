@@ -24,9 +24,14 @@ public class PoliceCar : MonoBehaviour
 
     private void Start()
     {
-        _isPlaying= true;
-        SwipeDetection.SwipeEvent += OnSwipe;     
+        _isPlaying= true; 
         animator = GetComponent<Animator>();
+    }
+
+
+    private void OnEnable()
+    {
+        SwipeDetection.SwipeEvent += OnSwipe;
     }
 
     private void OnSwipe(Vector2 direction)
@@ -65,6 +70,7 @@ public class PoliceCar : MonoBehaviour
             if(!shieldActive)
             {
                 EventManager.OnPlayerDied();
+                SwipeDetection.SwipeEvent -= OnSwipe;
                 gameObject.SetActive(false);
                 _isPlaying= false;
             }else
