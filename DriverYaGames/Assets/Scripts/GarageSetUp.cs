@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GarageSetUp : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class GarageSetUp : MonoBehaviour
 
     public void LoadChosenScene()
     {
+        DOTween.Clear();
         SceneManager.LoadScene(_chosenLocation.ToString());
     }
 

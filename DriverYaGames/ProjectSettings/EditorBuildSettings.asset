@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NightRoad.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/GreenCity.unity
+    guid: e6157188282254549a942e1bae11d638
+  - enabled: 1
+    path: Assets/Scenes/ToxicZone.unity
+    guid: 3165821e8507ec74ca3f12e27a9561a2
   m_configObjects: {}

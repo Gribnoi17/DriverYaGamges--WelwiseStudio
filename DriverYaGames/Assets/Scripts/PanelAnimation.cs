@@ -61,6 +61,12 @@ public class PanelAnimation : MonoBehaviour
 
     private void Start()
     {
+
+
+        if (!PlayerPrefs.HasKey("Car"))
+        {
+            PlayerPrefs.SetString("Car", "PoliceCar");
+        }
         
         if (PlayerPrefs.HasKey("ControllerType"))
         {
@@ -190,8 +196,6 @@ public class PanelAnimation : MonoBehaviour
 
         // Анимация появления панели
 
-        print("Блять");
-        print(_leftPanelTransform.name);
         _leftPanelTransform.DOAnchorPosX(0f, _leftPanelMoveDuration);
         _leftPanelCanvasGroup.DOFade(1f, _leftPanelAlphaDuration);
     }
@@ -316,9 +320,33 @@ public class PanelAnimation : MonoBehaviour
     }
 
 
+    private void SetCarPlayerPrefs()
+    {
+        if (_currentCarIndex == 0)
+        {
+            PlayerPrefs.SetString("Car", "PoliceCar");
+        }
+
+        if (_currentCarIndex == 1)
+        {
+            PlayerPrefs.SetString("Car", "WhitePoliceCar");
+        }
+
+        if (_currentCarIndex == 2)
+        {
+            PlayerPrefs.SetString("Car", "SportCar");
+        }
+
+        if (_currentCarIndex == 3)
+        {
+            PlayerPrefs.SetString("Car", "SciFiCar");
+        }
+    }
+
 
     public IEnumerator MoveCarToGarage(Transform tr)
     {
+        tr.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.4f);
         tr.position = _garageStartPosition;
         tr.DOMove(_garageEndPosition, _animationDuration).SetAutoKill(false).OnComplete(() =>
@@ -327,15 +355,16 @@ public class PanelAnimation : MonoBehaviour
         });
     }
 
+
     public void MoveCarToStreet(Transform tr)
     {
         tr.position = _garageEndPosition;
         tr.DOMove(_streetEndPosition, _animationDuration).SetAutoKill(false).OnComplete(() =>
         {
             Debug.Log("Машина прибыла на улицу");
+            tr.gameObject.SetActive(false);
         });
     }
-
 
 
     public void CheckCar(int indexInCarsList)
@@ -345,6 +374,7 @@ public class PanelAnimation : MonoBehaviour
         MoveCarToStreet(carsInGarage[_currentCarIndex]);
         StartCoroutine(MoveCarToGarage(carsInGarage[indexInCarsList]));
         _currentCarIndex = indexInCarsList;
+        SetCarPlayerPrefs();
     }
 
 }
