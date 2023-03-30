@@ -16,7 +16,7 @@ RenderSettings:
   serializedVersion: 9
   m_Fog: 1
   m_FogColor: {r: 0.7169812, g: 0.56329244, b: 0, a: 1}
-  m_FogMode: 2
+  m_FogMode: 1
   m_FogDensity: 0.025
   m_LinearFogStart: 0
   m_LinearFogEnd: 65
@@ -21829,6 +21829,7 @@ MonoBehaviour:
   odomText: {fileID: 91847812}
   getterSpeed: {fileID: 829222425}
   distSpeed: 30
+  kilomOfMoney: 100
 --- !u!114 &1429207846
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class ParticleOnImpact : MonoBehaviour
     {
         GameObject explosion = Instantiate(_explosionParticleSystem, transform.position, Quaternion.identity);
         Destroy(explosion, 1.0f);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
 }

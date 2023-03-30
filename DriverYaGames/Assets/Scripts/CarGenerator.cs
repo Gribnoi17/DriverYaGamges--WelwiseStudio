@@ -45,9 +45,14 @@ public class Generator : MonoBehaviour
         Moroutine.Run( Routines.Repeat(-1, GeneratorCarEnumerable()));
     }
 
-
     private IEnumerable GeneratorCarEnumerable()
     {
+
+        if (_linePoint == null)
+        {
+            yield break; // выходим из метода, если ссылка на объект _linePoint не установлена
+        }
+
         yield return new WaitForSeconds(_period);
         Car car = null;
         if (Random.Range(0, 8) == 0)
@@ -58,7 +63,7 @@ public class Generator : MonoBehaviour
         }
         else
         {
-            if (_carsPrefabs[0] != null)
+            if (_carsPrefabs != null && _carsPrefabs.Length != 0)
             {
                 car = Instantiate(_carsPrefabs[Random.Range(0, _carsPrefabs.Length)],
                 _linePoint.GetChild(Random.Range(0, _linePoint.childCount)).position.WithZ(transform.position.z),
@@ -68,5 +73,15 @@ public class Generator : MonoBehaviour
         }
 
         car.Speed += _additionalSpeed;
+    }
+
+
+    public void RemoveAllChildren()
+    {
+        // Перебираем всех детей объекта и удаляем их
+        for (int i = gameObject.transform.childCount - 1; i >= 0; i--)
+        {
+            GameObject.Destroy(gameObject.transform.GetChild(i).gameObject);
+        }
     }
 }

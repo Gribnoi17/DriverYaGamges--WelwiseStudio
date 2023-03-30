@@ -12,6 +12,11 @@ public class CarSceneSetter : MonoBehaviour
 
     private void Start()
     {
+        SetAndActivateCar();
+    }
+
+    public void SetAndActivateCar()
+    {
         if (PlayerPrefs.GetString("Car") == "PoliceCar")
         {
             PoliceCar.gameObject.SetActive(true);
