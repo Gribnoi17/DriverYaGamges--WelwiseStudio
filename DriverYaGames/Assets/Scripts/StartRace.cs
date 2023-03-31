@@ -9,9 +9,10 @@ public class StartRace : MonoBehaviour
 {
     [SerializeField] private GameObject _gameRuler;
     [SerializeField] private TextMeshProUGUI _timer;
+    [SerializeField] private TextMeshProUGUI[] _textForStart;
     void Start()
     {
-        if(_gameRuler.GetComponent<GameRules>().Regime == _gameRuler.GetComponent<GameRules>().regimeRace[0])
+        if (_gameRuler.GetComponent<GameRules>().Regime == _gameRuler.GetComponent<GameRules>().regimeRace[0])
         {
             StartFreeRace();
         }
@@ -24,13 +25,10 @@ public class StartRace : MonoBehaviour
     void StartFreeRace()
     {
         _timer.gameObject.SetActive(false);
-        StartRaceText();
     }
 
     void StartRaceForTime()
     {
-        StartRaceText();
-
         _timer.gameObject.SetActive(true);
         _timer.transform.parent.gameObject.SetActive(true);
 
@@ -46,8 +44,8 @@ public class StartRace : MonoBehaviour
         {
             _timer.text = 120.ToString();
         }
-
         StartCoroutine(Timer());
+
 
         IEnumerator Timer()
         {
@@ -71,14 +69,5 @@ public class StartRace : MonoBehaviour
             }
             StopCoroutine(Timer());
         }
-    }
-
-    IEnumerator StartRaceText()
-    {
-        //READY
-         yield return new WaitForSeconds(1f);
-        //TO
-         yield return new WaitForSeconds(1f);
-        //GO!
     }
 }

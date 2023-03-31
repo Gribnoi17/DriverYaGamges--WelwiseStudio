@@ -1719,14 +1719,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.10088261, y: 0, z: 0, w: 0.9948983}
+  m_LocalRotation: {x: 0.12186928, y: 0, z: 0, w: 0.9925462}
   m_LocalPosition: {x: 0, y: 3.1866598, z: -32.657616}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1986608312}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 11.58, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 14, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7133,6 +7133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameRuler: {fileID: 1458931340}
   _timer: {fileID: 3468248870135341791}
+  _textForStart: []
 --- !u!114 &1458931342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10668,6 +10669,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1101972309, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1618145997, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
