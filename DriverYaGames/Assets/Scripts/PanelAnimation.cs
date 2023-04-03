@@ -31,7 +31,9 @@ public class PanelAnimation : MonoBehaviour
     [SerializeField] private RectTransform _leftPanelTransform;
     [SerializeField] private GameObject _carsPanel;
     [SerializeField] private GameObject _locationsPanel;
+    [SerializeField] private GameObject _tasksPanel;
     [SerializeField] private List<Transform> _contentOfLocations;
+    [SerializeField] private List<Transform> _contentOfTasks;
     [SerializeField] private List<Transform> _contentOfCars;
     [SerializeField] private float _leftPanelMoveDuration = 1f;
     [SerializeField] private float _leftPanelAlphaDuration = 0.5f;
@@ -45,7 +47,7 @@ public class PanelAnimation : MonoBehaviour
 
 
     private CanvasGroup _leftPanelCanvasGroup;
-    private enum _panels {CarsPanel, LocationsPanel };
+    private enum _panels {CarsPanel, LocationsPanel, TasksPanel };
     private _panels _currentOpenedPanel = _panels.CarsPanel;
     private CanvasGroup _topPanelCanvasGroup;
     private CanvasGroup _bottomPanelCanvasGroup;
@@ -202,7 +204,7 @@ public class PanelAnimation : MonoBehaviour
 
     public void CallLocationsPanel()
     {
-        if(_currentOpenedPanel == _panels.CarsPanel && isTransitioningBtwLeftPanels == false)
+        if(_currentOpenedPanel != _panels.LocationsPanel && isTransitioningBtwLeftPanels == false)
         {
             StartCoroutine(ShowContentOfLocations());
             StartCoroutine(SetTransitionFalse());
@@ -210,9 +212,20 @@ public class PanelAnimation : MonoBehaviour
             
     }
 
+    public void CallTasksPanel() 
+    {
+        if (_currentOpenedPanel != _panels.TasksPanel && isTransitioningBtwLeftPanels == false)
+        {
+            StartCoroutine(ShowContentOfTasks());
+            StartCoroutine(SetTransitionFalse());
+        }
+
+    }
+
+
     public void CallCarsPanel()
     {
-        if (_currentOpenedPanel == _panels.LocationsPanel && isTransitioningBtwLeftPanels == false)
+        if (_currentOpenedPanel != _panels.CarsPanel && isTransitioningBtwLeftPanels == false)
         {
             StartCoroutine(ShowContentOfCars());
             StartCoroutine(SetTransitionFalse());
@@ -223,6 +236,10 @@ public class PanelAnimation : MonoBehaviour
     private IEnumerator ShowContentOfLocations()
     {
         isTransitioningBtwLeftPanels = true;
+        if (_currentOpenedPanel == _panels.CarsPanel)
+            DownScaleObjects(_contentOfCars, _carsPanel);
+        else
+            DownScaleObjects(_contentOfCars, _tasksPanel);
         DownScaleObjects(_contentOfCars, _carsPanel);
         yield return new WaitForSeconds(0.4f);
         _locationsPanel.SetActive(true);
@@ -230,9 +247,28 @@ public class PanelAnimation : MonoBehaviour
         _currentOpenedPanel = _panels.LocationsPanel;
     }
 
+
+    private IEnumerator ShowContentOfTasks()
+    {
+        isTransitioningBtwLeftPanels = true;
+        if(_currentOpenedPanel == _panels.CarsPanel)
+            DownScaleObjects(_contentOfCars, _carsPanel);
+        else
+            DownScaleObjects(_contentOfLocations, _locationsPanel);
+        yield return new WaitForSeconds(0.4f);
+        _tasksPanel.SetActive(true);
+        UPScaleObjects(_contentOfTasks);
+        _currentOpenedPanel = _panels.TasksPanel;
+    }
+
+
     private IEnumerator ShowContentOfCars()
     {
         isTransitioningBtwLeftPanels = true;
+        if (_currentOpenedPanel == _panels.TasksPanel)
+            DownScaleObjects(_contentOfTasks, _tasksPanel);
+        else
+            DownScaleObjects(_contentOfLocations, _locationsPanel);
         DownScaleObjects(_contentOfLocations,_locationsPanel);
         yield return new WaitForSeconds(0.4f);
         _carsPanel.SetActive(true);
