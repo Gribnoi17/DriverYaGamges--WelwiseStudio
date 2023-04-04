@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.PackageManager.Requests;
 
 public class Achivments : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Achivments : MonoBehaviour
     //DeathCount, счетчик смертей
     //RebirthCount, колличество перерождений за рекламу
     //SecondLocation, 0 - закрыта, 1 - открыта
-    //MaxResult, максимальный рекорд за заезд, за все время
+    //BestMilage, максимальный рекорд за заезд, за все время
     //MileageOn..., общая сумма пройденных киллометров на указанной локации 
     //PurchasedCars, колличество купленных машин
     //CompletedTests, колличество выполненных испытаний на время
@@ -73,6 +74,7 @@ public class Achivments : MonoBehaviour
                     _allAchivments[i].ChangeCompleted();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
+                    PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
                 }
             }
         }
@@ -80,7 +82,8 @@ public class Achivments : MonoBehaviour
 
     void AchivmentTwo()
     {
-        if(PlayerPrefs.GetInt("MaxSpeed") == 2)
+        //реализовано
+        if(PlayerPrefs.GetInt("MaxSpeed") == 260)
         {
             for(int i = 0; i < _allAchivments.Count; i++)
             {
@@ -89,6 +92,7 @@ public class Achivments : MonoBehaviour
                     _allAchivments[i].ChangeCompleted();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
+                    PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
                 }
             }
         }
@@ -96,7 +100,7 @@ public class Achivments : MonoBehaviour
 
     void AchivmentThree()
     {
-        if(PlayerPrefs.GetInt("SecondLocation") == 3)
+        if(PlayerPrefs.GetInt("SecondLocation") == 1)
         {
             for (int i = 0; i < _allAchivments.Count; i++)
             {
@@ -105,6 +109,7 @@ public class Achivments : MonoBehaviour
                     _allAchivments[i].ChangeCompleted();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
+                    PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
                 }
             }
         }
@@ -112,6 +117,7 @@ public class Achivments : MonoBehaviour
 
     void AchivmentFour()
     {
+        //реализовано
         int deathCount = PlayerPrefs.GetInt("DeatCount");
         for (int i = 0; i < _allAchivments.Count; i++)
         {
@@ -122,7 +128,9 @@ public class Achivments : MonoBehaviour
                     _allAchivments[i].ChangeCompleted();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
-                }else
+                    PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+                }
+                else
                 {
                     _allAchivments[i].ChangePersent(deathCount * 10);
                 }
@@ -132,6 +140,7 @@ public class Achivments : MonoBehaviour
 
     void AchivmentFive()
     {
+        //реализовано
         int rebirthCount = PlayerPrefs.GetInt("RebirthCount");
         for (int i = 0; i < _allAchivments.Count; i++)
         {
@@ -142,6 +151,7 @@ public class Achivments : MonoBehaviour
                     _allAchivments[i].ChangeCompleted();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
+                    PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
                 }
                 else
                 {
@@ -153,7 +163,8 @@ public class Achivments : MonoBehaviour
 
     void AchivmentSix()
     {
-        int n = PlayerPrefs.GetInt("MaxResult");
+        //реализовано
+        int n = PlayerPrefs.GetInt("BestMilage");
         for (int i = 0; i < _allAchivments.Count; i++)
         {
             if (_allAchivments[i].NumberAchiv == 6)
@@ -163,6 +174,7 @@ public class Achivments : MonoBehaviour
                     _allAchivments[i].ChangeCompleted();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
+                    PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
                 }
                 else
                 {
@@ -184,6 +196,7 @@ public class Achivments : MonoBehaviour
                     _allAchivments[i].ChangeCompleted();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
+                    PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
                 }
                 else
                 {
@@ -207,6 +220,7 @@ public class Achivments : MonoBehaviour
                     _allAchivments[i].ChangeCompleted();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
+                    PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
                 }
                 else
                 {
@@ -228,6 +242,7 @@ public class Achivments : MonoBehaviour
                     _allAchivments[i].ChangeCompleted();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
+                    PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
                 }
                 else
                 {
@@ -239,20 +254,22 @@ public class Achivments : MonoBehaviour
 
     void AchivmentTen()
     {
+        //реализовано
         int n = PlayerPrefs.GetInt("CompletedTests");
         for (int i = 0; i < _allAchivments[i].NumberAchiv; i++)
         {
-            if (_allAchivments[i].NumberAchiv == 10)
+            if (_allAchivments[i].NumberAchiv == 9)
             {
                 if (n == 12)
                 {
                     _allAchivments[i].ChangeCompleted();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
+                    PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
                 }
                 else
                 {
-                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f % 12));
+                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f % 9));
                 }
             }
         }

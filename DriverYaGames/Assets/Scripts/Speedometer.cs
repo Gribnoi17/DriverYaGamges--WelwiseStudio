@@ -62,6 +62,8 @@ public class Speedometer : MonoBehaviour
     public IEnumerator SpeedBoosterController()
     {
         _currentSpeed += 10;
+        if (PlayerPrefs.GetInt("MaxSpeed") < 260 && _currentSpeed >= 260)
+            PlayerPrefs.SetInt("MaxSpeed", 260);
         yield return new WaitForSeconds(2);
         _currentSpeed -= 10;
         StopCoroutine(SpeedBoosterController());

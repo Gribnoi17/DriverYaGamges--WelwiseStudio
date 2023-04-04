@@ -22,6 +22,7 @@ public class PauseController : MonoBehaviour
 
     public void LoadMenu()
     {
+        PlayerPrefs.SetInt("DeatCount", PlayerPrefs.GetInt("DeatCount") + 1);
         SceneManager.LoadScene("Garage Scene");
     }
 
