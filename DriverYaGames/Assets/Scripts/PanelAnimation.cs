@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using DG.Tweening;
 using System.Collections;
 
@@ -46,6 +47,10 @@ public class PanelAnimation : MonoBehaviour
     [SerializeField] private Button _backButton;
 
 
+    [Header("Stats setting")]
+    [SerializeField] private TextMeshProUGUI _moneyText;
+    [SerializeField] private TextMeshProUGUI _milageText;
+
     private CanvasGroup _leftPanelCanvasGroup;
     private enum _panels {CarsPanel, LocationsPanel, TasksPanel };
     private _panels _currentOpenedPanel = _panels.CarsPanel;
@@ -61,15 +66,36 @@ public class PanelAnimation : MonoBehaviour
         DOTween.Init();
     }
 
+
+
     private void Start()
     {
+        SetPlayerPrefs();
+
+        _secondCanvas.alpha = 0f;
+
+        // При нажатии на кнопку Play запускаем анимацию перехода
+        _playButton.onClick.AddListener(StartTransition);
+        _backButton.onClick.AddListener(BackCanvasTransition);
+    }
+
+    private void SetPlayerPrefs()
+    {
+        if (PlayerPrefs.HasKey("MoneyNameConst"))
+        {
+            UpdateMoneyText();
+        }
+        if (PlayerPrefs.HasKey("BestMilage"))
+        {
+            _milageText.text = PlayerPrefs.GetInt("BestMilage").ToString();
+        }
 
 
         if (!PlayerPrefs.HasKey("Car"))
         {
             PlayerPrefs.SetString("Car", "PoliceCar");
         }
-        
+
         if (PlayerPrefs.HasKey("ControllerType"))
         {
             LeftPanelAnim();
@@ -79,16 +105,12 @@ public class PanelAnimation : MonoBehaviour
             _firstCanvas.gameObject.SetActive(false);
             ControlChoicePanelAppears();
         }
-
-
-        _secondCanvas.alpha = 0f;
-
-        // При нажатии на кнопку Play запускаем анимацию перехода
-        _playButton.onClick.AddListener(StartTransition);
-        _backButton.onClick.AddListener(BackCanvasTransition);
     }
 
-
+    public void UpdateMoneyText()
+    {
+        _moneyText.text = PlayerPrefs.GetInt("MoneyNameConst").ToString();
+    }
 
     public void ChouseSlant()
     {
