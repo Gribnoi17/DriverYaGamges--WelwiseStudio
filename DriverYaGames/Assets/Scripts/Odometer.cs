@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Runtime.InteropServices;
 
 public class Odometer : MonoBehaviour
 {
@@ -21,12 +22,44 @@ public class Odometer : MonoBehaviour
     private bool isCarAlive = true;
 
 
+    [DllImport("__Internal")]
+    private static extern void SetToLeaderboard(int value);
+
+
     private void Awake()
     {
         kilomForMoneyTemp = kilomOfMoney;
         dist = 0f;
          _speedometr = getterSpeed.GetComponent<Speedometer>();
     }
+
+    private void Start()
+    {
+        EventManager.PlayerDied += SaveToLeaderboard;
+        if (!PlayerPrefs.HasKey("BestMilage"))
+        {
+            PlayerPrefs.SetInt("BestMilage", 0);
+        }
+    }
+
+
+    private void OnDestroy()
+    {
+        EventManager.PlayerDied -= SaveToLeaderboard;
+    }
+
+
+    private void SaveToLeaderboard()
+    {
+        if(dist > PlayerPrefs.GetInt("BestMilage"))
+        {
+            PlayerPrefs.SetInt("BestMilage", (int)dist);
+            print(PlayerPrefs.GetInt("BestMilage"));
+            SetToLeaderboard(PlayerPrefs.GetInt("BestMilage"));
+        }
+    }
+
+
     private void Update()
     {
         if (isCarAlive == false)
