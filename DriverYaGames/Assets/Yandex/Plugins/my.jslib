@@ -57,7 +57,7 @@ mergeInto(LibraryManager.library, {
  	SetToLeaderboard : function(value){
     	ysdk.getLeaderboards()
       	.then(lb => {
-        lb.setLeaderboardScore('Height', value);
+        lb.setLeaderboardScore('Milage', value);
       });
   	},
 

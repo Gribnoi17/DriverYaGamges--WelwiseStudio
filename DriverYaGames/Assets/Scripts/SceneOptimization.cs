@@ -45,7 +45,7 @@ public class SceneOptimization : MonoBehaviour
                 obj.SetActive(true);
             }
             SetPCGraphicsSettings();
-            SetExponentialFog();
+            //SetExponentialFog();
 
         }
 
@@ -56,7 +56,7 @@ public class SceneOptimization : MonoBehaviour
                 Destroy(obj);
             }
             SetMobileGraphicsSettings();
-            SetLinearFog();
+            //SetLinearFog();
         }
     }
 

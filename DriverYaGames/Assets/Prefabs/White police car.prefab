@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 5720571379791311123}
   - component: {fileID: 5862792836366360403}
   - component: {fileID: 6427334250121657115}
+  - component: {fileID: 759856018970393404}
   m_Layer: 0
   m_Name: whell.005
   m_TagString: Untagged
@@ -166,6 +167,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &759856018970393404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122571024201859652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a4754c85009274fa5a98a0fef5a05d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  axis: {x: 10, y: 0, z: 0}
 --- !u!1 &5139786134682537210
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +192,7 @@ GameObject:
   - component: {fileID: 8350564752826372986}
   - component: {fileID: 1299506897610540565}
   - component: {fileID: 6124967730217696980}
+  - component: {fileID: 5502392655641710581}
   m_Layer: 0
   m_Name: whell.004
   m_TagString: Untagged
@@ -249,6 +265,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5502392655641710581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5139786134682537210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a4754c85009274fa5a98a0fef5a05d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  axis: {x: 10, y: 0, z: 0}
 --- !u!1 &6453343049703520255
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +290,7 @@ GameObject:
   - component: {fileID: 3027369742676504280}
   - component: {fileID: 3416993410265862501}
   - component: {fileID: 7233836328989511629}
+  - component: {fileID: 6104853019792189375}
   m_Layer: 0
   m_Name: whell.006
   m_TagString: Untagged
@@ -332,6 +363,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6104853019792189375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453343049703520255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a4754c85009274fa5a98a0fef5a05d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  axis: {x: 10, y: 0, z: 0}
 --- !u!1 &6479053208872603660
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +424,7 @@ GameObject:
   - component: {fileID: 1433434646116750024}
   - component: {fileID: 3169374950543278917}
   - component: {fileID: 9095554448232396976}
+  - component: {fileID: 6096292017379562814}
   m_Layer: 0
   m_Name: whell.007
   m_TagString: Untagged
@@ -451,6 +497,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6096292017379562814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6694373491140045059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a4754c85009274fa5a98a0fef5a05d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  axis: {x: 10, y: 0, z: 0}
 --- !u!1 &7181025179168542672
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6193427513443417539
 Transform:
   m_ObjectHideFlags: 0
@@ -730,7 +790,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.10648728, y: 0.07745696, z: 0.060496148}
-  m_Center: {x: 0.00034698923, y: 0.032788925, z: -0.013770287}
+  m_Center: {x: 0.00034698923, y: 0.032788925, z: 0.01377029}
 --- !u!4 &66409377 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 06d91b1834b74e2498c5498be6e224e4,

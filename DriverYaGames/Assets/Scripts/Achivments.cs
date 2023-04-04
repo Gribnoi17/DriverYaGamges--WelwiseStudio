@@ -1,20 +1,12 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+//using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 public class Achivments : MonoBehaviour
 {
     //PlayerPrefs, 0 - не выполненно, 1 - выполнено
-    //ByuCar, колличество купленных авто
-    //MaxSpeed, максимальная скорость в заезде за все время
-    //DeathCount, счетчик смертей
-    //RebirthCount, колличество перерождений за рекламу
-    //SecondLocation, 0 - закрыта, 1 - открыта
-    //MaxResult, максимальный рекорд за заезд, за все время
-    //MileageOn..., общая сумма пройденных киллометров на указанной локации 
-    //PurchasedCars, колличество купленных машин
-    //CompletedTests, колличество выполненных испытаний на время
     [SerializeField] private List<Task> _allAchivments;
 
     private void Start()
@@ -64,7 +56,7 @@ public class Achivments : MonoBehaviour
 
     void AchivmentOne()
     {
-        if(PlayerPrefs.GetInt("BuyCar") >= 1)
+        if(PlayerPrefs.GetInt("BuyCar") == 1)
         {
             for(int i = 0; i < _allAchivments.Count; i++)
             {
@@ -80,181 +72,46 @@ public class Achivments : MonoBehaviour
 
     void AchivmentTwo()
     {
-        if(PlayerPrefs.GetInt("MaxSpeed") == 2)
-        {
-            for(int i = 0; i < _allAchivments.Count; i++)
-            {
-                if (_allAchivments[i].NumberAchiv == 2)
-                {
-                    _allAchivments[i].ChangeCompleted();
-                    _allAchivments[i].ChangePersent(100);
-                    _allAchivments.RemoveAt(i);
-                }
-            }
-        }
+        print(2);
     }
 
     void AchivmentThree()
     {
-        if(PlayerPrefs.GetInt("SecondLocation") == 3)
-        {
-            for (int i = 0; i < _allAchivments.Count; i++)
-            {
-                if (_allAchivments[i].NumberAchiv == 3)
-                {
-                    _allAchivments[i].ChangeCompleted();
-                    _allAchivments[i].ChangePersent(100);
-                    _allAchivments.RemoveAt(i);
-                }
-            }
-        }
+        print(3);
     }
 
     void AchivmentFour()
     {
-        int deathCount = PlayerPrefs.GetInt("DeatCount");
-        for (int i = 0; i < _allAchivments.Count; i++)
-        {
-            if (_allAchivments[i].NumberAchiv == 4)
-            {
-                if (deathCount >= 10)
-                {
-                    _allAchivments[i].ChangeCompleted();
-                    _allAchivments[i].ChangePersent(100);
-                    _allAchivments.RemoveAt(i);
-                }else
-                {
-                    _allAchivments[i].ChangePersent(deathCount * 10);
-                }
-            }
-        }    
+        print(4);
     }
 
     void AchivmentFive()
     {
-        int rebirthCount = PlayerPrefs.GetInt("RebirthCount");
-        for (int i = 0; i < _allAchivments.Count; i++)
-        {
-            if (_allAchivments[i].NumberAchiv == 5)
-            {
-                if (rebirthCount >= 7)
-                {
-                    _allAchivments[i].ChangeCompleted();
-                    _allAchivments[i].ChangePersent(100);
-                    _allAchivments.RemoveAt(i);
-                }
-                else
-                {
-                    _allAchivments[i].ChangePersent(Convert.ToInt32(rebirthCount * 100f % 7f));
-                }
-            }
-        }
+        print(5);
     }
 
     void AchivmentSix()
     {
-        int n = PlayerPrefs.GetInt("MaxResult");
-        for (int i = 0; i < _allAchivments.Count; i++)
-        {
-            if (_allAchivments[i].NumberAchiv == 6)
-            {
-                if (n >= 666)
-                {
-                    _allAchivments[i].ChangeCompleted();
-                    _allAchivments[i].ChangePersent(100);
-                    _allAchivments.RemoveAt(i);
-                }
-                else
-                {
-                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f % 666f));
-                }
-            }
-        }
+        print(6);
     }
 
     void AchivmentSeven()
     {
-        int n = PlayerPrefs.GetInt("CountPlayInFreeRide");
-        for(int i = 0; i < _allAchivments[i].NumberAchiv; i++)
-        {
-            if (_allAchivments[i].NumberAchiv == 7)
-            {
-                if (n >= 25)
-                {
-                    _allAchivments[i].ChangeCompleted();
-                    _allAchivments[i].ChangePersent(100);
-                    _allAchivments.RemoveAt(i);
-                }
-                else
-                {
-                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f % 25f));
-                }
-            }    
-        }
+        print(7);
     }
 
     void AchivmentEight()
     {
-        int n = PlayerPrefs.GetInt("MileageOnFirstLocation");
-        int nn = PlayerPrefs.GetInt("MileageOnSecondLocation");
-
-        for (int i = 0; i < _allAchivments[i].NumberAchiv; i++)
-        {
-            if (_allAchivments[i].NumberAchiv == 8)
-            {
-                if (n >= 1000 && nn >= 1000)
-                {
-                    _allAchivments[i].ChangeCompleted();
-                    _allAchivments[i].ChangePersent(100);
-                    _allAchivments.RemoveAt(i);
-                }
-                else
-                {
-                    _allAchivments[i].ChangePersent(Convert.ToInt32((n + nn) * 100f % 2000f));
-                }
-            }
-        }
+        print(8);
     }
 
     void AchivmentNine()
     {
-        int n = PlayerPrefs.GetInt("PurchasedCars");
-        for (int i = 0; i < _allAchivments[i].NumberAchiv; i++)
-        {
-            if (_allAchivments[i].NumberAchiv == 9)
-            {
-                if (n == 4)
-                {
-                    _allAchivments[i].ChangeCompleted();
-                    _allAchivments[i].ChangePersent(100);
-                    _allAchivments.RemoveAt(i);
-                }
-                else
-                {
-                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f % 4));
-                }
-            }
-        }
+        print(9);
     }
 
     void AchivmentTen()
     {
-        int n = PlayerPrefs.GetInt("CompletedTests");
-        for (int i = 0; i < _allAchivments[i].NumberAchiv; i++)
-        {
-            if (_allAchivments[i].NumberAchiv == 10)
-            {
-                if (n == 12)
-                {
-                    _allAchivments[i].ChangeCompleted();
-                    _allAchivments[i].ChangePersent(100);
-                    _allAchivments.RemoveAt(i);
-                }
-                else
-                {
-                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f % 12));
-                }
-            }
-        }
+        print(10);
     }
 }
