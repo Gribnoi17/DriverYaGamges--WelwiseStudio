@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.99215686, g: 0.50980395, b: 0.6627451, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0.06
+  m_FogDensity: 0.025
   m_LinearFogStart: 0
   m_LinearFogEnd: 65
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -618,7 +618,7 @@ PrefabInstance:
     - target: {fileID: 6193427513443417539, guid: 11e0516ca88dd32479f4951fe5583517,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.011925
+      value: 0.052
       objectReference: {fileID: 0}
     - target: {fileID: 6193427513443417539, guid: 11e0516ca88dd32479f4951fe5583517,
         type: 3}
@@ -664,6 +664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: White police car
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181025179168542672, guid: 11e0516ca88dd32479f4951fe5583517,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7181025179168542684, guid: 11e0516ca88dd32479f4951fe5583517,
         type: 3}
@@ -1656,6 +1661,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScifiCar
       objectReference: {fileID: 0}
+    - target: {fileID: 688739117325121903, guid: 86b448cd30424ed449b67ea872227619,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4599790724526017404, guid: 86b448cd30424ed449b67ea872227619,
         type: 3}
       propertyPath: m_RootOrder
@@ -1716,18 +1726,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86b448cd30424ed449b67ea872227619, type: 3}
---- !u!1 &754315450 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 688739117325121903, guid: 86b448cd30424ed449b67ea872227619,
-    type: 3}
-  m_PrefabInstance: {fileID: 754315449}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &754315451 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4599790724526017404, guid: 86b448cd30424ed449b67ea872227619,
-    type: 3}
-  m_PrefabInstance: {fileID: 754315449}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &771853936 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 771853936, guid: 5804600525f66de4abf11111389ca287,
@@ -2008,6 +2006,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sport Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191692630752193212, guid: 7fbf18738c14fa94bb04a37c9874ddae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3153,7 +3156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 437054, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.066
+      value: 0.053
       objectReference: {fileID: 0}
     - target: {fileID: 437054, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3611,7 +3614,7 @@ MonoBehaviour:
   PoliceCar: {fileID: 1556152783}
   WhitePoliceCar: {fileID: 250998221}
   SportCar: {fileID: 867975936}
-  SciFiCar: {fileID: 754315450}
+  SciFiCar: {fileID: 688739116600363478}
 --- !u!4 &1691936633
 Transform:
   m_ObjectHideFlags: 0
@@ -3627,7 +3630,7 @@ Transform:
   - {fileID: 1556152785}
   - {fileID: 250998222}
   - {fileID: 867975937}
-  - {fileID: 754315451}
+  - {fileID: 4599790725263489989}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4898,6 +4901,12 @@ MonoBehaviour:
   - {fileID: -2405523579888373959, guid: 9d59b959acecb2c4c8a7c9e7ee95c278, type: 3}
   - {fileID: 4825797502949678827, guid: 4d18b9aff573d1f4f9974ab6da29d9d3, type: 3}
   _poolSize: 1
+--- !u!1 &688739116600363478 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 688739117325121903, guid: 86b448cd30424ed449b67ea872227619,
+    type: 3}
+  m_PrefabInstance: {fileID: 754315449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &972295749743571002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4969,7 +4978,7 @@ PrefabInstance:
     - target: {fileID: 972295748850177002, guid: 0931882c2331d844595ae9cfdb370c6b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 972295748850177003, guid: 0931882c2331d844595ae9cfdb370c6b,
         type: 3}
@@ -5229,6 +5238,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3035619235896826715}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &4599790725263489989 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4599790724526017404, guid: 86b448cd30424ed449b67ea872227619,
+    type: 3}
+  m_PrefabInstance: {fileID: 754315449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5264654393026504899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5417,6 +5432,10 @@ PrefabInstance:
     - target: {fileID: 732481067, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -1.9699707
+      objectReference: {fileID: 0}
+    - target: {fileID: 859707643, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -20.50003
       objectReference: {fileID: 0}
     - target: {fileID: 1101972309, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_IsActive
