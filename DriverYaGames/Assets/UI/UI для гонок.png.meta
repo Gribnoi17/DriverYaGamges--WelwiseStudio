@@ -925,7 +925,7 @@ TextureImporter:
         width: 223
         height: 213
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -946,7 +946,7 @@ TextureImporter:
         width: 169
         height: 169
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -954,6 +954,27 @@ TextureImporter:
       bones: []
       spriteID: e90588739c7a70641af29b0381de1fe4
       internalID: 1442304546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_40"
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 1705
+        width: 131
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31888bd80c520be4db5feea114faff61
+      internalID: -1366096961
       vertices: []
       indices: 
       edges: []
@@ -990,14 +1011,15 @@ TextureImporter:
       "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_32": 831336941
       "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_5": 104232589
       "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_3": -743557862
-      "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_28": -1726939231
+      "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_40": -1366096961
       "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_33": 1948212532
+      "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_28": -1726939231
       "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_14": -1702469204
       "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_6": -1015723960
       "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_36": -713353838
-      "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_27": 250472844
       "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_38": -1867738348
       "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_1": -133983643
+      "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_27": 250472844
       "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_21": -2005139794
       "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_34": -495236750
       "UI \u0434\u043B\u044F \u0433\u043E\u043D\u043E\u043A_12": 685983334

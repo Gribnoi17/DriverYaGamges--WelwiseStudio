@@ -15,7 +15,8 @@ public class Money : MonoBehaviour
     private void Start()
     {
         EventManager.DroveKmForMoney += AddMoney;
-        _moneyText.text = PlayerPrefs.GetInt(nameof(MoneyNameConst)).ToString() + "$";
+        _moneyText.text = "0$";
+        //_moneyText.text = PlayerPrefs.GetInt(nameof(MoneyNameConst)).ToString() + "$";
     }
 
     private void OnDestroy()
@@ -29,7 +30,8 @@ public class Money : MonoBehaviour
     {
         int money = PlayerPrefs.GetInt(nameof(MoneyNameConst));
         PlayerPrefs.SetInt(nameof(MoneyNameConst), money + numberOfCoinsToBeAdded);
-        
-        _moneyText.text = PlayerPrefs.GetInt(nameof(MoneyNameConst)).ToString() + "$";
+
+        _moneyText.text = money.ToString() + "$";
+        //_moneyText.text = PlayerPrefs.GetInt(nameof(MoneyNameConst)).ToString() + "$";
     }
 }
