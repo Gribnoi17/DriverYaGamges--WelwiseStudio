@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.PackageManager.Requests;
@@ -17,6 +16,10 @@ public class Achivments : MonoBehaviour
     //PurchasedCars, колличество купленных машин
     //CompletedTests, колличество выполненных испытаний на время
     [SerializeField] private List<Task> _allAchivments;
+    [SerializeField] private TaskPanelControll _tPC;
+
+    [Header("To view")]
+    [SerializeField] private int countNotReceived = 0;
 
     private void Start()
     {
@@ -26,7 +29,7 @@ public class Achivments : MonoBehaviour
         }
     }
 
-    void CheckAchiv(int numAchiv)
+    private void CheckAchiv(int numAchiv)
     {
         switch(numAchiv)
         {
@@ -63,7 +66,7 @@ public class Achivments : MonoBehaviour
         }
     }
 
-    void AchivmentOne()
+    private void AchivmentOne()
     {
         if(PlayerPrefs.GetInt("BuyCar") >= 1)
         {
@@ -80,7 +83,7 @@ public class Achivments : MonoBehaviour
         }
     }
 
-    void AchivmentTwo()
+    private void AchivmentTwo()
     {
         //реализовано
         if(PlayerPrefs.GetInt("MaxSpeed") == 260)
@@ -98,7 +101,7 @@ public class Achivments : MonoBehaviour
         }
     }
 
-    void AchivmentThree()
+    private void AchivmentThree()
     {
         if(PlayerPrefs.GetInt("SecondLocation") == 1)
         {
@@ -115,7 +118,7 @@ public class Achivments : MonoBehaviour
         }
     }
 
-    void AchivmentFour()
+    private void AchivmentFour()
     {
         //реализовано
         int deathCount = PlayerPrefs.GetInt("DeatCount");
@@ -138,7 +141,7 @@ public class Achivments : MonoBehaviour
         }    
     }
 
-    void AchivmentFive()
+    private void AchivmentFive()
     {
         //реализовано
         int rebirthCount = PlayerPrefs.GetInt("RebirthCount");
@@ -161,7 +164,7 @@ public class Achivments : MonoBehaviour
         }
     }
 
-    void AchivmentSix()
+    private void AchivmentSix()
     {
         //реализовано
         int n = PlayerPrefs.GetInt("BestMilage");
@@ -184,10 +187,10 @@ public class Achivments : MonoBehaviour
         }
     }
 
-    void AchivmentSeven()
+    private void AchivmentSeven()
     {
         int n = PlayerPrefs.GetInt("CountPlayInFreeRide");
-        for(int i = 0; i < _allAchivments[i].NumberAchiv; i++)
+        for(int i = 0; i < _allAchivments.Count; i++)
         {
             if (_allAchivments[i].NumberAchiv == 7)
             {
@@ -206,12 +209,12 @@ public class Achivments : MonoBehaviour
         }
     }
 
-    void AchivmentEight()
+    private void AchivmentEight()
     {
         int n = PlayerPrefs.GetInt("MileageOnFirstLocation");
         int nn = PlayerPrefs.GetInt("MileageOnSecondLocation");
 
-        for (int i = 0; i < _allAchivments[i].NumberAchiv; i++)
+        for (int i = 0; i < _allAchivments.Count; i++)
         {
             if (_allAchivments[i].NumberAchiv == 8)
             {
@@ -230,10 +233,10 @@ public class Achivments : MonoBehaviour
         }
     }
 
-    void AchivmentNine()
+    private void AchivmentNine()
     {
         int n = PlayerPrefs.GetInt("PurchasedCars");
-        for (int i = 0; i < _allAchivments[i].NumberAchiv; i++)
+        for (int i = 0; i < _allAchivments.Count; i++)
         {
             if (_allAchivments[i].NumberAchiv == 9)
             {
@@ -252,13 +255,13 @@ public class Achivments : MonoBehaviour
         }
     }
 
-    void AchivmentTen()
+    private void AchivmentTen()
     {
         //реализовано
         int n = PlayerPrefs.GetInt("CompletedTests");
-        for (int i = 0; i < _allAchivments[i].NumberAchiv; i++)
+        for (int i = 0; i < _allAchivments.Count; i++)
         {
-            if (_allAchivments[i].NumberAchiv == 9)
+            if (_allAchivments[i].NumberAchiv == 10)
             {
                 if (n == 12)
                 {
@@ -273,5 +276,10 @@ public class Achivments : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OffAchivPanel()
+    {
+        _tPC.StartUnVisible();   
     }
 }
