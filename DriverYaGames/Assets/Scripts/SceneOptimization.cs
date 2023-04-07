@@ -34,7 +34,7 @@ public class SceneOptimization : MonoBehaviour
     private void Start()
     {
         //PlayerPrefs.DeleteAll();
-        //PlayerPrefs.SetInt("IsMobile", 1);
+        //PlayerPrefs.SetInt("IsMobile", 0);
         if (_sceneType == SceneType.Menu)
             GetDevice();
 

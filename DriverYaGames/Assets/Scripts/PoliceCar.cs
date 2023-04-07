@@ -70,7 +70,8 @@ public class PoliceCar : MonoBehaviour
             {
                 EventManager.OnPlayerDied();
                 SwipeDetection.SwipeEvent -= OnSwipe;
-                gameObject.SetActive(false);
+                transform.parent.gameObject.SetActive(false);
+                //gameObject.SetActive(false);
                 _isPlaying= false;
             }else
             {

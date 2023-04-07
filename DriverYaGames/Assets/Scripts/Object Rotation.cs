@@ -5,7 +5,8 @@ public class RotateObject : MonoBehaviour
 {
     public float speed = 5f; // скорость вращения объекта
     public Vector3 axis = Vector3.up; // ось вращения
-
+    public bool isStupidCar = false;
+    
     private void Start()
     {
         Rotate();
@@ -14,8 +15,9 @@ public class RotateObject : MonoBehaviour
     private void Rotate()
     {
         // вращаем объект с помощью DoTween
-        transform.DORotate(axis * 360f, speed, RotateMode.LocalAxisAdd)
+        transform.DORotate(axis * 360f, speed, RotateMode.WorldAxisAdd)
                  .SetEase(Ease.Linear)
                  .OnComplete(() => Rotate()); // повторяем вращение после завершения
     }
+
 }
