@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  axis: {x: 10, y: 0, z: 0}
+  axis: {x: 0, y: 0, z: 10}
 --- !u!1 &1026968444836758392
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  axis: {x: 10, y: 0, z: 0}
+  axis: {x: 0, y: 0, z: 10}
 --- !u!1 &7489885395848342540
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  axis: {x: 10, y: 0, z: 0}
+  axis: {x: 0, y: 0, z: 10}
 --- !u!1 &8096941521267134089
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  axis: {x: 10, y: 0, z: 0}
+  axis: {x: 0, y: 0, z: 10}
 --- !u!1 &8191692630752193212
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +506,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!65 &5185302141861730478
 BoxCollider:
