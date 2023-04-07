@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.PackageManager.Requests;
+using Unity.VisualScripting;
 
 public class Achivments : MonoBehaviour
 {
@@ -23,10 +24,7 @@ public class Achivments : MonoBehaviour
 
     private void Start()
     {
-        foreach(Task task in _allAchivments)
-        {
-            CheckAchiv(task.NumberAchiv);
-        }
+        ReCheck();
     }
 
     private void CheckAchiv(int numAchiv)
@@ -74,11 +72,24 @@ public class Achivments : MonoBehaviour
             {
                 if (_allAchivments[i].NumberAchiv == 1)
                 {
-                    _allAchivments[i].ChangeCompleted();
+                    _allAchivments[i].ChangeReceivePanel();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
                     PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+                    break;
                 }
+            }
+        }
+    }
+
+    public void AchivmentOneGetReward()
+    {
+        for (int i = 0; i < _allAchivments.Count;i++)
+        {
+            if(_allAchivments[i].NumberAchiv == 1)
+            {
+                _allAchivments[i].ChangeCompleted();
+                //дать денег
             }
         }
     }
@@ -96,7 +107,20 @@ public class Achivments : MonoBehaviour
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
                     PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+                    break;
                 }
+            }
+        }
+    }
+
+    public void AchivmentTwoGetReward()
+    {
+        for (int i = 0; i < _allAchivments.Count; i++)
+        {
+            if (_allAchivments[i].NumberAchiv == 2)
+            {
+                _allAchivments[i].ChangeCompleted();
+                //дать денег
             }
         }
     }
@@ -113,6 +137,7 @@ public class Achivments : MonoBehaviour
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
                     PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+                    break;
                 }
             }
         }
@@ -128,14 +153,16 @@ public class Achivments : MonoBehaviour
             {
                 if (deathCount >= 10)
                 {
-                    _allAchivments[i].ChangeCompleted();
+                    _allAchivments[i].ChangeReceivePanel();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
                     PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+                    break;
                 }
                 else
                 {
                     _allAchivments[i].ChangePersent(deathCount * 10);
+                    break;
                 }
             }
         }    
@@ -151,14 +178,16 @@ public class Achivments : MonoBehaviour
             {
                 if (rebirthCount >= 7)
                 {
-                    _allAchivments[i].ChangeCompleted();
+                    _allAchivments[i].ChangeReceivePanel();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
                     PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+                    break;
                 }
                 else
                 {
                     _allAchivments[i].ChangePersent(Convert.ToInt32(rebirthCount * 100f % 7f));
+                    break;
                 }
             }
         }
@@ -174,14 +203,16 @@ public class Achivments : MonoBehaviour
             {
                 if (n >= 666)
                 {
-                    _allAchivments[i].ChangeCompleted();
+                    _allAchivments[i].ChangeReceivePanel();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
                     PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+                    break;
                 }
                 else
                 {
                     _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f % 666f));
+                    break;
                 }
             }
         }
@@ -196,14 +227,16 @@ public class Achivments : MonoBehaviour
             {
                 if (n >= 25)
                 {
-                    _allAchivments[i].ChangeCompleted();
+                    _allAchivments[i].ChangeReceivePanel();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
                     PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+                    break;
                 }
                 else
                 {
                     _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f % 25f));
+                    break;
                 }
             }    
         }
@@ -220,14 +253,16 @@ public class Achivments : MonoBehaviour
             {
                 if (n >= 1000 && nn >= 1000)
                 {
-                    _allAchivments[i].ChangeCompleted();
+                    _allAchivments[i].ChangeReceivePanel();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
                     PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+                    break;
                 }
                 else
                 {
                     _allAchivments[i].ChangePersent(Convert.ToInt32((n + nn) * 100f % 2000f));
+                    break;
                 }
             }
         }
@@ -242,14 +277,16 @@ public class Achivments : MonoBehaviour
             {
                 if (n == 4)
                 {
-                    _allAchivments[i].ChangeCompleted();
+                    _allAchivments[i].ChangeReceivePanel();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
                     PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+                    break;
                 }
                 else
                 {
                     _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f % 4));
+                    break;
                 }
             }
         }
@@ -265,21 +302,35 @@ public class Achivments : MonoBehaviour
             {
                 if (n == 12)
                 {
-                    _allAchivments[i].ChangeCompleted();
+                    _allAchivments[i].ChangeReceivePanel();
                     _allAchivments[i].ChangePersent(100);
                     _allAchivments.RemoveAt(i);
                     PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+                    break;
                 }
                 else
                 {
                     _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f % 9));
+                    break;
                 }
             }
         }
     }
 
+    private void OnAchivPanel()
+    {
+        _tPC.StartVisible();
+    }
     private void OffAchivPanel()
     {
         _tPC.StartUnVisible();   
+    }
+
+    public void ReCheck()
+    {
+        foreach (Task task in _allAchivments)
+        {
+            CheckAchiv(task.NumberAchiv);
+        }
     }
 }

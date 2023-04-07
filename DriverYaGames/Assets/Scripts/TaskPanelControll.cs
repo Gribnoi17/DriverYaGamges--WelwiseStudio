@@ -29,7 +29,7 @@ public class TaskPanelControll : MonoBehaviour
         _textFlicker = false;
     }
 
-    IEnumerator Visible()
+    private IEnumerator Visible()
     {
         _alreadyRunning = true;
         yield return new WaitForSeconds(2);
@@ -42,7 +42,7 @@ public class TaskPanelControll : MonoBehaviour
         StartCoroutine(TextFlicker());
     }
 
-    IEnumerator TextFlicker()
+    private IEnumerator TextFlicker()
     {
         while(_textFlicker)
         {
