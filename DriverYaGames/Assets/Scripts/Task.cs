@@ -10,6 +10,7 @@ public class Task : MonoBehaviour
     [SerializeField] private int _numberAchiv;
     [SerializeField] private Slider _slider;
     [SerializeField] private GameObject _donePanel;
+    [SerializeField] private GameObject _receivePanel;
     [SerializeField] private TextMeshProUGUI _persent;
     private bool _completed = false;
     public bool Completed { get { return _completed; }}
@@ -22,8 +23,14 @@ public class Task : MonoBehaviour
         _slider.value = newValueForPercent / 100;
     }
 
+    public void ChangeReceivePanel()
+    {
+        _receivePanel.SetActive(true);
+    }
+
     public void ChangeCompleted()
     {
+        _receivePanel.SetActive(false);
         _completed = true;
         _donePanel.SetActive(true);
     }

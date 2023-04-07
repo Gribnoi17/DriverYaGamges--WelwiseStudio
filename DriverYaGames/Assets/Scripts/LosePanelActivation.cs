@@ -50,6 +50,7 @@ public class LosePanelActivation : MonoBehaviour
 
     public void ReturnToGame()
     {
+        PlayerPrefs.SetInt("RebirthCount", PlayerPrefs.GetInt("RebirthCount") + 1);
         _speedometer.enabled = true;
         _odometer.IsCounting(true);
         _carSceneSetter.SetAndActivateCar();
