@@ -3,8 +3,9 @@ using UnityEngine;
 public class Car : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    [SerializeField] private GameObject _explosionParticleSystem;
 
-    public float Speed
+	public float Speed
     {
         get => _speed;
         set => _speed = value;
@@ -29,7 +30,12 @@ public class Car : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+          if (gameObject.tag != "Shield" && gameObject.tag != "SpeedBooster")
+          {
+               GameObject explosion = Instantiate(_explosionParticleSystem, transform.position, Quaternion.identity);
+               Destroy(explosion, 1.0f);
+               Destroy(gameObject);
+          }
     }
 
 
