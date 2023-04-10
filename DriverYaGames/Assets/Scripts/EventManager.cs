@@ -7,7 +7,7 @@ public class EventManager : MonoBehaviour
 {
     public static event Action PlayerDied;
     public static event Action DroveKmForMoney;
-
+    public static event Action PlayerTookShield;
     public static void OnPlayerDied()
     {
         PlayerDied?.Invoke();
@@ -17,4 +17,9 @@ public class EventManager : MonoBehaviour
     {
         DroveKmForMoney?.Invoke();
     }
+
+	public static void OnPlayerTookShield()
+	{
+		PlayerTookShield?.Invoke();
+	}
 }
