@@ -24,6 +24,7 @@ public class StartRace : MonoBehaviour
 
     void StartFreeRace()
     {
+        PlayerPrefs.SetInt("CountPlayInFreeRide", PlayerPrefs.GetInt("CountPlayInFreeRide") + 1);
         _timer.gameObject.SetActive(false);
     }
 
