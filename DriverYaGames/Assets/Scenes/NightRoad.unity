@@ -6238,6 +6238,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -20.5
       objectReference: {fileID: 0}
+    - target: {fileID: 859707644, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: m_fontSize
+      value: 189.15
+      objectReference: {fileID: 0}
     - target: {fileID: 1101972309, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6266,6 +6270,46 @@ PrefabInstance:
     - target: {fileID: 1678101139674424009, guid: 5804600525f66de4abf11111389ca287,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180570667659470346, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.761125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180570667659470346, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.83166677
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180570667659470346, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.28800002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180570667659470346, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.16844444
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180570667659470346, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 92.21503
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180570667659470346, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 68.17999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180570667659470346, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.2609863
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180570667659470346, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3468248869941075997, guid: 5804600525f66de4abf11111389ca287,
@@ -6426,7 +6470,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 859707642, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6804371122547150253}
+    - targetCorrespondingSourceObject: {fileID: 6211794450962074042, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6804371122547150258}
+    - targetCorrespondingSourceObject: {fileID: 6228689781346273574, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6804371122547150257}
   m_SourcePrefab: {fileID: 100100000, guid: 5804600525f66de4abf11111389ca287, type: 3}
 --- !u!114 &6804371122547150250 stripped
 MonoBehaviour:
@@ -6446,6 +6502,42 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6804371122547150249}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6804371122547150252 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 859707642, guid: 5804600525f66de4abf11111389ca287,
+    type: 3}
+  m_PrefabInstance: {fileID: 6804371122547150249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6804371122547150253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6804371122547150252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbc19ee3f6b9f94f9fcaef36bc4983c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ruText: "\u0410\u0412\u0410\u0420\u0418\u042F!"
+  _enText: Game Over
+  _trText: Oyun Bitti
+  _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
+  _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
+  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+--- !u!1 &6804371122547150254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6228689781346273574, guid: 5804600525f66de4abf11111389ca287,
+    type: 3}
+  m_PrefabInstance: {fileID: 6804371122547150249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6804371122547150255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6211794450962074042, guid: 5804600525f66de4abf11111389ca287,
+    type: 3}
+  m_PrefabInstance: {fileID: 6804371122547150249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6804371122547150256 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3468248869513454277, guid: 5804600525f66de4abf11111389ca287,
@@ -6458,6 +6550,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3639305bd6ce7834990d524d5334e5f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6804371122547150257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6804371122547150254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbc19ee3f6b9f94f9fcaef36bc4983c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ruText: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u043C\u0443\u0437\u044B\u043A\u0438"
+  _enText: MUSIC VOLUME
+  _trText: "M\xDCZ\u0130K SES\u0130"
+  _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
+  _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
+  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+--- !u!114 &6804371122547150258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6804371122547150255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbc19ee3f6b9f94f9fcaef36bc4983c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ruText: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u0437\u0432\u0443\u043A\u043E\u0432"
+  _enText: SOUNDS VOLUME
+  _trText: "SESLER\u0130N SES\u0130"
+  _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
+  _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
+  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
 --- !u!4 &7724344576346582038 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1724015826547685358, guid: f499ecf2e78bfb74b99d8433414e2234,
