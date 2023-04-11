@@ -1,21 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using TMPro;
 
 [RequireComponent(typeof(Canvas))]
 public class LosePanelActivation : MonoBehaviour
 {
     [SerializeField] private GameObject _losePanel;
+    [SerializeField] TextMeshProUGUI _milageResultText;
+    [SerializeField] TextMeshProUGUI _moneyResultText;
+    [DllImport("__Internal")]
+    private static extern void ReturnToGameExtern();
 
     private Generator _carGenerator;
     private CarSceneSetter _carSceneSetter;
     private Odometer _odometer;
     private Speedometer _speedometer;
     private Animator _anim;
+    private Money _money;
     private bool _watchedAdv = false;
 
     private void Start()
     {
+        _money = FindObjectOfType<Money>();
         _watchedAdv = false;
         _anim = _losePanel.GetComponent<Animator>();
         _speedometer = FindObjectOfType<Speedometer>();
@@ -32,6 +38,9 @@ public class LosePanelActivation : MonoBehaviour
 
     private void ActivateLosePanel()
     {
+        _milageResultText.text = _odometer.GetCurrentMilage().ToString();
+        _moneyResultText.text = _money.GetCurrentAmount();
+
         _speedometer.enabled = false;
         _odometer.IsCounting(false);
         _losePanel.SetActive(true);
@@ -46,6 +55,11 @@ public class LosePanelActivation : MonoBehaviour
         } 
         _carGenerator.RemoveAllChildren();
         _carGenerator.gameObject.SetActive(false);
+    }
+
+    public void ShowRewardedAdv()
+    {
+        ReturnToGameExtern();
     }
 
     public void ReturnToGame()

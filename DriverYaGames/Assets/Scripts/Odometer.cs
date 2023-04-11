@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Runtime.InteropServices;
-using UnityEditor.SearchService;
+//using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 
 public class Odometer : MonoBehaviour
@@ -43,6 +43,10 @@ public class Odometer : MonoBehaviour
         EventManager.PlayerDied -= SaveToLeaderboard;
     }
 
+    public int GetCurrentMilage()
+    {
+        return (int)Mathf.Round(dist);
+    }
 
     private void SaveToLeaderboard()
     {

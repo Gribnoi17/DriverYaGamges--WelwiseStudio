@@ -11,7 +11,6 @@ public class Money : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _moneyText;
     [SerializeField] private int numberOfCoinsToBeAdded;
 
-
     private void Start()
     {
         EventManager.DroveKmForMoney += AddMoney;
@@ -24,7 +23,10 @@ public class Money : MonoBehaviour
         EventManager.DroveKmForMoney -= AddMoney;
     }
 
-
+    public string GetCurrentAmount()
+    {
+        return _moneyText.text;
+    }
 
     public void AddMoney()
     {
