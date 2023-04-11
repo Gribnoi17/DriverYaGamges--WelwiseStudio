@@ -17,7 +17,7 @@ public class ShopItem : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("MoneyNameConst", 9999999);
+        //PlayerPrefs.SetInt("MoneyNameConst", 9999999);
         _panelAnimation = FindObjectOfType<PanelAnimation>();
 
         if (!PlayerPrefs.HasKey(_itemName))
