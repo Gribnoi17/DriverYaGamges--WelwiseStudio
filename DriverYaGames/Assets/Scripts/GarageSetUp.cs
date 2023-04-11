@@ -30,6 +30,8 @@ public class GarageSetUp : MonoBehaviour
 
     public void ChooseGreenCity()
     {
+        if (PlayerPrefs.GetString("GreenCity") != "Unlocked")
+            return;
         _chosenLocation = Location.GreenCity;
         foreach (GameObject mark in _choiceMarks)
         {
@@ -40,6 +42,8 @@ public class GarageSetUp : MonoBehaviour
 
     public void ChooseToxicZone()
     {
+        if (PlayerPrefs.GetString("ToxicZone") != "Unlocked")
+            return;
         _chosenLocation = Location.ToxicZone;
         foreach (GameObject mark in _choiceMarks)
         {

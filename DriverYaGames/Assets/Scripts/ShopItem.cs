@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ShopItem : MonoBehaviour
 {
+    [SerializeField] _typeOfItem _ItemType = _typeOfItem.Car;
     [SerializeField] private string _itemName;
     public int _itemCost = 50;
     public bool _isLocked = true;
@@ -12,10 +13,11 @@ public class ShopItem : MonoBehaviour
     [SerializeField] private Button _buyButton;
 
     private PanelAnimation _panelAnimation;
+    private enum _typeOfItem { Car, Location }
 
     private void Start()
     {
-
+        PlayerPrefs.SetInt("MoneyNameConst", 9999999);
         _panelAnimation = FindObjectOfType<PanelAnimation>();
 
         if (!PlayerPrefs.HasKey(_itemName))
@@ -23,18 +25,18 @@ public class ShopItem : MonoBehaviour
             if(_isLocked)
                 PlayerPrefs.SetString(_itemName, "Locked");
             else
-                UnlockLocation();
+                UnlockItem();
         }
         else if(PlayerPrefs.GetString(_itemName) == "Unlocked")
         {
-            UnlockLocation();
+            UnlockItem();
         }
 
         if (_isLocked)
             _lockPanel.SetActive(true);
     }
 
-    public void UnlockLocation()
+    public void UnlockItem()
     {
         _lockPanel.SetActive(false);
         PlayerPrefs.SetString(_itemName, "Unlocked");
@@ -46,7 +48,17 @@ public class ShopItem : MonoBehaviour
         if(PlayerPrefs.GetInt("MoneyNameConst") >= _itemCost && _isLocked)
         {
             PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") - _itemCost);
-            UnlockLocation();
+            UnlockItem();
+            if (_ItemType == _typeOfItem.Car)
+            {
+                PlayerPrefs.SetInt("CarsCount", PlayerPrefs.GetInt("CarsCount") + 1);
+                print(PlayerPrefs.GetInt("CarsCount"));
+            }
+            else
+            {
+                PlayerPrefs.SetInt("LocationsCount", PlayerPrefs.GetInt("LocationsCount") + 1);
+                print(PlayerPrefs.GetInt("LocationsCount"));
+            }
         }
     }
 

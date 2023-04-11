@@ -58,7 +58,8 @@ public class PanelAnimation : MonoBehaviour
     private CanvasGroup _bottomPanelCanvasGroup;
     private bool isTransitioningBtwCanvases = false;
     private bool isTransitioningBtwLeftPanels = false;
-
+    private bool isTransitioningBtwCars = false;
+    
 
     private void Awake()
     {
@@ -71,7 +72,7 @@ public class PanelAnimation : MonoBehaviour
     private void Start()
     {
         SetPlayerPrefs();
-
+        SetCurrentCarByPrefs();
         _secondCanvas.alpha = 0f;
 
         // При нажатии на кнопку Play запускаем анимацию перехода
@@ -112,26 +113,28 @@ public class PanelAnimation : MonoBehaviour
         _moneyText.text = PlayerPrefs.GetInt("MoneyNameConst").ToString();
     }
 
-    public void ChouseSlant()
+    public void ChouseSlant(bool isSettings)
     {
         PlayerPrefs.SetString("ControllerType", "Slant");
-        _controlChoicePanel.transform.parent.gameObject.SetActive(false);
+        if(isSettings == false)
+            _controlChoicePanel.transform.parent.gameObject.SetActive(false);
         LeftPanelAnim();
     }
 
 
-    public void ChouseSwipe()
+    public void ChouseSwipe(bool isSettings)
     {
         PlayerPrefs.SetString("ControllerType", "Swipe");
-        _controlChoicePanel.transform.parent.gameObject.SetActive(false);
+        if(isSettings == false)
+            _controlChoicePanel.transform.parent.gameObject.SetActive(false);
         LeftPanelAnim();
     }
 
-    public void CallSettingsPanel()
+    public void CallSettingsPanel(GameObject panel)
     {
         if (isTransitioningBtwCanvases) return;
         isTransitioningBtwCanvases = true;
-
+        panel.GetComponent<CanvasGroup>().alpha = 1f;
         // Анимация отодвигания первого канваса влево
         _firstCanvas.transform
             .DOLocalMoveX(_firstCanvas.transform.position.x - 4000f, 0.7f)
@@ -139,14 +142,26 @@ public class PanelAnimation : MonoBehaviour
             .OnComplete(() =>
             {
                 // Когда первый канвас отодвинулся, появляем второй канвас с постепенным увеличением прозрачности
-                _controlChoicePanel.transform.parent.gameObject.SetActive(true);
-                _controlChoicePanel.gameObject.SetActive(true);
-                ControlChoicePanelAppears();
+                panel.transform.parent.gameObject.SetActive(true);
+                panel.SetActive(true);
+                SettingsChoicePanelAppears(panel);
+                //ControlChoicePanelAppears();
 
                 _firstCanvas.gameObject.SetActive(false);
                 _firstCanvas.transform.localPosition = new Vector3(0f, 0f, 0f);
                 isTransitioningBtwCanvases = false;
             });
+    }
+
+    private void SettingsChoicePanelAppears(GameObject panel)
+    {
+        Vector3 startScale = new Vector3(0f, 0f, 0f);
+        Vector3 endScale = _controlChoicePanel.localScale;
+
+        panel.transform.localScale = startScale;
+        panel.transform.parent.gameObject.SetActive(true);
+
+        panel.transform.DOScale(endScale, _upScaleDuration);
     }
 
 
@@ -176,7 +191,21 @@ public class PanelAnimation : MonoBehaviour
         }); ;
     }
 
+    public void BackCanvasTransition(CanvasGroup canvasGroup)
+    {
+        if (isTransitioningBtwCanvases) return;
+        isTransitioningBtwCanvases = true;
 
+        canvasGroup.DOFade(0f, 0.7f).OnComplete(() =>
+        {
+            _firstCanvas.alpha = 0f;
+            _firstCanvas.gameObject.SetActive(true);
+            _firstCanvas.DOFade(1f, 0.7f);
+            isTransitioningBtwCanvases = false;
+            canvasGroup.gameObject.SetActive(false);
+            canvasGroup.transform.parent.gameObject.SetActive(false);
+        }); ;
+    }
 
     private void StartTransition()
     {
@@ -251,7 +280,10 @@ public class PanelAnimation : MonoBehaviour
         {
             StartCoroutine(ShowContentOfCars());
             StartCoroutine(SetTransitionFalse());
-        }      
+            print("WTF");
+        }
+
+        print("WTF"); print("WTF"); print("WTF");
     }
 
 
@@ -378,6 +410,25 @@ public class PanelAnimation : MonoBehaviour
     }
 
 
+    private void SetCurrentCarByPrefs()
+    {
+        if (PlayerPrefs.GetString("Car") == "WhitePoliceCar")
+        {
+            CheckCar(1);
+        }
+
+        if (PlayerPrefs.GetString("Car") == "SportCar")
+        {
+            CheckCar(2);
+        }
+
+        if (PlayerPrefs.GetString("Car") == "SciFiCar")
+        {
+            CheckCar(3);
+        }
+    }
+
+
     private void SetCarPlayerPrefs()
     {
         if (_currentCarIndex == 0)
@@ -410,6 +461,7 @@ public class PanelAnimation : MonoBehaviour
         tr.DOMove(_garageEndPosition, _animationDuration).SetAutoKill(false).OnComplete(() =>
         {
             Debug.Log("Машина прибыла в гараж");
+            isTransitioningBtwCars = false;
         });
     }
 
@@ -427,10 +479,12 @@ public class PanelAnimation : MonoBehaviour
 
     public void CheckCar(int indexInCarsList)
     {
-        if (_currentCarIndex == indexInCarsList)
+        if (_currentCarIndex == indexInCarsList || isTransitioningBtwCars == true)
             return;
+        isTransitioningBtwCars = true;
         MoveCarToStreet(carsInGarage[_currentCarIndex]);
         StartCoroutine(MoveCarToGarage(carsInGarage[indexInCarsList]));
+        //PlayerPrefs.SetInt("SelectedCarIndex")
         _currentCarIndex = indexInCarsList;
         SetCarPlayerPrefs();
     }

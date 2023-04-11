@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 25
+  _explosionParticleSystem: {fileID: 0}
 --- !u!54 &2477477914898308189
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -217,7 +218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  axis: {x: 0, y: 0, z: 1}
+  axis: {x: 0, y: 1, z: 0}
+  isStupidCar: 0
 --- !u!4 &5760427095843729953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2db4014f23d8f184b90f99d9eabe3590,
