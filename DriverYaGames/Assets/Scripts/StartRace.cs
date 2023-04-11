@@ -9,7 +9,6 @@ public class StartRace : MonoBehaviour
 {
     [SerializeField] private GameObject _gameRuler;
     [SerializeField] private TextMeshProUGUI _timer;
-    [SerializeField] private TextMeshProUGUI[] _textForStart;
     void Start()
     {
         if (_gameRuler.GetComponent<GameRules>().Regime == _gameRuler.GetComponent<GameRules>().regimeRace[0])
@@ -24,6 +23,7 @@ public class StartRace : MonoBehaviour
 
     void StartFreeRace()
     {
+        PlayerPrefs.SetInt("CountPlayInFreeRide", PlayerPrefs.GetInt("CountPlayInFreeRide") + 1);
         _timer.gameObject.SetActive(false);
     }
 
