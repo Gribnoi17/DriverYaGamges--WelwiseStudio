@@ -7,7 +7,8 @@ using Unity.VisualScripting;
 public class Achivments : MonoBehaviour
 {
     //PlayerPrefs, 0 - не выполненно, 1 - выполнено
-    //ByuCar, колличество купленных авто
+    //CarsCount, колличество купленных авто
+    //LocationCount, колличетсов купленных локаций
     //MaxSpeed, максимальная скорость в заезде за все время
     //DeathCount, счетчик смертей
     //RebirthCount, колличество перерождений за рекламу
@@ -66,7 +67,8 @@ public class Achivments : MonoBehaviour
 
     private void AchivmentOne()
     {
-        if(PlayerPrefs.GetInt("BuyCar") >= 1)
+        //реализовано
+        if (PlayerPrefs.GetInt("CarsCount") >= 2)
         {
             for(int i = 0; i < _allAchivments.Count; i++)
             {
@@ -131,7 +133,8 @@ public class Achivments : MonoBehaviour
 
     private void AchivmentThree()
     {
-        if(PlayerPrefs.GetInt("SecondLocation") == 1)
+        //реализовано
+        if(PlayerPrefs.GetInt("LocationCount") >= 2)
         {
             for (int i = 0; i < _allAchivments.Count; i++)
             {
@@ -359,7 +362,7 @@ public class Achivments : MonoBehaviour
 
     private void AchivmentNine()
     {
-        int n = PlayerPrefs.GetInt("PurchasedCars");
+        int n = PlayerPrefs.GetInt("CarsCount");
         for (int i = 0; i < _allAchivments.Count; i++)
         {
             if (_allAchivments[i].NumberAchiv == 9)
