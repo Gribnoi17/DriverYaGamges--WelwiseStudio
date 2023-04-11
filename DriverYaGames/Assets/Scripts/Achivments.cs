@@ -19,6 +19,7 @@ public class Achivments : MonoBehaviour
     //CompletedTests, колличество выполненных испытаний на время
     [SerializeField] private List<Task> _allAchivments;
     [SerializeField] private TaskPanelControll _tPC;
+    [SerializeField] private ShopItem _thirdLocation;
 
     [Header("To view")]
     [SerializeField] private int countNotReceived = 0;
@@ -355,13 +356,14 @@ public class Achivments : MonoBehaviour
                 _allAchivments[i].ChangeCompleted();
                 _allAchivments.RemoveAt(i);
                 OffAchivPanel();
-                //дать 3 локацию
+                _thirdLocation.UnlockItem();
             }
         }
     }
 
     private void AchivmentNine()
     {
+        //реализовано
         int n = PlayerPrefs.GetInt("CarsCount");
         for (int i = 0; i < _allAchivments.Count; i++)
         {
