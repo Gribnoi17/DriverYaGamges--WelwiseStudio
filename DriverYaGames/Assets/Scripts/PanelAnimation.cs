@@ -84,9 +84,17 @@ public class PanelAnimation : MonoBehaviour
         {
             UpdateMoneyText();
         }
+        else
+        {
+            PlayerPrefs.SetInt("MoneyNameConst", 0);
+        }
         if (PlayerPrefs.HasKey("BestMilage"))
         {
             _milageText.text = PlayerPrefs.GetInt("BestMilage").ToString();
+        }
+        else
+        {
+            PlayerPrefs.SetInt("BestMilage", 0);
         }
 
 
