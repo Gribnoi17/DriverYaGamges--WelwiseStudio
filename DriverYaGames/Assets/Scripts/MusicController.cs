@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using UnityEngine.Audio;
 
 public class MusicController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class MusicController : MonoBehaviour
     [SerializeField] private AudioSource _soundsSource;
     [SerializeField] private AudioClip[] _musicForPlay;
     [SerializeField] private AudioClip[] _musicForLobby;
+    [SerializeField] private AudioMixerGroup _mixerGroup;
     [SerializeField] private Slider _sliderMusic;
     [SerializeField] private Slider _sliderSounds;
     [Header("Keys")]
@@ -26,14 +28,16 @@ public class MusicController : MonoBehaviour
 
     private void Awake()
     {
-        if(SceneManager.GetActiveScene().name == "Garage Scene")
+        if (SceneManager.GetActiveScene().name == "Garage Scene")
         {
             _musicSource.clip = _musicForLobby[Random.Range(0, _musicForLobby.Length - 1)];
             _activSceneName = "Garage Scene";
         }
+        /*
         _musicSource.volume = PlayerPrefs.GetFloat("BG_MUSIC");
-        _musicSource.volume = PlayerPrefs.GetFloat("BG_SOUNDS");
-        /*if (PlayerPrefs.HasKey(_saveMusicVolumeKey))
+        _soundsSource.volume = PlayerPrefs.GetFloat("BG_SOUNDS");
+        
+        if (PlayerPrefs.HasKey(_saveMusicVolumeKey))
         {
             _musicVolume = PlayerPrefs.GetFloat(_saveMusicVolumeKey);
             _musicSource.volume = _musicVolume;
@@ -43,14 +47,14 @@ public class MusicController : MonoBehaviour
                 _sliderMusic = sliderMusicObj.GetComponent<Slider>();
                 _sliderMusic.value = _musicVolume;
             }
-        }/*else
+        }else
         {
             _musicVolume = 0.5f;
             PlayerPrefs.SetFloat(_saveMusicVolumeKey, _musicVolume);
             _musicSource.volume = _musicVolume;
-        }*/
+        }
 
-        /*if (PlayerPrefs.HasKey(_saveSoundsVolumeKey))
+        if (PlayerPrefs.HasKey(_saveSoundsVolumeKey))
         {
             _soundsVolume = PlayerPrefs.GetFloat(_saveSoundsVolumeKey);
             _soundsSource.volume = _soundsVolume;
@@ -62,36 +66,57 @@ public class MusicController : MonoBehaviour
                 PlayerPrefs.SetFloat(_saveSoundsVolumeKey, _soundsVolume);
                 _sliderSounds.value = _soundsVolume;
             }
-        }/*else
+        }else
         {
             _soundsVolume = 0.5f;
             _soundsSource.volume = _soundsVolume;
-        }*/
+        }
+        */
+    }
+    private void Start()
+    {
+        _musicVolume = PlayerPrefs.GetFloat(_saveMusicVolumeKey);
+        _mixerGroup.audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80, 0, _musicVolume));
 
+        _soundsVolume = PlayerPrefs.GetFloat(_saveSoundsVolumeKey);
+        _mixerGroup.audioMixer.SetFloat("SoundsVolume", Mathf.Lerp(-80, 0, _soundsVolume));
     }
     private void LateUpdate()
     {
         CheckThisScene();
+    }
+
+    public void ChangeVolumeMusic()
+    {
         GameObject sliderMusicObj = GameObject.FindWithTag(_sliderMusicTag);
-        GameObject sliderSoundsObj = GameObject.FindWithTag(_sliderSoundsTag);
-        if(sliderMusicObj != null)
+
+        if (sliderMusicObj != null)
         {
             _sliderMusic = sliderMusicObj.GetComponent<Slider>();
             _musicVolume = _sliderMusic.value;
-            if(_musicSource.volume != _musicVolume)
+            PlayerPrefs.SetFloat(_saveMusicVolumeKey, _musicVolume);
+            _mixerGroup.audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80, 0, _musicVolume));
+            /*if (_musicSource.volume != _musicVolume)
             {
                 PlayerPrefs.SetFloat(_saveMusicVolumeKey, _musicVolume);
             }
+            */
             _musicSource.volume = _musicVolume;
         }
+    }
+    public void ChangeVolumeSounds()
+    {
+        GameObject sliderSoundsObj = GameObject.FindWithTag(_sliderSoundsTag);
         if (sliderSoundsObj != null)
         {
             _sliderSounds = sliderSoundsObj.GetComponent<Slider>();
             _soundsVolume = _sliderSounds.value;
-            if(_soundsSource.volume != _soundsVolume)
+            PlayerPrefs.SetFloat(_saveSoundsVolumeKey, _soundsVolume);
+            _mixerGroup.audioMixer.SetFloat("SoundsVolume", Mathf.Lerp(-80, 0, _soundsVolume));
+            /*if (_soundsSource.volume != _soundsVolume)
             {
                 PlayerPrefs.SetFloat(_saveSoundsVolumeKey, _soundsVolume);
-            }
+            }*/
             _soundsSource.volume = _soundsVolume;
         }
     }

@@ -7,7 +7,7 @@ public class BackgroundInstanceController : MonoBehaviour
     {
         GameObject obj = GameObject.FindWithTag(createdTag);
         if (obj != null)
-            Destroy(this);
+            Destroy(gameObject);
         else
         {
             tag = createdTag;
