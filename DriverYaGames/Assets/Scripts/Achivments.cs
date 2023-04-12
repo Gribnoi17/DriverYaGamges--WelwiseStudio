@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.PackageManager.Requests;
-using Unity.VisualScripting;
+//using UnityEditor.PackageManager.Requests;
+//using Unity.VisualScripting;
 
 public class Achivments : MonoBehaviour
 {

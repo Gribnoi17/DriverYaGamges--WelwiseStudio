@@ -67,8 +67,6 @@ public class PanelAnimation : MonoBehaviour
         DOTween.Init();
     }
 
-
-
     private void Start()
     {
         SetPlayerPrefs();
@@ -195,7 +193,7 @@ public class PanelAnimation : MonoBehaviour
     {
         if (isTransitioningBtwCanvases) return;
         isTransitioningBtwCanvases = true;
-
+        //CanvasGroup parentSettingsPanel = canvasGroup.transform.parent.gameObject.GetComponent<CanvasGroup>();
         canvasGroup.DOFade(0f, 0.7f).OnComplete(() =>
         {
             _firstCanvas.alpha = 0f;
@@ -204,6 +202,8 @@ public class PanelAnimation : MonoBehaviour
             isTransitioningBtwCanvases = false;
             canvasGroup.gameObject.SetActive(false);
             canvasGroup.transform.parent.gameObject.SetActive(false);
+            canvasGroup.alpha = 1f;
+            //parentSettingsPanel.alpha = 1f;
         }); ;
     }
 
@@ -282,8 +282,6 @@ public class PanelAnimation : MonoBehaviour
             StartCoroutine(SetTransitionFalse());
             print("WTF");
         }
-
-        print("WTF"); print("WTF"); print("WTF");
     }
 
 
