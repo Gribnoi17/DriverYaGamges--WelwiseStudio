@@ -17,21 +17,31 @@ public class PoliceCar : MonoBehaviour
 	 [SerializeField] private Speedometer _spd;
 	 [SerializeField] private Animator _animator;
 	 [SerializeField] private AudioClip _clipStart;
+    [SerializeField] private AudioClip _soundEngine;
 
-      private float _timeShield = 3f;
+    private float _timeShield = 3f;
 	 private bool _isPlaying = true;
 	 private int _lineIndex = 1;
 	 private Playable _animation;
 	 private bool shieldActive;
 	 public bool IsShieldActive { get; }
 
+	private AudioSource _audioSource;
+
 	 private void Start()
 	 {
-          GetComponent<AudioSource>().PlayOneShot(_clipStart);
+		StartCoroutine(StartSound());
 		_isPlaying= true; 
 	 }
 
-
+	private IEnumerator StartSound()
+	{
+        _audioSource = GetComponent<AudioSource>();
+		_audioSource.PlayOneShot(_clipStart);
+        yield return new WaitForSeconds(1f);
+        _audioSource.clip = _soundEngine;
+        _audioSource.Play();
+	}
 	 private void OnEnable()
 	 {
 		SwipeDetection.SwipeEvent += OnSwipe;

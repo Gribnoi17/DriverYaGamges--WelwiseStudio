@@ -19,6 +19,7 @@ public class Achivments : MonoBehaviour
     //CompletedTests, колличество выполненных испытаний на время
     [SerializeField] private List<Task> _allAchivments;
     [SerializeField] private TaskPanelControll _tPC;
+    [SerializeField] private ShopItem _thirdLocation;
 
     [Header("To view")]
     [SerializeField] private int countNotReceived = 0;
@@ -91,7 +92,7 @@ public class Achivments : MonoBehaviour
             if(_allAchivments[i].NumberAchiv == 1)
             {
                 _allAchivments[i].ChangeCompleted();
-                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + 100);
+                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
                 OffAchivPanel();
                 _allAchivments.RemoveAt(i);
             }
@@ -126,7 +127,7 @@ public class Achivments : MonoBehaviour
                 _allAchivments[i].ChangeCompleted();
                 _allAchivments.RemoveAt(i);
                 OffAchivPanel();
-                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + 100);
+                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
             }
         }
     }
@@ -159,7 +160,7 @@ public class Achivments : MonoBehaviour
                 _allAchivments[i].ChangeCompleted();
                 _allAchivments.RemoveAt(i);
                 OffAchivPanel();
-                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + 100);
+                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
             }
         }
     }
@@ -198,7 +199,7 @@ public class Achivments : MonoBehaviour
                 _allAchivments[i].ChangeCompleted();
                 _allAchivments.RemoveAt(i);
                 OffAchivPanel();
-                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + 100);
+                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
             }
         }
     }
@@ -236,7 +237,7 @@ public class Achivments : MonoBehaviour
                 _allAchivments[i].ChangeCompleted();
                 _allAchivments.RemoveAt(i);
                 OffAchivPanel();
-                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + 100);
+                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
             }
         }
     }
@@ -314,7 +315,7 @@ public class Achivments : MonoBehaviour
                 _allAchivments[i].ChangeCompleted();
                 _allAchivments.RemoveAt(i);
                 OffAchivPanel();
-                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + 100);
+                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
             }
         }
     }
@@ -355,13 +356,14 @@ public class Achivments : MonoBehaviour
                 _allAchivments[i].ChangeCompleted();
                 _allAchivments.RemoveAt(i);
                 OffAchivPanel();
-                //дать 3 локацию
+                _thirdLocation.UnlockItem();
             }
         }
     }
 
     private void AchivmentNine()
     {
+        //реализовано
         int n = PlayerPrefs.GetInt("CarsCount");
         for (int i = 0; i < _allAchivments.Count; i++)
         {
@@ -393,7 +395,7 @@ public class Achivments : MonoBehaviour
                 _allAchivments[i].ChangeCompleted();
                 _allAchivments.RemoveAt(i);
                 OffAchivPanel();
-                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + 100);
+                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
             }
         }
     }
@@ -432,7 +434,7 @@ public class Achivments : MonoBehaviour
                 _allAchivments[i].ChangeCompleted();
                 _allAchivments.RemoveAt(i);
                 OffAchivPanel();
-                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + 100);
+                PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
             }
         }
     }
