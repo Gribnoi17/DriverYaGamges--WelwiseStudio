@@ -59,6 +59,7 @@ public class ShopItem : MonoBehaviour
                 PlayerPrefs.SetInt("LocationsCount", PlayerPrefs.GetInt("LocationsCount") + 1);
                 print(PlayerPrefs.GetInt("LocationsCount"));
             }
+            _buyButton.gameObject.SetActive(false);
         }
     }
 

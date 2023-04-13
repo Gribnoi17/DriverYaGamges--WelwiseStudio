@@ -19,6 +19,11 @@ public class LosePanelActivation : MonoBehaviour
     private Money _money;
     private bool _watchedAdv = false;
 
+    private void Awake()
+    {
+        gameObject.transform.parent = null;
+    }
+
     private void Start()
     {
         _money = FindObjectOfType<Money>();
@@ -36,10 +41,17 @@ public class LosePanelActivation : MonoBehaviour
         EventManager.PlayerDied -= ActivateLosePanel;
     }
 
+    public void SaveMoney()
+    {
+        PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _money.GetCurrentAmount());
+        _carGenerator.gameObject.SetActive(false);
+    }
+
+
     private void ActivateLosePanel()
     {
         _milageResultText.text = _odometer.GetCurrentMilage().ToString();
-        _moneyResultText.text = _money.GetCurrentAmount();
+        _moneyResultText.text = _money.GetCurrentAmount().ToString();
 
         _speedometer.enabled = false;
         _odometer.IsCounting(false);
@@ -50,7 +62,7 @@ public class LosePanelActivation : MonoBehaviour
             _watchedAdv = true;
         }
         else
-        {        
+        {
             _anim.Play("LosePanelAnim Only Menu");
         } 
         _carGenerator.RemoveAllChildren();
