@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 1, g: 0.66415095, b: 0.7706397, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0.025
+  m_FogDensity: 0.03
   m_LinearFogStart: 0
   m_LinearFogEnd: 65
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -371,6 +371,7 @@ MonoBehaviour:
   speed: 10
   deadZone: 0.08
   rotateSpeed: 5
+  _value: {fileID: 0}
   maxX: 1.317
   minX: -1.317
 --- !u!4 &111393969
