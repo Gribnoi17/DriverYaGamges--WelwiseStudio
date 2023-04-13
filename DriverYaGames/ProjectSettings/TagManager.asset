@@ -7,6 +7,10 @@ TagManager:
   - SpeedBooster
   - Shield
   - Car
+  - BG_MUSIC_VOLUME_SLIDER
+  - BG_SOUNDS_VOLUME_SLIDER
+  - Canvas
+  - BG_MUSIC_CREATED
   layers:
   - Default
   - TransparentFX

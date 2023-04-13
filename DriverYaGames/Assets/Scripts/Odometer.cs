@@ -1,13 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-//using TMPro.EditorUtilities;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using System.Runtime.InteropServices;
+//using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class Odometer : MonoBehaviour
 {
@@ -48,9 +43,14 @@ public class Odometer : MonoBehaviour
         EventManager.PlayerDied -= SaveToLeaderboard;
     }
 
+    public int GetCurrentMilage()
+    {
+        return (int)Mathf.Round(dist);
+    }
 
     private void SaveToLeaderboard()
     {
+        SaveToAchiv();
         if(dist > PlayerPrefs.GetInt("BestMilage"))
         {
             PlayerPrefs.SetInt("BestMilage", (int)dist);
@@ -59,6 +59,14 @@ public class Odometer : MonoBehaviour
         }
     }
 
+    private void SaveToAchiv()
+    {
+        if(SceneManager.GetActiveScene().name == "NightRace")
+            PlayerPrefs.SetInt("MileageOnFirstLocation", PlayerPrefs.GetInt("MileageOnFirstLocation") + (int)dist);
+        else if(SceneManager.GetActiveScene().name == "GreenCity")
+            PlayerPrefs.SetInt("MileageOnSecondLocation", PlayerPrefs.GetInt("MileageOnSecondLocation") + (int)dist);
+
+    }
 
     private void Update()
     {

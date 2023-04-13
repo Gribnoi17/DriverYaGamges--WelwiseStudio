@@ -83,7 +83,7 @@ mergeInto(LibraryManager.library, {
         })
     },
 
-    AddCoinsExtern : function(value){
+    ReturnToGameExtern : function(){
         ysdk.adv.showRewardedVideo({
           callbacks: {
           onOpen: () => {
@@ -91,7 +91,7 @@ mergeInto(LibraryManager.library, {
         },
           onRewarded: () => {
             console.log('Rewarded!');
-            myGameInstance.SendMessage("CoinManager", "AddCoins", value);
+            myGameInstance.SendMessage("LosePanelActivation", "ReturnToGame");
         },
           onClose: () => {
             console.log('Video ad closed.');

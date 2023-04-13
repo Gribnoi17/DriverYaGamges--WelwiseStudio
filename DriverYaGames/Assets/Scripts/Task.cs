@@ -15,6 +15,10 @@ public class Task : MonoBehaviour
     private bool _completed = false;
     public bool Completed { get { return _completed; }}
 
+    private bool _needReceive;
+
+    public bool NeedReceive { get { return _needReceive; }}
+
     public int NumberAchiv { get { return _numberAchiv; } }
 
     public void ChangePersent(int newValueForPercent)
@@ -26,10 +30,12 @@ public class Task : MonoBehaviour
     public void ChangeReceivePanel()
     {
         _receivePanel.SetActive(true);
+        _needReceive= true;
     }
 
     public void ChangeCompleted()
     {
+        _needReceive= false;
         _receivePanel.SetActive(false);
         _completed = true;
         _donePanel.SetActive(true);

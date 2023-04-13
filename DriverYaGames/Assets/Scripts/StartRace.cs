@@ -9,7 +9,6 @@ public class StartRace : MonoBehaviour
 {
     [SerializeField] private GameObject _gameRuler;
     [SerializeField] private TextMeshProUGUI _timer;
-    [SerializeField] private TextMeshProUGUI[] _textForStart;
     void Start()
     {
         if (_gameRuler.GetComponent<GameRules>().Regime == _gameRuler.GetComponent<GameRules>().regimeRace[0])
@@ -24,6 +23,7 @@ public class StartRace : MonoBehaviour
 
     void StartFreeRace()
     {
+        PlayerPrefs.SetInt("CountPlayInFreeRide", PlayerPrefs.GetInt("CountPlayInFreeRide") + 1);
         _timer.gameObject.SetActive(false);
     }
 
@@ -44,30 +44,29 @@ public class StartRace : MonoBehaviour
         {
             _timer.text = 120.ToString();
         }
-        StartCoroutine(Timer());
+        StartCoroutine("Timer");
+    }
 
-
-        IEnumerator Timer()
+    IEnumerator Timer()
+    {
+        int _nt = Convert.ToInt32(_timer.text);
+        while (true)
         {
-            int _nt = Convert.ToInt32(_timer.text);
-            while(true)
-            {
-                int nextTime = _nt - 1;
-                _nt = nextTime;
-                if (nextTime / 60d > 1)
-                    if(nextTime - (Math.Truncate(nextTime / 60d) * 60) < 10)
-                        _timer.text = $"{Math.Truncate(nextTime / 60d)}:0{nextTime - (Math.Truncate(nextTime / 60d) * 60)}";
-                    else
-                        _timer.text = $"{Math.Truncate(nextTime / 60d)}:{nextTime - (Math.Truncate(nextTime / 60d) * 60)}";
+            int nextTime = _nt - 1;
+            _nt = nextTime;
+            if (nextTime / 60d > 1)
+                if (nextTime - (Math.Truncate(nextTime / 60d) * 60) < 10)
+                    _timer.text = $"{Math.Truncate(nextTime / 60d)}:0{nextTime - (Math.Truncate(nextTime / 60d) * 60)}";
                 else
-                    _timer.text = Convert.ToString(Convert.ToInt32(_nt) - 1).ToString();
+                    _timer.text = $"{Math.Truncate(nextTime / 60d)}:{nextTime - (Math.Truncate(nextTime / 60d) * 60)}";
+            else
+                _timer.text = Convert.ToString(Convert.ToInt32(_nt) - 1).ToString();
 
-                if (_nt == 0 || _nt < 0)
-                    break;
-                else
-                    yield return new WaitForSeconds(1f);
-            }
-            StopCoroutine(Timer());
+            if (_nt == 0 || _nt < 0)
+                break;
+            else
+                yield return new WaitForSeconds(1f);
         }
+        StopCoroutine(Timer());
     }
 }

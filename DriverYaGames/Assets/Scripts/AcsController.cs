@@ -22,7 +22,7 @@ public class AcsController : MonoBehaviour
 
     void Update()
     {
-         Vector3 acceleration = Input.acceleration;
+        Vector3 acceleration = Input.acceleration;
         if (acceleration.x > deadZone && rg.transform.position.x < maxX)
         {
             var dir = new Vector3(acceleration.x * speed, 0f, 0f);

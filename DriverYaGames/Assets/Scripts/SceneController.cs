@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SceneController : MonoBehaviour
 {
-    [SerializeField] GameObject _acsController;
-    [SerializeField] GameObject _swipeDetection;
+    [SerializeField] private GameObject _acsController;
+    [SerializeField] private GameObject _swipeDetection;
+    [SerializeField] private PoliceCar[] _cars;
 
     private void Start()
     {
@@ -27,8 +28,16 @@ public class SceneController : MonoBehaviour
 
     IEnumerator WaitForSwipeDet()
     {
+        foreach(PoliceCar car in _cars)
+        {
+            car.enabled = false;
+        }
         _swipeDetection.SetActive(false);
         yield return new WaitForSeconds(4f);
         _swipeDetection.SetActive(true);
+        foreach (PoliceCar car in _cars)
+        {
+            car.enabled = true;
+        }
     }
 }
