@@ -121,6 +121,15 @@ public class MusicController : MonoBehaviour
         }
     }
 
+    public void OffEngine()
+    {
+        _mixerGroup.audioMixer.SetFloat("Engine", Mathf.Lerp(-80, 0, 0));
+    }
+    public void OnEngine()
+    {
+        _mixerGroup.audioMixer.SetFloat("Engine", Mathf.Lerp(-80, 0, 1));
+    }
+
     private void CheckThisScene()
     {
         string sceneName = SceneManager.GetActiveScene().name;

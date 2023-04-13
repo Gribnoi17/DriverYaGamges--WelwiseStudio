@@ -18,7 +18,6 @@ public class CarWhoosed : MonoBehaviour
     }
     private void Update()
     {
-        print(Vector3.Distance(transform.position, _carPos));
         if (_source.clip == null && Vector3.Distance(transform.position, _carPos) <= _dist)
         {
             _source.clip = _clip;

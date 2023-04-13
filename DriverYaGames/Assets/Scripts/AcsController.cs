@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
+
 public class AcsController : MonoBehaviour
 {
     [SerializeField] private Rigidbody rg;
     [SerializeField] private float speed;
     [SerializeField] private float deadZone;
     [SerializeField] private float rotateSpeed;
+    [SerializeField] private TextMeshProUGUI _value;
 
     [Header("Coordinates")]
     [SerializeField] private float maxX;
@@ -23,6 +26,14 @@ public class AcsController : MonoBehaviour
     void Update()
     {
         Vector3 acceleration = Input.acceleration;
+        try
+        {
+            _value.text = acceleration.x.ToString();
+        }
+        catch
+        {
+            print("acs error");
+        }
         if (acceleration.x > deadZone && rg.transform.position.x < maxX)
         {
             var dir = new Vector3(acceleration.x * speed, 0f, 0f);

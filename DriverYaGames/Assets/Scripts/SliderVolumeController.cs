@@ -6,9 +6,11 @@ public class SliderVolumeController : MonoBehaviour
 {
     [SerializeField] private Slider _musicSlider;
     [SerializeField] private Slider _soundsSlider;
+    [SerializeField] private AudioClip _uiClick;
+    [SerializeField] private AudioClip _playClick;
 
     private MusicController _musCont;
-
+    [SerializeField]private AudioSource _source;
     private void Start()
     {
         try
@@ -32,5 +34,25 @@ public class SliderVolumeController : MonoBehaviour
     public void changeSoundsSliderEvent()
     {
         _musCont.ChangeVolumeSounds();
+    }
+
+    public void PauseClick()
+    {
+        _musCont.OffEngine();
+    }
+    public void ContineClick()
+    {
+        _musCont.OnEngine();
+    }
+
+    public void ClickForButtonSound()
+    {
+        _source.clip = _uiClick;
+        _source.Play();
+    }
+    public void ClickForPlaySound()
+    {
+        _source.clip = _playClick;
+        _source.Play();
     }
 }

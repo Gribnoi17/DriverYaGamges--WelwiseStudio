@@ -12,6 +12,7 @@ public class Task : MonoBehaviour
     [SerializeField] private GameObject _donePanel;
     [SerializeField] private GameObject _receivePanel;
     [SerializeField] private TextMeshProUGUI _persent;
+    [SerializeField] private int _moneyForReward;
     private bool _completed = false;
     public bool Completed { get { return _completed; }}
 
@@ -31,6 +32,11 @@ public class Task : MonoBehaviour
     {
         _receivePanel.SetActive(true);
         _needReceive= true;
+    }
+
+    public int GetCountMoneuForReward()
+    {
+        return _moneyForReward;
     }
 
     public void ChangeCompleted()
