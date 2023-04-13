@@ -99,7 +99,6 @@ public class SceneOptimization : MonoBehaviour
         pipelineAsset.renderScale = 0.7f;
 
         pipelineAsset.msaaSampleCount = 1;
-
         QualitySettings.shadows = UnityEngine.ShadowQuality.Disable;
         QualitySettings.realtimeReflectionProbes = false;
     }
