@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   axis: {x: 10, y: 0, z: 0}
+  isStupidCar: 0
 --- !u!1 &2891014741222228496
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   axis: {x: 10, y: 0, z: 0}
+  isStupidCar: 0
 --- !u!1 &5880464019355926767
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   axis: {x: 10, y: 0, z: 0}
+  isStupidCar: 0
 --- !u!1 &6939018624552333579
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   axis: {x: 10, y: 0, z: 0}
+  isStupidCar: 0
 --- !u!1 &8191692630752193212
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +508,8 @@ MonoBehaviour:
   _animationDuration: 0.18
   _spd: {fileID: 0}
   _animator: {fileID: 0}
+  _clipStart: {fileID: 0}
+  _soundEngine: {fileID: 0}
 --- !u!114 &5185302141861730476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,7 +549,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 124
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &5185302141861730478
 BoxCollider:
