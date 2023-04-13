@@ -8,7 +8,7 @@ public class GarageSetUp : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _choiceMarks;
     [Tooltip("Должны быть расположенны в таком же порядке, что и локации в панели")]
-
+    [SerializeField] private ParticleSystem[] _confettes;
     private Location _chosenLocation = Location.NightRoad;
 
     public enum Location
@@ -75,8 +75,12 @@ public class GarageSetUp : MonoBehaviour
     }
 
 
-    void Update()
+    public void Congrats()
     {
-        
+        foreach(ParticleSystem confetti in _confettes)
+        {
+            confetti.Play();
+        }
     }
+
 }
