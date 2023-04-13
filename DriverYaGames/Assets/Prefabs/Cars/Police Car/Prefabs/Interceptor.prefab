@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   axis: {x: 10, y: 0, z: 0}
+  isStupidCar: 0
 --- !u!1 &111398
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   axis: {x: 10, y: 0, z: 0}
+  isStupidCar: 0
 --- !u!1 &115512
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +242,7 @@ Transform:
   - {fileID: 6241355998867805623}
   - {fileID: 55113241}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3394840
 MeshFilter:
@@ -317,7 +319,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 124
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &746323486296731211
 BoxCollider:
@@ -358,6 +360,8 @@ MonoBehaviour:
   _animationDuration: 0.18
   _spd: {fileID: 0}
   _animator: {fileID: 0}
+  _clipStart: {fileID: 0}
+  _soundEngine: {fileID: 0}
 --- !u!114 &998968574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,6 +494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   axis: {x: 10, y: 0, z: 0}
+  isStupidCar: 0
 --- !u!1 &139396
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   axis: {x: 10, y: 0, z: 0}
+  isStupidCar: 0
 --- !u!1 &1605048671
 GameObject:
   m_ObjectHideFlags: 0
@@ -5461,7 +5467,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 0.03
+  m_Intensity: 1
   m_Range: 0.11
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5495,10 +5501,10 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -5596,7 +5602,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4025037651645468493}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.21389002, y: 0, z: 0}
+  m_LocalPosition: {x: 0.225, y: 0.079, z: 0.026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5616,7 +5622,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.06666667, g: 0.18039216, b: 0.40000004, a: 1}
   m_Intensity: 0
-  m_Range: 10
+  m_Range: 0.1795831
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -5649,10 +5655,10 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -5687,7 +5693,7 @@ MonoBehaviour:
   m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 1
+  m_SoftShadowQuality: 0
 --- !u!114 &1459556223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5747,7 +5753,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 0.03
+  m_Intensity: 1
   m_Range: 0.11
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5781,10 +5787,10 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -5847,7 +5853,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6899212348354177176}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.17611012, y: 0, z: 0}
+  m_LocalPosition: {x: -0.17611012, y: 0.075, z: 0.015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5867,7 +5873,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.5019608, g: 0.10196079, b: 0.1137255, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 0.15057635
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -5900,10 +5906,10 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0

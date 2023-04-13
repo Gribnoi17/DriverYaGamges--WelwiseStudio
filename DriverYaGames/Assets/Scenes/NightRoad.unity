@@ -2193,6 +2193,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5185302141861730483, guid: 7fbf18738c14fa94bb04a37c9874ddae,
+        type: 3}
+      propertyPath: _spd
+      value: 
+      objectReference: {fileID: 6804371122547150256}
+    - target: {fileID: 5185302141861730483, guid: 7fbf18738c14fa94bb04a37c9874ddae,
+        type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 821928033}
+    - target: {fileID: 5185302141861730483, guid: 7fbf18738c14fa94bb04a37c9874ddae,
+        type: 3}
+      propertyPath: _linePoint
+      value: 
+      objectReference: {fileID: 560263413}
     - target: {fileID: 8191692630752193212, guid: 7fbf18738c14fa94bb04a37c9874ddae,
         type: 3}
       propertyPath: m_Name
@@ -4041,7 +4056,7 @@ GameObject:
   - component: {fileID: 1691936633}
   - component: {fileID: 1691936632}
   m_Layer: 0
-  m_Name: Cars
+  m_Name: Cars[new]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

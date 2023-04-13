@@ -2675,6 +2675,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5185302141861730483, guid: 7fbf18738c14fa94bb04a37c9874ddae,
         type: 3}
+      propertyPath: _spd
+      value: 
+      objectReference: {fileID: 3468248870135341790}
+    - target: {fileID: 5185302141861730483, guid: 7fbf18738c14fa94bb04a37c9874ddae,
+        type: 3}
+      propertyPath: _linePoint
+      value: 
+      objectReference: {fileID: 560263413}
+    - target: {fileID: 5185302141861730483, guid: 7fbf18738c14fa94bb04a37c9874ddae,
+        type: 3}
       propertyPath: _soundEngine
       value: 
       objectReference: {fileID: 8300000, guid: b049660b860c8334a852b54855bce599, type: 3}
@@ -3340,7 +3350,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _spd
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3468248870135341790}
     - target: {fileID: 688739117325121891, guid: 86b448cd30424ed449b67ea872227619,
         type: 3}
       propertyPath: _animator
@@ -3355,7 +3365,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _linePoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 560263413}
     - target: {fileID: 688739117325121891, guid: 86b448cd30424ed449b67ea872227619,
         type: 3}
       propertyPath: _soundEngine
@@ -4042,7 +4052,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _spd
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3468248870135341790}
     - target: {fileID: 7181025179168542684, guid: 11e0516ca88dd32479f4951fe5583517,
         type: 3}
       propertyPath: _animator
@@ -4052,7 +4062,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _linePoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 560263413}
     - target: {fileID: 7181025179168542684, guid: 11e0516ca88dd32479f4951fe5583517,
         type: 3}
       propertyPath: _soundEngine
@@ -6709,7 +6719,7 @@ PrefabInstance:
     - target: {fileID: 761245885, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
       propertyPath: _spd
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3468248870135341790}
     - target: {fileID: 761245885, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
       propertyPath: _animator
       value: 
@@ -12553,6 +12563,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1806880161}
   m_SourcePrefab: {fileID: 100100000, guid: 5804600525f66de4abf11111389ca287, type: 3}
+--- !u!114 &3468248870135341790 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3468248869513454277, guid: 5804600525f66de4abf11111389ca287,
+    type: 3}
+  m_PrefabInstance: {fileID: 3468248870135341789}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059040704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3639305bd6ce7834990d524d5334e5f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3468248870135341791 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 771853936, guid: 5804600525f66de4abf11111389ca287,
