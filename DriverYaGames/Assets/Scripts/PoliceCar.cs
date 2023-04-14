@@ -68,6 +68,8 @@ public class PoliceCar : MonoBehaviour
         {
             MoveKeyboard(KeyCode.A, -1);
             MoveKeyboard(KeyCode.D, 1);
+            MoveKeyboard(KeyCode.LeftArrow, -1);
+            MoveKeyboard(KeyCode.RightArrow, 1);
         }
     }
 

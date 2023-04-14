@@ -33,11 +33,14 @@ public class SceneController : MonoBehaviour
             car.CanMove = false;
         }
         _swipeDetection.SetActive(false);
+        print("no");
         yield return new WaitForSeconds(4f);
+        print("yes");
         _swipeDetection.SetActive(true);
         foreach (PoliceCar car in _cars)
         {
             car.CanMove = true;
+            print("Yes2");
         }
     }
 }
