@@ -6,28 +6,30 @@ using Redcode.Moroutines;
 using UnityEngine.Rendering;
 using System;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 [RequireComponent(typeof(Animator))]
 public class PoliceCar : MonoBehaviour
 {
-	 [SerializeField] private GameObject _shield;
-	 [SerializeField] private Transform _linePoint;
-	 [SerializeField] private float _wheelAngelsSpeed;
-	 [SerializeField] private float _animationDuration;
-	 [SerializeField] private Speedometer _spd;
-	 [SerializeField] private Animator _animator;
-	 [SerializeField] private AudioClip _clipStart;
-    [SerializeField] private AudioClip _soundEngine;
+	[SerializeField] private GameObject _shield;
+	[SerializeField] private Transform _linePoint;
+	[SerializeField] private float _wheelAngelsSpeed;
+	[SerializeField] private float _animationDuration;
+	[SerializeField] private Speedometer _spd;
+	[SerializeField] private Animator _animator;
+	[SerializeField] private AudioClip _clipStart;
+	[SerializeField] private AudioClip _soundEngine;
 
-    private float _timeShield = 3f;
-	 private bool _isPlaying = true;
-	 private int _lineIndex = 1;
-	 private Playable _animation;
-	 private bool shieldActive;
-	 public bool IsShieldActive { get; }
+	private float _timeShield = 3f;
+	private bool _isPlaying = true;
+	private int _lineIndex = 1;
+	private Playable _animation;
+	private bool shieldActive;
+	public bool IsShieldActive { get; }
 
 	private AudioSource _audioSource;
-
+	private bool _canMove;
+	public bool CanMove{ set {_canMove = value;} }
 	 private void Start()
 	 {
 		StartCoroutine(StartSound());
@@ -40,7 +42,7 @@ public class PoliceCar : MonoBehaviour
 		_audioSource.PlayOneShot(_clipStart);
         yield return new WaitForSeconds(1f);
         _audioSource.clip = _soundEngine;
-        _audioSource.Play();
+		_audioSource.Play();
 	}
 	 private void OnEnable()
 	 {
@@ -61,10 +63,13 @@ public class PoliceCar : MonoBehaviour
 
 
 	 private void Update()
-	 {
-		MoveKeyboard(KeyCode.A, -1);
-		MoveKeyboard(KeyCode.D, 1);
-	 }
+	{
+		if (_canMove)
+        {
+            MoveKeyboard(KeyCode.A, -1);
+            MoveKeyboard(KeyCode.D, 1);
+        }
+    }
 
 	 private void OnCollisionEnter(Collision collision)
 	 {

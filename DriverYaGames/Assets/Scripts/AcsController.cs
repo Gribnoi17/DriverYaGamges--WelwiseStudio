@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using System;
 
 public class AcsController : MonoBehaviour
 {
@@ -17,6 +18,12 @@ public class AcsController : MonoBehaviour
     [SerializeField] private float minX;
 
     private Animator animator;
+    private float _acceleration = 0;
+
+    public void GetNumber(float accelerationInHtml)
+    {
+        _acceleration = accelerationInHtml;
+    }
 
     private void Start()
     {
@@ -25,27 +32,26 @@ public class AcsController : MonoBehaviour
 
     void Update()
     {
-        Vector3 acceleration = Input.acceleration;
         try
         {
-            _value.text = acceleration.x.ToString();
+            _value.text = Math.Truncate(_acceleration).ToString(); ;
         }
         catch
         {
             print("acs error");
         }
-        if (acceleration.x > deadZone && rg.transform.position.x < maxX)
+        if (_acceleration > deadZone && rg.transform.position.x < maxX)
         {
-            var dir = new Vector3(acceleration.x * speed, 0f, 0f);
+            var dir = new Vector3(_acceleration * speed, 0f, 0f);
             rg.velocity = dir; 
             animator.SetBool("None", false);
             animator.SetBool("RightTurn", true);
             animator.SetBool("LeftTurn", false);
 
         }
-        else if (acceleration.x < -deadZone && rg.transform.position.x > minX)
+        else if (_acceleration < -deadZone && rg.transform.position.x > minX)
         {
-            var dir = new Vector3(acceleration.x * speed, 0f, 0f);
+            var dir = new Vector3(_acceleration * speed, 0f, 0f);
             rg.velocity = dir;
             animator.SetBool("None", false);
             animator.SetBool("LeftTurn", true);
