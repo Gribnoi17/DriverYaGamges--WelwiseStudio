@@ -28,16 +28,16 @@ public class SceneController : MonoBehaviour
 
     IEnumerator WaitForSwipeDet()
     {
-        foreach(PoliceCar car in _cars)
+        foreach (PoliceCar car in _cars)
         {
-            car.enabled = false;
+            car.CanMove = false;
         }
         _swipeDetection.SetActive(false);
         yield return new WaitForSeconds(4f);
         _swipeDetection.SetActive(true);
         foreach (PoliceCar car in _cars)
         {
-            car.enabled = true;
+            car.CanMove = true;
         }
     }
 }
