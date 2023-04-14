@@ -70,6 +70,8 @@ public class ShopItem : MonoBehaviour
 
     public void ActivateBuyButton()
     {
+        if (_panelAnimation.GetIsTransitioningBtwCars() == true)
+            return;
         if(_isLocked == true)
         {
             _buyButton.gameObject.SetActive(true);

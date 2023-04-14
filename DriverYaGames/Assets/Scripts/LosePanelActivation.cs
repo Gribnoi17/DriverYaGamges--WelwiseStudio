@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(Canvas))]
+//[RequireComponent(typeof(Canvas))]
 public class LosePanelActivation : MonoBehaviour
 {
     [SerializeField] private GameObject _losePanel;
