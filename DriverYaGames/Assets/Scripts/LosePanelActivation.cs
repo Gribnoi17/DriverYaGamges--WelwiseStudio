@@ -21,7 +21,7 @@ public class LosePanelActivation : MonoBehaviour
 
     private void Awake()
     {
-        gameObject.transform.parent = null;
+        gameObject.transform.SetParent(null, false);
     }
 
     private void Start()
