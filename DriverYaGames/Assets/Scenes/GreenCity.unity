@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 111393969}
   - component: {fileID: 111393968}
   m_Layer: 0
-  m_Name: Acs cont
+  m_Name: AcsController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

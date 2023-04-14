@@ -82,6 +82,7 @@ public class LosePanelActivation : MonoBehaviour
 
     public void ReturnToGame()
     {
+        Debug.Log("------------------------Игрок восстановился---------------------------");
         PlayerPrefs.SetInt("RebirthCount", PlayerPrefs.GetInt("RebirthCount") + 1);
         print("+rebirth");
         _speedometer.enabled = true;

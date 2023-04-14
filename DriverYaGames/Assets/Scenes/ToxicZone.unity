@@ -1019,6 +1019,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 90320898}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &90320902 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3108673378384319606, guid: 7be733fca5977484eab72a8eca73b1b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 90320898}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &91847809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1545,7 +1551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec7a23205880e24cba644d275c493ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rg: {fileID: 0}
+  rg: {fileID: 90320902}
   speed: 10
   deadZone: 0.08
   rotateSpeed: 5

@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 111393969}
   - component: {fileID: 111393968}
   m_Layer: 0
-  m_Name: Acs cont
+  m_Name: AcsController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450,7 +450,7 @@ MonoBehaviour:
   speed: 10
   deadZone: 0.08
   rotateSpeed: 5
-  _value: {fileID: 0}
+  _value: {fileID: 6804371122547150252}
   maxX: 1.317
   minX: -1.317
 --- !u!4 &111393969
@@ -6742,6 +6742,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6804371122547150249}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6804371122547150252 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 378557645, guid: 5804600525f66de4abf11111389ca287,
+    type: 3}
+  m_PrefabInstance: {fileID: 6804371122547150249}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6804371122547150256 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3468248869513454277, guid: 5804600525f66de4abf11111389ca287,
