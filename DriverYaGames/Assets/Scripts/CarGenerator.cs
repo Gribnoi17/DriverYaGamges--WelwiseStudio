@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Redcode.Moroutines;
 using Redcode.Extensions;
-//using Unity.Android.Types;
 using Redcode.Tweens;
 using System.Threading;
 
@@ -52,6 +51,7 @@ public class Generator : MonoBehaviour
         {
             yield break; // выходим из метода, если ссылка на объект _linePoint не установлена
         }
+        print(_period);
 
         yield return new WaitForSeconds(_period);
         Car car = null;
