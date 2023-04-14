@@ -34,7 +34,8 @@ public class SceneOptimization : MonoBehaviour
     private void Start()
     {
         //PlayerPrefs.DeleteAll();
-        //PlayerPrefs.SetInt("IsMobile", 0);
+        //PlayerPrefs.SetInt("MoneyNameConst", 10000);
+
         if (_sceneType == SceneType.Menu)
             GetDevice();
 
@@ -99,7 +100,6 @@ public class SceneOptimization : MonoBehaviour
         pipelineAsset.renderScale = 0.7f;
 
         pipelineAsset.msaaSampleCount = 1;
-
         QualitySettings.shadows = UnityEngine.ShadowQuality.Disable;
         QualitySettings.realtimeReflectionProbes = false;
     }

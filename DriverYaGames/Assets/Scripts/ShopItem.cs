@@ -14,11 +14,14 @@ public class ShopItem : MonoBehaviour
 
     private PanelAnimation _panelAnimation;
     private enum _typeOfItem { Car, Location }
+    private GarageSetUp garageSetUp;
+
 
     private void Start()
     {
-        //PlayerPrefs.SetInt("MoneyNameConst", 9999999);
         _panelAnimation = FindObjectOfType<PanelAnimation>();
+        garageSetUp = FindObjectOfType<GarageSetUp>();
+
 
         if (!PlayerPrefs.HasKey(_itemName))
         {
@@ -60,6 +63,7 @@ public class ShopItem : MonoBehaviour
                 print(PlayerPrefs.GetInt("LocationsCount"));
             }
             _buyButton.gameObject.SetActive(false);
+            garageSetUp.Congrats();
         }
     }
 
