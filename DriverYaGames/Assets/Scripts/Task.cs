@@ -25,7 +25,7 @@ public class Task : MonoBehaviour
     public void ChangePersent(int newValueForPercent)
     {
         _persent.text = $"{newValueForPercent}%";
-        _slider.value = newValueForPercent / 100;
+        _slider.value = newValueForPercent / 100f;
     }
 
     public void ChangeReceivePanel()

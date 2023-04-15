@@ -499,7 +499,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 18321656}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: AchivmentFiveGetReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &18321656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,7 +790,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 35551879}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: AchivmentSevenGetReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &35551879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,7 +1205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24465117, y: 0.101}
   m_AnchorMax: {x: 0.61867446, y: 0.36}
-  m_AnchoredPosition: {x: -0.3999939, y: -0.30000305}
+  m_AnchoredPosition: {x: -0.3999939, y: -0.2999878}
   m_SizeDelta: {x: 0.59789276, y: 0.57964325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &73226385
@@ -1882,7 +1906,6 @@ GameObject:
   - component: {fileID: 158888072}
   - component: {fileID: 158888075}
   - component: {fileID: 158888074}
-  - component: {fileID: 158888073}
   - component: {fileID: 158888076}
   m_Layer: 5
   m_Name: Task4
@@ -1918,74 +1941,6 @@ RectTransform:
   m_AnchoredPosition: {x: 250.027, y: -1050}
   m_SizeDelta: {x: 430, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &158888073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158888071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 158888074}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 645902428}
-        m_TargetAssemblyTypeName: GarageSetUp, Assembly-CSharp
-        m_MethodName: ChooseNightRoad
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: AchivmentFourGetReward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &158888074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2037,11 +1992,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberAchiv: 4
-  _slider: {fileID: 1868731506}
-  _donePanel: {fileID: 929472912}
+  _slider: {fileID: 1479842309}
+  _donePanel: {fileID: 2001026033}
   _receivePanel: {fileID: 1195278594}
-  _persent: {fileID: 1949079293}
-  _moneyForReward: 0
+  _persent: {fileID: 1191536693}
+  _moneyForReward: 300
 --- !u!1 &161238206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,18 +2255,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _allAchivments:
+  - {fileID: 1643190703}
   - {fileID: 1574744165}
   - {fileID: 1723123080}
   - {fileID: 1798171559}
   - {fileID: 158888076}
-  - {fileID: 1643190703}
   - {fileID: 1134816155}
   - {fileID: 514297413}
   - {fileID: 1584365388}
   - {fileID: 1656434664}
   - {fileID: 209171193}
   _tPC: {fileID: 1271335795}
-  _thirdLocation: {fileID: 0}
+  _thirdLocation: {fileID: 922215291}
   countNotReceived: 0
 --- !u!1 &164813012
 GameObject:
@@ -3504,7 +3459,6 @@ GameObject:
   - component: {fileID: 209171189}
   - component: {fileID: 209171192}
   - component: {fileID: 209171191}
-  - component: {fileID: 209171190}
   - component: {fileID: 209171193}
   m_Layer: 5
   m_Name: Task10
@@ -3540,74 +3494,6 @@ RectTransform:
   m_AnchoredPosition: {x: 250.027, y: -2175}
   m_SizeDelta: {x: 430, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &209171190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209171188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 209171191}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 645902428}
-        m_TargetAssemblyTypeName: GarageSetUp, Assembly-CSharp
-        m_MethodName: ChooseNightRoad
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: AchivmentTenGetReward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &209171191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3659,11 +3545,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberAchiv: 10
-  _slider: {fileID: 1868731506}
-  _donePanel: {fileID: 929472912}
+  _slider: {fileID: 759889198}
+  _donePanel: {fileID: 1215047002}
   _receivePanel: {fileID: 284188652}
-  _persent: {fileID: 1949079293}
-  _moneyForReward: 0
+  _persent: {fileID: 1614914404}
+  _moneyForReward: 300
 --- !u!1 &220600247
 GameObject:
   m_ObjectHideFlags: 0
@@ -5613,7 +5499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24465117, y: 0.101}
   m_AnchorMax: {x: 0.61867446, y: 0.36}
-  m_AnchoredPosition: {x: -0.3999939, y: -0.30000305}
+  m_AnchoredPosition: {x: -0.3999939, y: -0.2999878}
   m_SizeDelta: {x: 0.59789276, y: 0.57964325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &333100733
@@ -6948,7 +6834,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 444490930}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: AchivmentOneGetReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &444490930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7146,7 +7044,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 449971633}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: AchivmentTwoGetReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &449971633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7296,7 +7206,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24465117, y: 0.101}
   m_AnchorMax: {x: 0.61867446, y: 0.36}
-  m_AnchoredPosition: {x: -0.3999939, y: -0.30000305}
+  m_AnchoredPosition: {x: -0.3999939, y: -0.2999878}
   m_SizeDelta: {x: 0.59789276, y: 0.57964325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &458513993
@@ -7480,7 +7390,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 463818185}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: AchivmentSixGetReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &463818185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8037,7 +7959,6 @@ GameObject:
   - component: {fileID: 514297409}
   - component: {fileID: 514297412}
   - component: {fileID: 514297411}
-  - component: {fileID: 514297410}
   - component: {fileID: 514297413}
   m_Layer: 5
   m_Name: Task7
@@ -8073,74 +7994,6 @@ RectTransform:
   m_AnchoredPosition: {x: 250.027, y: -1500}
   m_SizeDelta: {x: 430, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &514297410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 514297408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 514297411}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 645902428}
-        m_TargetAssemblyTypeName: GarageSetUp, Assembly-CSharp
-        m_MethodName: ChooseNightRoad
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: AchivmentSevenGetReward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &514297411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8192,11 +8045,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberAchiv: 7
-  _slider: {fileID: 1868731506}
-  _donePanel: {fileID: 929472912}
+  _slider: {fileID: 204267945}
+  _donePanel: {fileID: 825172615}
   _receivePanel: {fileID: 25678248}
-  _persent: {fileID: 1949079293}
-  _moneyForReward: 0
+  _persent: {fileID: 2006114552}
+  _moneyForReward: 300
 --- !u!1 &518876511
 GameObject:
   m_ObjectHideFlags: 0
@@ -14915,7 +14768,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24465117, y: 0.101}
   m_AnchorMax: {x: 0.61867446, y: 0.36}
-  m_AnchoredPosition: {x: -0.3999939, y: -0.30000305}
+  m_AnchoredPosition: {x: -0.3999939, y: -0.2999878}
   m_SizeDelta: {x: 0.59789276, y: 0.57964325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966633266
@@ -16180,7 +16033,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24465117, y: 0.101}
   m_AnchorMax: {x: 0.61867446, y: 0.36}
-  m_AnchoredPosition: {x: -0.3999939, y: -0.30000305}
+  m_AnchoredPosition: {x: -0.3999939, y: -0.2999878}
   m_SizeDelta: {x: 0.59789276, y: 0.57964325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1043891162
@@ -17468,7 +17321,6 @@ GameObject:
   - component: {fileID: 1134816151}
   - component: {fileID: 1134816154}
   - component: {fileID: 1134816153}
-  - component: {fileID: 1134816152}
   - component: {fileID: 1134816155}
   m_Layer: 5
   m_Name: Task6
@@ -17504,74 +17356,6 @@ RectTransform:
   m_AnchoredPosition: {x: 250.027, y: -1275}
   m_SizeDelta: {x: 430, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1134816152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134816150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1134816153}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 645902428}
-        m_TargetAssemblyTypeName: GarageSetUp, Assembly-CSharp
-        m_MethodName: ChooseNightRoad
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: AchivmentSixGetReward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1134816153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17623,11 +17407,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberAchiv: 6
-  _slider: {fileID: 1868731506}
-  _donePanel: {fileID: 929472912}
+  _slider: {fileID: 621036498}
+  _donePanel: {fileID: 1460881667}
   _receivePanel: {fileID: 989965030}
-  _persent: {fileID: 1949079293}
-  _moneyForReward: 0
+  _persent: {fileID: 1462409055}
+  _moneyForReward: 300
 --- !u!1 &1135141929
 GameObject:
   m_ObjectHideFlags: 0
@@ -19475,7 +19259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24465117, y: 0.101}
   m_AnchorMax: {x: 0.61867446, y: 0.36}
-  m_AnchoredPosition: {x: -0.3999939, y: -0.30000305}
+  m_AnchoredPosition: {x: -0.3999939, y: -0.2999878}
   m_SizeDelta: {x: 0.59789276, y: 0.57964325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1249265738
@@ -19957,7 +19741,6 @@ GameObject:
   - component: {fileID: 1271335794}
   - component: {fileID: 1271335793}
   - component: {fileID: 1271335795}
-  - component: {fileID: 1271335796}
   m_Layer: 5
   m_Name: UnLockedTask
   m_TagString: Untagged
@@ -20038,62 +19821,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _taskPanel: {fileID: 1271335791}
   _text: {fileID: 1606664621}
---- !u!114 &1271335796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271335791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1271335793}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 186328285}
-        m_TargetAssemblyTypeName: PanelAnimation, Assembly-CSharp
-        m_MethodName: CallTasksPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1271423733
 GameObject:
   m_ObjectHideFlags: 0
@@ -22034,7 +21761,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24465117, y: 0.101}
   m_AnchorMax: {x: 0.61867446, y: 0.36}
-  m_AnchoredPosition: {x: -0.3999939, y: -0.30000305}
+  m_AnchoredPosition: {x: -0.3999939, y: -0.2999878}
   m_SizeDelta: {x: 0.59789276, y: 0.57964325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1344678291
@@ -25053,7 +24780,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1506321649}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: AchivmentThreeGetReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1506321649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25433,7 +25172,6 @@ GameObject:
   - component: {fileID: 1574744161}
   - component: {fileID: 1574744164}
   - component: {fileID: 1574744163}
-  - component: {fileID: 1574744162}
   - component: {fileID: 1574744165}
   m_Layer: 5
   m_Name: Task1
@@ -25469,74 +25207,6 @@ RectTransform:
   m_AnchoredPosition: {x: 250.027, y: -375}
   m_SizeDelta: {x: 430, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1574744162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574744160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1574744163}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 645902428}
-        m_TargetAssemblyTypeName: GarageSetUp, Assembly-CSharp
-        m_MethodName: ChooseNightRoad
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: AchivmentOneGetReward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1574744163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25588,11 +25258,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberAchiv: 1
-  _slider: {fileID: 1868731506}
-  _donePanel: {fileID: 929472912}
+  _slider: {fileID: 1237081932}
+  _donePanel: {fileID: 1010522979}
   _receivePanel: {fileID: 1646144180}
-  _persent: {fileID: 1949079293}
-  _moneyForReward: 0
+  _persent: {fileID: 1227480175}
+  _moneyForReward: 300
 --- !u!1 &1579676486
 GameObject:
   m_ObjectHideFlags: 0
@@ -25987,7 +25657,6 @@ GameObject:
   - component: {fileID: 1584365384}
   - component: {fileID: 1584365387}
   - component: {fileID: 1584365386}
-  - component: {fileID: 1584365385}
   - component: {fileID: 1584365388}
   m_Layer: 5
   m_Name: Task8
@@ -26023,74 +25692,6 @@ RectTransform:
   m_AnchoredPosition: {x: 250.027, y: -1725}
   m_SizeDelta: {x: 430, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1584365385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584365383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1584365386}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 645902428}
-        m_TargetAssemblyTypeName: GarageSetUp, Assembly-CSharp
-        m_MethodName: ChooseNightRoad
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: AchivmentEightGetReward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1584365386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26142,11 +25743,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberAchiv: 8
-  _slider: {fileID: 1868731506}
-  _donePanel: {fileID: 929472912}
+  _slider: {fileID: 288971384}
+  _donePanel: {fileID: 1678291859}
   _receivePanel: {fileID: 80491319}
-  _persent: {fileID: 1949079293}
-  _moneyForReward: 0
+  _persent: {fileID: 687205209}
+  _moneyForReward: 300
 --- !u!1 &1595116273
 GameObject:
   m_ObjectHideFlags: 0
@@ -26338,7 +25939,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03636786, y: 0.105103776}
   m_AnchorMax: {x: 0.970793, y: 0.85611093}
-  m_AnchoredPosition: {x: -0.6248627, y: 0.46868896}
+  m_AnchoredPosition: {x: -0.6248474, y: 0.46868896}
   m_SizeDelta: {x: 0.4545002, y: 0.19110012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1606664621
@@ -27131,7 +26732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24465117, y: 0.101}
   m_AnchorMax: {x: 0.61867446, y: 0.36}
-  m_AnchoredPosition: {x: -0.3999939, y: -0.30000305}
+  m_AnchoredPosition: {x: -0.3999939, y: -0.2999878}
   m_SizeDelta: {x: 0.59789276, y: 0.57964325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633965731
@@ -27379,7 +26980,6 @@ GameObject:
   - component: {fileID: 1643190699}
   - component: {fileID: 1643190702}
   - component: {fileID: 1643190701}
-  - component: {fileID: 1643190700}
   - component: {fileID: 1643190703}
   m_Layer: 5
   m_Name: Task5
@@ -27415,74 +27015,6 @@ RectTransform:
   m_AnchoredPosition: {x: 250.027, y: -150}
   m_SizeDelta: {x: 430, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1643190700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1643190698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1643190701}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 645902428}
-        m_TargetAssemblyTypeName: GarageSetUp, Assembly-CSharp
-        m_MethodName: ChooseNightRoad
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: AchivmentFiveGetReward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1643190701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27538,7 +27070,7 @@ MonoBehaviour:
   _donePanel: {fileID: 929472912}
   _receivePanel: {fileID: 591179471}
   _persent: {fileID: 1949079293}
-  _moneyForReward: 0
+  _moneyForReward: 300
 --- !u!1 &1646144180
 GameObject:
   m_ObjectHideFlags: 0
@@ -27631,7 +27163,6 @@ GameObject:
   - component: {fileID: 1656434660}
   - component: {fileID: 1656434663}
   - component: {fileID: 1656434662}
-  - component: {fileID: 1656434661}
   - component: {fileID: 1656434664}
   m_Layer: 5
   m_Name: Task9
@@ -27667,74 +27198,6 @@ RectTransform:
   m_AnchoredPosition: {x: 250.027, y: -1950}
   m_SizeDelta: {x: 430, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1656434661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656434659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1656434662}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 645902428}
-        m_TargetAssemblyTypeName: GarageSetUp, Assembly-CSharp
-        m_MethodName: ChooseNightRoad
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: AchivmentNineGetReward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1656434662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27786,11 +27249,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberAchiv: 9
-  _slider: {fileID: 1868731506}
-  _donePanel: {fileID: 929472912}
-  _receivePanel: {fileID: 0}
-  _persent: {fileID: 1949079293}
-  _moneyForReward: 0
+  _slider: {fileID: 1026666116}
+  _donePanel: {fileID: 1762155086}
+  _receivePanel: {fileID: 536957696}
+  _persent: {fileID: 1615114975}
+  _moneyForReward: 300
 --- !u!1 &1661913019
 GameObject:
   m_ObjectHideFlags: 0
@@ -28010,7 +27473,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1670627472}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: AchivmentNineGetReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1670627472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28741,7 +28216,6 @@ GameObject:
   - component: {fileID: 1723123076}
   - component: {fileID: 1723123079}
   - component: {fileID: 1723123078}
-  - component: {fileID: 1723123077}
   - component: {fileID: 1723123080}
   m_Layer: 5
   m_Name: Task2
@@ -28777,74 +28251,6 @@ RectTransform:
   m_AnchoredPosition: {x: 250.027, y: -600}
   m_SizeDelta: {x: 430, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1723123077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723123075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1723123078}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 645902428}
-        m_TargetAssemblyTypeName: GarageSetUp, Assembly-CSharp
-        m_MethodName: ChooseNightRoad
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: AchivmentTwoGetReward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1723123078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28896,11 +28302,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberAchiv: 2
-  _slider: {fileID: 1868731506}
+  _slider: {fileID: 2043338529}
   _donePanel: {fileID: 1982945288}
   _receivePanel: {fileID: 1928191892}
-  _persent: {fileID: 1949079293}
-  _moneyForReward: 0
+  _persent: {fileID: 1105045497}
+  _moneyForReward: 300
 --- !u!1 &1726488485
 GameObject:
   m_ObjectHideFlags: 0
@@ -30721,7 +30127,6 @@ GameObject:
   - component: {fileID: 1798171555}
   - component: {fileID: 1798171558}
   - component: {fileID: 1798171557}
-  - component: {fileID: 1798171556}
   - component: {fileID: 1798171559}
   m_Layer: 5
   m_Name: Task3
@@ -30757,74 +30162,6 @@ RectTransform:
   m_AnchoredPosition: {x: 250.027, y: -825}
   m_SizeDelta: {x: 430, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1798171556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798171554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1798171557}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 645902428}
-        m_TargetAssemblyTypeName: GarageSetUp, Assembly-CSharp
-        m_MethodName: ChooseNightRoad
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: AchivmentThreeGetReward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1798171557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30876,11 +30213,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberAchiv: 3
-  _slider: {fileID: 1868731506}
-  _donePanel: {fileID: 929472912}
+  _slider: {fileID: 707400289}
+  _donePanel: {fileID: 1579676486}
   _receivePanel: {fileID: 329946659}
-  _persent: {fileID: 1949079293}
-  _moneyForReward: 0
+  _persent: {fileID: 191419135}
+  _moneyForReward: 300
 --- !u!1 &1803615326
 GameObject:
   m_ObjectHideFlags: 0
@@ -32472,7 +31809,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1912314598}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: AchivmentTenGetReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1912314598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32763,7 +32112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24465117, y: 0.101}
   m_AnchorMax: {x: 0.61867446, y: 0.36}
-  m_AnchoredPosition: {x: -0.3999939, y: -0.30000305}
+  m_AnchoredPosition: {x: -0.3999939, y: -0.2999878}
   m_SizeDelta: {x: 0.59789276, y: 0.57964325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1933252287
@@ -36092,7 +35441,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2077997899}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: AchivmentEightGetReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2077997899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36560,7 +35921,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2103259178}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: AchivmentFourGetReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2103259178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36671,7 +36044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24465117, y: 0.101}
   m_AnchorMax: {x: 0.61867446, y: 0.36}
-  m_AnchoredPosition: {x: -0.3999939, y: -0.30000305}
+  m_AnchoredPosition: {x: -0.3999939, y: -0.2999878}
   m_SizeDelta: {x: 0.59789276, y: 0.57964325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108203326
