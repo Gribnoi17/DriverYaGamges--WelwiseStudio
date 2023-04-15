@@ -13,17 +13,23 @@ public class SliderVolumeController : MonoBehaviour
     [SerializeField]private AudioSource _source;
     private void Start()
     {
+        _musCont = FindObjectOfType<MusicController>();
         try
         {
             _musicSlider.value = PlayerPrefs.GetFloat("BG_MUSIC");
+        }
+        catch
+        {
+            
+        }
+        try
+        {
             _soundsSlider.value = PlayerPrefs.GetFloat("BG_SOUNDS");
         }
         catch
         {
-            print("catch error");
+
         }
-  
-        _musCont = FindObjectOfType<MusicController>();
     }
 
     public void changeMusicSliderEvent()
