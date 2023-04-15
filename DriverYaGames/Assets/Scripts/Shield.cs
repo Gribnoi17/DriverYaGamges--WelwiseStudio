@@ -1,12 +1,15 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Shield : MonoBehaviour
 {
 	private Image _shieldImage;
+	private Tween _tween;
 
 	private void Start()
 	{
@@ -17,24 +20,14 @@ public class Shield : MonoBehaviour
 
 	private void TurnOnVisualTimerShield()
 	{
-		StartCoroutine(StartVisualTimerShield());
-	}
-
-	private IEnumerator StartVisualTimerShield()
-	{
+		if (_tween != null)
+			_tween.Kill();
 		_shieldImage.enabled = true;
 		_shieldImage.fillAmount = 1;
-		while (_shieldImage.fillAmount > 0.001)
-		{
-			_shieldImage.fillAmount -= 0.007f; //магическое число +- 3 секунды
-			yield return new WaitForFixedUpdate();
-		}
-		_shieldImage.fillAmount = 0;
-		StopCoroutine(StartVisualTimerShield());
-
+		_tween = _shieldImage.DOFillAmount(0f, 3f);
 	}
 
-	private void OnDestroy()
+    private void OnDestroy()
 	{
 		EventManager.PlayerTookShield -= TurnOnVisualTimerShield;
 	}

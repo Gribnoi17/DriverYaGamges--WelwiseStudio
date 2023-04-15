@@ -30,6 +30,7 @@ public class PoliceCar : MonoBehaviour
 	private AudioSource _audioSource;
 	private bool _canMove;
 	public bool CanMove{ set {_canMove = value;} }
+
 	 private void Start()
 	 {
 		StartCoroutine(StartSound());
