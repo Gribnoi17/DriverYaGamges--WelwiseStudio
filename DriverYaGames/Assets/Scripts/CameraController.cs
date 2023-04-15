@@ -1,4 +1,4 @@
-using Redcode.Tweens;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,24 +10,31 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _durationShake = 0.5f;
     [SerializeField] private Image _brokenScreen;
 
-    private float _period = 6f;
-
-
-    public float Period
-    {
-        get => _period;
-        set => _period = value;
-    }
+    private Sequence _sequence;
 
     private void Start()
     {
         EventManager.PlayerDied += ShakeCameraPlay;
+
+        DOVirtual.DelayedCall(20f, CameraRotate);
+    }
+
+    private void CameraRotate()
+    {
+        _sequence = DOTween.Sequence();
+        _sequence.Append(transform.DORotate(new Vector3(0f, 3f, 0f), 2f, RotateMode.Fast).SetEase(Ease.Linear));
+        _sequence.Append(transform.DORotate(new Vector3(0f, 0f, 0f), 2f, RotateMode.Fast).SetEase(Ease.Linear));
+        _sequence.Append(transform.DORotate(new Vector3(0f, -3f, 0f), 2f, RotateMode.Fast).SetEase(Ease.Linear));
+        _sequence.Append(transform.DORotate(new Vector3(0f, 0f, 0f), 2f, RotateMode.Fast).SetEase(Ease.Linear));
+        _sequence.SetLoops(-1);
     }
 
 
     private void OnDestroy()
     {
         EventManager.PlayerDied -= ShakeCameraPlay;
+        EventManager.PlayerDied -= CameraRotate;
+        _sequence.Kill();
     }
 
     private void ShakeCameraPlay()

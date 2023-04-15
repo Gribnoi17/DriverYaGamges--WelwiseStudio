@@ -16,8 +16,8 @@ public class GameRules : MonoBehaviour
     [SerializeField] private int _startCarSpawnPeriod = 2;
     public int StartCarSpawnPeriod { get { return _startCarSpawnPeriod; } private set { _startCarSpawnPeriod = value; } }
 
-    [SerializeField] private int _minCarSpawnPeriod = 1;
-    public int MinCarSpawnPeriod { get { return _minCarSpawnPeriod; } private set { _minCarSpawnPeriod = value; } }
+    [SerializeField] private float _minCarSpawnPeriod = 0.5f;
+    public float MinCarSpawnPeriod { get { return _minCarSpawnPeriod; } private set { _minCarSpawnPeriod = value; } }
 
     private string regime;
     public string Regime { get { return regime; } private set { regime = value; } }

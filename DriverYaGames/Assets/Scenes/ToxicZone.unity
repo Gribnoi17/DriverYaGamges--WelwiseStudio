@@ -1033,6 +1033,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2320249074015556916, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.5999756
+      objectReference: {fileID: 0}
     - target: {fileID: 3468248869941075997, guid: 5804600525f66de4abf11111389ca287,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4691,7 +4696,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _linePoint: {fileID: 560263413}
-  _camera: {fileID: 1986608313}
   _carsPrefabs:
   - {fileID: 7300954844610325912, guid: 4d1624804e8167f479ab63c5302ff1d5, type: 3}
   - {fileID: 6663728298878876312, guid: 62010132604e8c94d96b4cb4fe6d3394, type: 3}
@@ -22560,7 +22564,7 @@ MonoBehaviour:
   maxSpeed: 240
   rateOfSpeedGrowth: 10
   _startCarSpawnPeriod: 2
-  _minCarSpawnPeriod: 1
+  _minCarSpawnPeriod: 0.65
 --- !u!4 &1429207847
 Transform:
   m_ObjectHideFlags: 0
