@@ -54,7 +54,7 @@ public class Odometer : MonoBehaviour
         if(dist > PlayerPrefs.GetInt("BestMilage"))
         {
             PlayerPrefs.SetInt("BestMilage", (int)dist);
-            print(PlayerPrefs.GetInt("BestMilage"));
+            //print(PlayerPrefs.GetInt("BestMilage"));
             SetToLeaderboard(PlayerPrefs.GetInt("BestMilage"));
         }
     }

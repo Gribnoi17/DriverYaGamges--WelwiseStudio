@@ -945,18 +945,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 186328285}
-        m_TargetAssemblyTypeName: PanelAnimation, Assembly-CSharp
-        m_MethodName: CheckCar
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 42720067}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: ActivateBuyButton
@@ -965,6 +953,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 186328285}
+        m_TargetAssemblyTypeName: PanelAnimation, Assembly-CSharp
+        m_MethodName: CheckCar
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2041,6 +2041,7 @@ MonoBehaviour:
   _donePanel: {fileID: 929472912}
   _receivePanel: {fileID: 1195278594}
   _persent: {fileID: 1949079293}
+  _moneyForReward: 0
 --- !u!1 &161238206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,7 +2285,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &164620601
 MonoBehaviour:
@@ -2310,6 +2311,7 @@ MonoBehaviour:
   - {fileID: 1656434664}
   - {fileID: 209171193}
   _tPC: {fileID: 1271335795}
+  _thirdLocation: {fileID: 0}
   countNotReceived: 0
 --- !u!1 &164813012
 GameObject:
@@ -2749,7 +2751,7 @@ RectTransform:
   m_Children:
   - {fileID: 353183256}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3661,6 +3663,7 @@ MonoBehaviour:
   _donePanel: {fileID: 929472912}
   _receivePanel: {fileID: 284188652}
   _persent: {fileID: 1949079293}
+  _moneyForReward: 0
 --- !u!1 &220600247
 GameObject:
   m_ObjectHideFlags: 0
@@ -3813,6 +3816,124 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245431362}
   m_CullTransparentMesh: 1
+--- !u!1001 &254696973
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2854922758819683096, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922758819683101, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922758819683101, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922758819683101, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922758819683103, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922759056076342, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922759056076342, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922759056076342, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922759056076342, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922759056076342, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922759056076342, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922759056076342, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922759056076342, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922759056076342, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922759056076342, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922759056076342, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922759056076343, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_Name
+      value: ConfettiParticle[new] (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922759056076343, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922760118044998, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922760118044998, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854922760118044998, guid: 07c00631142e3594990ce8345e23f956,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 07c00631142e3594990ce8345e23f956, type: 3}
 --- !u!1 &267435618
 GameObject:
   m_ObjectHideFlags: 0
@@ -4830,6 +4951,37 @@ MonoBehaviour:
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
   _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+--- !u!1 &315241135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 315241136}
+  m_Layer: 5
+  m_Name: Visual Effect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &315241136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315241135}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1916311789}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &321064290
 GameObject:
   m_ObjectHideFlags: 0
@@ -5303,18 +5455,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 186328285}
-        m_TargetAssemblyTypeName: PanelAnimation, Assembly-CSharp
-        m_MethodName: CheckCar
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 328764199}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: ActivateBuyButton
@@ -5323,6 +5463,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 186328285}
+        m_TargetAssemblyTypeName: PanelAnimation, Assembly-CSharp
+        m_MethodName: CheckCar
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8044,6 +8196,7 @@ MonoBehaviour:
   _donePanel: {fileID: 929472912}
   _receivePanel: {fileID: 25678248}
   _persent: {fileID: 1949079293}
+  _moneyForReward: 0
 --- !u!1 &518876511
 GameObject:
   m_ObjectHideFlags: 0
@@ -9713,6 +9866,9 @@ MonoBehaviour:
   - {fileID: 1686017037}
   - {fileID: 910550287}
   - {fileID: 844591107}
+  _confettes:
+  - {fileID: 884159527}
+  - {fileID: 1514526016}
 --- !u!4 &645902429
 Transform:
   m_ObjectHideFlags: 0
@@ -9726,7 +9882,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &647473184
 GameObject:
@@ -9840,7 +9996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03636786, y: 0.105103776}
   m_AnchorMax: {x: 0.970793, y: 0.85611093}
-  m_AnchoredPosition: {x: -0.62493896, y: 0.46868896}
+  m_AnchoredPosition: {x: -0.6249695, y: 0.46868896}
   m_SizeDelta: {x: 0.4545002, y: 0.19110012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &654898964
@@ -10584,7 +10740,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2666
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -12280,7 +12436,7 @@ PrefabInstance:
     - target: {fileID: 4198446133214510572, guid: 5ae5e8fa3b7dad04f9e6786adc26c13f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4198446133214510572, guid: 5ae5e8fa3b7dad04f9e6786adc26c13f,
         type: 3}
@@ -13365,6 +13521,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882653267}
   m_CullTransparentMesh: 1
+--- !u!198 &884159527 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2854922758819683101, guid: 07c00631142e3594990ce8345e23f956,
+    type: 3}
+  m_PrefabInstance: {fileID: 254696973}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &887590263
 GameObject:
   m_ObjectHideFlags: 0
@@ -14391,8 +14553,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 5.2251, y: 2.6127}
+  m_SizeDelta: {x: 52.251, y: 57.4762}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &930642543
 MonoBehaviour:
@@ -17465,6 +17627,7 @@ MonoBehaviour:
   _donePanel: {fileID: 929472912}
   _receivePanel: {fileID: 989965030}
   _persent: {fileID: 1949079293}
+  _moneyForReward: 0
 --- !u!1 &1135141929
 GameObject:
   m_ObjectHideFlags: 0
@@ -18237,7 +18400,7 @@ RectTransform:
   m_Children:
   - {fileID: 164813013}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -19794,6 +19957,7 @@ GameObject:
   - component: {fileID: 1271335794}
   - component: {fileID: 1271335793}
   - component: {fileID: 1271335795}
+  - component: {fileID: 1271335796}
   m_Layer: 5
   m_Name: UnLockedTask
   m_TagString: Untagged
@@ -19874,6 +20038,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _taskPanel: {fileID: 1271335791}
   _text: {fileID: 1606664621}
+--- !u!114 &1271335796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271335791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1271335793}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 186328285}
+        m_TargetAssemblyTypeName: PanelAnimation, Assembly-CSharp
+        m_MethodName: CallTasksPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1271423733
 GameObject:
   m_ObjectHideFlags: 0
@@ -20013,7 +20233,7 @@ Transform:
   - {fileID: 1271613921}
   - {fileID: 6097882299011879901}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 33, z: 0}
 --- !u!4 &1271613921
 Transform:
@@ -20549,7 +20769,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1287992301
 GameObject:
@@ -20995,7 +21215,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1311102522
 GameObject:
@@ -23370,7 +23590,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431714009
 GameObject:
@@ -24094,18 +24314,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 186328285}
-        m_TargetAssemblyTypeName: PanelAnimation, Assembly-CSharp
-        m_MethodName: CheckCar
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1464557820}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: ActivateBuyButton
@@ -24114,6 +24322,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 186328285}
+        m_TargetAssemblyTypeName: PanelAnimation, Assembly-CSharp
+        m_MethodName: CheckCar
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -24872,6 +25092,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506321646}
   m_CullTransparentMesh: 1
+--- !u!198 &1514526016 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2854922760118044998, guid: 07c00631142e3594990ce8345e23f956,
+    type: 3}
+  m_PrefabInstance: {fileID: 254696973}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1527270051
 GameObject:
   m_ObjectHideFlags: 0
@@ -25366,6 +25592,7 @@ MonoBehaviour:
   _donePanel: {fileID: 929472912}
   _receivePanel: {fileID: 1646144180}
   _persent: {fileID: 1949079293}
+  _moneyForReward: 0
 --- !u!1 &1579676486
 GameObject:
   m_ObjectHideFlags: 0
@@ -25707,10 +25934,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 186328285}
-        m_TargetAssemblyTypeName: PanelAnimation, Assembly-CSharp
-        m_MethodName: CheckCar
-        m_Mode: 3
+      - m_Target: {fileID: 1580617437}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: ActivateBuyButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -25719,10 +25946,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1580617437}
-        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
-        m_MethodName: ActivateBuyButton
-        m_Mode: 1
+      - m_Target: {fileID: 186328285}
+        m_TargetAssemblyTypeName: PanelAnimation, Assembly-CSharp
+        m_MethodName: CheckCar
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -25919,6 +26146,7 @@ MonoBehaviour:
   _donePanel: {fileID: 929472912}
   _receivePanel: {fileID: 80491319}
   _persent: {fileID: 1949079293}
+  _moneyForReward: 0
 --- !u!1 &1595116273
 GameObject:
   m_ObjectHideFlags: 0
@@ -26110,7 +26338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03636786, y: 0.105103776}
   m_AnchorMax: {x: 0.970793, y: 0.85611093}
-  m_AnchoredPosition: {x: -0.6248779, y: 0.46868896}
+  m_AnchoredPosition: {x: -0.6248627, y: 0.46868896}
   m_SizeDelta: {x: 0.4545002, y: 0.19110012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1606664621
@@ -26725,7 +26953,7 @@ PrefabInstance:
     - target: {fileID: 871799552622969237, guid: 48e086f9b0acfbd4e9fa16b9eeeca71e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 871799552622969237, guid: 48e086f9b0acfbd4e9fa16b9eeeca71e,
         type: 3}
@@ -27310,6 +27538,7 @@ MonoBehaviour:
   _donePanel: {fileID: 929472912}
   _receivePanel: {fileID: 591179471}
   _persent: {fileID: 1949079293}
+  _moneyForReward: 0
 --- !u!1 &1646144180
 GameObject:
   m_ObjectHideFlags: 0
@@ -27561,6 +27790,7 @@ MonoBehaviour:
   _donePanel: {fileID: 929472912}
   _receivePanel: {fileID: 0}
   _persent: {fileID: 1949079293}
+  _moneyForReward: 0
 --- !u!1 &1661913019
 GameObject:
   m_ObjectHideFlags: 0
@@ -28493,7 +28723,7 @@ RectTransform:
   - {fileID: 1427949856}
   - {fileID: 1311102523}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -28670,6 +28900,7 @@ MonoBehaviour:
   _donePanel: {fileID: 1982945288}
   _receivePanel: {fileID: 1928191892}
   _persent: {fileID: 1949079293}
+  _moneyForReward: 0
 --- !u!1 &1726488485
 GameObject:
   m_ObjectHideFlags: 0
@@ -29434,7 +29665,7 @@ PrefabInstance:
     - target: {fileID: 4763899328562670808, guid: 257a2d584dbadce4884c7d8df6c17d77,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4763899328562670808, guid: 257a2d584dbadce4884c7d8df6c17d77,
         type: 3}
@@ -29853,7 +30084,7 @@ RectTransform:
   - {fileID: 791963292}
   - {fileID: 805877951}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -30649,6 +30880,7 @@ MonoBehaviour:
   _donePanel: {fileID: 929472912}
   _receivePanel: {fileID: 329946659}
   _persent: {fileID: 1949079293}
+  _moneyForReward: 0
 --- !u!1 &1803615326
 GameObject:
   m_ObjectHideFlags: 0
@@ -32308,7 +32540,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 315241136}
   m_Father: {fileID: 1942597444}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -32337,7 +32570,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15000
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -32364,7 +32597,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.7
+  m_fontSize: 52.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -36858,7 +37091,7 @@ Transform:
   - {fileID: 1262141678873476533}
   - {fileID: 3667846603856838503}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919132148895777966
 GameObject:

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1116798451415447380}
   - component: {fileID: 4825797502949678827}
   - component: {fileID: 3681676333197187199}
+  - component: {fileID: 3111669154250453570}
   m_Layer: 0
   m_Name: BoosterPrefab
   m_TagString: SpeedBooster
@@ -33,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 5946116948714731523}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1116798451415447380
 BoxCollider:
@@ -69,6 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 18
+  _explosionParticleSystem: {fileID: 0}
 --- !u!54 &3681676333197187199
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -96,6 +98,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &3111669154250453570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4120952637156098133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd42abf2a6d742b4d80ffdb4e90f8f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosionParticleSystem: {fileID: 4996654755281666790, guid: 77e0f41c556694743baf142f6a62a1d7,
+    type: 3}
 --- !u!1001 &6128942387901194216
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class GameRules : MonoBehaviour
 {
-    [SerializeField] private int startSpeed = 50;
-    public int StartSpeed { get { return startSpeed; } private set { startSpeed = value; } }
+    [SerializeField] private int _startSpeed = 50;
+    public int StartSpeed { get { return _startSpeed; } private set { _startSpeed = value; } }
 
-    [SerializeField] private int maxSpeed = 240;
-    public int MaxSpeed { get { return maxSpeed; } private set { maxSpeed = value; } }
+    public int MaxSpeed { get { return _maxSpeed; } private set { _maxSpeed = value; } }
 
     [SerializeField] private int rateOfSpeedGrowth = 1;
     public int RateOfSpeedGrowth { get { return rateOfSpeedGrowth; } private set { rateOfSpeedGrowth = value; } }
 
-    [SerializeField] private int _startCarSpawnPeriod = 2;
-    public int StartCarSpawnPeriod { get { return _startCarSpawnPeriod; } private set { _startCarSpawnPeriod = value; } }
+    [SerializeField] private float _startCarSpawnPeriod = 2;
+    public float StartCarSpawnPeriod { get { return _startCarSpawnPeriod; } private set { _startCarSpawnPeriod = value; } }
 
-    [SerializeField] private int _minCarSpawnPeriod = 1;
-    public int MinCarSpawnPeriod { get { return _minCarSpawnPeriod; } private set { _minCarSpawnPeriod = value; } }
+    [SerializeField] private float _minCarSpawnPeriod = 0.5f;
+    public float MinCarSpawnPeriod { get { return _minCarSpawnPeriod; } private set { _minCarSpawnPeriod = value; } }
 
     private string regime;
     public string Regime { get { return regime; } private set { regime = value; } }
@@ -38,6 +37,13 @@ public class GameRules : MonoBehaviour
         {2, "Hard"}
     };
 
+    [Header("CarsCharacteristics")]
+    [SerializeField] private int _maxSpeed_PoliceCar;
+    [SerializeField] private int _maxSpeed_WhitePoliceCar;
+    [SerializeField] private int _maxSpeed_SportCar;
+    [SerializeField] private int _maxSpeed_SciFiCar;
+
+    private int _maxSpeed = 240;
     private Generator carGenerator;
 
     private void Start()
@@ -56,16 +62,35 @@ public class GameRules : MonoBehaviour
 
     private void Awake()
     {
-        StartSpeed = startSpeed;
-        MaxSpeed = maxSpeed;
-        RateOfSpeedGrowth = rateOfSpeedGrowth;
         carGenerator = FindObjectOfType<Generator>();
+        StartSpeed = _startSpeed;
+        Inizializition();
+        RateOfSpeedGrowth = rateOfSpeedGrowth;
     }
 
 
     private void Inizializition()
     {
         carGenerator.SpawnPeriod = _startCarSpawnPeriod;
+
+        if (PlayerPrefs.GetString("Car") == "WhitePoliceCar" && PlayerPrefs.GetString("WhitePoliceCar") == "Unlocked")
+        {
+            _maxSpeed = _maxSpeed_WhitePoliceCar;
+        }
+        else if (PlayerPrefs.GetString("Car") == "SportCar" && PlayerPrefs.GetString("SportCar") == "Unlocked")
+        {
+            _maxSpeed = _maxSpeed_SportCar;
+        }
+        else if (PlayerPrefs.GetString("Car") == "SciFiCar" && PlayerPrefs.GetString("SciFiCar") == "Unlocked")
+        {
+            _maxSpeed = _maxSpeed_SciFiCar;
+        }
+        else
+        {
+            _maxSpeed = _maxSpeed_PoliceCar;
+        }
+
+        MaxSpeed = _maxSpeed;
     }
 
     public void SetCarSpawnPeriod(float val)

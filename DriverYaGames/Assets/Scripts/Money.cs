@@ -10,7 +10,7 @@ public class Money : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _moneyText;
     [SerializeField] private int numberOfCoinsToBeAdded;
-
+    private int _currentAmount = 0;
     private void Start()
     {
         EventManager.DroveKmForMoney += AddMoney;
@@ -23,17 +23,19 @@ public class Money : MonoBehaviour
         EventManager.DroveKmForMoney -= AddMoney;
     }
 
-    public string GetCurrentAmount()
+    public int GetCurrentAmount()
     {
-        return _moneyText.text;
+        return _currentAmount;
     }
 
     public void AddMoney()
     {
-        int money = PlayerPrefs.GetInt(nameof(MoneyNameConst));
-        PlayerPrefs.SetInt(nameof(MoneyNameConst), money + numberOfCoinsToBeAdded);
-
-        _moneyText.text = money.ToString() + "$";
+        //int money = PlayerPrefs.GetInt(nameof(MoneyNameConst));
+        //PlayerPrefs.SetInt(nameof(MoneyNameConst), money + numberOfCoinsToBeAdded);
+        _currentAmount += numberOfCoinsToBeAdded;
+        _moneyText.text = _currentAmount.ToString() + "$";
         //_moneyText.text = PlayerPrefs.GetInt(nameof(MoneyNameConst)).ToString() + "$";
     }
+
+
 }
