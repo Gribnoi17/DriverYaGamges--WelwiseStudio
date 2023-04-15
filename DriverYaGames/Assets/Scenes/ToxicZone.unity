@@ -22560,11 +22560,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601c31c82a8973546a29679216d83857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 50
-  maxSpeed: 240
+  _startSpeed: 50
   rateOfSpeedGrowth: 10
   _startCarSpawnPeriod: 2
   _minCarSpawnPeriod: 0.65
+  _maxSpeed_PoliceCar: 240
+  _maxSpeed_WhitePoliceCar: 270
+  _maxSpeed_SportCar: 300
+  _maxSpeed_SciFiCar: 350
 --- !u!4 &1429207847
 Transform:
   m_ObjectHideFlags: 0

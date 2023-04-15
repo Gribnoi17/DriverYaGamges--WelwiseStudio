@@ -19,6 +19,8 @@ public class PoliceCar : MonoBehaviour
 	[SerializeField] private Animator _animator;
 	[SerializeField] private AudioClip _clipStart;
 	[SerializeField] private AudioClip _soundEngine;
+	[SerializeField] private ParticleSystem _nitro;
+
 
 	private float _timeShield = 3f;
 	private bool _isPlaying = true;
@@ -26,6 +28,7 @@ public class PoliceCar : MonoBehaviour
 	private Playable _animation;
 	private bool shieldActive;
 	public bool IsShieldActive { get; }
+	[HideInInspector] public float NitroTime = 2f;
 
 	private AudioSource _audioSource;
 	private bool _canMove;
@@ -49,6 +52,13 @@ public class PoliceCar : MonoBehaviour
 	 {
 		SwipeDetection.SwipeEvent += OnSwipe;
 	 }
+
+	public IEnumerator ActivateNitro()
+    {
+		_nitro.gameObject.SetActive(true);
+		yield return new WaitForSeconds(NitroTime);
+		_nitro.gameObject.SetActive(false);
+    }
 
 	 private void OnSwipe(Vector2 direction)
 	 {
@@ -78,14 +88,19 @@ public class PoliceCar : MonoBehaviour
 	 {
 		if(collision.gameObject.tag == "Shield")
 		{
-		  Destroy(collision.gameObject);
-		  StopCoroutine(ShieldController());
-		  StartCoroutine(ShieldController());
-		}else if(collision.gameObject.tag == "SpeedBooster")
+		    Destroy(collision.gameObject);
+		    StopCoroutine(ShieldController());
+		    StartCoroutine(ShieldController());
+		}
+
+		else if(collision.gameObject.tag == "SpeedBooster")
 		{
-		  Destroy(collision.gameObject);
-		  StartCoroutine(_spd.SpeedBoosterController());
-		}else if (collision.gameObject.tag == "Car")
+		    Destroy(collision.gameObject);
+			StartCoroutine(ActivateNitro());
+		    StartCoroutine(_spd.SpeedBoosterController());
+		}
+		
+		else if (collision.gameObject.tag == "Car")
 		{
 		  //щит включен
 		  if(!shieldActive)
