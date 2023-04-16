@@ -10,13 +10,20 @@ public class SceneController : MonoBehaviour
 
     private void Start()
     {
-        if(_acsController.activeSelf)
-        {
-            StartCoroutine(WaitForAcs());  
-        }else if(_swipeDetection.activeSelf)
+
+        if (PlayerPrefs.GetString("ControllerType") == "Swipe")
         {
             StartCoroutine(WaitForSwipeDet());
         }
+        if (PlayerPrefs.GetString("ControllerType") == "Slant")
+        {
+            StartCoroutine(WaitForAcs());
+        }
+        if ((PlayerPrefs.GetString("ControllerType") == "Keyboard"))
+        {
+            StartCoroutine(WaitForKeyboard());
+        }
+
     }
 
     IEnumerator WaitForAcs()
@@ -28,19 +35,24 @@ public class SceneController : MonoBehaviour
 
     IEnumerator WaitForSwipeDet()
     {
+        _swipeDetection.SetActive(false);
+        yield return new WaitForSeconds(4f);
+        _swipeDetection.SetActive(true);
+    }
+
+
+    IEnumerator WaitForKeyboard()
+    {
         foreach (PoliceCar car in _cars)
         {
             car.CanMove = false;
         }
-        _swipeDetection.SetActive(false);
-        print("no");
         yield return new WaitForSeconds(4f);
-        print("yes");
-        _swipeDetection.SetActive(true);
+
         foreach (PoliceCar car in _cars)
         {
             car.CanMove = true;
-            print("Yes2");
         }
+
     }
 }

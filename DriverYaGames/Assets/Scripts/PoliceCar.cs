@@ -19,7 +19,7 @@ public class PoliceCar : MonoBehaviour
 	[SerializeField] private Animator _animator;
 	[SerializeField] private AudioClip _clipStart;
 	[SerializeField] private AudioClip _soundEngine;
-	[SerializeField] private ParticleSystem _nitro;
+	[SerializeField] private GameObject _nitro;
 
 
 	private float _timeShield = 3f;
@@ -27,18 +27,18 @@ public class PoliceCar : MonoBehaviour
 	private int _lineIndex = 1;
 	private Playable _animation;
 	private bool shieldActive;
-	public bool IsShieldActive { get; }
-	[HideInInspector] public float NitroTime = 2f;
+	public bool IsShieldActive;
+	[HideInInspector] public float NitroTime = 3.5f;
 
 	private AudioSource _audioSource;
 	private bool _canMove;
 	public bool CanMove{ set {_canMove = value;} }
 
-	 private void Start()
-	 {
+	private void Start()
+	{
 		StartCoroutine(StartSound());
 		_isPlaying= true; 
-	 }
+	}
 
 	private IEnumerator StartSound()
 	{
@@ -55,9 +55,12 @@ public class PoliceCar : MonoBehaviour
 
 	public IEnumerator ActivateNitro()
     {
-		_nitro.gameObject.SetActive(true);
-		yield return new WaitForSeconds(NitroTime);
-		_nitro.gameObject.SetActive(false);
+		if (_nitro != null)
+        {
+			_nitro.gameObject.SetActive(true);
+			yield return new WaitForSeconds(NitroTime);
+			_nitro.gameObject.SetActive(false);
+		}	
     }
 
 	 private void OnSwipe(Vector2 direction)
@@ -71,9 +74,12 @@ public class PoliceCar : MonoBehaviour
 		SwipeDetection.SwipeEvent -= OnSwipe;
 	 }
 
+	public void SetShieldActionTime(float value)
+	{
+		_timeShield = value;
+	}
 
-
-	 private void Update()
+	private void Update()
 	{
 		if (_canMove)
         {
@@ -90,6 +96,7 @@ public class PoliceCar : MonoBehaviour
 		{
 		    Destroy(collision.gameObject);
 		    StopCoroutine(ShieldController());
+			DeactivateSchield();
 		    StartCoroutine(ShieldController());
 		}
 
@@ -118,31 +125,40 @@ public class PoliceCar : MonoBehaviour
 		}
 	 }
 
-	 private IEnumerator ShieldController()
-	 {
-		shieldActive = true;
-		EventManager.OnPlayerTookShield();
-		if (_shield.activeSelf == false)
-		  _shield.SetActive(true);
-		StartCoroutine(_spd.SpeedUnBusterOrShielPickUp());
-		yield return new WaitForSeconds(_timeShield);
-		_shield.SetActive(false);
-		shieldActive = false;
-		StopCoroutine(ShieldController());
-	 }
+	private IEnumerator ShieldController()
+    {
+        print(1);
+        shieldActive = true;
+        EventManager.OnPlayerTookShield();
+        if (_shield.activeSelf == false)
+            _shield.SetActive(true);
+        _spd.CurrentSpeed = -10;
+        //StartCoroutine(_spd.SpeedUnBusterOrShielPickUp());
+        yield return new WaitForSeconds(_timeShield);
+        DeactivateSchield();
+        StopCoroutine(ShieldController());
+    }
 
+    private void DeactivateSchield()
+    {
+        _shield.SetActive(false);
+        shieldActive = false;
+        _spd.CurrentSpeed = +10;
+    }
 
-	 private void MoveKeyboard(KeyCode key, int direction)
+    private void MoveKeyboard(KeyCode key, int direction)
 	 {
 		if ((_animation == null || _animation.PlayedTime == _animationDuration) && Input.GetKeyDown(key))
 		{
 		  if (direction > 0)
 		  {
-			 StartCoroutine(OnTurnRight());
+			if (_linePoint.GetChild(_lineIndex).name != "Right")
+				StartCoroutine(OnTurnRight());
 		  }
 		  else
 		  {
-			 StartCoroutine(OnTurnLeft());
+			if (_linePoint.GetChild(_lineIndex).name != "Left")
+				StartCoroutine(OnTurnLeft());
 		  }
 		  _lineIndex = Mathf.Clamp(_lineIndex + direction, 0, _linePoint.childCount - 1);
 		  var point = _linePoint.GetChild(_lineIndex);
@@ -156,13 +172,15 @@ public class PoliceCar : MonoBehaviour
 		if (direction.x > 0)
 		{
 		  _tempDirection = 1;
-		  StartCoroutine(OnTurnRight());
+			if (_linePoint.GetChild(_lineIndex).name != "Right")
+				StartCoroutine(OnTurnRight());
 		  
 		}
 		else
 		{
 		  _tempDirection = -1;
-		  StartCoroutine(OnTurnLeft());
+			if (_linePoint.GetChild(_lineIndex).name != "Left")
+				StartCoroutine(OnTurnLeft());
 		}
 
 		if (_animation == null || _animation.PlayedTime == _animationDuration)

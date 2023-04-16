@@ -10,6 +10,8 @@ public class Shield : MonoBehaviour
 {
 	private Image _shieldImage;
 	private Tween _tween;
+	public float _activationTime = 5;
+
 
 	private void Start()
 	{
@@ -24,7 +26,7 @@ public class Shield : MonoBehaviour
 			_tween.Kill();
 		_shieldImage.enabled = true;
 		_shieldImage.fillAmount = 1;
-		_tween = _shieldImage.DOFillAmount(0f, 3f);
+		_tween = _shieldImage.DOFillAmount(0f, _activationTime);
 	}
 
     private void OnDestroy()

@@ -51,6 +51,11 @@ public class PanelAnimation : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _moneyText;
     [SerializeField] private TextMeshProUGUI _milageText;
 
+    [Header("Settings")]
+    [SerializeField] private GameObject _slantChoicePanel;
+    [SerializeField] private GameObject _swipeChoicePanel;
+
+
     private CanvasGroup _leftPanelCanvasGroup;
     private enum _panels {CarsPanel, LocationsPanel, TasksPanel };
     private _panels _currentOpenedPanel = _panels.CarsPanel;
@@ -109,11 +114,23 @@ public class PanelAnimation : MonoBehaviour
         if (PlayerPrefs.HasKey("ControllerType"))
         {
             LeftPanelAnim();
+            if(PlayerPrefs.GetString("ControllerType") == "Swipe")
+            {
+                _swipeChoicePanel.SetActive(true);
+            }
+            else if(PlayerPrefs.GetString("ControllerType") == "Slant")
+            {
+                _slantChoicePanel.SetActive(true);
+            }
         }
-        else
+        else if (PlayerPrefs.GetInt("IsMobile") == 1)
         {
             _firstCanvas.gameObject.SetActive(false);
             ControlChoicePanelAppears();
+        }
+        else
+        {
+            PlayerPrefs.SetString("ControllerType", "Keyboard");
         }
     }
 
@@ -126,8 +143,11 @@ public class PanelAnimation : MonoBehaviour
     {
         PlayerPrefs.SetString("ControllerType", "Slant");
         if(isSettings == false)
+        {
             _controlChoicePanel.transform.parent.gameObject.SetActive(false);
-        LeftPanelAnim();
+            LeftPanelAnim();
+        }
+        _slantChoicePanel.SetActive(true);
     }
 
 
@@ -135,8 +155,11 @@ public class PanelAnimation : MonoBehaviour
     {
         PlayerPrefs.SetString("ControllerType", "Swipe");
         if(isSettings == false)
+        {
             _controlChoicePanel.transform.parent.gameObject.SetActive(false);
-        LeftPanelAnim();
+            LeftPanelAnim();
+        }
+        _swipeChoicePanel.SetActive(true);
     }
 
     public void CallSettingsPanel(GameObject panel)
