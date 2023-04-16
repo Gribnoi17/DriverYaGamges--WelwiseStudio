@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using System.Collections;
 
 public class MusicController : MonoBehaviour
 {
@@ -119,7 +120,7 @@ public class MusicController : MonoBehaviour
             _sliderSounds.value = PlayerPrefs.GetFloat(_saveSoundsVolumeKey);
     }
 
-    public void FindSliders()
+    public IEnumerator FindSliders()
     {
         while(true)
         {
@@ -133,13 +134,17 @@ public class MusicController : MonoBehaviour
             catch
             {
                 Debug.Log("Слайдеры регулировки громкости не найдены, скорее всего они выключены");
+                
             }
 
-            if(_sliderMusic != null && _sliderSounds != null)
+            yield return new WaitForForSeconds(0.1f);
+
+            if (_sliderMusic != null && _sliderSounds != null)
             {
                 SetUpSlidersStats();
                 break;
             }
         }
+        StopCoroutine(FindSliders());
     }
 }
