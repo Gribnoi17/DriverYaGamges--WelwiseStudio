@@ -5,10 +5,19 @@ public class Car : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private GameObject _explosionParticleSystem;
 
+    private bool _isZone;
+
+    private ZoneObjectsDetector _detector;
+
 	public float Speed
     {
         get => _speed;
         set => _speed = value;
+    }
+
+    private void Start()
+    {
+        _detector = FindObjectOfType<ZoneObjectsDetector>();
     }
 
     private void Update()
@@ -30,12 +39,35 @@ public class Car : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-          if (gameObject.tag != "Shield" && gameObject.tag != "SpeedBooster")
-          {
-               GameObject explosion = Instantiate(_explosionParticleSystem, transform.position, Quaternion.identity);
-               Destroy(explosion, 1.0f);
-               Destroy(gameObject);
-          }
+        if (gameObject.tag != "Shield" && gameObject.tag != "SpeedBooster")
+        {
+            GameObject explosion = Instantiate(_explosionParticleSystem, transform.position, Quaternion.identity);
+            Destroy(explosion, 1.0f);
+            if (_isZone == false)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+                _detector.CountOfCars -=1;
+                _isZone = false;
+            }
+                
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if ( gameObject.tag != "Shield" && gameObject.tag != "SpeedBooster" )
+            _isZone = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (gameObject.tag != "Shield" && gameObject.tag != "SpeedBooster")
+            _isZone = false;
     }
 
 
