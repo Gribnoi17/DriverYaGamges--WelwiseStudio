@@ -7010,6 +7010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameRuler: {fileID: 1458931340}
   _timer: {fileID: 3468248870135341791}
+  _endConfetti: {fileID: 0}
 --- !u!114 &1458931342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7024,8 +7025,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   odomText: {fileID: 3468248870135341792}
   getterSpeed: {fileID: 2059040704}
-  distSpeed: 30
-  kilomOfMoney: 100
 --- !u!114 &1458931343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7046,6 +7045,10 @@ MonoBehaviour:
   _maxSpeed_WhitePoliceCar: 270
   _maxSpeed_SportCar: 300
   _maxSpeed_SciFiCar: 350
+  _distSpeed: 30
+  _rewardedKilometers: 15
+  _moneyForDistance: 20
+  _shieldActionTime: 5
 --- !u!4 &1458931344
 Transform:
   m_ObjectHideFlags: 0
@@ -7093,7 +7096,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moneyText: {fileID: 1552658613}
-  numberOfCoinsToBeAdded: 100
 --- !u!1 &1465209288
 GameObject:
   m_ObjectHideFlags: 0
@@ -10777,6 +10779,10 @@ PrefabInstance:
     - target: {fileID: 143340539, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 767503937, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1806880161, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_Enabled

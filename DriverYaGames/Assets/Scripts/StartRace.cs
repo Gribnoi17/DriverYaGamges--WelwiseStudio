@@ -9,8 +9,11 @@ public class StartRace : MonoBehaviour
 {
     [SerializeField] private GameObject _gameRuler;
     [SerializeField] private TextMeshProUGUI _timer;
+    [SerializeField] private GameObject _endConfetti;
+    private Speedometer _spd;
     void Start()
     {
+        _spd = FindObjectOfType<Speedometer>();
         if (_gameRuler.GetComponent<GameRules>().Regime == _gameRuler.GetComponent<GameRules>().regimeRace[0])
         {
             StartFreeRace();
@@ -34,20 +37,20 @@ public class StartRace : MonoBehaviour
 
         if (_gameRuler.GetComponent<GameRules>().Difficult == _gameRuler.GetComponent<GameRules>().difficulty[0])
         {
-            _timer.text = 30.ToString();
+            _timer.text = "10";
         }
         else if (_gameRuler.GetComponent<GameRules>().Difficult == _gameRuler.GetComponent<GameRules>().difficulty[1])
         {
-            _timer.text = 60.ToString();
+            _timer.text = "180";
         }
         else if (_gameRuler.GetComponent<GameRules>().Difficult == _gameRuler.GetComponent<GameRules>().difficulty[2])
         {
-            _timer.text = 120.ToString();
+            _timer.text = "360";
         }
-        StartCoroutine("Timer");
+        StartCoroutine(Timer());
     }
 
-    IEnumerator Timer()
+    private IEnumerator Timer()
     {
         int _nt = Convert.ToInt32(_timer.text);
         while (true)
@@ -68,5 +71,17 @@ public class StartRace : MonoBehaviour
                 yield return new WaitForSeconds(1f);
         }
         StopCoroutine(Timer());
+        Win();
+    }
+
+
+    private void Win()
+    {
+        while(_spd.CurrentSpeed > 0)
+        {
+            _spd.CurrentSpeed = -1;
+        }
+        _endConfetti.SetActive(true);
+        _spd.gameObject.SetActive(false);
     }
 }

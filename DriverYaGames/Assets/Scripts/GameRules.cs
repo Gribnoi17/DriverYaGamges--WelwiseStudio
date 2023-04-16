@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameRules : MonoBehaviour
 {
+    [Header("Speed")]
     [SerializeField] private int _startSpeed = 50;
     public int StartSpeed { get { return _startSpeed; } private set { _startSpeed = value; } }
 
@@ -37,14 +38,30 @@ public class GameRules : MonoBehaviour
         {2, "Hard"}
     };
 
-    [Header("CarsCharacteristics")]
+    [Header("Cars Characteristics")]
     [SerializeField] private int _maxSpeed_PoliceCar;
     [SerializeField] private int _maxSpeed_WhitePoliceCar;
     [SerializeField] private int _maxSpeed_SportCar;
     [SerializeField] private int _maxSpeed_SciFiCar;
 
+    [Header("Economics and Gameplay")]
+    [Tooltip("Обратный коэфф. скорости набора километража, чем больше, тем медленнее")] [SerializeField] private float _distSpeed = 30;
+    public float DistSpeed { get { return _distSpeed; } }
+
+    [Tooltip("Каждый раз, когда игрок проходит n-ное число километров, он получает награду")] [SerializeField] private float _rewardedKilometers = 15;
+    public float RewardedKilometers { get { return _rewardedKilometers; } }
+
+    [Tooltip("Вознаграждение за n-ное кол-во километров")] [SerializeField] private int _moneyForDistance = 20;
+    public int MoneyForDistance { get { return _moneyForDistance; } }
+
+   [SerializeField] private float _shieldActionTime = 5;
+
     private int _maxSpeed = 240;
-    private Generator carGenerator;
+    private Generator _carGenerator;
+    private Odometer _odometr;
+    private Money _money;
+    private Shield _shield;
+    private PoliceCar _policeCar;
 
     private void Start()
     {
@@ -58,20 +75,23 @@ public class GameRules : MonoBehaviour
             Regime = regimeRace[1];
             Difficult = difficulty[PlayerPrefs.GetInt("Difficult")];
         }
+        Inizializition();
     }
 
     private void Awake()
     {
-        carGenerator = FindObjectOfType<Generator>();
-        StartSpeed = _startSpeed;
-        Inizializition();
+        _money = FindObjectOfType<Money>();
+        _odometr = FindObjectOfType<Odometer>();
+        _carGenerator = FindObjectOfType<Generator>();
+        _shield = FindObjectOfType<Shield>();
+        StartSpeed = _startSpeed;      
         RateOfSpeedGrowth = rateOfSpeedGrowth;
     }
 
 
     private void Inizializition()
     {
-        carGenerator.SpawnPeriod = _startCarSpawnPeriod;
+        _carGenerator.SpawnPeriod = _startCarSpawnPeriod;
 
         if (PlayerPrefs.GetString("Car") == "WhitePoliceCar" && PlayerPrefs.GetString("WhitePoliceCar") == "Unlocked")
         {
@@ -91,14 +111,26 @@ public class GameRules : MonoBehaviour
         }
 
         MaxSpeed = _maxSpeed;
+        _odometr.SetDistSpeed(_distSpeed);
+        _odometr.SetKm4Money(_rewardedKilometers);
+        _money.SetKmRewardVar(_moneyForDistance);
+        _shield._activationTime = _shieldActionTime;
+        StartCoroutine(LateInizialization());
     }
 
     public void SetCarSpawnPeriod(float val)
     {
-        if (carGenerator.SpawnPeriod > _minCarSpawnPeriod)
-            carGenerator.SpawnPeriod -= val;
+        if (_carGenerator.SpawnPeriod > _minCarSpawnPeriod)
+            _carGenerator.SpawnPeriod -= val;
         else
-            carGenerator.SpawnPeriod = _minCarSpawnPeriod;
+            _carGenerator.SpawnPeriod = _minCarSpawnPeriod;
+    }
+
+    private IEnumerator LateInizialization()
+    {
+        yield return new WaitForSeconds(2f);
+        _policeCar = FindObjectOfType<PoliceCar>();
+        _policeCar.SetShieldActionTime(_shieldActionTime);
     }
 
 }

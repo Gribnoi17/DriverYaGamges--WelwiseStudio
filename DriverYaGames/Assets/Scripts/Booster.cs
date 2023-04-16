@@ -12,7 +12,7 @@ public class Booster : MonoBehaviour
         {
             Vector3 oppositeTheCamera = new Vector3(0f, 3f, -26.83f);
             GameObject explosion = Instantiate(_explosionParticleSystem, oppositeTheCamera, Quaternion.Euler(180f, 0f, 0f)); //ѕоворот, чтобы частицы летели на камеру
-            Destroy(explosion, 3.0f);
+            Destroy(explosion, 3.5f);
         }
     }
 }

@@ -1,15 +1,14 @@
 using UnityEngine;
 using TMPro;
 using System.Runtime.InteropServices;
-//using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 
 public class Odometer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI odomText;
     [SerializeField] private GameObject getterSpeed;
-    [SerializeField] private float distSpeed;
-    [SerializeField] private float kilomOfMoney = 100;
+    private float distSpeed;
+    private float kilomOfMoney = 100;
     private Speedometer _speedometr;
     private float dist;
     private float kilom;
@@ -48,13 +47,22 @@ public class Odometer : MonoBehaviour
         return (int)Mathf.Round(dist);
     }
 
+    public void SetDistSpeed(float val)
+    {
+        distSpeed = val;
+    }
+
+    public void SetKm4Money(float val)
+    {
+        kilomOfMoney = val;
+    }
+
     private void SaveToLeaderboard()
     {
         SaveToAchiv();
         if(dist > PlayerPrefs.GetInt("BestMilage"))
         {
             PlayerPrefs.SetInt("BestMilage", (int)dist);
-            //print(PlayerPrefs.GetInt("BestMilage"));
             SetToLeaderboard(PlayerPrefs.GetInt("BestMilage"));
         }
     }
