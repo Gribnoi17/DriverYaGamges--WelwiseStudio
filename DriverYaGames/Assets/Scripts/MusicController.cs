@@ -121,15 +121,25 @@ public class MusicController : MonoBehaviour
 
     public void FindSliders()
     {
-        try
+        while(true)
         {
-            _sliderMusic = GameObject.FindGameObjectWithTag(_sliderMusicTag).GetComponent<Slider>();
-            //_sliderMusic.onValueChanged.AddListener(ChangeVolumeMusic);
-            _sliderMusic = GameObject.FindGameObjectWithTag(_sliderSoundsTag).GetComponent<Slider>();
-        }
-        catch
-        {
-            Debug.LogWarning("Слайдеры регулировки громкости не найдены, скорее всего они выключены");
+            try
+            {
+                GameObject _sliderMusicObject = GameObject.FindWithTag(_sliderMusicTag);
+                _sliderMusic = _sliderMusicObject.GetComponent<Slider>();
+                GameObject _sliderSoundsObject = GameObject.FindWithTag(_sliderSoundsTag);
+                _sliderSounds = _sliderSoundsObject.GetComponent<Slider>();
+            }
+            catch
+            {
+                Debug.Log("Слайдеры регулировки громкости не найдены, скорее всего они выключены");
+            }
+
+            if(_sliderMusic != null && _sliderSounds != null)
+            {
+                SetUpSlidersStats();
+                break;
+            }
         }
     }
 }

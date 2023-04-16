@@ -64,7 +64,6 @@ public class PanelAnimation : MonoBehaviour
     private bool isTransitioningBtwCanvases = false;
     private bool isTransitioningBtwLeftPanels = false;
     private bool isTransitioningBtwCars = false;
-    
 
     private void Awake()
     {
