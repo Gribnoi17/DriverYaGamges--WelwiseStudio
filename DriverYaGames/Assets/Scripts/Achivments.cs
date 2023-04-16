@@ -102,7 +102,7 @@ public class Achivments : MonoBehaviour
     private void AchivmentTwo()
     {
         //реализовано
-        if(PlayerPrefs.GetInt("MaxSpeed") == 260)
+        if(PlayerPrefs.GetInt("MaxSpeed") >= 260)
         {
             for(int i = 0; i < _allAchivments.Count; i++)
             {
@@ -124,10 +124,10 @@ public class Achivments : MonoBehaviour
         {
             if (_allAchivments[i].NumberAchiv == 2)
             {
-                _allAchivments[i].ChangeCompleted();
-                _allAchivments.RemoveAt(i);
+                _allAchivments[i].ChangeCompleted();     
                 OffAchivPanel();
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
+                _allAchivments.RemoveAt(i);
             }
         }
     }
@@ -158,9 +158,9 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 3)
             {
                 _allAchivments[i].ChangeCompleted();
-                _allAchivments.RemoveAt(i);
                 OffAchivPanel();
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
+                _allAchivments.RemoveAt(i);
             }
         }
     }
@@ -197,9 +197,9 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 4)
             {
                 _allAchivments[i].ChangeCompleted();
-                _allAchivments.RemoveAt(i);
                 OffAchivPanel();
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
+                _allAchivments.RemoveAt(i);
             }
         }
     }
@@ -222,7 +222,7 @@ public class Achivments : MonoBehaviour
                 }
                 else
                 {
-                    _allAchivments[i].ChangePersent(Convert.ToInt32(rebirthCount * 100f % 7f));
+                    _allAchivments[i].ChangePersent(Convert.ToInt32(rebirthCount * 100f / 7f));
                     break;
                 }
             }
@@ -235,9 +235,9 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 5)
             {
                 _allAchivments[i].ChangeCompleted();
-                _allAchivments.RemoveAt(i);
                 OffAchivPanel();
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
+                _allAchivments.RemoveAt(i);
             }
         }
     }
@@ -260,7 +260,7 @@ public class Achivments : MonoBehaviour
                 }
                 else
                 {
-                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f % 666f));
+                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f / 666f));
                     break;
                 }
             }
@@ -274,9 +274,9 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 6)
             {
                 _allAchivments[i].ChangeCompleted();
-                _allAchivments.RemoveAt(i);
                 OffAchivPanel();
                 //дать машину
+                _allAchivments.RemoveAt(i);
             }
         }
     }
@@ -299,7 +299,7 @@ public class Achivments : MonoBehaviour
                 }
                 else
                 {
-                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f % 25f));
+                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f / 25f));
                     break;
                 }
             }    
@@ -313,9 +313,9 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 7)
             {
                 _allAchivments[i].ChangeCompleted();
-                _allAchivments.RemoveAt(i);
                 OffAchivPanel();
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
+                _allAchivments.RemoveAt(i);
             }
         }
     }
@@ -340,7 +340,7 @@ public class Achivments : MonoBehaviour
                 }
                 else
                 {
-                    _allAchivments[i].ChangePersent(Convert.ToInt32((n + nn) * 100f % 2000f));
+                    _allAchivments[i].ChangePersent(Convert.ToInt32((n + nn) * 100f / 2000f));
                     break;
                 }
             }
@@ -354,9 +354,9 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 8)
             {
                 _allAchivments[i].ChangeCompleted();
-                _allAchivments.RemoveAt(i);
                 OffAchivPanel();
                 _thirdLocation.UnlockItem();
+                _allAchivments.RemoveAt(i);
             }
         }
     }
@@ -379,7 +379,7 @@ public class Achivments : MonoBehaviour
                 }
                 else
                 {
-                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f % 4));
+                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f / 4));
                     break;
                 }
             }
@@ -393,9 +393,9 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 9)
             {
                 _allAchivments[i].ChangeCompleted();
-                _allAchivments.RemoveAt(i);
                 OffAchivPanel();
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
+                _allAchivments.RemoveAt(i);
             }
         }
     }
@@ -408,7 +408,7 @@ public class Achivments : MonoBehaviour
         {
             if (_allAchivments[i].NumberAchiv == 10)
             {
-                if (n == 12)
+                if (n >= 9)
                 {
                     _allAchivments[i].ChangeReceivePanel();
                     _allAchivments[i].ChangePersent(100);
@@ -418,7 +418,7 @@ public class Achivments : MonoBehaviour
                 }
                 else
                 {
-                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f % 9));
+                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f / 9));
                     break;
                 }
             }
@@ -432,9 +432,9 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 10)
             {
                 _allAchivments[i].ChangeCompleted();
-                _allAchivments.RemoveAt(i);
                 OffAchivPanel();
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
+                _allAchivments.RemoveAt(i);
             }
         }
     }
@@ -446,7 +446,7 @@ public class Achivments : MonoBehaviour
     }
     private void OffAchivPanel()
     {
-        bool _needStartUnVisible = false;
+        bool _needStartUnVisible = true;
         foreach (Task task in _allAchivments)
         {
             if (task.NeedReceive == true)
@@ -456,7 +456,10 @@ public class Achivments : MonoBehaviour
             }
         }
         if(_needStartUnVisible)
-            _tPC.StartUnVisible();   
+        {
+            _tPC.StartUnVisible();
+        }
+             
     }
 
     public void ReCheck()

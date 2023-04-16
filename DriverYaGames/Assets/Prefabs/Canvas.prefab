@@ -2385,17 +2385,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1888422410}
-  - component: {fileID: 1888422412}
   - component: {fileID: 1888422411}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LosePanelActivation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1888422410
-RectTransform:
+--- !u!4 &1888422410
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2409,33 +2408,6 @@ RectTransform:
   m_Father: {fileID: 3468248869941075997}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!223 &1888422412
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888422409}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!114 &1888422411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3509,7 +3481,6 @@ GameObject:
   - component: {fileID: 91847815}
   - component: {fileID: 143340539}
   - component: {fileID: 1806880161}
-  - component: {fileID: 6251927605960555284}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Canvas
@@ -3542,7 +3513,7 @@ RectTransform:
   - {fileID: 2320249074015556916}
   - {fileID: 1888422410}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3750,23 +3721,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6251927605960555284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3468248869941076065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb1a833c20c5e84dbd9a4b041aa411a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _musicSlider: {fileID: 2451446775676117750}
-  _soundsSlider: {fileID: 1066327685606694709}
-  _uiClick: {fileID: 8300000, guid: b2bdcbe97595c494198cb36016956707, type: 3}
-  _playClick: {fileID: 8300000, guid: 336a6a9f83e5f1b4facbcddcf4acd0d2, type: 3}
-  _source: {fileID: 0}
 --- !u!1 &3468248870630601314
 GameObject:
   m_ObjectHideFlags: 0

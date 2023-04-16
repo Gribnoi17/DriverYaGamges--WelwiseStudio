@@ -33,45 +33,6 @@ public class MusicController : MonoBehaviour
             _musicSource.clip = _musicForLobby[Random.Range(0, _musicForLobby.Length - 1)];
             _activSceneName = "Garage Scene";
         }
-        /*
-        _musicSource.volume = PlayerPrefs.GetFloat("BG_MUSIC");
-        _soundsSource.volume = PlayerPrefs.GetFloat("BG_SOUNDS");
-        
-        if (PlayerPrefs.HasKey(_saveMusicVolumeKey))
-        {
-            _musicVolume = PlayerPrefs.GetFloat(_saveMusicVolumeKey);
-            _musicSource.volume = _musicVolume;
-            GameObject sliderMusicObj = GameObject.FindWithTag(_sliderMusicTag);
-            if (sliderMusicObj != null)
-            {
-                _sliderMusic = sliderMusicObj.GetComponent<Slider>();
-                _sliderMusic.value = _musicVolume;
-            }
-        }else
-        {
-            _musicVolume = 0.5f;
-            PlayerPrefs.SetFloat(_saveMusicVolumeKey, _musicVolume);
-            _musicSource.volume = _musicVolume;
-        }
-
-        if (PlayerPrefs.HasKey(_saveSoundsVolumeKey))
-        {
-            _soundsVolume = PlayerPrefs.GetFloat(_saveSoundsVolumeKey);
-            _soundsSource.volume = _soundsVolume;
-
-            GameObject sliderSoundsObj = GameObject.FindWithTag(_sliderSoundsTag);
-            if (sliderSoundsObj != null)
-            {
-                _sliderSounds = sliderSoundsObj.GetComponent<Slider>();
-                PlayerPrefs.SetFloat(_saveSoundsVolumeKey, _soundsVolume);
-                _sliderSounds.value = _soundsVolume;
-            }
-        }else
-        {
-            _soundsVolume = 0.5f;
-            _soundsSource.volume = _soundsVolume;
-        }
-        */
     }
     private void Start()
     {

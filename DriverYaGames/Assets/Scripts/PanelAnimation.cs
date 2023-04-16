@@ -63,12 +63,14 @@ public class PanelAnimation : MonoBehaviour
 
     private void Awake()
     {
+        PlayerPrefs.SetInt("MoneyNameConst", 15000);
         Time.timeScale = 1f;
         DOTween.Init();
     }
 
     private void Start()
     {
+        PlayerPrefs.SetInt("MoneyNameConst", 15000);
         SetPlayerPrefs();
         SetCurrentCarByPrefs();
         _secondCanvas.alpha = 0f;
@@ -80,6 +82,7 @@ public class PanelAnimation : MonoBehaviour
 
     private void SetPlayerPrefs()
     {
+        //PlayerPrefs.SetInt("MoneyNameConst", 15000);
         if (PlayerPrefs.HasKey("MoneyNameConst"))
         {
             UpdateMoneyText();
@@ -418,20 +421,24 @@ public class PanelAnimation : MonoBehaviour
 
     private void SetCurrentCarByPrefs()
     {
-        if (PlayerPrefs.GetString("Car") == "WhitePoliceCar")
+        if (PlayerPrefs.GetString("Car") == "WhitePoliceCar" && PlayerPrefs.GetString("WhitePoliceCar") == "Unlocked")
         {
             CheckCar(1);
         }
-
-        if (PlayerPrefs.GetString("Car") == "SportCar")
+        else if (PlayerPrefs.GetString("Car") == "SportCar" && PlayerPrefs.GetString("SportCar") == "Unlocked")
         {
             CheckCar(2);
         }
-
-        if (PlayerPrefs.GetString("Car") == "SciFiCar")
+        else if (PlayerPrefs.GetString("Car") == "SciFiCar" && PlayerPrefs.GetString("SciFiCar") == "Unlocked")
         {
             CheckCar(3);
         }
+        else
+        {
+            CheckCar(0);
+            PlayerPrefs.SetString("Car", "PoliceCar");
+        }
+
     }
 
 
@@ -485,14 +492,21 @@ public class PanelAnimation : MonoBehaviour
 
     public void CheckCar(int indexInCarsList)
     {
-        if (_currentCarIndex == indexInCarsList || isTransitioningBtwCars == true)
-            return;
-        isTransitioningBtwCars = true;
-        MoveCarToStreet(carsInGarage[_currentCarIndex]);
-        StartCoroutine(MoveCarToGarage(carsInGarage[indexInCarsList]));
-        //PlayerPrefs.SetInt("SelectedCarIndex")
-        _currentCarIndex = indexInCarsList;
-        SetCarPlayerPrefs();
+
+        if (_currentCarIndex != indexInCarsList && isTransitioningBtwCars == false)
+        {
+            isTransitioningBtwCars = true;
+            MoveCarToStreet(carsInGarage[_currentCarIndex]);
+            StartCoroutine(MoveCarToGarage(carsInGarage[indexInCarsList]));
+            _currentCarIndex = indexInCarsList;
+            SetCarPlayerPrefs();
+            print("≈баный в рот это казино");
+        }
+    }
+
+    public bool GetIsTransitioningBtwCars()
+    {
+        return isTransitioningBtwCars;
     }
 
 }
