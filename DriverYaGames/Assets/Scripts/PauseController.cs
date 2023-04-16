@@ -17,15 +17,15 @@ public class PauseController : MonoBehaviour
 
     public void PauseStart()
     {
-        _musicController.FindSliders();
-       // _musicController.SetUpSlidersStats();
+        StartCoroutine(_musicController.FindSliders());
+        // _musicController.SetUpSlidersStats();
         Time.timeScale = 0.0000001f;
         pauseMenu.SetActive(true);
     }
 
     public void OnlyFindObjects()
     {
-        _musicController.FindSliders();
+        StartCoroutine(_musicController.FindSliders());
        // _musicController.SetUpSlidersStats();
     }
 

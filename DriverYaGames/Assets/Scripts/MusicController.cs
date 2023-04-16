@@ -53,7 +53,7 @@ public class MusicController : MonoBehaviour
 
         
         _mixerGroup.audioMixer.SetFloat("SoundsVolume", Mathf.Lerp(-80, 0, _soundsVolume));
-        FindSliders();
+        StartCoroutine(FindSliders());
     }
     private void LateUpdate()
     {
@@ -137,7 +137,7 @@ public class MusicController : MonoBehaviour
                 
             }
 
-            yield return new WaitForForSeconds(0.1f);
+            yield return new WaitForSeconds(0.1f);
 
             if (_sliderMusic != null && _sliderSounds != null)
             {
