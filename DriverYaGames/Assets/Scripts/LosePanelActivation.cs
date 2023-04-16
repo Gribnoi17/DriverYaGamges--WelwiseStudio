@@ -27,6 +27,7 @@ public class LosePanelActivation : MonoBehaviour
 
     private void Start()
     {
+        _audioSources = GameObject.Find("AuduoSources");
         _pauseController = FindObjectOfType<PauseController>();
         _money = FindObjectOfType<Money>();
         _watchedAdv = false;

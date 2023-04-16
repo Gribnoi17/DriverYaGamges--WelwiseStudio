@@ -7,9 +7,18 @@ using UnityEngine.UIElements;
 public class PauseController : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    private MusicController _musicController;
+
+
+    private void Start()
+    {
+        _musicController = FindObjectOfType<MusicController>();
+    }
 
     public void PauseStart()
     {
+        _musicController.FindSliders();
+        _musicController.SetUpSlidersStats();
         Time.timeScale = 0.0000001f;
         pauseMenu.SetActive(true);
     }

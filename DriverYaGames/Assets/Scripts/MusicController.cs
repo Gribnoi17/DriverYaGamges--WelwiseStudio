@@ -1,7 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 using UnityEngine.Audio;
 
 public class MusicController : MonoBehaviour
@@ -14,12 +13,15 @@ public class MusicController : MonoBehaviour
     [SerializeField] private AudioMixerGroup _mixerGroup;
     [SerializeField] private Slider _sliderMusic;
     [SerializeField] private Slider _sliderSounds;
+
     [Header("Keys")]
     [SerializeField] private string _saveMusicVolumeKey;
     [SerializeField] private string _saveSoundsVolumeKey;
+
     [Header("Tags")]
     [SerializeField] private string _sliderMusicTag;
     [SerializeField] private string _sliderSoundsTag;
+
     [Header("Parametres")]
     [SerializeField] private float _musicVolume;
     [SerializeField] private float _soundsVolume;
@@ -36,48 +38,45 @@ public class MusicController : MonoBehaviour
     }
     private void Start()
     {
-        _musicVolume = PlayerPrefs.GetFloat(_saveMusicVolumeKey);
+        if (PlayerPrefs.HasKey(_saveMusicVolumeKey))
+            _musicVolume = PlayerPrefs.GetFloat(_saveMusicVolumeKey);
+        else
+            PlayerPrefs.SetFloat(_saveMusicVolumeKey, _musicVolume);
+
         _mixerGroup.audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80, 0, _musicVolume));
 
-        _soundsVolume = PlayerPrefs.GetFloat(_saveSoundsVolumeKey);
+        if (PlayerPrefs.HasKey(_saveMusicVolumeKey))
+            _musicVolume = PlayerPrefs.GetFloat(_saveMusicVolumeKey);
+        else
+            PlayerPrefs.SetFloat(_saveMusicVolumeKey, _musicVolume);
+
+        
         _mixerGroup.audioMixer.SetFloat("SoundsVolume", Mathf.Lerp(-80, 0, _soundsVolume));
+        FindSliders();
     }
     private void LateUpdate()
     {
-        CheckThisScene();
+        CheckCurrentScene();
     }
 
     public void ChangeVolumeMusic()
     {
-        GameObject sliderMusicObj = GameObject.FindWithTag(_sliderMusicTag);
-
-        if (sliderMusicObj != null)
+        if (_sliderMusic != null)
         {
-            _sliderMusic = sliderMusicObj.GetComponent<Slider>();
+            print(_sliderMusic.value);
             _musicVolume = _sliderMusic.value;
             PlayerPrefs.SetFloat(_saveMusicVolumeKey, _musicVolume);
             _mixerGroup.audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80, 0, _musicVolume));
-            /*if (_musicSource.volume != _musicVolume)
-            {
-                PlayerPrefs.SetFloat(_saveMusicVolumeKey, _musicVolume);
-            }
-            */
             _musicSource.volume = _musicVolume;
         }
     }
     public void ChangeVolumeSounds()
     {
-        GameObject sliderSoundsObj = GameObject.FindWithTag(_sliderSoundsTag);
-        if (sliderSoundsObj != null)
-        {
-            _sliderSounds = sliderSoundsObj.GetComponent<Slider>();
+        if (_sliderSounds != null)
+        {         
             _soundsVolume = _sliderSounds.value;
             PlayerPrefs.SetFloat(_saveSoundsVolumeKey, _soundsVolume);
             _mixerGroup.audioMixer.SetFloat("SoundsVolume", Mathf.Lerp(-80, 0, _soundsVolume));
-            /*if (_soundsSource.volume != _soundsVolume)
-            {
-                PlayerPrefs.SetFloat(_saveSoundsVolumeKey, _soundsVolume);
-            }*/
             _soundsSource.volume = _soundsVolume;
         }
     }
@@ -91,7 +90,7 @@ public class MusicController : MonoBehaviour
         _mixerGroup.audioMixer.SetFloat("Engine", Mathf.Lerp(-80, 0, 1));
     }
 
-    private void CheckThisScene()
+    private void CheckCurrentScene()
     {
         string sceneName = SceneManager.GetActiveScene().name;
         if (sceneName != _activSceneName)
@@ -109,6 +108,28 @@ public class MusicController : MonoBehaviour
                 _activSceneName = sceneName;
             }
             
+        }
+    }
+
+    public void SetUpSlidersStats()
+    {
+        if(_sliderMusic != null)
+            _sliderMusic.value = PlayerPrefs.GetFloat(_saveMusicVolumeKey);
+        if (_sliderSounds != null)
+            _sliderSounds.value = PlayerPrefs.GetFloat(_saveSoundsVolumeKey);
+    }
+
+    public void FindSliders()
+    {
+        try
+        {
+            _sliderMusic = GameObject.FindGameObjectWithTag(_sliderMusicTag).GetComponent<Slider>();
+            //_sliderMusic.onValueChanged.AddListener(ChangeVolumeMusic);
+            _sliderMusic = GameObject.FindGameObjectWithTag(_sliderSoundsTag).GetComponent<Slider>();
+        }
+        catch
+        {
+            Debug.LogWarning("Слайдеры регулировки громкости не найдены, скорее всего они выключены");
         }
     }
 }
