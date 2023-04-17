@@ -17,7 +17,8 @@ public class RotateObject : MonoBehaviour
         // вращаем объект с помощью DoTween
         transform.DORotate(axis * 360f, speed, RotateMode.WorldAxisAdd)
                  .SetEase(Ease.Linear)
-                 .OnComplete(() => Rotate()); // повторяем вращение после завершения
+                 .SetLoops(-1)
+                 .SetLink(gameObject);
     }
 
 }

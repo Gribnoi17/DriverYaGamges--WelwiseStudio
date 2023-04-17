@@ -125,7 +125,7 @@ public class PoliceCar : MonoBehaviour
 		}
 	 }
 
-	private IEnumerator ShieldController()
+	public IEnumerator ShieldController()
     {
         print(1);
         shieldActive = true;
