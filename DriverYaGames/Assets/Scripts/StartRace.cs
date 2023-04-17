@@ -10,6 +10,7 @@ public class StartRace : MonoBehaviour
     [SerializeField] private GameObject _gameRuler;
     [SerializeField] private TextMeshProUGUI _timer;
     [SerializeField] private GameObject _endConfetti;
+    [SerializeField] private Generator _gen;
     private Speedometer _spd;
     void Start()
     {
@@ -26,12 +27,14 @@ public class StartRace : MonoBehaviour
 
     void StartFreeRace()
     {
+        _gen.needSpawnShield = true;
         PlayerPrefs.SetInt("CountPlayInFreeRide", PlayerPrefs.GetInt("CountPlayInFreeRide") + 1);
         _timer.gameObject.SetActive(false);
     }
 
     void StartRaceForTime()
     {
+        _gen.needSpawnShield = false;
         _timer.gameObject.SetActive(true);
         _timer.transform.parent.gameObject.SetActive(true);
 

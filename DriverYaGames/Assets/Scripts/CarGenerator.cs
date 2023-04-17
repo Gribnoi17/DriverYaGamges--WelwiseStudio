@@ -12,11 +12,15 @@ public class Generator : MonoBehaviour
     [SerializeField] private Car[] _carsPrefabs;
     [SerializeField] private float _period;
     [SerializeField] private Car[] _auxiliary;
+    //_auxiliary[0] - нитро _auxiliary[1] - щит
 
     public float SpawnPeriod { get { return _period; } set { _period = value; } }
 
     private float _additionalSpeed;
     private int _countRoutinesSpeedTick = 5;
+
+    [HideInInspector] public bool needSpawnShield;
+
     private void Start()
     {
 
@@ -40,9 +44,18 @@ public class Generator : MonoBehaviour
         Car car = null;
         if (Random.Range(0, 8) == 0)
         {
-            car = Instantiate(_auxiliary[Random.Range(0, _auxiliary.Length)],
-            _linePoint.GetChild(Random.Range(0, _linePoint.childCount)).position.WithZ(transform.position.z),
-            Quaternion.Euler(0f, 0f, 0f), transform);
+            if(needSpawnShield == true)
+            {
+                car = Instantiate(_auxiliary[Random.Range(0, _auxiliary.Length)],
+                _linePoint.GetChild(Random.Range(0, _linePoint.childCount)).position.WithZ(transform.position.z),
+                Quaternion.Euler(0f, 0f, 0f), transform);
+            }
+            else
+            {
+                car = Instantiate(_auxiliary[0],
+                _linePoint.GetChild(Random.Range(0, _linePoint.childCount)).position.WithZ(transform.position.z),
+                Quaternion.Euler(0f, 0f, 0f), transform);
+            } 
         }
         else
         {
