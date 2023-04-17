@@ -34,6 +34,7 @@ public class MusicController : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Garage Scene")
         {
             _musicSource.clip = _musicForLobby[Random.Range(0, _musicForLobby.Length - 1)];
+            _musicSource.Play();
             _activSceneName = "Garage Scene";
         }
     }
@@ -46,10 +47,10 @@ public class MusicController : MonoBehaviour
 
         _mixerGroup.audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80, 0, _musicVolume));
 
-        if (PlayerPrefs.HasKey(_saveMusicVolumeKey))
-            _musicVolume = PlayerPrefs.GetFloat(_saveMusicVolumeKey);
+        if (PlayerPrefs.HasKey(_saveSoundsVolumeKey))
+            _soundsVolume = PlayerPrefs.GetFloat(_saveSoundsVolumeKey);
         else
-            PlayerPrefs.SetFloat(_saveMusicVolumeKey, _musicVolume);
+            PlayerPrefs.SetFloat(_saveSoundsVolumeKey, _soundsVolume);
 
         
         _mixerGroup.audioMixer.SetFloat("SoundsVolume", Mathf.Lerp(-80, 0, _soundsVolume));
