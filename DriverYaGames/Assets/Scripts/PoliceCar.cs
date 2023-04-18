@@ -19,10 +19,14 @@ public class PoliceCar : MonoBehaviour
 	[SerializeField] private Animator _animator;
 	[SerializeField] private AudioClip _clipStart;
 	[SerializeField] private AudioClip _soundEngine;
-	[SerializeField] private GameObject _nitro;
+	[SerializeField] private AudioClip _shieldPickUp;
+    [SerializeField] private AudioClip _collission;
+    [SerializeField] private AudioClip _nitroSound;
+    [SerializeField] private GameObject _nitro;
+	[SerializeField] private AudioSource _canvasAS;
 
 
-	private float _timeShield = 3f;
+	private float _timeShield = 5f;
 	private bool _isPlaying = true;
 	private int _lineIndex = 1;
 	private Playable _animation;
@@ -56,9 +60,10 @@ public class PoliceCar : MonoBehaviour
 
 	public IEnumerator ActivateNitro()
     {
-		if (_nitro != null)
+        if (_nitro != null)
         {
-			_nitro.gameObject.SetActive(true);
+            _audioSource.PlayOneShot(_nitroSound);
+            _nitro.gameObject.SetActive(true);
 			yield return new WaitForSeconds(NitroTime);
 			_nitro.gameObject.SetActive(false);
 		}	
@@ -95,6 +100,7 @@ public class PoliceCar : MonoBehaviour
 	 {
 		if(collision.gameObject.tag == "Shield")
 		{
+			
 		    Destroy(collision.gameObject);
 		    StopCoroutine(ShieldController());
 			DeactivateSchield();
@@ -110,9 +116,9 @@ public class PoliceCar : MonoBehaviour
 		
 		else if (collision.gameObject.tag == "Car")
 		{
-		  //щит включен
 		  if(!shieldActive)
 		  {
+			 _canvasAS.PlayOneShot(_collission);
 			 EventManager.OnPlayerDied();
 			 SwipeDetection.SwipeEvent -= OnSwipe;
 			 transform.parent.gameObject.SetActive(false);
@@ -120,7 +126,6 @@ public class PoliceCar : MonoBehaviour
 			 _isPlaying= false;
 		  }else
 		  {
-			 //убираем машину котора€ врезалась
 			 Destroy(collision.gameObject);
 		  }
 		}
@@ -128,7 +133,7 @@ public class PoliceCar : MonoBehaviour
 
 	public IEnumerator ShieldController()
     {
-        print(1);
+		_audioSource.PlayOneShot(_shieldPickUp);
         shieldActive = true;
         EventManager.OnPlayerTookShield();
         if (_shield.activeSelf == false)

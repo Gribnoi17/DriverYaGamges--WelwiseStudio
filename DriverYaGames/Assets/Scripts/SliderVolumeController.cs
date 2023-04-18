@@ -8,6 +8,7 @@ public class SliderVolumeController : MonoBehaviour
     [SerializeField] private Slider _soundsSlider;
     [SerializeField] private AudioClip _uiClick;
     [SerializeField] private AudioClip _playClick;
+    [SerializeField] private AudioClip _changeCar;
 
     private MusicController _musCont;
     [SerializeField]private AudioSource _source;
@@ -49,6 +50,11 @@ public class SliderVolumeController : MonoBehaviour
     public void ContineClick()
     {
         _musCont.OnEngine();
+    }
+
+    public void ChangeCarSound()
+    {
+        _source.PlayOneShot(_changeCar);
     }
 
     public void ClickForButtonSound()

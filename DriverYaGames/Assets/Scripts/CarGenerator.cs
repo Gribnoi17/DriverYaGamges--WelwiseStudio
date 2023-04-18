@@ -19,7 +19,7 @@ public class Generator : MonoBehaviour
     private float _additionalSpeed;
     private int _countRoutinesSpeedTick = 5;
 
-    [HideInInspector] public bool needSpawnShield;
+    [HideInInspector] public bool needSpawnShield = true;
 
     private void Start()
     {
@@ -42,6 +42,7 @@ public class Generator : MonoBehaviour
 
         yield return new WaitForSeconds(_period);
         Car car = null;
+        needSpawnShield = true;
         if (Random.Range(0, 8) == 0)
         {
             if(needSpawnShield == true)

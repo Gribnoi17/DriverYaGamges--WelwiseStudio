@@ -134,7 +134,6 @@ public class MusicController : MonoBehaviour
             }
             catch
             {
-                Debug.Log("Слайдеры регулировки громкости не найдены, скорее всего они выключены");
                 
             }
 

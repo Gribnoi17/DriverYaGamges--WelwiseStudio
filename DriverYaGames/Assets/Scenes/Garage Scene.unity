@@ -2923,6 +2923,7 @@ MonoBehaviour:
   _milageText: {fileID: 723714783}
   _slantChoicePanel: {fileID: 922124724}
   _swipeChoicePanel: {fileID: 1104301736}
+  _canvasWithSliderCont: {fileID: 1752272780}
 --- !u!225 &186328286
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -30719,6 +30720,7 @@ MonoBehaviour:
   _soundsSlider: {fileID: 1250105445}
   _uiClick: {fileID: 8300000, guid: b2bdcbe97595c494198cb36016956707, type: 3}
   _playClick: {fileID: 8300000, guid: 336a6a9f83e5f1b4facbcddcf4acd0d2, type: 3}
+  _changeCar: {fileID: 8300000, guid: 2621051d7786c4247b15fe0728ecfab0, type: 3}
   _source: {fileID: 186328288}
 --- !u!1 &1752958398
 GameObject:

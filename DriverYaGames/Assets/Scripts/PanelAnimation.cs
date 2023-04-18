@@ -55,6 +55,8 @@ public class PanelAnimation : MonoBehaviour
     [SerializeField] private GameObject _slantChoicePanel;
     [SerializeField] private GameObject _swipeChoicePanel;
 
+    [Header("Other")]
+    [SerializeField] private GameObject _canvasWithSliderCont;
 
     private CanvasGroup _leftPanelCanvasGroup;
     private enum _panels {CarsPanel, LocationsPanel, TasksPanel };
@@ -313,7 +315,7 @@ public class PanelAnimation : MonoBehaviour
         {
             StartCoroutine(ShowContentOfCars());
             StartCoroutine(SetTransitionFalse());
-            print("WTF");
+            //print("WTF");
         }
     }
 
@@ -495,7 +497,7 @@ public class PanelAnimation : MonoBehaviour
         tr.position = _garageStartPosition;
         tr.DOMove(_garageEndPosition, _animationDuration).SetAutoKill(false).OnComplete(() =>
         {
-            Debug.Log("Машина прибыла в гараж");
+            //Debug.Log("Машина прибыла в гараж");
             isTransitioningBtwCars = false;
         });
     }
@@ -506,7 +508,7 @@ public class PanelAnimation : MonoBehaviour
         tr.position = _garageEndPosition;
         tr.DOMove(_streetEndPosition, _animationDuration).SetAutoKill(false).OnComplete(() =>
         {
-            Debug.Log("Машина прибыла на улицу");
+            //Debug.Log("Машина прибыла на улицу");
             tr.gameObject.SetActive(false);
         });
     }
@@ -517,12 +519,13 @@ public class PanelAnimation : MonoBehaviour
 
         if (_currentCarIndex != indexInCarsList && isTransitioningBtwCars == false)
         {
+            _canvasWithSliderCont.GetComponent<SliderVolumeController>().ChangeCarSound();
             isTransitioningBtwCars = true;
             MoveCarToStreet(carsInGarage[_currentCarIndex]);
             StartCoroutine(MoveCarToGarage(carsInGarage[indexInCarsList]));
             _currentCarIndex = indexInCarsList;
             SetCarPlayerPrefs();
-            print("Ебаный в рот это казино");
+            //print("Ебаный в рот это казино");
         }
     }
 
