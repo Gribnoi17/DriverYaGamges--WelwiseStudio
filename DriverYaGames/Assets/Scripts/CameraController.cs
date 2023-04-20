@@ -10,23 +10,45 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _durationShake = 0.5f;
     [SerializeField] private Image _brokenScreen;
 
-    private Sequence _sequence;
+   // private Booster _booster;
+    private Sequence _sequenceRotate;
+    private Sequence _sequenceMoveBackwards;
 
     private void Start()
     {
         EventManager.PlayerDied += ShakeCameraPlay;
+        EventManager.PlayerTookNitro += StartMoveCameraBackwards;
+
+        _sequenceMoveBackwards = DOTween.Sequence();
 
         DOVirtual.DelayedCall(20f, CameraRotate);
     }
 
     private void CameraRotate()
     {
-        _sequence = DOTween.Sequence();
-        _sequence.Append(transform.DORotate(new Vector3(0f, 3f, 0f), 2f, RotateMode.Fast).SetEase(Ease.Linear));
-        _sequence.Append(transform.DORotate(new Vector3(0f, 0f, 0f), 2f, RotateMode.Fast).SetEase(Ease.Linear));
-        _sequence.Append(transform.DORotate(new Vector3(0f, -3f, 0f), 2f, RotateMode.Fast).SetEase(Ease.Linear));
-        _sequence.Append(transform.DORotate(new Vector3(0f, 0f, 0f), 2f, RotateMode.Fast).SetEase(Ease.Linear));
-        _sequence.SetLoops(-1);
+        _sequenceRotate = DOTween.Sequence();
+        _sequenceRotate.Append(transform.DORotate(new Vector3(0f, 3f, 0f), 2f, RotateMode.Fast).SetEase(Ease.Linear));
+        _sequenceRotate.Append(transform.DORotate(new Vector3(0f, 0f, 0f), 2f, RotateMode.Fast).SetEase(Ease.Linear));
+        _sequenceRotate.Append(transform.DORotate(new Vector3(0f, -3f, 0f), 2f, RotateMode.Fast).SetEase(Ease.Linear));
+        _sequenceRotate.Append(transform.DORotate(new Vector3(0f, 0f, 0f), 2f, RotateMode.Fast).SetEase(Ease.Linear));
+        _sequenceRotate.SetLoops(-1);
+    }
+
+    private void StartMoveCameraBackwards()
+    {
+        StartCoroutine(MoveCameraBackwards());
+    }
+
+    private IEnumerator MoveCameraBackwards()
+    {
+        if (_sequenceMoveBackwards != null)
+            _sequenceMoveBackwards.Kill();
+        _sequenceMoveBackwards.Append(transform.DOMoveZ(-1.5f, 0.5f));
+        yield return new WaitForSeconds(3.5f);
+        _sequenceMoveBackwards.Append(transform.DOMoveZ(0f, 0.5f));
+        StopCoroutine(MoveCameraBackwards());
+
+
     }
 
 
@@ -34,7 +56,8 @@ public class CameraController : MonoBehaviour
     {
         EventManager.PlayerDied -= ShakeCameraPlay;
         EventManager.PlayerDied -= CameraRotate;
-        _sequence.Kill();
+        EventManager.PlayerTookNitro -= StartMoveCameraBackwards;
+        _sequenceRotate.Kill();
     }
 
     private void ShakeCameraPlay()
