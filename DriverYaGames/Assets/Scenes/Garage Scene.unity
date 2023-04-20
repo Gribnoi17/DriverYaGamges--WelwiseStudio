@@ -1029,6 +1029,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: ReCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &42720067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5745,6 +5757,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: ReCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &328764199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9057,6 +9081,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1752272787}
         m_TargetAssemblyTypeName: SliderVolumeController, Assembly-CSharp
         m_MethodName: ClickForButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: ReCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14457,7 +14493,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 97da1662e32b49b4fa9f6b52f314d2fe, type: 3}
   - {fileID: 8300000, guid: ff256711c69a2a443981d0494f60b7ab, type: 3}
   _musicForLobby:
-  - {fileID: 8300000, guid: e78bd6d4c0efa48498c06c3e6e7c2274, type: 3}
+  - {fileID: 8300000, guid: 7e0da909046cb2749818f16ffe617a44, type: 3}
   - {fileID: 8300000, guid: c7f65dfef04ca9243a56a88e5b797a2a, type: 3}
   _mixerGroup: {fileID: 24300002, guid: 820aa9ad9c0ecfe4ba802c153192c5b6, type: 2}
   _sliderMusic: {fileID: 0}
@@ -14664,6 +14700,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1752272787}
         m_TargetAssemblyTypeName: SliderVolumeController, Assembly-CSharp
         m_MethodName: ClickForButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: ReCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25206,6 +25254,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1752272787}
         m_TargetAssemblyTypeName: SliderVolumeController, Assembly-CSharp
         m_MethodName: ClickForButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: ReCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36746,6 +36806,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1752272787}
         m_TargetAssemblyTypeName: SliderVolumeController, Assembly-CSharp
         m_MethodName: ClickForButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 164620601}
+        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
+        m_MethodName: ReCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
