@@ -7,7 +7,7 @@ public class LosePanelActivation : MonoBehaviour
     [SerializeField] private GameObject _losePanel;
     [SerializeField] private GameObject _audioSources;
     [SerializeField] TextMeshProUGUI _milageResultText;
-    [SerializeField] TextMeshProUGUI _moneyResultText;
+    [SerializeField] TextMeshProUGUI[] _moneyResultText;
     [DllImport("__Internal")]
     private static extern void ReturnToGameExtern();
 
@@ -59,12 +59,8 @@ public class LosePanelActivation : MonoBehaviour
     private void ActivateLosePanel()
     {
         _milageResultText.text = _odometer.GetCurrentMilage().ToString();
-        _moneyResultText.text = _money.GetCurrentAmount().ToString();
 
-        _speedometer.enabled = false;
-        _odometer.IsCounting(false);
-        _losePanel.SetActive(true);
-        _audioSources.gameObject.SetActive(false);
+        Pause();
         if (_watchedAdv == false)
         {
             _anim.Play("LosePanelAnim");
@@ -74,6 +70,19 @@ public class LosePanelActivation : MonoBehaviour
         {
             _anim.Play("LosePanelAnim Only Menu");
         } 
+    }
+
+
+    public void Pause()
+    {
+        foreach (TextMeshProUGUI txt in _moneyResultText)
+        {
+            txt.text = _money.GetCurrentAmount().ToString();
+        }
+
+        _speedometer.enabled = false;
+        _odometer.IsCounting(false);
+        _audioSources.gameObject.SetActive(false);
         _carGenerator.RemoveAllChildren();
         _carGenerator.gameObject.SetActive(false);
     }
