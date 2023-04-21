@@ -35,9 +35,16 @@ public class SceneOptimization : MonoBehaviour
     {
         //PlayerPrefs.DeleteAll();
         //PlayerPrefs.SetInt("MoneyNameConst", 10000);
-
+        
         if (_sceneType == SceneType.Menu)
-            GetDevice();
+            try
+            {
+                GetDevice();
+            }
+            catch
+            {
+                PlayerPrefs.SetInt("IsMobile", 1);
+            }
 
         if (PlayerPrefs.GetInt("IsMobile") == 0)
         {
@@ -46,10 +53,8 @@ public class SceneOptimization : MonoBehaviour
                 obj.SetActive(true);
             }
             SetPCGraphicsSettings();
-            //SetExponentialFog();
 
         }
-
         else
         {
             foreach (GameObject obj in objectsToDestroyOnPhone)

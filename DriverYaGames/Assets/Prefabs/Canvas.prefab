@@ -259,7 +259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15957864, y: 0.74066544}
   m_AnchorMax: {x: 0.9088816, y: 1}
-  m_AnchoredPosition: {x: -20.499878, y: -1.5}
+  m_AnchoredPosition: {x: -20.499939, y: -1.5}
   m_SizeDelta: {x: 40.728027, y: 13.959991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &16922293
@@ -377,7 +377,7 @@ MonoBehaviour:
   _trText: "Testler tamamland\u0131!"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &141195769
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &767503938
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1232,7 +1232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -11.192627, y: -6.296509}
+  m_AnchoredPosition: {x: -11.192627, y: -6.2964478}
   m_SizeDelta: {x: 133.13, y: 74.894}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &767503941
@@ -1283,7 +1283,7 @@ Animator:
   m_GameObject: {fileID: 767503937}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fbdddc02f3ac0744b9945134b692a556, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9fdffbfc3ef1c574ba01a6501177904a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1617,7 +1617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15957864, y: 0.74066544}
   m_AnchorMax: {x: 0.9088816, y: 1}
-  m_AnchoredPosition: {x: -20.499878, y: -1.5}
+  m_AnchoredPosition: {x: -20.499939, y: -1.5}
   m_SizeDelta: {x: 40.728027, y: 13.959991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &859707645
@@ -1735,7 +1735,7 @@ MonoBehaviour:
   _trText: Oyun Bitti
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &946466448
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,7 +1831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1029811561
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1928,7 +1928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -11.192627, y: -6.296509}
+  m_AnchoredPosition: {x: -11.192627, y: -6.2964478}
   m_SizeDelta: {x: 133.13, y: 74.894}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1101972312
@@ -3631,7 +3631,9 @@ MonoBehaviour:
   _losePanel: {fileID: 1101972309}
   _audioSources: {fileID: 0}
   _milageResultText: {fileID: 1392087645}
-  _moneyResultText: {fileID: 1575546164}
+  _moneyResultText:
+  - {fileID: 1429250587}
+  - {fileID: 1575546164}
 --- !u!1 &1959176342
 GameObject:
   m_ObjectHideFlags: 0
@@ -4991,6 +4993,7 @@ MonoBehaviour:
   _soundsSlider: {fileID: 1066327685606694709}
   _uiClick: {fileID: 8300000, guid: b2bdcbe97595c494198cb36016956707, type: 3}
   _playClick: {fileID: 8300000, guid: 336a6a9f83e5f1b4facbcddcf4acd0d2, type: 3}
+  _changeCar: {fileID: 0}
   _source: {fileID: 1806880161}
 --- !u!82 &1806880161
 AudioSource:
@@ -5994,7 +5997,7 @@ MonoBehaviour:
   _trText: "SESLER\u0130N SES\u0130"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &6228689781346273574
 GameObject:
   m_ObjectHideFlags: 0
@@ -6149,7 +6152,7 @@ MonoBehaviour:
   _trText: "M\xDCZ\u0130K SES\u0130"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &6764649845743960381
 GameObject:
   m_ObjectHideFlags: 0
@@ -6710,7 +6713,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 8450396787114233301}
   m_HandleRect: {fileID: 3806943899477600492}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.4
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -6967,7 +6970,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1678101139674424009}
   m_HandleRect: {fileID: 8834840752074248284}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.4
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.426
