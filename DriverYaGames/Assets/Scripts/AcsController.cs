@@ -42,7 +42,7 @@ public class AcsController : MonoBehaviour
 
     void Update()
     {
-      /*  Vector3 vec = Input.acceleration;
+        Vector3 vec = Input.acceleration;
         try
         {
             _valueForUnity.text = vec.x.ToString();
@@ -50,7 +50,7 @@ public class AcsController : MonoBehaviour
         catch
         {
             print("acs error");
-        }*/
+        }
         try
         {
             _value.text = _acceleration.ToString();
