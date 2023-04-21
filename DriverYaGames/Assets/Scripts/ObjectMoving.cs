@@ -33,7 +33,7 @@ public class ObjectMoving : MonoBehaviour
         CurrentSpeed = StartSpeed;
     }
     
-    private void Update()
+    private void FixedUpdate()
     {
         for (int i = 0; i < transform.childCount; i++)
         {

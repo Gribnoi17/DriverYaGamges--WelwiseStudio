@@ -18,7 +18,7 @@ public class PauseController : MonoBehaviour
     public void PauseStart()
     {
         StartCoroutine(_musicController.FindSliders());
-        // _musicController.SetUpSlidersStats();
+        //_musicController.SetUpSlidersStats();
         Time.timeScale = 0.0000001f;
         pauseMenu.SetActive(true);
     }
@@ -26,7 +26,7 @@ public class PauseController : MonoBehaviour
     public void OnlyFindObjects()
     {
         StartCoroutine(_musicController.FindSliders());
-       // _musicController.SetUpSlidersStats();
+       //_musicController.SetUpSlidersStats();
     }
 
     public void PauseEnd()

@@ -31,10 +31,9 @@ public class SceneOptimization : MonoBehaviour
     }
 
 
-    private void Start()
+    private void Awake()
     {
         //PlayerPrefs.DeleteAll();
-        //PlayerPrefs.SetInt("MoneyNameConst", 10000);
         
         if (_sceneType == SceneType.Menu)
             try

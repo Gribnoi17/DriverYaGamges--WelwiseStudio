@@ -8,7 +8,6 @@ using System;
 using UnityEngine.UI;
 using Unity.VisualScripting;
 
-[RequireComponent(typeof(Animator))]
 public class PoliceCar : MonoBehaviour
 {
 	[SerializeField] private GameObject _shield;

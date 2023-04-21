@@ -78,6 +78,9 @@ public class AcsController : MonoBehaviour
         }
         else
         {
+            if (_rB == null)
+                return;
+
             _rB.velocity = new Vector3(0f, 0f, 0f);
                 animator.SetBool("None", true);
                 animator.SetBool("LeftTurn", false);
