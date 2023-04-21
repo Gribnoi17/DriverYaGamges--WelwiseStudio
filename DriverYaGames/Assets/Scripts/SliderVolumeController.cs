@@ -9,6 +9,7 @@ public class SliderVolumeController : MonoBehaviour
     [SerializeField] private AudioClip _uiClick;
     [SerializeField] private AudioClip _playClick;
     [SerializeField] private AudioClip _changeCar;
+    [SerializeField] private AudioClip _buyFire;
 
     private MusicController _musCont;
     [SerializeField]private AudioSource _source;
@@ -66,5 +67,11 @@ public class SliderVolumeController : MonoBehaviour
     {
         _source.clip = _playClick;
         _source.Play();
+    }
+
+    public void BuyButtonSound()
+    {
+        _source.clip = _uiClick;
+        _source.PlayOneShot(_buyFire);
     }
 }
