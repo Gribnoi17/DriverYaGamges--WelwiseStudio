@@ -4,18 +4,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Runtime.InteropServices;
 
 public class StartRace : MonoBehaviour
 {
-    [SerializeField] private GameObject _gameRuler;
-    [SerializeField] private TextMeshProUGUI _timer;
+    [DllImport("__Internal")]
+    private static extern string RateGame();
+
+    [SerializeField] private GameRules _gameRuler;
     [SerializeField] private GameObject _endConfetti;
     [SerializeField] private Generator _gen;
+
+    [Header("UI")]
+    [SerializeField] private GameObject _winPanel;
+    [SerializeField] private TextMeshProUGUI _timer;
+    [SerializeField] private TextMeshProUGUI _finalTimeText;
+
     private Speedometer _spd;
+    private LosePanelActivation _losePanelScript;
     void Start()
     {
         _spd = FindObjectOfType<Speedometer>();
-        if (_gameRuler.GetComponent<GameRules>().Regime == _gameRuler.GetComponent<GameRules>().regimeRace[0])
+        _losePanelScript = FindObjectOfType<LosePanelActivation>();
+        _gameRuler = GetComponent<GameRules>();
+        if (_gameRuler.Regime == _gameRuler.regimeRace[0])
         {
             StartFreeRace();
         }
@@ -38,18 +50,20 @@ public class StartRace : MonoBehaviour
         _timer.gameObject.SetActive(true);
         _timer.transform.parent.gameObject.SetActive(true);
 
-        if (_gameRuler.GetComponent<GameRules>().Difficult == _gameRuler.GetComponent<GameRules>().difficulty[0])
+        if (_gameRuler.Difficult == _gameRuler.difficulty[0])
         {
             _timer.text = "10";
         }
-        else if (_gameRuler.GetComponent<GameRules>().Difficult == _gameRuler.GetComponent<GameRules>().difficulty[1])
+        else if (_gameRuler.Difficult == _gameRuler.difficulty[1])
         {
             _timer.text = "180";
+
         }
-        else if (_gameRuler.GetComponent<GameRules>().Difficult == _gameRuler.GetComponent<GameRules>().difficulty[2])
+        else if (_gameRuler.Difficult == _gameRuler.difficulty[2])
         {
             _timer.text = "360";
         }
+        _finalTimeText.text = _timer.text;
         StartCoroutine(Timer());
     }
 
@@ -74,17 +88,24 @@ public class StartRace : MonoBehaviour
                 yield return new WaitForSeconds(1f);
         }
         StopCoroutine(Timer());
-        Win();
+        StartCoroutine(Win());
     }
 
 
-    private void Win()
+    private IEnumerator Win()
     {
         while(_spd.CurrentSpeed > 0)
         {
             _spd.CurrentSpeed = -1;
         }
         _endConfetti.SetActive(true);
-        _spd.gameObject.SetActive(false);
+        _losePanelScript.Pause();
+        yield return new WaitForSeconds(2f);
+        _winPanel.SetActive(true);
+        if(_gameRuler.Difficult == _gameRuler.difficulty[1])
+        {
+            RateGame();
+        }
+        print("----Звук победы----");
     }
 }

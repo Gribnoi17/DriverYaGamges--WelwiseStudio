@@ -279,7 +279,7 @@ MonoBehaviour:
   _trText: OTOSPAY
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &17088106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1213,7 @@ MonoBehaviour:
   _trText: Ve
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 0}
 --- !u!1 &57341282
 GameObject:
   m_ObjectHideFlags: 0
@@ -3396,7 +3396,7 @@ MonoBehaviour:
   _trText: Gece Yolu
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!114 &199701213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4363,7 +4363,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.65
+  m_fontSize: 66
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4430,7 +4430,7 @@ MonoBehaviour:
   _trText: "Par\xE7alar"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &283683854
 GameObject:
   m_ObjectHideFlags: 0
@@ -5216,7 +5216,7 @@ MonoBehaviour:
   _trText: "Umutsuzlu\u011Fa kap\u0131lmayaca\u011F\u0131m!"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &315241135
 GameObject:
   m_ObjectHideFlags: 0
@@ -5418,7 +5418,7 @@ MonoBehaviour:
   _trText: "Ye\u015Fil \u015Eehir"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!114 &327773333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6288,7 +6288,7 @@ MonoBehaviour:
   _trText: "kontrol tipini se\xE7in"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &356473087
 GameObject:
   m_ObjectHideFlags: 0
@@ -7959,7 +7959,7 @@ MonoBehaviour:
   _trText: Siber Alev
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!114 &489858602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8142,7 +8142,7 @@ MonoBehaviour:
   _trText: "Turuncu \xD6fke"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &501878957
 GameObject:
   m_ObjectHideFlags: 0
@@ -8941,7 +8941,7 @@ MonoBehaviour:
   _trText: "Reklamlar\u0131 7 kez oynatt\u0131ktan sonra izleyin"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &563883535
 GameObject:
   m_ObjectHideFlags: 0
@@ -9880,7 +9880,7 @@ MonoBehaviour:
   _trText: "H\u0131zc\u0131"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &610387476
 GameObject:
   m_ObjectHideFlags: 0
@@ -10413,7 +10413,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.5
+  m_fontSize: 51.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10480,7 +10480,7 @@ MonoBehaviour:
   _trText: "G\xF6rev Y\xF6neticisi"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &659721196
 GameObject:
   m_ObjectHideFlags: 0
@@ -11133,7 +11133,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.05
+  m_fontSize: 53.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11413,7 +11413,7 @@ MonoBehaviour:
   _trText: "Hay\u0131rsever"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &736870295
 GameObject:
   m_ObjectHideFlags: 0
@@ -13515,7 +13515,7 @@ MonoBehaviour:
   _trText: ayarlar
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!114 &857599812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14912,7 +14912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.46500003, y: 0.076000005}
   m_AnchorMax: {x: 0.65000004, y: 0.216}
-  m_AnchoredPosition: {x: 0.9999924, y: 0.05001831}
+  m_AnchoredPosition: {x: 0.9999924, y: 0.050048828}
   m_SizeDelta: {x: -3.274002, y: 1.6329956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &926903197
@@ -15738,7 +15738,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.14500001, y: 0.076000005}
   m_AnchorMax: {x: 0.32750002, y: 0.216}
-  m_AnchoredPosition: {x: 0.6529999, y: 0.05001831}
+  m_AnchoredPosition: {x: 0.6529999, y: 0.050048828}
   m_SizeDelta: {x: -2.274002, y: 1.6329956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &983778757
@@ -16076,7 +16076,7 @@ MonoBehaviour:
   _trText: "\xD6ld\xFC\u011F\xFCmde, ne i\xE7in \xF6ld\xFC\u011F\xFCm\xFC bilece\u011Fim."
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1003967334
 GameObject:
   m_ObjectHideFlags: 0
@@ -16792,7 +16792,7 @@ MonoBehaviour:
   _trText: "ZAMAN DENEYI\u0307"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1041435400
 GameObject:
   m_ObjectHideFlags: 0
@@ -17161,7 +17161,7 @@ MonoBehaviour:
   _trText: "1 yar\u0131\u015Fta 666 km s\xFCr\xFCn"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1049048169
 GameObject:
   m_ObjectHideFlags: 0
@@ -17432,7 +17432,7 @@ MonoBehaviour:
   _trText: OYUN MODU
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1060909295
 GameObject:
   m_ObjectHideFlags: 0
@@ -18180,7 +18180,7 @@ MonoBehaviour:
   _trText: "Hayalet kontrol\xFC"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1122664301
 GameObject:
   m_ObjectHideFlags: 0
@@ -18819,7 +18819,7 @@ MonoBehaviour:
   _trText: "Gizli bir rota aran\u0131yor"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1178474963
 GameObject:
   m_ObjectHideFlags: 0
@@ -18974,7 +18974,7 @@ MonoBehaviour:
   _trText: "B\xFCt\xFCn arabalar\u0131 sat\u0131n al"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1191536691
 GameObject:
   m_ObjectHideFlags: 0
@@ -20122,7 +20122,7 @@ MonoBehaviour:
   _trText: "Ho\u015F\xE7akal tatl\u0131 evim"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1247675401
 GameObject:
   m_ObjectHideFlags: 0
@@ -20545,7 +20545,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.14500001, y: 0.076000005}
   m_AnchorMax: {x: 0.32750002, y: 0.216}
-  m_AnchoredPosition: {x: 0.6529999, y: 0.05001831}
+  m_AnchoredPosition: {x: 0.6529999, y: 0.050048828}
   m_SizeDelta: {x: -2.274002, y: 1.6329956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1256480373
@@ -20800,7 +20800,7 @@ MonoBehaviour:
   _trText: Miami Polisi
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1265472953
 GameObject:
   m_ObjectHideFlags: 0
@@ -21773,7 +21773,7 @@ MonoBehaviour:
   _trText: "M\xDCZ\u0130K SES\u0130"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!114 &1302440599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22028,7 +22028,7 @@ MonoBehaviour:
   _trText: "ilk araban\u0131z\u0131 sat\u0131n al\u0131n"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1307256791
 GameObject:
   m_ObjectHideFlags: 0
@@ -22560,7 +22560,7 @@ MonoBehaviour:
   _trText: "*Bunu ayarlardan de\u011Fi\u015Ftirebilirsiniz*"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1329838210
 GameObject:
   m_ObjectHideFlags: 0
@@ -22871,7 +22871,7 @@ MonoBehaviour:
   _trText: "25 sonsuz yar\u0131\u015Fa kat\u0131l\u0131n"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1344678289
 GameObject:
   m_ObjectHideFlags: 0
@@ -23911,7 +23911,7 @@ MonoBehaviour:
   _trText: "Mevcut her konumda toplam 1.000 km s\xFCr\xFC\u015F yap\u0131n"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1386363908
 GameObject:
   m_ObjectHideFlags: 0
@@ -24119,7 +24119,7 @@ MonoBehaviour:
   _trText: "Zehirli B\xF6lge"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!114 &1401876045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24372,7 +24372,7 @@ MonoBehaviour:
   _trText: Kolay Yol
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1427949855
 GameObject:
   m_ObjectHideFlags: 0
@@ -25340,7 +25340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.46500003, y: 0.076000005}
   m_AnchorMax: {x: 0.65000004, y: 0.216}
-  m_AnchoredPosition: {x: 0.9999924, y: 0.05001831}
+  m_AnchoredPosition: {x: 0.9999924, y: 0.050048828}
   m_SizeDelta: {x: -3.274002, y: 1.6329956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1479809402
@@ -25687,7 +25687,7 @@ MonoBehaviour:
   _trText: "T\xFCm zaman denemelerini tamamlay\u0131n "
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1492028931
 GameObject:
   m_ObjectHideFlags: 0
@@ -25842,7 +25842,7 @@ MonoBehaviour:
   _trText: Cehennemin derinliklerine
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1506321646
 GameObject:
   m_ObjectHideFlags: 0
@@ -26227,7 +26227,7 @@ MonoBehaviour:
   _trText: "Sadece ac\u0131 \xE7ekerek ger\xE7ek ortaya \xE7\u0131kar."
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1574744160
 GameObject:
   m_ObjectHideFlags: 0
@@ -26883,7 +26883,7 @@ MonoBehaviour:
   _trText: "SESLER\u0130N SES\u0130"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!114 &1595116276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27069,7 +27069,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.9
+  m_fontSize: 38.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -27136,7 +27136,7 @@ MonoBehaviour:
   _trText: "Yeni Ba\u015Far\u0131"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1607453985
 GameObject:
   m_ObjectHideFlags: 0
@@ -29710,7 +29710,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.85
+  m_fontSize: 56.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -29777,7 +29777,7 @@ MonoBehaviour:
   _trText: Oyun
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1729678203
 GameObject:
   m_ObjectHideFlags: 0
@@ -30008,7 +30008,7 @@ MonoBehaviour:
   _trText: "\u0130lk kural..."
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1730848263
 GameObject:
   m_ObjectHideFlags: 0
@@ -30163,7 +30163,7 @@ MonoBehaviour:
   _trText: Geri
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1734100514
 GameObject:
   m_ObjectHideFlags: 0
@@ -32289,7 +32289,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.65
+  m_fontSize: 66
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -32356,7 +32356,7 @@ MonoBehaviour:
   _trText: Arabalar
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1864044889
 GameObject:
   m_ObjectHideFlags: 0
@@ -33318,7 +33318,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.1
+  m_fontSize: 54.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -33717,7 +33717,7 @@ MonoBehaviour:
   _trText: Geri
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!114 &1938810959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34545,7 +34545,7 @@ MonoBehaviour:
   _trText: "Maksimum h\u0131za \xE7\u0131k\u0131n"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1972367190
 GameObject:
   m_ObjectHideFlags: 0
@@ -35291,7 +35291,7 @@ MonoBehaviour:
   _trText: "Zamana kar\u015F\u0131 yar\u0131\u015Flarda 10 kez kaybetme"
   _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
   _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
-  _trFont: {fileID: 11400000, guid: 7b6cf2fb4eb29064da494c3cc72270a1, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &1991155147
 GameObject:
   m_ObjectHideFlags: 0
@@ -37286,6 +37286,7 @@ GameObject:
   - component: {fileID: 2085773070}
   - component: {fileID: 2085773072}
   - component: {fileID: 2085773071}
+  - component: {fileID: 2085773073}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -37411,6 +37412,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085773069}
   m_CullTransparentMesh: 1
+--- !u!114 &2085773073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085773069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbc19ee3f6b9f94f9fcaef36bc4983c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ruText: "\u041A\u0443\u043F\u0438\u0442\u044C"
+  _enText: Buy
+  _trText: "Sat\u0131n Al"
+  _ruFont: {fileID: 11400000, guid: 51748ca9e7071f74f9619cd4de1a1bf2, type: 2}
+  _enFont: {fileID: 11400000, guid: b7818a6e8e191a54c85d85a469337997, type: 2}
+  _trFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
 --- !u!1 &2103259175
 GameObject:
   m_ObjectHideFlags: 0
