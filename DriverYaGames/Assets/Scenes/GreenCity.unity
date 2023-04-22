@@ -2575,6 +2575,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 528894223}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &549383785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3468248869583429855, guid: 5804600525f66de4abf11111389ca287,
+    type: 3}
+  m_PrefabInstance: {fileID: 3468248870135341789}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &549383787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549383785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ea4581999585043a62b395d1e89369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!1 &560263412
 GameObject:
   m_ObjectHideFlags: 0
@@ -10026,6 +10045,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1961144649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4573330312626064138, guid: 5804600525f66de4abf11111389ca287,
+    type: 3}
+  m_PrefabInstance: {fileID: 3468248870135341789}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1961144650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961144649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ea4581999585043a62b395d1e89369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!1 &1986608311
 GameObject:
   m_ObjectHideFlags: 0
@@ -11100,6 +11138,41 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3468248869583429849, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468248869583429849, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468248869583429849, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 549383787}
+    - target: {fileID: 3468248869583429849, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468248869583429849, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: OnlyFindObjects
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468248869583429849, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: PauseController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468248869583429849, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3468248869941075997, guid: 5804600525f66de4abf11111389ca287,
         type: 3}
       propertyPath: m_Pivot.x
@@ -11228,7 +11301,15 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 176075981}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3468248869583429855, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 549383787}
+    - targetCorrespondingSourceObject: {fileID: 4573330312626064138, guid: 5804600525f66de4abf11111389ca287,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1961144650}
   m_SourcePrefab: {fileID: 100100000, guid: 5804600525f66de4abf11111389ca287, type: 3}
 --- !u!114 &3468248870135341790 stripped
 MonoBehaviour:
