@@ -632,6 +632,7 @@ MonoBehaviour:
   _sceneType: 1
   pipelineAsset: {fileID: 11400000, guid: d0e2fc18fe036412f8223b3b3d9ad574, type: 2}
   _mainCamera: {fileID: 330585545}
+  _skyboxes: []
   _fogStartDistance: 0
   _fogEndDistance: 65
   _fogDensity: 0.025
@@ -1029,7 +1030,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 16922290, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -20.499847
+      value: -20.499878
       objectReference: {fileID: 0}
     - target: {fileID: 767503937, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_IsActive
@@ -1041,11 +1042,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 767503938, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -6.2964478
+      value: -6.296509
       objectReference: {fileID: 0}
     - target: {fileID: 859707643, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -20.499847
+      value: -20.499878
       objectReference: {fileID: 0}
     - target: {fileID: 1101972310, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1053,7 +1054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1101972310, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -6.2964478
+      value: -6.296509
       objectReference: {fileID: 0}
     - target: {fileID: 2320249074015556916, guid: 5804600525f66de4abf11111389ca287,
         type: 3}
@@ -10829,10 +10830,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc7f5e591f601de46beea97a5e111536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PoliceCar: {fileID: 1331626737}
-  WhitePoliceCar: {fileID: 695225808}
-  SportCar: {fileID: 1032230978}
-  SciFiCar: {fileID: 781490804}
+  _policeCar: {fileID: 0}
+  _whitePoliceCar: {fileID: 0}
+  _sportCar: {fileID: 0}
+  _sciFiCar: {fileID: 0}
 --- !u!4 &821179495
 Transform:
   m_ObjectHideFlags: 0
@@ -22617,7 +22618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea84ed9b29320a41b60a6774bac32b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameRuler: {fileID: 1429207843}
+  _gameRuler: {fileID: 1429207846}
   _endConfetti: {fileID: 0}
   _gen: {fileID: 0}
   _winPanel: {fileID: 0}

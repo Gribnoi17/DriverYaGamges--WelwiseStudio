@@ -15,15 +15,15 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 1}
+  m_FogColor: {r: 1, g: 1, b: 1, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0.025
+  m_FogDensity: 0.03
   m_LinearFogStart: 0
   m_LinearFogEnd: 65
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 1.51
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 6259bdd41fd1e804584504134a1e04f7, type: 2}
@@ -33,12 +33,12 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 32
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13160406, g: 0.103241965, b: 0.09795531, a: 1}
+  m_IndirectSpecularColor: {r: 0.13842553, g: 0.12449579, b: 0.12215038, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1186,7 +1186,7 @@ Transform:
   m_GameObject: {fileID: 251884643}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 23.65, y: -0.76, z: 0}
-  m_LocalScale: {x: 0.2964, y: 2.3905036, z: 35.568}
+  m_LocalScale: {x: 0.2964, y: 4.447293, z: 35.568}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1427388170}
@@ -3558,7 +3558,7 @@ Transform:
   m_GameObject: {fileID: 724073577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -21.1, y: -0.76, z: 0}
-  m_LocalScale: {x: 0.2964, y: 2.3905036, z: 35.568}
+  m_LocalScale: {x: 0.2964, y: 4.2818704, z: 35.568}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1427388170}
@@ -5533,6 +5533,7 @@ MonoBehaviour:
   _sceneType: 1
   pipelineAsset: {fileID: 11400000, guid: d0e2fc18fe036412f8223b3b3d9ad574, type: 2}
   _mainCamera: {fileID: 330585545}
+  _skyboxes: []
   _fogStartDistance: 0
   _fogEndDistance: 65
   _fogDensity: 0.025
@@ -7256,7 +7257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea84ed9b29320a41b60a6774bac32b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameRuler: {fileID: 1458931340}
+  _gameRuler: {fileID: 1458931343}
   _endConfetti: {fileID: 0}
   _gen: {fileID: 985670609}
   _winPanel: {fileID: 0}
@@ -8625,7 +8626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1730624082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11186,6 +11187,14 @@ PrefabInstance:
     - target: {fileID: 767503937, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 767503938, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.296356
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101972310, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.296356
       objectReference: {fileID: 0}
     - target: {fileID: 1806880161, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_Enabled
