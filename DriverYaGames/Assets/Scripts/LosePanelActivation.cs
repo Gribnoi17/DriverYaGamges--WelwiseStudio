@@ -1,6 +1,7 @@
 using System.Runtime.InteropServices;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class LosePanelActivation : MonoBehaviour
 {
@@ -59,7 +60,7 @@ public class LosePanelActivation : MonoBehaviour
     private void ActivateLosePanel()
     {
         _milageResultText.text = _odometer.GetCurrentMilage().ToString();
-
+        _losePanel.SetActive(true);
         Pause();
         if (_watchedAdv == false)
         {
@@ -69,7 +70,9 @@ public class LosePanelActivation : MonoBehaviour
         else
         {
             _anim.Play("LosePanelAnim Only Menu");
-        } 
+            Destroy(_carGenerator);
+            DOTween.KillAll();
+        }
     }
 
 
@@ -95,9 +98,11 @@ public class LosePanelActivation : MonoBehaviour
 
     public void ReturnToGame()
     {
-        _audioSources.gameObject.SetActive(true);
+        if(_audioSources != null)
+        {
+            _audioSources.gameObject.SetActive(true);
+        }
         PlayerPrefs.SetInt("RebirthCount", PlayerPrefs.GetInt("RebirthCount") + 1);
-        print("+rebirth");
         _speedometer.enabled = true;
         _odometer.IsCounting(true);
         _carSceneSetter.SetAndActivateCar();

@@ -8,7 +8,6 @@ using System;
 using UnityEngine.UI;
 using Unity.VisualScripting;
 
-[RequireComponent(typeof(Animator))]
 public class PoliceCar : MonoBehaviour
 {
 	[SerializeField] private GameObject _shield;
@@ -32,6 +31,7 @@ public class PoliceCar : MonoBehaviour
 	private Playable _animation;
 	private bool shieldActive;
 	public bool IsShieldActive;
+
 	[HideInInspector] public float NitroTime = 3.5f;
 
 	private AudioSource _audioSource;
@@ -110,7 +110,8 @@ public class PoliceCar : MonoBehaviour
 		else if(collision.gameObject.tag == "SpeedBooster")
 		{
 		    Destroy(collision.gameObject);
-			StartCoroutine(ActivateNitro());
+            EventManager.OnPlayerTookNitro();
+            StartCoroutine(ActivateNitro());
 		    StartCoroutine(_spd.SpeedBoosterController());
 		}
 		

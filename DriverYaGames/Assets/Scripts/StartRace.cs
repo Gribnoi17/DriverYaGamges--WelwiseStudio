@@ -52,7 +52,7 @@ public class StartRace : MonoBehaviour
 
         if (_gameRuler.Difficult == _gameRuler.difficulty[0])
         {
-            _timer.text = "10";
+            _timer.text = "60";
         }
         else if (_gameRuler.Difficult == _gameRuler.difficulty[1])
         {

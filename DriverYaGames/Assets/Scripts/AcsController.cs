@@ -12,7 +12,6 @@ public class AcsController : MonoBehaviour
     [SerializeField] private float deadZone;
     [SerializeField] private float rotateSpeed;
     [SerializeField] private TextMeshProUGUI _value;
-    [SerializeField] private TextMeshProUGUI _valueForUnity;
 
     [Header("Coordinates")]
     [SerializeField] private float maxX;
@@ -57,7 +56,7 @@ public class AcsController : MonoBehaviour
         }
         catch
         {
-            print("acs error");
+            print("acs text error");
         }
         if (_acceleration > deadZone && _rB.transform.position.x < maxX)
         {
@@ -79,6 +78,9 @@ public class AcsController : MonoBehaviour
         }
         else
         {
+            if (_rB == null)
+                return;
+
             _rB.velocity = new Vector3(0f, 0f, 0f);
                 animator.SetBool("None", true);
                 animator.SetBool("LeftTurn", false);

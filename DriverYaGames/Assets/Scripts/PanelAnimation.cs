@@ -69,14 +69,13 @@ public class PanelAnimation : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.SetInt("MoneyNameConst", 15000);
+        PlayerPrefs.SetInt("MoneyNameConst", 16000);
         Time.timeScale = 1f;
         DOTween.Init();
     }
 
     private void Start()
     {
-        PlayerPrefs.SetInt("MoneyNameConst", 15000);
         SetPlayerPrefs();
         SetCurrentCarByPrefs();
         _secondCanvas.alpha = 0f;
@@ -88,7 +87,6 @@ public class PanelAnimation : MonoBehaviour
 
     private void SetPlayerPrefs()
     {
-        //PlayerPrefs.SetInt("MoneyNameConst", 15000);
         if (PlayerPrefs.HasKey("MoneyNameConst"))
         {
             UpdateMoneyText();
@@ -124,7 +122,7 @@ public class PanelAnimation : MonoBehaviour
                 _slantChoicePanel.SetActive(true);
             }
         }
-        else if (PlayerPrefs.GetInt("IsMobile") == 1)
+        else if (!PlayerPrefs.HasKey("ControllerType") && PlayerPrefs.GetInt("IsMobile") == 1)
         {
             _firstCanvas.gameObject.SetActive(false);
             ControlChoicePanelAppears();
