@@ -85,11 +85,11 @@ public class MusicController : MonoBehaviour
 
     public void OffEngine()
     {
-        _mixerGroup.audioMixer.SetFloat("Engine", Mathf.Lerp(-80, 0, 0));
+        _mixerGroup.audioMixer.SetFloat("Engine", -80);
     }
     public void OnEngine()
     {
-        _mixerGroup.audioMixer.SetFloat("Engine", Mathf.Lerp(-80, 0, 1));
+        _mixerGroup.audioMixer.SetFloat("Engine", 0);
     }
 
     private void CheckCurrentScene()
@@ -109,7 +109,7 @@ public class MusicController : MonoBehaviour
                 _musicSource.Play();
                 _activSceneName = sceneName;
             }
-            
+            StartCoroutine(FindSliders());
         }
     }
 
