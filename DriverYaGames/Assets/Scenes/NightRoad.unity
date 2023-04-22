@@ -5985,10 +5985,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc7f5e591f601de46beea97a5e111536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PoliceCar: {fileID: 1947941069}
-  WhitePoliceCar: {fileID: 1861734151}
-  SportCar: {fileID: 821928032}
-  SciFiCar: {fileID: 1978141389}
+  _policeCar: {fileID: 1947941069}
+  _whitePoliceCar: {fileID: 1861734151}
+  _sportCar: {fileID: 821928032}
+  _sciFiCar: {fileID: 1978141389}
 --- !u!4 &1691936633
 Transform:
   m_ObjectHideFlags: 0
