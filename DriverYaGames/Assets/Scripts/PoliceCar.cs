@@ -42,7 +42,7 @@ public class PoliceCar : MonoBehaviour
 
 	private void Start()
 	{
-		
+        CheckKeyboardAccess();
 		StartCoroutine(StartSound());
 	}
 
@@ -101,7 +101,7 @@ public class PoliceCar : MonoBehaviour
 
     private void KeyboardControl()
     {
-        if (_canMove && _isKeyboardAvailable)
+        if (_isKeyboardAvailable)
         {
             MoveKeyboard(KeyCode.A, -1);
             MoveKeyboard(KeyCode.D, 1);

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ public class SliderVolumeController : MonoBehaviour
     [SerializeField] private AudioClip _playClick;
     [SerializeField] private AudioClip _changeCar;
     [SerializeField] private AudioClip _buyFire;
+    [SerializeField] private AudioClip _winSound;
 
     private MusicController _musCont;
     [SerializeField]private AudioSource _source;
@@ -73,5 +75,20 @@ public class SliderVolumeController : MonoBehaviour
     {
         _source.clip = _uiClick;
         _source.PlayOneShot(_buyFire);
+    }
+
+    public void WinSoundsStart()
+    {
+        StartCoroutine(WinSounds());
+    }
+
+    private IEnumerator WinSounds()
+    {
+        _source.PlayOneShot(_winSound);
+        while (true)
+        {
+            _source.PlayOneShot(_buyFire);
+            yield return new WaitForSeconds(1f);
+        }
     }
 }
