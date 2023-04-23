@@ -14,6 +14,7 @@ public class StartRace : MonoBehaviour
     [SerializeField] private GameRules _gameRuler;
     [SerializeField] private GameObject _endConfetti;
     [SerializeField] private Generator _gen;
+    [SerializeField] private SliderVolumeController _sVC;
 
     [Header("UI")]
     [SerializeField] private GameObject _winPanel;
@@ -94,12 +95,14 @@ public class StartRace : MonoBehaviour
 
     private IEnumerator Win()
     {
+        PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
         _timer.text = "0";
         while (_spd.CurrentSpeed > 0)
         {
             _spd.CurrentSpeed = -1;
         }
         _endConfetti.SetActive(true);
+        _sVC.WinSoundsStart();
         _losePanelScript.Pause();
         yield return new WaitForSeconds(2f);
         _winPanel.SetActive(true);
@@ -107,6 +110,5 @@ public class StartRace : MonoBehaviour
         {
             RateGame();
         }
-        print("----Звук победы----");
     }
 }
