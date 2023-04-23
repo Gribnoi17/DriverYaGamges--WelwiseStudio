@@ -13,6 +13,8 @@ public class SceneOptimization : MonoBehaviour
     [SerializeField] private UniversalRenderPipelineAsset pipelineAsset;
     public Camera _mainCamera;
 
+    [SerializeField] private Skybox[] _skyboxes;
+
     [Header("Fog settings")]
     [SerializeField] private float _fogStartDistance = 0f;
     [SerializeField] private float _fogEndDistance = 15f;
@@ -34,6 +36,10 @@ public class SceneOptimization : MonoBehaviour
     private void Awake()
     {
         //PlayerPrefs.DeleteAll();
+        foreach(Skybox sky in _skyboxes)
+        {
+            //sky.material.
+        }
         
         if (_sceneType == SceneType.Menu)
             try

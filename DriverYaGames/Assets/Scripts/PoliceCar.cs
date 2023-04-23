@@ -26,7 +26,6 @@ public class PoliceCar : MonoBehaviour
 
 
 	private float _timeShield = 5f;
-	private bool _isPlaying = true;
 	private int _lineIndex = 1;
 	private Playable _animation;
 	private bool shieldActive;
@@ -37,13 +36,22 @@ public class PoliceCar : MonoBehaviour
 	private AudioSource _audioSource;
 	private bool _canMove;
 	public bool CanMove{ set {_canMove = value;} }
+	private bool _isKeyboardAvailable;
+
 
 
 	private void Start()
 	{
+		
 		StartCoroutine(StartSound());
-		_isPlaying= true; 
 	}
+
+	private void CheckKeyboardAccess()
+    {
+		if (PlayerPrefs.GetInt("IsMobile") == 0)
+			_isKeyboardAvailable = true;
+    }
+
 
 	private IEnumerator StartSound()
 	{
@@ -53,6 +61,8 @@ public class PoliceCar : MonoBehaviour
         _audioSource.clip = _soundEngine;
 		_audioSource.Play();
 	}
+
+
 	 private void OnEnable()
 	 {
 		SwipeDetection.SwipeEvent += OnSwipe;
@@ -72,7 +82,6 @@ public class PoliceCar : MonoBehaviour
 	 private void OnSwipe(Vector2 direction)
 	 {
 		MoveSwipe(direction);
-		_isPlaying = false;
 	 }
 
 	 private void OnDestroy()
@@ -86,8 +95,13 @@ public class PoliceCar : MonoBehaviour
 	}
 
 	private void Update()
-	{
-		if (_canMove)
+    {
+        KeyboardControl();
+    }
+
+    private void KeyboardControl()
+    {
+        if (_canMove && _isKeyboardAvailable)
         {
             MoveKeyboard(KeyCode.A, -1);
             MoveKeyboard(KeyCode.D, 1);
@@ -96,7 +110,7 @@ public class PoliceCar : MonoBehaviour
         }
     }
 
-	 private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
 	 {
 		if(collision.gameObject.tag == "Shield")
 		{
@@ -124,8 +138,8 @@ public class PoliceCar : MonoBehaviour
 			 SwipeDetection.SwipeEvent -= OnSwipe;
 			 transform.parent.gameObject.SetActive(false);
 			 //gameObject.SetActive(false);
-			 _isPlaying= false;
-		  }else
+		  }
+		  else
 		  {
 			 Destroy(collision.gameObject);
 		  }
@@ -143,7 +157,6 @@ public class PoliceCar : MonoBehaviour
         //StartCoroutine(_spd.SpeedUnBusterOrShielPickUp());
         yield return new WaitForSeconds(_timeShield);
         DeactivateSchield();
-        StopCoroutine(ShieldController());
     }
 
     private void DeactivateSchield()

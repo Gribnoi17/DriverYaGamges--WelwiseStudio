@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CarSceneSetter : MonoBehaviour
 {
-    [SerializeField] private GameObject PoliceCar;
-    [SerializeField] private GameObject WhitePoliceCar;
-    [SerializeField] private GameObject SportCar;
-    [SerializeField] private GameObject SciFiCar;
-
+    [SerializeField] private GameObject _policeCar;
+    [SerializeField] private GameObject _whitePoliceCar;
+    [SerializeField] private GameObject _sportCar;
+    [SerializeField] private GameObject _sciFiCar;
+    private List<GameObject> _cars;
 
     private void Start()
     {
@@ -19,22 +19,34 @@ public class CarSceneSetter : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Car") == "PoliceCar")
         {
-            PoliceCar.gameObject.SetActive(true);
+            _policeCar.gameObject.SetActive(true);
+            Destroy(_sciFiCar);
+            Destroy(_sportCar);
+            Destroy(_whitePoliceCar);
         }
 
         if (PlayerPrefs.GetString("Car") == "WhitePoliceCar")
         {
-            WhitePoliceCar.gameObject.SetActive(true);
+            _whitePoliceCar.gameObject.SetActive(true);
+            Destroy(_sciFiCar);
+            Destroy(_sportCar);
+            Destroy(_policeCar);
         }
 
         if (PlayerPrefs.GetString("Car") == "SportCar")
         {
-            SportCar.gameObject.SetActive(true);
+            _sportCar.gameObject.SetActive(true);
+            Destroy(_sciFiCar);
+            Destroy(_policeCar);
+            Destroy(_whitePoliceCar);
         }
 
         if (PlayerPrefs.GetString("Car") == "SciFiCar")
         {
-            SciFiCar.gameObject.SetActive(true);
+            _sciFiCar.gameObject.SetActive(true);
+            Destroy(_sportCar);
+            Destroy(_policeCar);
+            Destroy(_whitePoliceCar);
         }
     }
 }

@@ -94,7 +94,8 @@ public class StartRace : MonoBehaviour
 
     private IEnumerator Win()
     {
-        while(_spd.CurrentSpeed > 0)
+        _timer.text = "0";
+        while (_spd.CurrentSpeed > 0)
         {
             _spd.CurrentSpeed = -1;
         }
