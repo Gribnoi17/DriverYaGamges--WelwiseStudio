@@ -48,7 +48,7 @@ public class LosePanelActivation : MonoBehaviour
     public void SaveMoney()
     {
         PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _money.GetCurrentAmount());
-        _carGenerator.gameObject.SetActive(false);
+        Destroy(_carGenerator);
     }
 
     private void ShowPanelThroughtTime()
@@ -70,7 +70,6 @@ public class LosePanelActivation : MonoBehaviour
         else
         {
             _anim.Play("LosePanelAnim Only Menu");
-            Destroy(_carGenerator);
             DOTween.KillAll();
         }
     }
