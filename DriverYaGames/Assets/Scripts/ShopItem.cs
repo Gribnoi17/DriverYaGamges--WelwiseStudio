@@ -11,6 +11,7 @@ public class ShopItem : MonoBehaviour
     public bool _isLocked = true;
     [SerializeField] private GameObject _lockPanel;
     [SerializeField] private Button _buyButton;
+    [SerializeField] private Achivments _ach;
 
     private PanelAnimation _panelAnimation;
     private enum _typeOfItem { Car, Location }
@@ -44,6 +45,7 @@ public class ShopItem : MonoBehaviour
         _lockPanel.SetActive(false);
         PlayerPrefs.SetString(_itemName, "Unlocked");
         _isLocked = false;
+        StartCoroutine(_ach.ReCheck());
     }
 
     public void BuyItem()
