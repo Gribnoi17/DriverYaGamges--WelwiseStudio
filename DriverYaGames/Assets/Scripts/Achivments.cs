@@ -329,9 +329,9 @@ public class Achivments : MonoBehaviour
     {
         int n = PlayerPrefs.GetInt("MileageOnFirstLocation");
         int nn = PlayerPrefs.GetInt("MileageOnSecondLocation");
-        if(n >= 1000)
+        if(n > 1000)
             n = 1000;
-        else if(nn >= 1000)
+        if(nn > 1000)
             nn = 1000;
 
         for (int i = 0; i < _allAchivments.Count; i++)
