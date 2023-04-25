@@ -53,15 +53,15 @@ public class LosePanelActivation : MonoBehaviour
 
     private void ShowPanelThroughtTime()
     {
+        Pause();
         Invoke("ActivateLosePanel", 0.7f);
     }
 
 
     private void ActivateLosePanel()
     {
-        _milageResultText.text = _odometer.GetCurrentMilage().ToString();
         _losePanel.SetActive(true);
-        Pause();
+        _milageResultText.text = _odometer.GetCurrentMilage().ToString();
         if (_watchedAdv == false)
         {
             _anim.Play("LosePanelAnim");
@@ -84,7 +84,8 @@ public class LosePanelActivation : MonoBehaviour
 
         _speedometer.enabled = false;
         _odometer.IsCounting(false);
-        _audioSources.gameObject.SetActive(false);
+        if(_audioSources != null)
+            _audioSources.gameObject.SetActive(false);
         _carGenerator.RemoveAllChildren();
         _carGenerator.gameObject.SetActive(false);
     }
