@@ -2135,6 +2135,7 @@ MonoBehaviour:
   _receivePanel: {fileID: 1195278594}
   _persent: {fileID: 1191536693}
   _moneyForReward: 300
+  _completed: 0
 --- !u!1 &161238206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2406,6 +2407,7 @@ MonoBehaviour:
   _tPC: {fileID: 1271335795}
   _thirdLocation: {fileID: 922215291}
   _moneyText: {fileID: 1916311790}
+  _car: {fileID: 0}
   countNotReceived: 0
 --- !u!1 &164813012
 GameObject:
@@ -3790,6 +3792,7 @@ MonoBehaviour:
   _receivePanel: {fileID: 284188652}
   _persent: {fileID: 1614914404}
   _moneyForReward: 300
+  _completed: 0
 --- !u!1 &220600247
 GameObject:
   m_ObjectHideFlags: 0
@@ -8468,6 +8471,7 @@ MonoBehaviour:
   _receivePanel: {fileID: 25678248}
   _persent: {fileID: 2006114552}
   _moneyForReward: 300
+  _completed: 0
 --- !u!1 &518876511
 GameObject:
   m_ObjectHideFlags: 0
@@ -18391,6 +18395,7 @@ MonoBehaviour:
   _receivePanel: {fileID: 989965030}
   _persent: {fileID: 1462409055}
   _moneyForReward: 300
+  _completed: 0
 --- !u!1 &1135141929
 GameObject:
   m_ObjectHideFlags: 0
@@ -25245,7 +25250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ItemType: 0
-  _itemName: ScifiCar
+  _itemName: SciFiCar
   _itemCost: 5000
   _isLocked: 1
   _lockPanel: {fileID: 427851157}
@@ -26276,6 +26281,7 @@ MonoBehaviour:
   _receivePanel: {fileID: 1646144180}
   _persent: {fileID: 1227480175}
   _moneyForReward: 300
+  _completed: 0
 --- !u!1 &1579676486
 GameObject:
   m_ObjectHideFlags: 0
@@ -26774,6 +26780,7 @@ MonoBehaviour:
   _receivePanel: {fileID: 80491319}
   _persent: {fileID: 687205209}
   _moneyForReward: 300
+  _completed: 0
 --- !u!1 &1595116273
 GameObject:
   m_ObjectHideFlags: 0
@@ -28186,6 +28193,7 @@ MonoBehaviour:
   _receivePanel: {fileID: 591179471}
   _persent: {fileID: 1949079293}
   _moneyForReward: 300
+  _completed: 0
 --- !u!1 &1646144180
 GameObject:
   m_ObjectHideFlags: 0
@@ -28369,6 +28377,7 @@ MonoBehaviour:
   _receivePanel: {fileID: 536957696}
   _persent: {fileID: 1615114975}
   _moneyForReward: 300
+  _completed: 0
 --- !u!1 &1661913019
 GameObject:
   m_ObjectHideFlags: 0
@@ -29434,6 +29443,7 @@ MonoBehaviour:
   _receivePanel: {fileID: 1928191892}
   _persent: {fileID: 1105045497}
   _moneyForReward: 300
+  _completed: 0
 --- !u!1 &1726488485
 GameObject:
   m_ObjectHideFlags: 0
@@ -31464,6 +31474,7 @@ MonoBehaviour:
   _receivePanel: {fileID: 329946659}
   _persent: {fileID: 191419135}
   _moneyForReward: 300
+  _completed: 0
 --- !u!1 &1803661058
 GameObject:
   m_ObjectHideFlags: 0

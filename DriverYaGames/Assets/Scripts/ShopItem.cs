@@ -44,6 +44,7 @@ public class ShopItem : MonoBehaviour
     {
         _lockPanel.SetActive(false);
         PlayerPrefs.SetString(_itemName, "Unlocked");
+        garageSetUp.SetLocationByPlayerPrefs();
         _isLocked = false;
         StartCoroutine(_ach.ReCheck());
     }
@@ -53,6 +54,7 @@ public class ShopItem : MonoBehaviour
         if(PlayerPrefs.GetInt("MoneyNameConst") >= _itemCost && _isLocked)
         {
             PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") - _itemCost);
+            PlayerPrefs.SetString("ChousenLocation", _itemName);
             UnlockItem();
             if (_ItemType == _typeOfItem.Car)
             {
