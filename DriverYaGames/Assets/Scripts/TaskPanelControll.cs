@@ -23,7 +23,6 @@ public class TaskPanelControll : MonoBehaviour
         _textColor = _text.color; _textColor.a = 0f;
         _text.color = _textColor;
         _textFlicker = true;
-        //StartCoroutine(StartExitPeriod());
     }
 
     private void UnVisible()
@@ -31,21 +30,11 @@ public class TaskPanelControll : MonoBehaviour
         _textFlicker = false;
     }
 
-    private IEnumerator StartExitPeriod()
-    {
-        if (_alreadyRunning)
-        {
-            yield return new WaitForSeconds(10f);
-            StartUnVisible();
-        }
-    }
-
-
     private IEnumerator Visible()
     {
         _alreadyRunning = true;
         _textFlicker = true;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         for (float f = 0.05f; f <= 1f; f += 0.05f)
         {
             _color.a = f;

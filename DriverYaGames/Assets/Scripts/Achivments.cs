@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class Achivments : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Achivments : MonoBehaviour
     [SerializeField] private TaskPanelControll _tPC;
     [SerializeField] private ShopItem _thirdLocation;
     [SerializeField] private TextMeshProUGUI _moneyText;
+    [SerializeField] private ShopItem _car;
 
     [Header("To view")]
     [SerializeField] private int countNotReceived = 0;
@@ -27,7 +29,15 @@ public class Achivments : MonoBehaviour
     private void Start()
     {
         //PlayerPrefs.DeleteAll();
-        ReCheck();
+
+        CheckActivAchivs();
+
+        if (!PlayerPrefs.HasKey("LocationsCount")) 
+            PlayerPrefs.SetInt("LocationsCount", 1);
+        if (!PlayerPrefs.HasKey("CarsCount")) 
+            PlayerPrefs.SetInt("CarsCount", 1);
+
+        StartCoroutine(ReCheck());
     }
 
     private void CheckAchiv(int numAchiv)
@@ -69,24 +79,18 @@ public class Achivments : MonoBehaviour
 
     private void AchivmentOne()
     {
-        if (PlayerPrefs.GetInt("CarsCount") >= 1)
+        if (PlayerPrefs.GetInt("CarsCount") >= 2)
         {
             for(int i = 0; i < _allAchivments.Count; i++)
             {
                 if (_allAchivments[i].NumberAchiv == 1)
                 {
                     _allAchivments[i].ChangeReceivePanel();
-                    _allAchivments[i].ChangePersent(100);
                     OnAchivPanel();
                     break;
                 }
             }
         }
-    }
-
-    private void UpdateMoneyText()
-    {
-        _moneyText.text = PlayerPrefs.GetInt("MoneyNameConst").ToString();
     }
 
     public void AchivmentOneGetReward()
@@ -96,6 +100,7 @@ public class Achivments : MonoBehaviour
             if(_allAchivments[i].NumberAchiv == 1)
             {
                 _allAchivments[i].ChangeCompleted();
+                ChangeCompleted(1);
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
                 UpdateMoneyText();
                 OffAchivPanel();
@@ -113,7 +118,6 @@ public class Achivments : MonoBehaviour
                 if (_allAchivments[i].NumberAchiv == 2)
                 {
                     _allAchivments[i].ChangeReceivePanel();
-                    _allAchivments[i].ChangePersent(100);
                     OnAchivPanel();
                     break;
                 }
@@ -127,7 +131,8 @@ public class Achivments : MonoBehaviour
         {
             if (_allAchivments[i].NumberAchiv == 2)
             {
-                _allAchivments[i].ChangeCompleted();     
+                _allAchivments[i].ChangeCompleted();
+                ChangeCompleted(2);
                 OffAchivPanel();
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
                 UpdateMoneyText();
@@ -145,7 +150,6 @@ public class Achivments : MonoBehaviour
                 if (_allAchivments[i].NumberAchiv == 3)
                 {
                     _allAchivments[i].ChangeReceivePanel();
-                    _allAchivments[i].ChangePersent(100);
                     OnAchivPanel();
                     break;
                 }
@@ -160,6 +164,7 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 3)
             {
                 _allAchivments[i].ChangeCompleted();
+                ChangeCompleted(3);
                 OffAchivPanel();
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
                 UpdateMoneyText();
@@ -178,7 +183,6 @@ public class Achivments : MonoBehaviour
                 if (deathCount >= 10)
                 {
                     _allAchivments[i].ChangeReceivePanel();
-                    _allAchivments[i].ChangePersent(100);
                     OnAchivPanel();
                     UpdateMoneyText();
                     break;
@@ -199,6 +203,7 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 4)
             {
                 _allAchivments[i].ChangeCompleted();
+                ChangeCompleted(4);
                 OffAchivPanel();
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
                 UpdateMoneyText();
@@ -217,7 +222,6 @@ public class Achivments : MonoBehaviour
                 if (rebirthCount >= 7)
                 {
                     _allAchivments[i].ChangeReceivePanel();
-                    _allAchivments[i].ChangePersent(100);
                     OnAchivPanel();
                     UpdateMoneyText();
                     break;
@@ -237,6 +241,7 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 5)
             {
                 _allAchivments[i].ChangeCompleted();
+                ChangeCompleted(5);
                 OffAchivPanel();
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
                 UpdateMoneyText();
@@ -255,7 +260,6 @@ public class Achivments : MonoBehaviour
                 if (n >= 666)
                 {
                     _allAchivments[i].ChangeReceivePanel();
-                    _allAchivments[i].ChangePersent(100);
                     OnAchivPanel();
                     break;
                 }
@@ -275,8 +279,9 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 6)
             {
                 _allAchivments[i].ChangeCompleted();
+                ChangeCompleted(6);
                 OffAchivPanel();
-                //дать машину
+                _car.UnlockItem();
                 _allAchivments.RemoveAt(i);
             }
         }
@@ -292,7 +297,6 @@ public class Achivments : MonoBehaviour
                 if (n >= 25)
                 {
                     _allAchivments[i].ChangeReceivePanel();
-                    _allAchivments[i].ChangePersent(100);
                     OnAchivPanel();
                     break;
                 }
@@ -312,6 +316,7 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 7)
             {
                 _allAchivments[i].ChangeCompleted();
+                ChangeCompleted(7);
                 OffAchivPanel();
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
                 UpdateMoneyText();
@@ -324,9 +329,9 @@ public class Achivments : MonoBehaviour
     {
         int n = PlayerPrefs.GetInt("MileageOnFirstLocation");
         int nn = PlayerPrefs.GetInt("MileageOnSecondLocation");
-        if(n >= 1000)
+        if(n > 1000)
             n = 1000;
-        else if(nn >= 1000)
+        if(nn > 1000)
             nn = 1000;
 
         for (int i = 0; i < _allAchivments.Count; i++)
@@ -336,7 +341,6 @@ public class Achivments : MonoBehaviour
                 if (n >= 1000 && nn >= 1000)
                 {
                     _allAchivments[i].ChangeReceivePanel();
-                    _allAchivments[i].ChangePersent(100);
                     OnAchivPanel();
                     break;
                 }
@@ -356,6 +360,7 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 8)
             {
                 _allAchivments[i].ChangeCompleted();
+                ChangeCompleted(8);
                 OffAchivPanel();
                 _thirdLocation.UnlockItem();
                 _allAchivments.RemoveAt(i);
@@ -365,21 +370,19 @@ public class Achivments : MonoBehaviour
 
     private void AchivmentNine()
     {
-        int n = PlayerPrefs.GetInt("CarsCount");
-        for (int i = 0; i < _allAchivments.Count; i++)
+        for ( int i = 0; i < _allAchivments.Count; i++)
         {
             if (_allAchivments[i].NumberAchiv == 9)
             {
-                if (n == 4)
+                if (PlayerPrefs.GetInt("CarsCount") == 4)
                 {
                     _allAchivments[i].ChangeReceivePanel();
-                    _allAchivments[i].ChangePersent(100);
                     OnAchivPanel();
                     break;
                 }
                 else
                 {
-                    _allAchivments[i].ChangePersent(Convert.ToInt32(n * 100f / 4));
+                    _allAchivments[i].ChangePersent(Convert.ToInt32(PlayerPrefs.GetInt("CarsCount") * 100f / 4));
                     break;
                 }
             }
@@ -393,6 +396,7 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 9)
             {
                 _allAchivments[i].ChangeCompleted();
+                ChangeCompleted(9);
                 OffAchivPanel();
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
                 UpdateMoneyText();
@@ -411,7 +415,6 @@ public class Achivments : MonoBehaviour
                 if (n >= 9)
                 {
                     _allAchivments[i].ChangeReceivePanel();
-                    _allAchivments[i].ChangePersent(100);
                     OnAchivPanel();
                     break;
                 }
@@ -431,6 +434,7 @@ public class Achivments : MonoBehaviour
             if (_allAchivments[i].NumberAchiv == 10)
             {
                 _allAchivments[i].ChangeCompleted();
+                ChangeCompleted(10);
                 OffAchivPanel();
                 PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _allAchivments[i].GetCountMoneuForReward());
                 UpdateMoneyText();
@@ -462,11 +466,66 @@ public class Achivments : MonoBehaviour
              
     }
 
-    public void ReCheck()
+    public IEnumerator ReCheck()
     {
+        yield return new WaitForSeconds(0.5f);
         foreach (Task task in _allAchivments)
         {
             CheckAchiv(task.NumberAchiv);
         }
+        StopCoroutine(ReCheck());
+    }
+
+    private void CheckActivAchivs()
+    {
+        for(int numAchiv = 0; numAchiv < _allAchivments.Count; numAchiv++)
+        {
+            int n = _allAchivments[numAchiv].NumberAchiv;
+            if (PlayerPrefs.HasKey($"A{n}"))
+            {
+                if (PlayerPrefs.GetInt($"A{n}") == 0)
+                    _allAchivments[numAchiv].Completed = false;
+                else
+                    _allAchivments[numAchiv].Completed = true;
+            }
+            else
+            { _allAchivments[numAchiv].Completed = false; PlayerPrefs.SetInt($"A{n}", 0); }
+        }
+
+        var _numForDel = new List<int>();
+        foreach (Task t in _allAchivments)
+        {
+            if(t.Completed)
+            {
+                for(int i = 0; i < _allAchivments.Count; i++)
+                {
+                    if (_allAchivments[i].NumberAchiv == t.NumberAchiv)
+                    {
+                        _allAchivments[i].ChangeCompleted();
+                        _numForDel.Add(_allAchivments[i].NumberAchiv);
+                    }   
+                }
+            }
+        }
+        foreach(int i in _numForDel)
+        {
+            for(int n = 0; n < _allAchivments.Count; n++)
+            {
+                if (_allAchivments[n].NumberAchiv == i)
+                {
+                    _allAchivments.RemoveAt(n);
+                }
+            }
+        }
+    }
+
+    private void ChangeCompleted(int numAchiv)
+    {
+        PlayerPrefs.SetInt($"A{numAchiv}", 1);
+    }
+
+    private void UpdateMoneyText()
+    {
+        _moneyText.text = PlayerPrefs.GetInt("MoneyNameConst").ToString();
     }
 }

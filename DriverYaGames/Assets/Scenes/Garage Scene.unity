@@ -1029,18 +1029,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: ReCheck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &42720067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,6 +1047,7 @@ MonoBehaviour:
   _isLocked: 1
   _lockPanel: {fileID: 1607453985}
   _buyButton: {fileID: 866099795}
+  _ach: {fileID: 164620601}
 --- !u!1 &54015106
 GameObject:
   m_ObjectHideFlags: 0
@@ -5757,18 +5746,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: ReCheck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &328764199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5787,6 +5764,7 @@ MonoBehaviour:
   _isLocked: 1
   _lockPanel: {fileID: 370115995}
   _buyButton: {fileID: 866099795}
+  _ach: {fileID: 164620601}
 --- !u!1 &329946659
 GameObject:
   m_ObjectHideFlags: 0
@@ -5804,7 +5782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &329946660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9090,18 +9068,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: ReCheck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &566724812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9158,6 +9124,7 @@ MonoBehaviour:
   _isLocked: 0
   _lockPanel: {fileID: 1049594239}
   _buyButton: {fileID: 866099795}
+  _ach: {fileID: 164620601}
 --- !u!1 &572527684
 GameObject:
   m_ObjectHideFlags: 0
@@ -13788,18 +13755,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: ReCheck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1752272787}
         m_TargetAssemblyTypeName: SliderVolumeController, Assembly-CSharp
         m_MethodName: BuyButtonSound
@@ -14733,18 +14688,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: ReCheck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 922215291}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: ActivateBuyButton
@@ -14813,6 +14756,7 @@ MonoBehaviour:
   _isLocked: 1
   _lockPanel: {fileID: 1265472953}
   _buyButton: {fileID: 866099795}
+  _ach: {fileID: 164620601}
 --- !u!1 &923141495
 GameObject:
   m_ObjectHideFlags: 0
@@ -25288,18 +25232,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: ReCheck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1464557820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25318,6 +25250,7 @@ MonoBehaviour:
   _isLocked: 1
   _lockPanel: {fileID: 427851157}
   _buyButton: {fileID: 866099795}
+  _ach: {fileID: 164620601}
 --- !u!1 &1479809400
 GameObject:
   m_ObjectHideFlags: 0
@@ -26738,6 +26671,7 @@ MonoBehaviour:
   _isLocked: 0
   _lockPanel: {fileID: 849589287}
   _buyButton: {fileID: 866099795}
+  _ach: {fileID: 164620601}
 --- !u!1 &1584365383
 GameObject:
   m_ObjectHideFlags: 0
@@ -36842,18 +36776,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164620601}
-        m_TargetAssemblyTypeName: Achivments, Assembly-CSharp
-        m_MethodName: ReCheck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2077784279}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
         m_MethodName: ActivateBuyButton
@@ -36922,6 +36844,7 @@ MonoBehaviour:
   _isLocked: 1
   _lockPanel: {fileID: 283683854}
   _buyButton: {fileID: 866099795}
+  _ach: {fileID: 164620601}
 --- !u!1 &2077997896
 GameObject:
   m_ObjectHideFlags: 0

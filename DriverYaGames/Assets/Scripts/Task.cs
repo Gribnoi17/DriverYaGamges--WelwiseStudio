@@ -13,8 +13,9 @@ public class Task : MonoBehaviour
     [SerializeField] private GameObject _receivePanel;
     [SerializeField] private TextMeshProUGUI _persent;
     [SerializeField] private int _moneyForReward;
-    private bool _completed = false;
-    public bool Completed { get { return _completed; }}
+    [Header("For Watch")]
+    [SerializeField] private bool _completed;
+    public bool Completed { get { return _completed; } set { _completed = value; } }
 
     private bool _needReceive;
 
@@ -30,6 +31,7 @@ public class Task : MonoBehaviour
 
     public void ChangeReceivePanel()
     {
+        ChangePersent(100);
         _receivePanel.SetActive(true);
         _needReceive= true;
     }
@@ -45,5 +47,6 @@ public class Task : MonoBehaviour
         _receivePanel.SetActive(false);
         _completed = true;
         _donePanel.SetActive(true);
+        ChangePersent(100);
     }
 }
