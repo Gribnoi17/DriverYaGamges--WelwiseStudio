@@ -1252,6 +1252,11 @@ PrefabInstance:
       objectReference: {fileID: 1861734152}
     - target: {fileID: 7181025179168542684, guid: 11e0516ca88dd32479f4951fe5583517,
         type: 3}
+      propertyPath: _canvasAS
+      value: 
+      objectReference: {fileID: 6804371122547150253}
+    - target: {fileID: 7181025179168542684, guid: 11e0516ca88dd32479f4951fe5583517,
+        type: 3}
       propertyPath: _linePoint
       value: 
       objectReference: {fileID: 560263413}
@@ -3130,6 +3135,11 @@ PrefabInstance:
       objectReference: {fileID: 1978141390}
     - target: {fileID: 688739117325121891, guid: 86b448cd30424ed449b67ea872227619,
         type: 3}
+      propertyPath: _canvasAS
+      value: 
+      objectReference: {fileID: 6804371122547150253}
+    - target: {fileID: 688739117325121891, guid: 86b448cd30424ed449b67ea872227619,
+        type: 3}
       propertyPath: _linePoint
       value: 
       objectReference: {fileID: 560263413}
@@ -3725,6 +3735,11 @@ PrefabInstance:
       propertyPath: _animator
       value: 
       objectReference: {fileID: 821928033}
+    - target: {fileID: 5185302141861730483, guid: 7fbf18738c14fa94bb04a37c9874ddae,
+        type: 3}
+      propertyPath: _canvasAS
+      value: 
+      objectReference: {fileID: 6804371122547150253}
     - target: {fileID: 5185302141861730483, guid: 7fbf18738c14fa94bb04a37c9874ddae,
         type: 3}
       propertyPath: _linePoint
@@ -5662,10 +5677,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PoliceCar
       objectReference: {fileID: 0}
-    - target: {fileID: 115512, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 437054, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5715,74 +5726,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6804371122547150256}
     - target: {fileID: 761245885, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
-      propertyPath: _nitro
-      value: 
-      objectReference: {fileID: 1768373286}
-    - target: {fileID: 761245885, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
       propertyPath: _animator
       value: 
       objectReference: {fileID: 1947941071}
     - target: {fileID: 761245885, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
+      propertyPath: _canvasAS
+      value: 
+      objectReference: {fileID: 6804371122547150253}
+    - target: {fileID: 761245885, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
       propertyPath: _linePoint
       value: 
       objectReference: {fileID: 560263413}
-    - target: {fileID: 2017029534, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.8679245
-      objectReference: {fileID: 0}
-    - target: {fileID: 2017029534, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.8679245
-      objectReference: {fileID: 0}
-    - target: {fileID: 2017029534, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.8679245
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108673378384319606, guid: 7be733fca5977484eab72a8eca73b1b2,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108673378384319606, guid: 7be733fca5977484eab72a8eca73b1b2,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108673378384319606, guid: 7be733fca5977484eab72a8eca73b1b2,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 124
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108673378384319606, guid: 7be733fca5977484eab72a8eca73b1b2,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3730266566971516016, guid: 7be733fca5977484eab72a8eca73b1b2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4327930522376964018, guid: 7be733fca5977484eab72a8eca73b1b2,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.75849056
-      objectReference: {fileID: 0}
-    - target: {fileID: 4327930522376964018, guid: 7be733fca5977484eab72a8eca73b1b2,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.75849056
-      objectReference: {fileID: 0}
-    - target: {fileID: 4327930522376964018, guid: 7be733fca5977484eab72a8eca73b1b2,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7497793276961711449, guid: 7be733fca5977484eab72a8eca73b1b2,
-        type: 3}
-      propertyPath: m_Center.z
-      value: 0.01
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7000,12 +6954,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1768373286 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3730266566971516016, guid: 7be733fca5977484eab72a8eca73b1b2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1556152782}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1801190800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9588,6 +9536,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &6804371122547150253 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1806880161, guid: 5804600525f66de4abf11111389ca287,
+    type: 3}
+  m_PrefabInstance: {fileID: 6804371122547150249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6804371122547150256 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3468248869513454277, guid: 5804600525f66de4abf11111389ca287,
