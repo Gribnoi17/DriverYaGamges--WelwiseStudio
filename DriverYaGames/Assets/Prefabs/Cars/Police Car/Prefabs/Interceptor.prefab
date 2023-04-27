@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 1556152790}
   m_Layer: 0
   m_Name: Interceptor
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -321,7 +321,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!65 &746323486296731211
 BoxCollider:
@@ -364,9 +364,9 @@ MonoBehaviour:
   _animator: {fileID: 0}
   _clipStart: {fileID: 8300000, guid: 99077207653a74846877ef5dc69cc8f0, type: 3}
   _soundEngine: {fileID: 8300000, guid: 316224186e8ae6543990a05f4dc13981, type: 3}
-  _shieldPickUp: {fileID: 0}
-  _collission: {fileID: 0}
-  _nitroSound: {fileID: 0}
+  _shieldPickUp: {fileID: 8300000, guid: 7927b0721fe612043ab5a6c686ada5b4, type: 3}
+  _collission: {fileID: 8300000, guid: 0535cebfc88fdf1459f7ebc4555b1acf, type: 3}
+  _nitroSound: {fileID: 8300000, guid: 81a01c9777140c34fb857ac325d215e9, type: 3}
   _nitro: {fileID: 3730266566971516016}
   _canvasAS: {fileID: 0}
   IsShieldActive: 0
@@ -493,7 +493,7 @@ Animator:
   m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 59f06fd9cfbad824ea384480572f9048, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -5751,7 +5751,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -11016,7 +11016,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.75849056, b: 0.75849056, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -15979,7 +15979,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.10648728, y: 0.07745696, z: 0.060496148}
-  m_Center: {x: 0.00034698923, y: 0.032788925, z: -0.013770287}
+  m_Center: {x: 0.00034698923, y: 0.032788925, z: 0.01}
 --- !u!4 &6241355998867805623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 06d91b1834b74e2498c5498be6e224e4,

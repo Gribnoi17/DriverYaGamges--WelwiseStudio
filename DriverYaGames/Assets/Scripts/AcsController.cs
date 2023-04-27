@@ -29,7 +29,8 @@ public class AcsController : MonoBehaviour
 
     private void Awake()
     {
-        Invoke("FindPlayer", 2f);
+        Invoke(nameof(FindPlayer), 3f);
+        //
     }
 
     private void FindPlayer()
@@ -40,9 +41,9 @@ public class AcsController : MonoBehaviour
 
     void Update()
     {
+        _acceleration = _testSlider.value;
         try
         {
-            //_acceleration = _testSlider.value;
             _value.text = _acceleration.ToString();
         }
         catch

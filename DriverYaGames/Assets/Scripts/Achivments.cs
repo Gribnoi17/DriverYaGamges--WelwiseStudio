@@ -517,6 +517,7 @@ public class Achivments : MonoBehaviour
                 }
             }
         }
+        ReCheck();
     }
 
     private void ChangeCompleted(int numAchiv)
