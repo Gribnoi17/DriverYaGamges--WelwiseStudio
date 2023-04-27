@@ -36,10 +36,6 @@ public class SceneOptimization : MonoBehaviour
     private void Awake()
     {
         //PlayerPrefs.DeleteAll();
-        foreach(Skybox sky in _skyboxes)
-        {
-            //sky.material.
-        }
         
         if (_sceneType == SceneType.Menu)
             try

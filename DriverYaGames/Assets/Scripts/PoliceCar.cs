@@ -28,8 +28,8 @@ public class PoliceCar : MonoBehaviour
 	private float _timeShield = 5f;
 	private int _lineIndex = 1;
 	private Playable _animation;
-	private bool shieldActive;
-	public bool IsShieldActive;
+	private bool shieldActive = false;
+	public bool IsShieldActive = false;
 
 	[HideInInspector] public float NitroTime = 3.5f;
 
@@ -43,9 +43,10 @@ public class PoliceCar : MonoBehaviour
 
 	private void Start()
 	{
-        CheckKeyboardAccess();
+		shieldActive = false;
+		CheckKeyboardAccess();
 		StartCoroutine(StartSound());
-		_losePanelScript = GameObject.FindObjectOfType<LosePanelActivation>();
+		_losePanelScript = FindObjectOfType<LosePanelActivation>();
 	}
 
 	private void CheckKeyboardAccess()
@@ -135,12 +136,13 @@ public class PoliceCar : MonoBehaviour
 		{
 		  if(shieldActive == false)
 		  {
-				_losePanelScript.ShowPanelThroughtTime();
+				Debug.Log("-----------Столкновение, метод коллизии----------------");
 				EventManager.OnPlayerDied();
 				_canvasAS.PlayOneShot(_collission);
 				SwipeDetection.SwipeEvent -= OnSwipe;
+				_losePanelScript.ShowPanelThroughtTime();
 				transform.parent.gameObject.SetActive(false);
-			 //gameObject.SetActive(false);
+				//gameObject.SetActive(false);
 		  }
 		  else
 		  {

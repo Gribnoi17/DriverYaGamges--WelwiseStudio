@@ -98,16 +98,16 @@ public class LosePanelActivation : MonoBehaviour
 
     public void ReturnToGame()
     {
-        if(_audioSources != null)
+        _pauseController.PauseStart();
+        if (_audioSources != null)
         {
             _audioSources.gameObject.SetActive(true);
         }
         PlayerPrefs.SetInt("RebirthCount", PlayerPrefs.GetInt("RebirthCount") + 1);
         _speedometer.enabled = true;
         _odometer.IsCounting(true);
+        _carGenerator.gameObject.SetActive(true);
         _carSceneSetter.SetAndActivateCar();
         _losePanel.SetActive(false);
-        _carGenerator.gameObject.SetActive(true);
-        _pauseController.PauseStart();
     }
 }

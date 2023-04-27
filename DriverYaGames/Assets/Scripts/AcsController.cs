@@ -41,7 +41,7 @@ public class AcsController : MonoBehaviour
 
     void Update()
     {
-        _acceleration = _testSlider.value;
+        //_acceleration = _testSlider.value;
         try
         {
             _value.text = _acceleration.ToString();
