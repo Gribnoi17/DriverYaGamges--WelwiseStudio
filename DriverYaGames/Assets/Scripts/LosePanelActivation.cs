@@ -37,12 +37,12 @@ public class LosePanelActivation : MonoBehaviour
         _carSceneSetter = FindObjectOfType<CarSceneSetter>();
         _carGenerator = FindObjectOfType<Generator>();
         _odometer = FindObjectOfType<Odometer>();
-        EventManager.PlayerDied += ShowPanelThroughtTime;
+        //EventManager.PlayerDied += ShowPanelThroughtTime;
     }
 
     private void OnDestroy()
     {
-        EventManager.PlayerDied -= ShowPanelThroughtTime;
+        //EventManager.PlayerDied -= ShowPanelThroughtTime;
     }
 
     public void SaveMoney()
@@ -51,7 +51,7 @@ public class LosePanelActivation : MonoBehaviour
         Destroy(_carGenerator);
     }
 
-    private void ShowPanelThroughtTime()
+    public void ShowPanelThroughtTime()
     {
         Pause();
         Invoke("ActivateLosePanel", 0.7f);

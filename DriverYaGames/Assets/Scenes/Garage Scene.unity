@@ -14475,7 +14475,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 945d193addfb066468aeb1895fe9f816, type: 3}
   - {fileID: 8300000, guid: 211ff883e4972394fbeb77ce3fa37e3b, type: 3}
   - {fileID: 8300000, guid: 7e0da909046cb2749818f16ffe617a44, type: 3}
-  - {fileID: 8300000, guid: c7f65dfef04ca9243a56a88e5b797a2a, type: 3}
   _musicForLobby:
   - {fileID: 8300000, guid: 884cfb23057c96e4f92335b2074ea29a, type: 3}
   _mixerGroup: {fileID: 24300002, guid: 820aa9ad9c0ecfe4ba802c153192c5b6, type: 2}

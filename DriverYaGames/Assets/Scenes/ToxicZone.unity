@@ -1640,7 +1640,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec7a23205880e24cba644d275c493ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rg: []
   speed: 10
   deadZone: 0.08
   rotateSpeed: 5
@@ -1648,6 +1647,7 @@ MonoBehaviour:
   maxX: 1.317
   minX: -1.317
   _rB: {fileID: 0}
+  _testSlider: {fileID: 0}
 --- !u!4 &111393969
 Transform:
   m_ObjectHideFlags: 0
@@ -9387,7 +9387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &695225809
 Animator:
   serializedVersion: 5
@@ -10916,10 +10916,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc7f5e591f601de46beea97a5e111536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _policeCar: {fileID: 0}
-  _whitePoliceCar: {fileID: 0}
-  _sportCar: {fileID: 0}
-  _sciFiCar: {fileID: 0}
+  _policeCar: {fileID: 1331626737}
+  _whitePoliceCar: {fileID: 695225808}
+  _sportCar: {fileID: 1032230978}
+  _sciFiCar: {fileID: 781490804}
 --- !u!4 &821179495
 Transform:
   m_ObjectHideFlags: 0

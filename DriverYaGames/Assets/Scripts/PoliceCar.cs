@@ -34,6 +34,7 @@ public class PoliceCar : MonoBehaviour
 	[HideInInspector] public float NitroTime = 3.5f;
 
 	private AudioSource _audioSource;
+	private LosePanelActivation _losePanelScript;
 	private bool _canMove;
 	public bool CanMove{ set {_canMove = value;} }
 	private bool _isKeyboardAvailable;
@@ -44,6 +45,7 @@ public class PoliceCar : MonoBehaviour
 	{
         CheckKeyboardAccess();
 		StartCoroutine(StartSound());
+		_losePanelScript = GameObject.FindObjectOfType<LosePanelActivation>();
 	}
 
 	private void CheckKeyboardAccess()
@@ -114,7 +116,7 @@ public class PoliceCar : MonoBehaviour
 	 {
 		if(collision.gameObject.tag == "Shield")
 		{
-			
+			shieldActive = true;
 		    Destroy(collision.gameObject);
 		    StopCoroutine(ShieldController());
 			DeactivateSchield();
@@ -131,12 +133,13 @@ public class PoliceCar : MonoBehaviour
 		
 		else if (collision.gameObject.tag == "Car")
 		{
-		  if(!shieldActive)
+		  if(shieldActive == false)
 		  {
-			 _canvasAS.PlayOneShot(_collission);
-			 EventManager.OnPlayerDied();
-			 SwipeDetection.SwipeEvent -= OnSwipe;
-			 transform.parent.gameObject.SetActive(false);
+				_losePanelScript.ShowPanelThroughtTime();
+				EventManager.OnPlayerDied();
+				_canvasAS.PlayOneShot(_collission);
+				SwipeDetection.SwipeEvent -= OnSwipe;
+				transform.parent.gameObject.SetActive(false);
 			 //gameObject.SetActive(false);
 		  }
 		  else
