@@ -29,7 +29,7 @@ public class AcsController : MonoBehaviour
 
     private void Awake()
     {
-        Invoke("FindPlayer", 3f);
+        Invoke(nameof(FindPlayer), 3f);
         //
     }
 
