@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.UI;
 using System;
 
 public class AcsController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody[] _rg;
     [SerializeField] private float speed;
     [SerializeField] private float deadZone;
     [SerializeField] private float rotateSpeed;
@@ -20,36 +20,28 @@ public class AcsController : MonoBehaviour
     private Animator animator;
     private float _acceleration = 0;
     [Header("For watch")]
-    [SerializeField]private Rigidbody _rB;
-
+    [SerializeField] private Rigidbody _rB;
+    [SerializeField] private Slider _testSlider;
     public void GetNumber(float accelerationInHtml)
     {
         _acceleration = accelerationInHtml / 10;
     }
 
-    private void Start()
+    private void Awake()
     {
-        foreach(Rigidbody r in _rg)
-        {
-            if (r.gameObject.activeSelf)
-            {
-                _rB = r;
-            }
-        }
+        Invoke("FindPlayer", 3f);
+        //
+    }
+
+    private void FindPlayer()
+    {
+        _rB = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
         animator = _rB.GetComponent<Animator>();
     }
 
     void Update()
     {
-      /*  Vector3 vec = Input.acceleration;
-        try
-        {
-            _valueForUnity.text = vec.x.ToString();
-        }
-        catch
-        {
-            print("acs error");
-        }*/
+        _acceleration = _testSlider.value;
         try
         {
             _value.text = _acceleration.ToString();
@@ -61,7 +53,7 @@ public class AcsController : MonoBehaviour
         if (_acceleration > deadZone && _rB.transform.position.x < maxX)
         {
             var dir = new Vector3(_acceleration * speed, 0f, 0f);
-            _rB.velocity = dir; 
+            _rB.transform.position += dir * Time.deltaTime;
             animator.SetBool("None", false);
             animator.SetBool("RightTurn", true);
             animator.SetBool("LeftTurn", false);
@@ -70,7 +62,7 @@ public class AcsController : MonoBehaviour
         else if (_acceleration < -deadZone && _rB.transform.position.x > minX)
         {
             var dir = new Vector3(_acceleration * speed, 0f, 0f);
-            _rB.velocity = dir;
+            _rB.transform.position += dir * Time.deltaTime;
             animator.SetBool("None", false);
             animator.SetBool("LeftTurn", true);
             animator.SetBool("RightTurn", false);
@@ -81,7 +73,7 @@ public class AcsController : MonoBehaviour
             if (_rB == null)
                 return;
 
-            _rB.velocity = new Vector3(0f, 0f, 0f);
+            //_rB.velocity = new Vector3(0f, 0f, 0f);
                 animator.SetBool("None", true);
                 animator.SetBool("LeftTurn", false);
                 animator.SetBool("RightTurn", false);

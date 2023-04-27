@@ -28,7 +28,7 @@ public class SceneController : MonoBehaviour
 
     IEnumerator WaitForAcs()
     {
-        _acsController.SetActive(false);
+        //_acsController.SetActive(false);
         yield return new WaitForSeconds(4f);
         _acsController.SetActive(true);
     }

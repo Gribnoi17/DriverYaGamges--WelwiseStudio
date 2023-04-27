@@ -48,20 +48,20 @@ public class LosePanelActivation : MonoBehaviour
     public void SaveMoney()
     {
         PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") + _money.GetCurrentAmount());
-        _carGenerator.gameObject.SetActive(false);
+        Destroy(_carGenerator);
     }
 
     private void ShowPanelThroughtTime()
     {
+        Pause();
         Invoke("ActivateLosePanel", 0.7f);
     }
 
 
     private void ActivateLosePanel()
     {
-        _milageResultText.text = _odometer.GetCurrentMilage().ToString();
         _losePanel.SetActive(true);
-        Pause();
+        _milageResultText.text = _odometer.GetCurrentMilage().ToString();
         if (_watchedAdv == false)
         {
             _anim.Play("LosePanelAnim");
@@ -70,7 +70,6 @@ public class LosePanelActivation : MonoBehaviour
         else
         {
             _anim.Play("LosePanelAnim Only Menu");
-            Destroy(_carGenerator);
             DOTween.KillAll();
         }
     }
@@ -85,7 +84,8 @@ public class LosePanelActivation : MonoBehaviour
 
         _speedometer.enabled = false;
         _odometer.IsCounting(false);
-        _audioSources.gameObject.SetActive(false);
+        if(_audioSources != null)
+            _audioSources.gameObject.SetActive(false);
         _carGenerator.RemoveAllChildren();
         _carGenerator.gameObject.SetActive(false);
     }

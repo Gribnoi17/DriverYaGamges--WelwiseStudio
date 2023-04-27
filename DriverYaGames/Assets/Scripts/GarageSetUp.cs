@@ -18,6 +18,28 @@ public class GarageSetUp : MonoBehaviour
         ToxicZone
     }
 
+    private void Start()
+    {
+        SetLocationByPlayerPrefs();
+    }
+
+    public void SetLocationByPlayerPrefs()
+    {
+        if (PlayerPrefs.GetString("ChousenLocation") == "NightRoad")
+        {
+            ChooseNightRoad();
+        }
+        if (PlayerPrefs.GetString("ChousenLocation") == "GreenCity")
+        {
+            ChooseGreenCity();
+        }
+        if (PlayerPrefs.GetString("ChousenLocation") == "ToxicZone")
+        {
+            ChooseToxicZone();
+        }
+    }
+
+
     public void ChooseNightRoad()
     {
         _chosenLocation = Location.NightRoad;
@@ -26,6 +48,7 @@ public class GarageSetUp : MonoBehaviour
             mark.SetActive(false);
         }
         _choiceMarks[0].SetActive(true);
+        PlayerPrefs.SetString("ChousenLocation", _chosenLocation.ToString());
     }
 
     public void ChooseGreenCity()
@@ -38,6 +61,7 @@ public class GarageSetUp : MonoBehaviour
             mark.SetActive(false);
         }
         _choiceMarks[1].SetActive(true);
+        PlayerPrefs.SetString("ChousenLocation", _chosenLocation.ToString());
     }
 
     public void ChooseToxicZone()
@@ -50,6 +74,7 @@ public class GarageSetUp : MonoBehaviour
             mark.SetActive(false);
         }
         _choiceMarks[2].SetActive(true);
+        PlayerPrefs.SetString("ChousenLocation", _chosenLocation.ToString());
     }
 
 
