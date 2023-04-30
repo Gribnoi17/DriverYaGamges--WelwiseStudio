@@ -21,10 +21,15 @@ public class SetControlType : MonoBehaviour
             _swipeDetection.gameObject.SetActive(false);
 
         }
-        else
+        else if(PlayerPrefs.GetString("ControllerType") == "Swipe")
         {
             _acsController.gameObject.SetActive(false);
             _swipeDetection.gameObject.SetActive(true);
+        }
+        else
+        {
+            _acsController.gameObject.SetActive(false);
+            _swipeDetection.gameObject.SetActive(false);
         }
     }
 }

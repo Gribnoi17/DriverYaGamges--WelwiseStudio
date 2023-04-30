@@ -21,7 +21,7 @@ public class SwipeDetection : MonoBehaviour
 
     private void Start()
     {
-        _isMobile = Application.isMobilePlatform;
+        _isMobile = PlayerPrefs.GetInt("IsMobile") == 1;
     }
 
     private void Update()

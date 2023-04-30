@@ -28,6 +28,14 @@ public class LosePanelActivation : MonoBehaviour
 
     private void Start()
     {
+        Invoke(nameof(Initialization), 1.5f);
+        //Initialization();
+        //EventManager.PlayerDied += ShowPanelThroughtTime;
+    }
+
+    private void Initialization()
+    {
+        print("Сука, где спидометр????");
         _audioSources = GameObject.Find("AuduoSources");
         _pauseController = FindObjectOfType<PauseController>();
         _money = FindObjectOfType<Money>();
@@ -37,12 +45,11 @@ public class LosePanelActivation : MonoBehaviour
         _carSceneSetter = FindObjectOfType<CarSceneSetter>();
         _carGenerator = FindObjectOfType<Generator>();
         _odometer = FindObjectOfType<Odometer>();
-        EventManager.PlayerDied += ShowPanelThroughtTime;
     }
 
     private void OnDestroy()
     {
-        EventManager.PlayerDied -= ShowPanelThroughtTime;
+        //EventManager.PlayerDied -= ShowPanelThroughtTime;
     }
 
     public void SaveMoney()
@@ -51,7 +58,7 @@ public class LosePanelActivation : MonoBehaviour
         Destroy(_carGenerator);
     }
 
-    private void ShowPanelThroughtTime()
+    public void ShowPanelThroughtTime()
     {
         Pause();
         Invoke("ActivateLosePanel", 0.7f);
@@ -98,16 +105,16 @@ public class LosePanelActivation : MonoBehaviour
 
     public void ReturnToGame()
     {
-        if(_audioSources != null)
+        if (_audioSources != null)
         {
             _audioSources.gameObject.SetActive(true);
         }
+        _pauseController.PauseStart();
         PlayerPrefs.SetInt("RebirthCount", PlayerPrefs.GetInt("RebirthCount") + 1);
         _speedometer.enabled = true;
         _odometer.IsCounting(true);
+        _carGenerator.gameObject.SetActive(true);
         _carSceneSetter.SetAndActivateCar();
         _losePanel.SetActive(false);
-        _carGenerator.gameObject.SetActive(true);
-        _pauseController.PauseStart();
     }
 }

@@ -35,21 +35,22 @@ public class SceneOptimization : MonoBehaviour
 
     private void Awake()
     {
-        //PlayerPrefs.DeleteAll();
-        foreach(Skybox sky in _skyboxes)
-        {
-            //sky.material.
-        }
         
+
         if (_sceneType == SceneType.Menu)
+        {
+            //PlayerPrefs.DeleteAll();
             try
             {
                 GetDevice();
             }
             catch
             {
-                PlayerPrefs.SetInt("IsMobile", 1);
+                //PlayerPrefs.SetInt("IsMobile", 0);
+                //PlayerPrefs.SetString("ControllerType", "Keyboard");
             }
+        }
+            
 
         if (PlayerPrefs.GetInt("IsMobile") == 0)
         {

@@ -28,12 +28,13 @@ public class PoliceCar : MonoBehaviour
 	private float _timeShield = 5f;
 	private int _lineIndex = 1;
 	private Playable _animation;
-	private bool shieldActive;
-	public bool IsShieldActive;
+	private bool shieldActive = false;
+	public bool IsShieldActive = false;
 
 	[HideInInspector] public float NitroTime = 3.5f;
 
 	private AudioSource _audioSource;
+	private LosePanelActivation _losePanelScript;
 	private bool _canMove;
 	public bool CanMove{ set {_canMove = value;} }
 	private bool _isKeyboardAvailable;
@@ -42,8 +43,10 @@ public class PoliceCar : MonoBehaviour
 
 	private void Start()
 	{
-        CheckKeyboardAccess();
+		shieldActive = false;
+		CheckKeyboardAccess();
 		StartCoroutine(StartSound());
+		_losePanelScript = FindObjectOfType<LosePanelActivation>();
 	}
 
 	private void CheckKeyboardAccess()
@@ -66,6 +69,7 @@ public class PoliceCar : MonoBehaviour
 	 private void OnEnable()
 	 {
 		SwipeDetection.SwipeEvent += OnSwipe;
+		print("EJhlfgdhsljflsjdjadsljfodsfjgkladfjo;f");
 	 }
 
 	public IEnumerator ActivateNitro()
@@ -101,7 +105,7 @@ public class PoliceCar : MonoBehaviour
 
     private void KeyboardControl()
     {
-        if (_isKeyboardAvailable)
+        if (_isKeyboardAvailable && _canMove)
         {
             MoveKeyboard(KeyCode.A, -1);
             MoveKeyboard(KeyCode.D, 1);
@@ -114,7 +118,7 @@ public class PoliceCar : MonoBehaviour
 	 {
 		if(collision.gameObject.tag == "Shield")
 		{
-			
+			shieldActive = true;
 		    Destroy(collision.gameObject);
 		    StopCoroutine(ShieldController());
 			DeactivateSchield();
@@ -131,13 +135,16 @@ public class PoliceCar : MonoBehaviour
 		
 		else if (collision.gameObject.tag == "Car")
 		{
-		  if(!shieldActive)
+		  if(shieldActive == false)
 		  {
-			 _canvasAS.PlayOneShot(_collission);
-			 EventManager.OnPlayerDied();
-			 SwipeDetection.SwipeEvent -= OnSwipe;
-			 transform.parent.gameObject.SetActive(false);
-			 //gameObject.SetActive(false);
+				Debug.Log("-----------Столкновение, метод коллизии----------------");
+				SwipeDetection.SwipeEvent -= OnSwipe;
+				_losePanelScript.ShowPanelThroughtTime();
+				_canvasAS.PlayOneShot(_collission);
+				EventManager.OnPlayerDied();
+				_animation = null;
+				transform.parent.gameObject.SetActive(false);
+				//gameObject.SetActive(false);
 		  }
 		  else
 		  {
@@ -180,6 +187,7 @@ public class PoliceCar : MonoBehaviour
 			if (_linePoint.GetChild(_lineIndex).name != "Left")
 				StartCoroutine(OnTurnLeft());
 		  }
+			print("Метод таджикистана MoveKeyboard");
 		  _lineIndex = Mathf.Clamp(_lineIndex + direction, 0, _linePoint.childCount - 1);
 		  var point = _linePoint.GetChild(_lineIndex);
 		  _animation = transform.DoPositionX(point.transform.position.x, _animationDuration, Ease.InOutCirc).Play();

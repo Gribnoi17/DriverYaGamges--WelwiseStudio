@@ -17,17 +17,28 @@ public class PauseController : MonoBehaviour
 
     public void PauseStart()
     {
-        StartCoroutine(_musicController.FindSliders());
-        //_musicController.SetUpSlidersStats();
-        Time.timeScale = 0.0000001f;
+        try
+        {
+            StartCoroutine(_musicController.FindSliders());
+        }
+        catch
+        {
+            print("Слайдеры не найдены, PauseController");
+        }
         pauseMenu.SetActive(true);
+        Time.timeScale = 0.0000001f;
     }
 
     public void OnlyFindObjects()
     {
         StartCoroutine(_musicController.FindSliders());
-       //_musicController.SetUpSlidersStats();
     }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 
     public void PauseEnd()
     {
