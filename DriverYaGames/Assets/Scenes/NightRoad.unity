@@ -1162,6 +1162,11 @@ PrefabInstance:
       propertyPath: _linePoint
       value: 
       objectReference: {fileID: 560263413}
+    - target: {fileID: 7181025179168542684, guid: 11e0516ca88dd32479f4951fe5583517,
+        type: 3}
+      propertyPath: _shieldColl
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a3496ff5cab2714bb3360e764e457e1, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3009,6 +3014,11 @@ PrefabInstance:
       propertyPath: _linePoint
       value: 
       objectReference: {fileID: 560263413}
+    - target: {fileID: 688739117325121891, guid: 86b448cd30424ed449b67ea872227619,
+        type: 3}
+      propertyPath: _shieldColl
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a3496ff5cab2714bb3360e764e457e1, type: 3}
     - target: {fileID: 688739117325121901, guid: 86b448cd30424ed449b67ea872227619,
         type: 3}
       propertyPath: m_Constraints
@@ -3447,6 +3457,11 @@ PrefabInstance:
       propertyPath: _linePoint
       value: 
       objectReference: {fileID: 560263413}
+    - target: {fileID: 5185302141861730483, guid: 7fbf18738c14fa94bb04a37c9874ddae,
+        type: 3}
+      propertyPath: _shieldColl
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a3496ff5cab2714bb3360e764e457e1, type: 3}
     - target: {fileID: 8191692630752193212, guid: 7fbf18738c14fa94bb04a37c9874ddae,
         type: 3}
       propertyPath: m_Name
@@ -5335,6 +5350,14 @@ PrefabInstance:
       propertyPath: _linePoint
       value: 
       objectReference: {fileID: 560263413}
+    - target: {fileID: 761245885, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
+      propertyPath: _nitroSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 81a01c9777140c34fb857ac325d215e9, type: 3}
+    - target: {fileID: 761245885, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
+      propertyPath: _shieldColl
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a3496ff5cab2714bb3360e764e457e1, type: 3}
     - target: {fileID: 437617175283213183, guid: 7be733fca5977484eab72a8eca73b1b2,
         type: 3}
       propertyPath: m_Lightmapping

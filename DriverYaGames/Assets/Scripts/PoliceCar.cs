@@ -21,6 +21,7 @@ public class PoliceCar : MonoBehaviour
 	[SerializeField] private AudioClip _shieldPickUp;
     [SerializeField] private AudioClip _collission;
     [SerializeField] private AudioClip _nitroSound;
+    [SerializeField] private AudioClip _shieldColl;
     [SerializeField] private GameObject _nitro;
 	[SerializeField] private AudioSource _canvasAS;
 
@@ -137,7 +138,7 @@ public class PoliceCar : MonoBehaviour
 		{
 		  if(shieldActive == false)
 		  {
-				Debug.Log("-----------Столкновение, метод коллизии----------------");
+				//Debug.Log("-----------Столкновение, метод коллизии----------------");
 				SwipeDetection.SwipeEvent -= OnSwipe;
 				_losePanelScript.ShowPanelThroughtTime();
 				_canvasAS.PlayOneShot(_collission);
@@ -148,6 +149,7 @@ public class PoliceCar : MonoBehaviour
 		  }
 		  else
 		  {
+			_canvasAS.PlayOneShot(_shieldColl);
 			 Destroy(collision.gameObject);
 		  }
 		}

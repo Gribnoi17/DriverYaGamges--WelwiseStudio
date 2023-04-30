@@ -934,8 +934,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 60
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -959,7 +959,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 59.35
+  m_fontSize: 56.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2786,6 +2786,11 @@ PrefabInstance:
       propertyPath: _linePoint
       value: 
       objectReference: {fileID: 560263413}
+    - target: {fileID: 5185302141861730483, guid: 7fbf18738c14fa94bb04a37c9874ddae,
+        type: 3}
+      propertyPath: _shieldColl
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a3496ff5cab2714bb3360e764e457e1, type: 3}
     - target: {fileID: 8191692630752193212, guid: 7fbf18738c14fa94bb04a37c9874ddae,
         type: 3}
       propertyPath: m_Name
@@ -2802,18 +2807,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 581949944}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &581949946 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5185302141861730483, guid: 7fbf18738c14fa94bb04a37c9874ddae,
-    type: 3}
-  m_PrefabInstance: {fileID: 581949944}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da057b1366093d44fb093d23aabac775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &586870028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3145,6 +3138,11 @@ PrefabInstance:
       propertyPath: _linePoint
       value: 
       objectReference: {fileID: 560263413}
+    - target: {fileID: 688739117325121891, guid: 86b448cd30424ed449b67ea872227619,
+        type: 3}
+      propertyPath: _shieldColl
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a3496ff5cab2714bb3360e764e457e1, type: 3}
     - target: {fileID: 688739117325121903, guid: 86b448cd30424ed449b67ea872227619,
         type: 3}
       propertyPath: m_Name
@@ -3216,18 +3214,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 650822868}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &650822870 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 688739117325121891, guid: 86b448cd30424ed449b67ea872227619,
-    type: 3}
-  m_PrefabInstance: {fileID: 650822868}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da057b1366093d44fb093d23aabac775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &665156028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3648,6 +3634,11 @@ PrefabInstance:
       propertyPath: _linePoint
       value: 
       objectReference: {fileID: 560263413}
+    - target: {fileID: 7181025179168542684, guid: 11e0516ca88dd32479f4951fe5583517,
+        type: 3}
+      propertyPath: _shieldColl
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a3496ff5cab2714bb3360e764e457e1, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3659,18 +3650,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 740272469}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &740272471 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7181025179168542684, guid: 11e0516ca88dd32479f4951fe5583517,
-    type: 3}
-  m_PrefabInstance: {fileID: 740272469}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da057b1366093d44fb093d23aabac775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &759563469 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 1806880161, guid: 5804600525f66de4abf11111389ca287,
@@ -6354,6 +6333,10 @@ PrefabInstance:
       propertyPath: _linePoint
       value: 
       objectReference: {fileID: 560263413}
+    - target: {fileID: 761245885, guid: 7be733fca5977484eab72a8eca73b1b2, type: 3}
+      propertyPath: _shieldColl
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a3496ff5cab2714bb3360e764e457e1, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6365,18 +6348,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1262955028}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1262955030 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 761245885, guid: 7be733fca5977484eab72a8eca73b1b2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1262955028}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da057b1366093d44fb093d23aabac775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1284570346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7300,11 +7271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _acsController: {fileID: 111393967}
   _swipeDetection: {fileID: 275120864}
-  _cars:
-  - {fileID: 1262955030}
-  - {fileID: 740272471}
-  - {fileID: 581949946}
-  - {fileID: 650822870}
+  _activeCar: {fileID: 0}
 --- !u!114 &1458931346
 MonoBehaviour:
   m_ObjectHideFlags: 0
