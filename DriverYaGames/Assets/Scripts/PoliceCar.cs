@@ -69,6 +69,7 @@ public class PoliceCar : MonoBehaviour
 	 private void OnEnable()
 	 {
 		SwipeDetection.SwipeEvent += OnSwipe;
+		print("EJhlfgdhsljflsjdjadsljfodsfjgkladfjo;f");
 	 }
 
 	public IEnumerator ActivateNitro()
@@ -104,7 +105,7 @@ public class PoliceCar : MonoBehaviour
 
     private void KeyboardControl()
     {
-        if (_isKeyboardAvailable)
+        if (_isKeyboardAvailable && _canMove)
         {
             MoveKeyboard(KeyCode.A, -1);
             MoveKeyboard(KeyCode.D, 1);
@@ -137,10 +138,11 @@ public class PoliceCar : MonoBehaviour
 		  if(shieldActive == false)
 		  {
 				Debug.Log("-----------Столкновение, метод коллизии----------------");
-				EventManager.OnPlayerDied();
-				_canvasAS.PlayOneShot(_collission);
 				SwipeDetection.SwipeEvent -= OnSwipe;
 				_losePanelScript.ShowPanelThroughtTime();
+				_canvasAS.PlayOneShot(_collission);
+				EventManager.OnPlayerDied();
+				_animation = null;
 				transform.parent.gameObject.SetActive(false);
 				//gameObject.SetActive(false);
 		  }
@@ -185,6 +187,7 @@ public class PoliceCar : MonoBehaviour
 			if (_linePoint.GetChild(_lineIndex).name != "Left")
 				StartCoroutine(OnTurnLeft());
 		  }
+			print("Метод таджикистана MoveKeyboard");
 		  _lineIndex = Mathf.Clamp(_lineIndex + direction, 0, _linePoint.childCount - 1);
 		  var point = _linePoint.GetChild(_lineIndex);
 		  _animation = transform.DoPositionX(point.transform.position.x, _animationDuration, Ease.InOutCirc).Play();

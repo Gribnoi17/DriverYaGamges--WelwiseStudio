@@ -28,6 +28,14 @@ public class LosePanelActivation : MonoBehaviour
 
     private void Start()
     {
+        Invoke(nameof(Initialization), 1.5f);
+        //Initialization();
+        //EventManager.PlayerDied += ShowPanelThroughtTime;
+    }
+
+    private void Initialization()
+    {
+        print("Сука, где спидометр????");
         _audioSources = GameObject.Find("AuduoSources");
         _pauseController = FindObjectOfType<PauseController>();
         _money = FindObjectOfType<Money>();
@@ -37,7 +45,6 @@ public class LosePanelActivation : MonoBehaviour
         _carSceneSetter = FindObjectOfType<CarSceneSetter>();
         _carGenerator = FindObjectOfType<Generator>();
         _odometer = FindObjectOfType<Odometer>();
-        //EventManager.PlayerDied += ShowPanelThroughtTime;
     }
 
     private void OnDestroy()
@@ -98,11 +105,11 @@ public class LosePanelActivation : MonoBehaviour
 
     public void ReturnToGame()
     {
-        _pauseController.PauseStart();
         if (_audioSources != null)
         {
             _audioSources.gameObject.SetActive(true);
         }
+        _pauseController.PauseStart();
         PlayerPrefs.SetInt("RebirthCount", PlayerPrefs.GetInt("RebirthCount") + 1);
         _speedometer.enabled = true;
         _odometer.IsCounting(true);

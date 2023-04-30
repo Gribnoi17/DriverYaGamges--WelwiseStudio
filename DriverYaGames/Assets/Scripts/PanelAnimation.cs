@@ -471,17 +471,17 @@ public class PanelAnimation : MonoBehaviour
             PlayerPrefs.SetString("Car", "PoliceCar");
         }
 
-        if (_currentCarIndex == 1)
+        if (_currentCarIndex == 1 && PlayerPrefs.GetString("WhitePoliceCar") == "Unlocked")
         {
             PlayerPrefs.SetString("Car", "WhitePoliceCar");
         }
 
-        if (_currentCarIndex == 2)
+        if (_currentCarIndex == 2 && PlayerPrefs.GetString("SportCar") == "Unlocked")
         {
             PlayerPrefs.SetString("Car", "SportCar");
         }
 
-        if (_currentCarIndex == 3)
+        if (_currentCarIndex == 3 && PlayerPrefs.GetString("SciFiCar") == "Unlocked")
         {
             PlayerPrefs.SetString("Car", "SciFiCar");
         }
@@ -523,7 +523,6 @@ public class PanelAnimation : MonoBehaviour
             StartCoroutine(MoveCarToGarage(carsInGarage[indexInCarsList]));
             _currentCarIndex = indexInCarsList;
             SetCarPlayerPrefs();
-            //print("≈баный в рот это казино");
         }
     }
 

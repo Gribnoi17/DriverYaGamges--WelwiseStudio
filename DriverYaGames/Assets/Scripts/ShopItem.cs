@@ -59,12 +59,10 @@ public class ShopItem : MonoBehaviour
             if (_ItemType == _typeOfItem.Car)
             {
                 PlayerPrefs.SetInt("CarsCount", PlayerPrefs.GetInt("CarsCount") + 1);
-                print(PlayerPrefs.GetInt("CarsCount"));
             }
             else
             {
                 PlayerPrefs.SetInt("LocationsCount", PlayerPrefs.GetInt("LocationsCount") + 1);
-                print(PlayerPrefs.GetInt("LocationsCount"));
             }
             _buyButton.gameObject.SetActive(false);
             garageSetUp.Congrats();
