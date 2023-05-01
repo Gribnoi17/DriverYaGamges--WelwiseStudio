@@ -86,7 +86,6 @@ public class GameRules : MonoBehaviour
                 PlayerPrefs.SetInt("GSDif", 0);
                 PlayerPrefs.SetInt("TZDif", 0);
             }
-            difficult = difficulty[GetDiff()];
         }
         Inizializition();
     }
