@@ -27,14 +27,13 @@ public class StartRace : MonoBehaviour
     {
         _spd = FindObjectOfType<Speedometer>();
         _losePanelScript = FindObjectOfType<LosePanelActivation>();
-        _gameRuler = GetComponent<GameRules>();
-        if (_gameRuler.Regime == _gameRuler.regimeRace[0])
+        if (PlayerPrefs.GetInt("RegimeRace") == 0)
         {
             StartFreeRace();
         }
-        else
+        else if(PlayerPrefs.GetInt("RegimeRace") == 1)
         {
-            StartRaceForTime();
+            Invoke(nameof(StartRaceForTime),4f);
         }
     }
 
@@ -50,7 +49,6 @@ public class StartRace : MonoBehaviour
         _gen.needSpawnShield = false;
         _timer.gameObject.SetActive(true);
         _timer.transform.parent.gameObject.SetActive(true);
-
         if (_gameRuler.Difficult == _gameRuler.difficulty[0])
         {
             _timer.text = "60";
@@ -58,7 +56,6 @@ public class StartRace : MonoBehaviour
         else if (_gameRuler.Difficult == _gameRuler.difficulty[1])
         {
             _timer.text = "180";
-
         }
         else if (_gameRuler.Difficult == _gameRuler.difficulty[2])
         {
@@ -70,7 +67,7 @@ public class StartRace : MonoBehaviour
 
     private IEnumerator Timer()
     {
-        int _nt = Convert.ToInt32(_timer.text);
+        int _nt = Convert.ToInt32(_timer.text.ToString());
         while (true)
         {
             int nextTime = _nt - 1;
@@ -95,6 +92,7 @@ public class StartRace : MonoBehaviour
 
     private IEnumerator Win()
     {
+        PlayerPrefs.SetInt("Difficult", PlayerPrefs.GetInt("Difficult") + 1);
         PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
         _timer.text = "0";
         while (_spd.CurrentSpeed > 0)
@@ -102,11 +100,12 @@ public class StartRace : MonoBehaviour
             _spd.CurrentSpeed = -1;
         }
         _endConfetti.SetActive(true);
-        _sVC.WinSoundsStart();
-        _losePanelScript.Pause();
+        if(_sVC != null)
+            _sVC.WinSoundsStart();
         yield return new WaitForSeconds(2f);
         _winPanel.SetActive(true);
-        if(_gameRuler.Difficult == _gameRuler.difficulty[1])
+        _losePanelScript.Pause();
+        if (_gameRuler.Difficult == _gameRuler.difficulty[2])
         {
             RateGame();
         }

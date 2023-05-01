@@ -65,15 +65,23 @@ public class GameRules : MonoBehaviour
 
     private void Start()
     {
-        difficult = "Normal";
 
         if(PlayerPrefs.GetInt("RegimeRace") == 0)
         {
             Regime = regimeRace[0];
-        } else if(PlayerPrefs.GetInt("RegimeRace") == 1)
+        } 
+        else if(PlayerPrefs.GetInt("RegimeRace") == 1)
         {
             Regime = regimeRace[1];
-            Difficult = difficulty[PlayerPrefs.GetInt("Difficult")];
+            if (PlayerPrefs.HasKey("Difficult"))
+            {
+                Difficult = difficulty[PlayerPrefs.GetInt("Difficult")];
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Difficult", 0);
+            }
+            difficult = difficulty[PlayerPrefs.GetInt("Difficult")];
         }
         Inizializition();
     }
