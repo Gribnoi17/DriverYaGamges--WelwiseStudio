@@ -38,6 +38,8 @@ public class Speedometer : MonoBehaviour
         {
             _currentSpeed += _gameRules.RateOfSpeedGrowth;
         }
+        if (_currentSpeed > PlayerPrefs.GetInt("MaxSpeed"))
+            PlayerPrefs.SetInt("MaxSpeed", (int)_currentSpeed);
     }
 
     private void IncreaseCarsSpawnRate()

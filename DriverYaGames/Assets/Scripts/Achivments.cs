@@ -338,7 +338,7 @@ public class Achivments : MonoBehaviour
         {
             if (_allAchivments[i].NumberAchiv == 8)
             {
-                if (n >= 1000 && nn >= 1000)
+                if (n == 1000 && nn == 1000)
                 {
                     _allAchivments[i].ChangeReceivePanel();
                     OnAchivPanel();
