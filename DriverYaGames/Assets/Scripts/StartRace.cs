@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Runtime.InteropServices;
+using UnityEngine.SceneManagement;
 
 public class StartRace : MonoBehaviour
 {
@@ -92,8 +93,25 @@ public class StartRace : MonoBehaviour
 
     private IEnumerator Win()
     {
-        PlayerPrefs.SetInt("Difficult", PlayerPrefs.GetInt("Difficult") + 1);
-        PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+        string nameScene = SceneManager.GetActiveScene().name;
+        if (nameScene == "NightRoad")
+        {
+            PlayerPrefs.SetInt("NRDif", PlayerPrefs.GetInt("NRDif") + 1);
+            if(PlayerPrefs.GetInt("NRDif") < 4)
+                PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+        }
+        else if (nameScene == "GreenCity")
+        {
+            PlayerPrefs.SetInt("GSDif", PlayerPrefs.GetInt("GSDif") + 1);
+            if (PlayerPrefs.GetInt("GSDif") < 4)
+                PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+        }
+        else if (nameScene == "ToxicZone")
+        {
+            PlayerPrefs.SetInt("TZDif", PlayerPrefs.GetInt("TZDif") + 1);
+            if (PlayerPrefs.GetInt("TZDif") < 4)
+                PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
+        }
         _timer.text = "0";
         while (_spd.CurrentSpeed > 0)
         {
