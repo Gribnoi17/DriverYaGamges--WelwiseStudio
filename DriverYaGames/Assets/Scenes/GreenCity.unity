@@ -10975,6 +10975,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1806880161, guid: 5804600525f66de4abf11111389ca287, type: 3}
+      propertyPath: DopplerLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3468248869583429849, guid: 5804600525f66de4abf11111389ca287,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
