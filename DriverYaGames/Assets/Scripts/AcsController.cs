@@ -21,7 +21,6 @@ public class AcsController : MonoBehaviour
     private float _acceleration = 0;
     [Header("For watch")]
     [SerializeField] private Rigidbody _rB;
-    [SerializeField] private Slider _testSlider;
     public void GetNumber(float accelerationInHtml)
     {
         _acceleration = accelerationInHtml / 10;
@@ -30,7 +29,6 @@ public class AcsController : MonoBehaviour
     private void Awake()
     {
         Invoke(nameof(FindPlayer), 3f);
-        //
     }
 
     private void FindPlayer()
@@ -41,7 +39,6 @@ public class AcsController : MonoBehaviour
 
     void Update()
     {
-        //_acceleration = _testSlider.value;
         try
         {
             _value.text = _acceleration.ToString();

@@ -9,6 +9,7 @@ public class LosePanelActivation : MonoBehaviour
     [SerializeField] private GameObject _audioSources;
     [SerializeField] TextMeshProUGUI _milageResultText;
     [SerializeField] TextMeshProUGUI[] _moneyResultText;
+
     [DllImport("__Internal")]
     private static extern void ReturnToGameExtern();
 
@@ -89,7 +90,7 @@ public class LosePanelActivation : MonoBehaviour
             txt.text = _money.GetCurrentAmount().ToString();
         }
 
-        _speedometer.enabled = false;
+        _speedometer.IsCounting = false;
         _odometer.IsCounting(false);
         if(_audioSources != null)
             _audioSources.gameObject.SetActive(false);
@@ -111,7 +112,7 @@ public class LosePanelActivation : MonoBehaviour
         }
         _pauseController.PauseStart();
         PlayerPrefs.SetInt("RebirthCount", PlayerPrefs.GetInt("RebirthCount") + 1);
-        _speedometer.enabled = true;
+        _speedometer.IsCounting = true;
         _odometer.IsCounting(true);
         _carGenerator.gameObject.SetActive(true);
         _carSceneSetter.SetAndActivateCar();

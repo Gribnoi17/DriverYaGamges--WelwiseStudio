@@ -12,7 +12,8 @@ public class Speedometer : MonoBehaviour
     public float CurrentSpeed { get { return _currentSpeed; } set { _currentSpeed += value; } }
     private GameRules _gameRules;
     private float _periodGrowthRate;
-
+    private bool _isCounting = true;
+    public bool IsCounting { get { return _isCounting; } set { _isCounting = value; } }
     private void Start()
     {
         _gameRules = FindObjectOfType<GameRules>();
@@ -28,13 +29,16 @@ public class Speedometer : MonoBehaviour
 
 
     private void Update()
-    {
-        ChangeSpeed();
+    {     
+        if (_isCounting)
+        {
+            ChangeSpeed();
+        }
     }
 
     private void IncreaseSpeed()
     {
-        if(_currentSpeed < _gameRules.MaxSpeed)
+        if(_currentSpeed < _gameRules.MaxSpeed && _isCounting)
         {
             _currentSpeed += _gameRules.RateOfSpeedGrowth;
         }
@@ -44,7 +48,10 @@ public class Speedometer : MonoBehaviour
 
     private void IncreaseCarsSpawnRate()
     {
-        _gameRules.SetCarSpawnPeriod(_periodGrowthRate);
+        if (_isCounting)
+        {
+            _gameRules.SetCarSpawnPeriod(_periodGrowthRate);
+        }
     }
 
     private void ChangeSpeed()

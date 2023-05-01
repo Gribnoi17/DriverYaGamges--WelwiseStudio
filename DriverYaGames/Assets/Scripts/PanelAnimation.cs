@@ -69,7 +69,6 @@ public class PanelAnimation : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.SetInt("MoneyNameConst", 16000);
         Time.timeScale = 1f;
         DOTween.Init();
     }
