@@ -243,8 +243,9 @@ Transform:
   - {fileID: 1605048674}
   - {fileID: 55113241}
   - {fileID: 7442210964955483991}
+  - {fileID: 892119123}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3394840
 MeshFilter:
@@ -367,6 +368,7 @@ MonoBehaviour:
   _shieldPickUp: {fileID: 8300000, guid: 7927b0721fe612043ab5a6c686ada5b4, type: 3}
   _collission: {fileID: 8300000, guid: 0535cebfc88fdf1459f7ebc4555b1acf, type: 3}
   _nitroSound: {fileID: 8300000, guid: 81a01c9777140c34fb857ac325d215e9, type: 3}
+  _shieldColl: {fileID: 8300000, guid: 9a3496ff5cab2714bb3360e764e457e1, type: 3}
   _nitro: {fileID: 3730266566971516016}
   _canvasAS: {fileID: 0}
   IsShieldActive: 0
@@ -700,6 +702,37 @@ MonoBehaviour:
   speed: 3
   axis: {x: 10, y: 0, z: 0}
   isStupidCar: 0
+--- !u!1 &892119122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 892119123}
+  m_Layer: 0
+  m_Name: FollowPoint
+  m_TagString: CameraFollowPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &892119123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892119122}
+  m_LocalRotation: {x: 0.082175605, y: -0, z: -0, w: 0.99661785}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 437054}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 9.427, y: 0, z: 0}
 --- !u!1 &1605048671
 GameObject:
   m_ObjectHideFlags: 0
@@ -10407,7 +10440,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -10440,7 +10473,7 @@ Light:
     serializedVersion: 2
     m_Bits: 2147483647
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -10465,7 +10498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_LightLayerMask: 1
   m_RenderingLayers: 1
   m_CustomShadowLayers: 0
@@ -10726,7 +10759,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -10759,7 +10792,7 @@ Light:
     serializedVersion: 2
     m_Bits: 2147483647
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -10784,7 +10817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_LightLayerMask: 1
   m_RenderingLayers: 1
   m_CustomShadowLayers: 0

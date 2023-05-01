@@ -11,6 +11,7 @@ TagManager:
   - BG_SOUNDS_VOLUME_SLIDER
   - Canvas
   - BG_MUSIC_CREATED
+  - CameraFollowPoint
   layers:
   - Default
   - TransparentFX
