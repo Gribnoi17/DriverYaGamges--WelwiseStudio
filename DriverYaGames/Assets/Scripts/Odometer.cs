@@ -76,7 +76,7 @@ public class Odometer : MonoBehaviour
 
     private void SaveToAchiv()
     {
-        if(SceneManager.GetActiveScene().name == "NightRace")
+        if(SceneManager.GetActiveScene().name == "NightRoad")
             PlayerPrefs.SetInt("MileageOnFirstLocation", PlayerPrefs.GetInt("MileageOnFirstLocation") + (int)dist);
         else if(SceneManager.GetActiveScene().name == "GreenCity")
             PlayerPrefs.SetInt("MileageOnSecondLocation", PlayerPrefs.GetInt("MileageOnSecondLocation") + (int)dist);

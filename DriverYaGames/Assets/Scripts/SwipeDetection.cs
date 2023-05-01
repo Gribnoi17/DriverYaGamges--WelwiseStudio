@@ -55,10 +55,10 @@ public class SwipeDetection : MonoBehaviour
                     _isSwiping = true;
                     _tapPosition = Input.GetTouch(0).position;
                 }
-            }
-            else if (Input.GetTouch(0).phase == TouchPhase.Canceled || Input.GetTouch(0).phase == TouchPhase.Ended)
-            {
-                ResetSwipe();
+                else if (Input.GetTouch(0).phase == TouchPhase.Canceled || Input.GetTouch(0).phase == TouchPhase.Ended)
+                {
+                    ResetSwipe();
+                }
             }
         }
 

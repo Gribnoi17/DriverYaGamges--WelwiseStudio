@@ -1,6 +1,9 @@
+using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameRules : MonoBehaviour
 {
@@ -73,17 +76,34 @@ public class GameRules : MonoBehaviour
         else if(PlayerPrefs.GetInt("RegimeRace") == 1)
         {
             Regime = regimeRace[1];
-            if (PlayerPrefs.HasKey("Difficult"))
+            if (PlayerPrefs.HasKey("NRDif") || PlayerPrefs.HasKey("GSDif") || PlayerPrefs.HasKey("TZDif"))
             {
-                Difficult = difficulty[PlayerPrefs.GetInt("Difficult")];
+                Difficult = difficulty[GetDiff()];
             }
             else
             {
-                PlayerPrefs.SetInt("Difficult", 0);
+                PlayerPrefs.SetInt("NRDif", 0);
+                PlayerPrefs.SetInt("GSDif", 0);
+                PlayerPrefs.SetInt("TZDif", 0);
             }
-            difficult = difficulty[PlayerPrefs.GetInt("Difficult")];
         }
         Inizializition();
+    }
+
+    private int GetDiff()
+    {
+        string nameScene = SceneManager.GetActiveScene().name;
+        if (nameScene == "NightRoad")
+        {
+            return PlayerPrefs.GetInt("NRDif");
+        }else if(nameScene == "GreenCity")
+        {
+            return PlayerPrefs.GetInt("GSDif");
+        }else if(nameScene == "ToxicZone")
+        {
+            return PlayerPrefs.GetInt("TZDif");
+        }
+        return 0;
     }
 
     private void Awake()
