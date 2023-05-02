@@ -85,6 +85,7 @@ public class GameRules : MonoBehaviour
                 PlayerPrefs.SetInt("NRDif", 0);
                 PlayerPrefs.SetInt("GSDif", 0);
                 PlayerPrefs.SetInt("TZDif", 0);
+                Difficult = difficulty[GetDiff()];
             }
         }
         Inizializition();
@@ -96,10 +97,14 @@ public class GameRules : MonoBehaviour
         if (nameScene == "NightRoad")
         {
             return PlayerPrefs.GetInt("NRDif");
-        }else if(nameScene == "GreenCity")
+        }
+
+        else if(nameScene == "GreenCity")
         {
             return PlayerPrefs.GetInt("GSDif");
-        }else if(nameScene == "ToxicZone")
+        }
+
+        else if(nameScene == "ToxicZone")
         {
             return PlayerPrefs.GetInt("TZDif");
         }

@@ -20,6 +20,7 @@ public class LosePanelActivation : MonoBehaviour
     private Animator _anim;
     private Money _money;
     private PauseController _pauseController;
+    private StartRace _startRace;
     private bool _watchedAdv = false;
 
     private void Awake()
@@ -36,7 +37,7 @@ public class LosePanelActivation : MonoBehaviour
 
     private void Initialization()
     {
-        print("Сука, где спидометр????");
+        _startRace = FindObjectOfType<StartRace>();
         _audioSources = GameObject.Find("AuduoSources");
         _pauseController = FindObjectOfType<PauseController>();
         _money = FindObjectOfType<Money>();
@@ -50,7 +51,7 @@ public class LosePanelActivation : MonoBehaviour
 
     private void OnDestroy()
     {
-        //EventManager.PlayerDied -= ShowPanelThroughtTime;
+        _audioSources.gameObject.SetActive(true);
     }
 
     public void SaveMoney()
@@ -74,12 +75,17 @@ public class LosePanelActivation : MonoBehaviour
         {
             _anim.Play("LosePanelAnim");
             _watchedAdv = true;
+            if (PlayerPrefs.GetInt("RegimeRace") == 1)
+            {
+                _startRace.IsTimeCounting(false);
+            }
         }
         else
         {
             _anim.Play("LosePanelAnim Only Menu");
             DOTween.KillAll();
         }
+
     }
 
 
@@ -101,7 +107,14 @@ public class LosePanelActivation : MonoBehaviour
 
     public void ShowRewardedAdv()
     {
-        ReturnToGameExtern();
+        try
+        {
+            ReturnToGameExtern();
+        }
+        catch
+        {
+            ReturnToGame();
+        }
     }
 
     public void ReturnToGame()
@@ -117,5 +130,9 @@ public class LosePanelActivation : MonoBehaviour
         _carGenerator.gameObject.SetActive(true);
         _carSceneSetter.SetAndActivateCar();
         _losePanel.SetActive(false);
+        if (PlayerPrefs.GetInt("RegimeRace") == 1)
+        {
+            _startRace.IsTimeCounting(true);
+        }
     }
 }

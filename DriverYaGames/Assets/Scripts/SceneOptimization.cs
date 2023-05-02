@@ -11,14 +11,8 @@ public class SceneOptimization : MonoBehaviour
     [SerializeField] private List<GameObject> objectsToDestroyOnPhone;
     [SerializeField] private SceneType _sceneType = SceneType.Location;
     [SerializeField] private UniversalRenderPipelineAsset pipelineAsset;
-    public Camera _mainCamera;
 
     [SerializeField] private Skybox[] _skyboxes;
-
-    [Header("Fog settings")]
-    [SerializeField] private float _fogStartDistance = 0f;
-    [SerializeField] private float _fogEndDistance = 15f;
-    [SerializeField] private float _fogDensity = 0.1f;
 
 
     [DllImport("__Internal")]
@@ -68,21 +62,7 @@ public class SceneOptimization : MonoBehaviour
                 Destroy(obj);
             }
             SetMobileGraphicsSettings();
-            //SetLinearFog();
         }
-    }
-
-    private void SetLinearFog()
-    {
-        RenderSettings.fogMode = FogMode.Linear;
-        RenderSettings.fogStartDistance = _fogStartDistance;
-        RenderSettings.fogEndDistance = _fogEndDistance;
-    }
-
-    private void SetExponentialFog()
-    {
-        RenderSettings.fogMode = FogMode.Exponential;
-        RenderSettings.fogDensity = _fogDensity;
     }
 
     private void GetDevice()
@@ -92,12 +72,10 @@ public class SceneOptimization : MonoBehaviour
         if (_deviceType == 1)
         {
             PlayerPrefs.SetInt("IsMobile", 1);
-            Debug.Log("-------------------------------------------“≈À≈‘ŒÕ-------------------");
         }
         else if (_deviceType == 3)
         {
             PlayerPrefs.SetInt("IsMobile", 0);
-            Debug.Log("-------------------------------------------ÔÍÍÍÍÍÍ-------------------");
         }
     }
 

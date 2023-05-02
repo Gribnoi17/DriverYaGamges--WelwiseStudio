@@ -9,8 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class StartRace : MonoBehaviour
 {
-    [DllImport("__Internal")]
-    private static extern string RateGame();
+    //[DllImport("__Internal")]
+    //private static extern string RateGame();
 
     [SerializeField] private GameRules _gameRuler;
     [SerializeField] private GameObject _endConfetti;
@@ -24,9 +24,12 @@ public class StartRace : MonoBehaviour
 
     private Speedometer _spd;
     private LosePanelActivation _losePanelScript;
+    private PoliceCar _policeCarScript;
+    private SceneController _sceneController;
+    private Generator _carGenerator;
+    private bool _isTimeCounting = true; 
     void Start()
     {
-        _spd = FindObjectOfType<Speedometer>();
         _losePanelScript = FindObjectOfType<LosePanelActivation>();
         if (PlayerPrefs.GetInt("RegimeRace") == 0)
         {
@@ -38,6 +41,11 @@ public class StartRace : MonoBehaviour
         }
     }
 
+    public void IsTimeCounting(bool value)
+    {
+        _isTimeCounting = value;
+    }
+
     void StartFreeRace()
     {
         _gen.needSpawnShield = true;
@@ -47,20 +55,26 @@ public class StartRace : MonoBehaviour
 
     void StartRaceForTime()
     {
+        _sceneController = FindObjectOfType<SceneController>();
+        _carGenerator = FindObjectOfType<Generator>();
+        _spd = FindObjectOfType<Speedometer>();
+        _policeCarScript = FindObjectOfType<PoliceCar>();
         _gen.needSpawnShield = false;
-        _timer.gameObject.SetActive(true);
         _timer.transform.parent.gameObject.SetActive(true);
+        _timer.gameObject.SetActive(true);
+        print(_gameRuler.Difficult);
+        print(_gameRuler.difficulty[0]);
         if (_gameRuler.Difficult == _gameRuler.difficulty[0])
         {
-            _timer.text = "60";
+            _timer.text = "92";
         }
         else if (_gameRuler.Difficult == _gameRuler.difficulty[1])
         {
-            _timer.text = "180";
+            _timer.text = "182";
         }
         else if (_gameRuler.Difficult == _gameRuler.difficulty[2])
         {
-            _timer.text = "360";
+            _timer.text = "252";
         }
         _finalTimeText.text = _timer.text;
         StartCoroutine(Timer());
@@ -69,26 +83,36 @@ public class StartRace : MonoBehaviour
     private IEnumerator Timer()
     {
         int _nt = Convert.ToInt32(_timer.text.ToString());
-        while (true)
-        {
-            int nextTime = _nt - 1;
-            _nt = nextTime;
-            if (nextTime / 60d > 1)
-                if (nextTime - (Math.Truncate(nextTime / 60d) * 60) < 10)
-                    _timer.text = $"{Math.Truncate(nextTime / 60d)}:0{nextTime - (Math.Truncate(nextTime / 60d) * 60)}";
-                else
-                    _timer.text = $"{Math.Truncate(nextTime / 60d)}:{nextTime - (Math.Truncate(nextTime / 60d) * 60)}";
-            else
-                _timer.text = Convert.ToString(Convert.ToInt32(_nt) - 1).ToString();
 
-            if (_nt == 0 || _nt < 0)
-                break;
-            else
+        while (_nt > 1)
+        {
+            if (_isTimeCounting)
+            {
+                int nextTime = _nt - 1;
+                _nt = nextTime;
+
+                if (nextTime / 60d > 1)
+                {
+                    if (nextTime - (Math.Truncate(nextTime / 60d) * 60) < 10)
+                        _timer.text = $"{Math.Truncate(nextTime / 60d)}:0{nextTime - (Math.Truncate(nextTime / 60d) * 60)}";
+                    else
+                        _timer.text = $"{Math.Truncate(nextTime / 60d)}:{nextTime - (Math.Truncate(nextTime / 60d) * 60)}";
+                }
+                else
+                {
+                    _timer.text = Convert.ToString(Convert.ToInt32(_nt) - 1).ToString();
+                }
+                
                 yield return new WaitForSeconds(1f);
+            }
+            else
+            {
+                yield return null;
+            }
         }
-        StopCoroutine(Timer());
         StartCoroutine(Win());
     }
+
 
 
     private IEnumerator Win()
@@ -120,12 +144,12 @@ public class StartRace : MonoBehaviour
         _endConfetti.SetActive(true);
         if(_sVC != null)
             _sVC.WinSoundsStart();
+        _policeCarScript.enabled = false;
+        _carGenerator.RemoveAllChildren();
+        _sceneController.DeatctivateAllControl();
+        _policeCarScript.gameObject.GetComponent<BoxCollider>().enabled = false;
         yield return new WaitForSeconds(2f);
         _winPanel.SetActive(true);
         _losePanelScript.Pause();
-        if (_gameRuler.Difficult == _gameRuler.difficulty[2])
-        {
-            RateGame();
-        }
     }
 }

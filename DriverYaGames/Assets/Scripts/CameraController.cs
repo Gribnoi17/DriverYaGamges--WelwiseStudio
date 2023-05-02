@@ -28,7 +28,7 @@ public class CameraController : MonoBehaviour
     private Transform _followPoint;
 
 
-
+    private bool _isNitroPlaying = false;
     // private Booster _booster;
     private Sequence _sequenceRotate;
     private Sequence _sequenceMoveBackwards;
@@ -106,11 +106,13 @@ public class CameraController : MonoBehaviour
 
     private void StartMoveCameraBackwards()
     {
+        StopCoroutine(StartCameraZoom());
         StartCoroutine(StartCameraZoom());
     }
 
     private IEnumerator StartCameraZoom()
     {
+        _isNitroPlaying = true;
         float startFov = _virtualCamera.m_Lens.FieldOfView;
         float elapsedTime = 0f;
 
@@ -134,6 +136,7 @@ public class CameraController : MonoBehaviour
 
         // возвращаем значение FieldOfView обратно
         _virtualCamera.m_Lens.FieldOfView = startFov;
+        _isNitroPlaying = false;
     }
 
 

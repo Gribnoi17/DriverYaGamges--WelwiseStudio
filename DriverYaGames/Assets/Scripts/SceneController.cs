@@ -6,11 +6,10 @@ public class SceneController : MonoBehaviour
 {
     [SerializeField] private GameObject _acsController;
     [SerializeField] private GameObject _swipeDetection;
-    [SerializeField] private PoliceCar _activeCar;
+    private PoliceCar _activeCar;
 
     private void Start()
     {
-
         if (PlayerPrefs.GetString("ControllerType") == "Swipe")
         {
             StartCoroutine(WaitForSwipeDet());
@@ -24,7 +23,6 @@ public class SceneController : MonoBehaviour
             StartCoroutine(WaitForKeyboard());
             StartCoroutine(WaitForSwipeDet());
         }
-
     }
 
     IEnumerator WaitForAcs()
@@ -49,5 +47,12 @@ public class SceneController : MonoBehaviour
         _activeCar.CanMove = false;
         yield return new WaitForSeconds(3.5f);
         _activeCar.CanMove = true;
+    }
+
+    public void DeatctivateAllControl()
+    {
+        _activeCar.CanMove = false;
+        _swipeDetection.SetActive(false);
+        _acsController.SetActive(false);
     }
 }
