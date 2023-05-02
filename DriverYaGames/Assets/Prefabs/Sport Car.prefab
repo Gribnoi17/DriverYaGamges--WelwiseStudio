@@ -35,6 +35,37 @@ Transform:
   m_Father: {fileID: 7052772391324818294}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1300325434569699368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5325809697901246413}
+  m_Layer: 0
+  m_Name: FollowPoint
+  m_TagString: CameraFollowPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5325809697901246413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300325434569699368}
+  m_LocalRotation: {x: 0.082175605, y: -0, z: -0, w: 0.99661785}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5185302141861730479}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 9.427, y: 0, z: 0}
 --- !u!1 &1882339347892639746
 GameObject:
   m_ObjectHideFlags: 0
@@ -5308,7 +5339,7 @@ GameObject:
   - component: {fileID: 688076150}
   m_Layer: 0
   m_Name: Sport Car
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5329,8 +5360,9 @@ Transform:
   - {fileID: 9058432445630675987}
   - {fileID: 7052772391324818294}
   - {fileID: 789983037189412575}
+  - {fileID: 5325809697901246413}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5185302141861730482
 Animator:
@@ -5375,6 +5407,7 @@ MonoBehaviour:
   _shieldPickUp: {fileID: 8300000, guid: 7927b0721fe612043ab5a6c686ada5b4, type: 3}
   _collission: {fileID: 8300000, guid: 0535cebfc88fdf1459f7ebc4555b1acf, type: 3}
   _nitroSound: {fileID: 8300000, guid: 81a01c9777140c34fb857ac325d215e9, type: 3}
+  _shieldColl: {fileID: 8300000, guid: 9a3496ff5cab2714bb3360e764e457e1, type: 3}
   _nitro: {fileID: 3427607770776878418}
   _canvasAS: {fileID: 0}
   IsShieldActive: 0
