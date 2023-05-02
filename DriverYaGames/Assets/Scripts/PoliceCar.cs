@@ -138,8 +138,10 @@ public class PoliceCar : MonoBehaviour
 		{
 		  if(shieldActive == false)
 		  {
-				//Debug.Log("-----------Столкновение, метод коллизии----------------");
-				SwipeDetection.SwipeEvent -= OnSwipe;
+				StartRace sr = FindObjectOfType<StartRace>();
+				sr.StopCoroutine("Timer");
+                //Debug.Log("-----------Столкновение, метод коллизии----------------");
+                SwipeDetection.SwipeEvent -= OnSwipe;
 				_losePanelScript.ShowPanelThroughtTime();
 				_canvasAS.PlayOneShot(_collission);
 				EventManager.OnPlayerDied();
