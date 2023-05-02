@@ -24,8 +24,10 @@ public class StartRace : MonoBehaviour
 
     private Speedometer _spd;
     private LosePanelActivation _losePanelScript;
+    private bool _needOffCoroutine;
     void Start()
     {
+        _needOffCoroutine = false;
         _spd = FindObjectOfType<Speedometer>();
         _losePanelScript = FindObjectOfType<LosePanelActivation>();
         if (PlayerPrefs.GetInt("RegimeRace") == 0)
@@ -36,6 +38,11 @@ public class StartRace : MonoBehaviour
         {
             Invoke(nameof(StartRaceForTime),4f);
         }
+    }
+
+    public void StopText()
+    {
+        _needOffCoroutine = true;
     }
 
     void StartFreeRace()
@@ -81,13 +88,14 @@ public class StartRace : MonoBehaviour
             else
                 _timer.text = Convert.ToString(Convert.ToInt32(_nt) - 1).ToString();
 
-            if (_nt == 0 || _nt < 0)
+            if (_nt == 0 || _nt < 0 || _needOffCoroutine)
                 break;
             else
                 yield return new WaitForSeconds(1f);
         }
         StopCoroutine(Timer());
-        StartCoroutine(Win());
+        if(!_needOffCoroutine)
+            StartCoroutine(Win());
     }
 
 
