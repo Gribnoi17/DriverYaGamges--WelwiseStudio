@@ -15,6 +15,8 @@ public class SliderVolumeController : MonoBehaviour
 
     private MusicController _musCont;
     [SerializeField]private AudioSource _source;
+
+    private bool alreadyStartCor;
     private void Start()
     {
         _musCont = FindObjectOfType<MusicController>();
@@ -38,12 +40,32 @@ public class SliderVolumeController : MonoBehaviour
 
     public void changeMusicSliderEvent()
     {
+        if (_musCont == null && alreadyStartCor)
+            StartCoroutine(FindMusCon());
         _musCont.ChangeVolumeMusic();
     }
 
     public void changeSoundsSliderEvent()
     {
+        if (_musCont == null && !alreadyStartCor)
+            StartCoroutine(FindMusCon());
         _musCont.ChangeVolumeSounds();
+    }
+
+    private IEnumerator FindMusCon()
+    {
+        alreadyStartCor = true;
+        while(true)
+        {
+            if (_musCont != null)
+                break;
+            _musCont = FindObjectOfType<MusicController>();
+            yield return new WaitForSeconds(0.1f);
+        }
+        changeMusicSliderEvent();
+        changeSoundsSliderEvent();
+        alreadyStartCor = false;
+        StopCoroutine(FindMusCon());
     }
 
     public void PauseClick()
