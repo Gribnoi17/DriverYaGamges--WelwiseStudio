@@ -133,8 +133,13 @@ public class PoliceCar : MonoBehaviour
             StartCoroutine(ActivateNitro());
 		    StartCoroutine(_spd.SpeedBoosterController());
 		}
-		
-		else if (collision.gameObject.tag == "Car")
+        else if (collision.gameObject.tag == "ItemCamera")
+        {
+            Destroy(collision.gameObject);
+            EventManager.OnPlayerTookCamera();
+        }
+
+        else if (collision.gameObject.tag == "Car")
 		{
 		  if(shieldActive == false)
 		  {

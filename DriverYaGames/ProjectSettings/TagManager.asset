@@ -12,6 +12,7 @@ TagManager:
   - Canvas
   - BG_MUSIC_CREATED
   - CameraFollowPoint
+  - ItemCamera
   layers:
   - Default
   - TransparentFX
