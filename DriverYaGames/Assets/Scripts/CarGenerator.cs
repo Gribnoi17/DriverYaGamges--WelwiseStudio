@@ -77,7 +77,7 @@ public class Generator : MonoBehaviour
     private IEnumerator StartAuxiliaryBreak()
     {
         _canSpawnAuxiliary = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
         _canSpawnAuxiliary = true;
     }
 
