@@ -30,16 +30,14 @@ public class CameraController : MonoBehaviour
 
     private bool _isNitroPlaying = false;
     // private Booster _booster;
-    private Sequence _sequenceRotate;
-    private Sequence _sequenceMoveBackwards;
 
     private void Start()
     {
         EventManager.PlayerDied += ShakeCameraPlay;
         Invoke(nameof(FindFollowPoint), 0.3f);
         EventManager.PlayerTookNitro += StartMoveCameraBackwards;
+        EventManager.PlayerTookCamera += StartMoveShoulderOffset;
         StartCoroutine(WaitForStartAnim());
-        //StartCoroutine(MoveShoulderOffset(_shoulderOffsetValue, _cameraMovingDuration)); ------- метод для изменения позиции камеры
     }
 
     private IEnumerator WaitForStartAnim()
@@ -53,6 +51,12 @@ public class CameraController : MonoBehaviour
     {
         _followPoint = GameObject.FindGameObjectWithTag("CameraFollowPoint").GetComponent<Transform>();
         _virtualCamera.Follow = _followPoint;
+    }
+
+
+    private void StartMoveShoulderOffset()
+    {
+        StartCoroutine(MoveShoulderOffset(_shoulderOffsetValue, _cameraMovingDuration));
     }
 
     private IEnumerator MoveShoulderOffset(float offsetValue, float duration)
@@ -145,7 +149,7 @@ public class CameraController : MonoBehaviour
     {
         EventManager.PlayerDied -= ShakeCameraPlay;
         EventManager.PlayerTookNitro -= StartMoveCameraBackwards;
-        _sequenceRotate.Kill();
+        EventManager.PlayerTookCamera -= StartMoveShoulderOffset;
     }
 
     private void ShakeCameraPlay()

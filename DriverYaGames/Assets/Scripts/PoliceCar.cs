@@ -70,7 +70,6 @@ public class PoliceCar : MonoBehaviour
 	 private void OnEnable()
 	 {
 		SwipeDetection.SwipeEvent += OnSwipe;
-		print("EJhlfgdhsljflsjdjadsljfodsfjgkladfjo;f");
 	 }
 
 	public IEnumerator ActivateNitro()
@@ -119,11 +118,16 @@ public class PoliceCar : MonoBehaviour
 	 {
 		if(collision.gameObject.tag == "Shield")
 		{
-			shieldActive = true;
-		    Destroy(collision.gameObject);
-		    StopCoroutine(ShieldController());
-			DeactivateSchield();
-		    StartCoroutine(ShieldController());
+			if (shieldActive == true)
+				Destroy(collision.gameObject);
+			else
+			{
+                Destroy(collision.gameObject);
+                StopCoroutine(ShieldController());
+                DeactivateSchield();
+                StartCoroutine(ShieldController());
+            }
+
 		}
 
 		else if(collision.gameObject.tag == "SpeedBooster")
@@ -133,8 +137,13 @@ public class PoliceCar : MonoBehaviour
             StartCoroutine(ActivateNitro());
 		    StartCoroutine(_spd.SpeedBoosterController());
 		}
-		
-		else if (collision.gameObject.tag == "Car")
+        else if (collision.gameObject.tag == "ItemCamera")
+        {
+            Destroy(collision.gameObject);
+            EventManager.OnPlayerTookCamera();
+        }
+
+        else if (collision.gameObject.tag == "Car")
 		{
 		  if(shieldActive == false)
 		  {
