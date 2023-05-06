@@ -663,11 +663,7 @@ MonoBehaviour:
   - {fileID: 90320901}
   _sceneType: 1
   pipelineAsset: {fileID: 11400000, guid: d0e2fc18fe036412f8223b3b3d9ad574, type: 2}
-  _mainCamera: {fileID: 0}
   _skyboxes: []
-  _fogStartDistance: 0
-  _fogEndDistance: 65
-  _fogDensity: 0.025
 --- !u!4 &53498611
 Transform:
   m_ObjectHideFlags: 0
@@ -1075,7 +1071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 767503938, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -11.192688
+      value: -11.192627
       objectReference: {fileID: 0}
     - target: {fileID: 767503938, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1087,7 +1083,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1101972310, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -11.192688
+      value: -11.192627
       objectReference: {fileID: 0}
     - target: {fileID: 1101972310, guid: 5804600525f66de4abf11111389ca287, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4659,6 +4655,7 @@ MonoBehaviour:
   _auxiliary:
   - {fileID: 4825797502949678827, guid: 4d18b9aff573d1f4f9974ab6da29d9d3, type: 3}
   - {fileID: -2405523579888373959, guid: 9d59b959acecb2c4c8a7c9e7ee95c278, type: 3}
+  - {fileID: 151185970, guid: 7a375182e934d024dbe2d45cc0a867b6, type: 3}
   needSpawnShield: 1
 --- !u!4 &346564571
 Transform:
@@ -22616,7 +22613,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _acsController: {fileID: 111393967}
   _swipeDetection: {fileID: 275120864}
-  _activeCar: {fileID: 0}
 --- !u!114 &1429207849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31749,6 +31745,11 @@ PrefabInstance:
       propertyPath: _brokenScreen
       value: 
       objectReference: {fileID: 2102042485}
+    - target: {fileID: 8929506094752826997, guid: 483d88c645d9fc141be51a5091fe86c7,
+        type: 3}
+      propertyPath: _cameraMovingDuration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8929506094752826999, guid: 483d88c645d9fc141be51a5091fe86c7,
         type: 3}
       propertyPath: m_Name

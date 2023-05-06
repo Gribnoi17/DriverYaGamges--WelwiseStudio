@@ -39,7 +39,7 @@ public class Car : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (gameObject.tag != "Shield" && gameObject.tag != "SpeedBooster")
+        if (gameObject.tag != "Shield" && gameObject.tag != "SpeedBooster" && gameObject.tag != "ItemCamera")
         {
             GameObject explosion = Instantiate(_explosionParticleSystem, transform.position, Quaternion.identity);
             Destroy(explosion, 1.0f);
@@ -60,7 +60,7 @@ public class Car : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if ( gameObject.tag != "Shield" && gameObject.tag != "SpeedBooster" )
+        if ( gameObject.tag != "Shield" && gameObject.tag != "SpeedBooster" && gameObject.tag != "ItemCamera")
             _isZone = true;
     }
 

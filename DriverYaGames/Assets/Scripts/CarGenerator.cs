@@ -18,7 +18,7 @@ public class Generator : MonoBehaviour
 
     private float _additionalSpeed;
     private int _countRoutinesSpeedTick = 5;
-
+    private bool _canSpawnAuxiliary = true;
     [HideInInspector] public bool needSpawnShield = true;
 
     private void Start()
@@ -43,8 +43,9 @@ public class Generator : MonoBehaviour
         yield return new WaitForSeconds(_period);
         Car car = null;
         needSpawnShield = true;
-        if (Random.Range(0, 8) == 0)
+        if (Random.Range(0, 11) == 0 & _canSpawnAuxiliary)
         {
+            StartCoroutine(StartAuxiliaryBreak());
             if(needSpawnShield == true)
             {
                 car = Instantiate(_auxiliary[Random.Range(0, _auxiliary.Length)],
@@ -72,6 +73,13 @@ public class Generator : MonoBehaviour
         car.Speed += _additionalSpeed;
     }
 
+
+    private IEnumerator StartAuxiliaryBreak()
+    {
+        _canSpawnAuxiliary = false;
+        yield return new WaitForSeconds(5f);
+        _canSpawnAuxiliary = true;
+    }
 
     public void RemoveAllChildren()
     {
