@@ -25,6 +25,15 @@ public class TaskPanelControll : MonoBehaviour
         _textFlicker = true;
     }
 
+    private void Update()
+    {
+        if(!AlreadyRunning && _sprite.GetColor().a != 0f)
+        {
+            _color.a = 0f;
+            _sprite.SetColor(_color);
+        }
+    }
+
     private void UnVisible()
     {
         _textFlicker = false;
