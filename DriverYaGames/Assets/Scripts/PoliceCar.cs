@@ -147,8 +147,6 @@ public class PoliceCar : MonoBehaviour
 		{
 		  if(shieldActive == false)
 		  {
-				StartRace sr = FindObjectOfType<StartRace>();
-				sr.StopText();
                 //Debug.Log("-----------Столкновение, метод коллизии----------------");
                 SwipeDetection.SwipeEvent -= OnSwipe;
 				_losePanelScript.ShowPanelThroughtTime();
