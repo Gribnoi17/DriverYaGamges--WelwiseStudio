@@ -525,7 +525,6 @@ MonoBehaviour:
   speed: 10
   deadZone: 0.12
   rotateSpeed: 3.5
-  _value: {fileID: 6804371122547150252}
   maxX: 0.936
   minX: -0.936
   _rB: {fileID: 0}
@@ -9285,7 +9284,9 @@ PrefabInstance:
       value: Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 378557642, guid: 5804600525f66de4abf11111389ca287, type: 3}
+    - {fileID: 1618145996, guid: 5804600525f66de4abf11111389ca287, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5804600525f66de4abf11111389ca287, type: 3}
@@ -9307,18 +9308,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6804371122547150249}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6804371122547150252 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 378557645, guid: 5804600525f66de4abf11111389ca287,
-    type: 3}
-  m_PrefabInstance: {fileID: 6804371122547150249}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &6804371122547150253 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 1806880161, guid: 5804600525f66de4abf11111389ca287,
