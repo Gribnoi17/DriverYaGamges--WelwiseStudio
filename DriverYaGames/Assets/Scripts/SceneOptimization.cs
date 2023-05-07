@@ -34,6 +34,7 @@ public class SceneOptimization : MonoBehaviour
         if (_sceneType == SceneType.Menu)
         {
             //PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt("MoneyNameConst",15000);
             try
             {
                 GetDevice();

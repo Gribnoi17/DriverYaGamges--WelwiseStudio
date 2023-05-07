@@ -11,7 +11,6 @@ public class AcsController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float deadZone;
     [SerializeField] private float rotateSpeed;
-    [SerializeField] private TextMeshProUGUI _value;
 
     [Header("Coordinates")]
     [SerializeField] private float maxX;
@@ -39,14 +38,6 @@ public class AcsController : MonoBehaviour
 
     void Update()
     {
-        try
-        {
-            _value.text = _acceleration.ToString();
-        }
-        catch
-        {
-            print("acs text error");
-        }
         if (_acceleration > deadZone && _rB.transform.position.x < maxX)
         {
             var dir = new Vector3(_acceleration * speed, 0f, 0f);
