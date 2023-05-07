@@ -1299,18 +1299,6 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 91847809}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &91847814 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 378557645, guid: 5804600525f66de4abf11111389ca287,
-    type: 3}
-  m_PrefabInstance: {fileID: 91847809}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &91996652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,7 +1653,6 @@ MonoBehaviour:
   speed: 10
   deadZone: 0.08
   rotateSpeed: 5
-  _value: {fileID: 91847814}
   maxX: 0.936
   minX: -0.936
   _rB: {fileID: 0}
@@ -22580,9 +22567,9 @@ MonoBehaviour:
   _maxSpeed_WhitePoliceCar: 270
   _maxSpeed_SportCar: 300
   _maxSpeed_SciFiCar: 350
-  _distSpeed: 30
+  _distSpeed: 50
   _rewardedKilometers: 15
-  _moneyForDistance: 20
+  _moneyForDistance: 5
   _shieldActionTime: 5
 --- !u!4 &1429207847
 Transform:

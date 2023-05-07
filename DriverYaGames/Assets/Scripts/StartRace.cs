@@ -9,8 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class StartRace : MonoBehaviour
 {
-    //[DllImport("__Internal")]
-    //private static extern string RateGame();
+    [DllImport("__Internal")]
+    private static extern string ShowAdv();
 
     [SerializeField] private GameRules _gameRuler;
     [SerializeField] private GameObject _endConfetti;
@@ -151,5 +151,10 @@ public class StartRace : MonoBehaviour
         yield return new WaitForSeconds(2f);
         _winPanel.SetActive(true);
         _losePanelScript.Pause();
+        if(_gameRuler.Difficult == _gameRuler.difficulty[1] || _gameRuler.Difficult == _gameRuler.difficulty[2])
+        {
+            yield return new WaitForSeconds(0.5f);
+            ShowAdv();
+        }
     }
 }

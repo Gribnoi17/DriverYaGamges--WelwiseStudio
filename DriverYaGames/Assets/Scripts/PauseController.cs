@@ -26,7 +26,7 @@ public class PauseController : MonoBehaviour
             print("Слайдеры не найдены, PauseController");
         }
         pauseMenu.SetActive(true);
-        Time.timeScale = 0.0000001f;
+        Time.timeScale = 0.0001f;
     }
 
     public void OnlyFindObjects()

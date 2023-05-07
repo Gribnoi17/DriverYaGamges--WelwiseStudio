@@ -134,5 +134,6 @@ public class LosePanelActivation : MonoBehaviour
         {
             _startRace.IsTimeCounting(true);
         }
+        _carGenerator.RemoveAllChildren();
     }
 }

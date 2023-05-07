@@ -141,6 +141,7 @@ public class PoliceCar : MonoBehaviour
         {
             Destroy(collision.gameObject);
             EventManager.OnPlayerTookCamera();
+			print("Взял камеру");	
         }
 
         else if (collision.gameObject.tag == "Car")

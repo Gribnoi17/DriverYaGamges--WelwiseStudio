@@ -34,10 +34,18 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         EventManager.PlayerDied += ShakeCameraPlay;
+        EventManager.PlayerDied += SetDefaultStats;
         Invoke(nameof(FindFollowPoint), 0.3f);
         EventManager.PlayerTookNitro += StartMoveCameraBackwards;
         EventManager.PlayerTookCamera += StartMoveShoulderOffset;
         StartCoroutine(WaitForStartAnim());
+    }
+    
+    private void SetDefaultStats()
+    {
+        Cinemachine3rdPersonFollow follow = _virtualCamera.GetCinemachineComponent<Cinemachine3rdPersonFollow>();
+        follow.ShoulderOffset.x = 0.3f;
+        _virtualCamera.m_Lens.FieldOfView = 40f;
     }
 
     private IEnumerator WaitForStartAnim()
@@ -150,6 +158,7 @@ public class CameraController : MonoBehaviour
         EventManager.PlayerDied -= ShakeCameraPlay;
         EventManager.PlayerTookNitro -= StartMoveCameraBackwards;
         EventManager.PlayerTookCamera -= StartMoveShoulderOffset;
+        EventManager.PlayerDied -= SetDefaultStats;
     }
 
     private void ShakeCameraPlay()
