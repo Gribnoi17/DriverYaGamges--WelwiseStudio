@@ -15,6 +15,7 @@ public class TaskPanelControll : MonoBehaviour
     private bool _textFlicker;
     private bool _alreadyRunning;
     public bool AlreadyRunning { get { return _alreadyRunning; } }
+
     private void Start()
     {
         _sprite = _taskPanel.GetComponent<CanvasRenderer>();
@@ -92,5 +93,15 @@ public class TaskPanelControll : MonoBehaviour
         StartCoroutine(Visible());
     }
 
-
+    private void OnEnable()
+    {
+        if (AlreadyRunning)
+        {
+            _color.a = 0f;
+            _sprite.SetColor(_color);
+            _textColor.a = 0f;
+            _text.color = _textColor;
+            StartVisible();
+        }
+    }
 }

@@ -12,6 +12,7 @@ public class ShopItem : MonoBehaviour
     [SerializeField] private GameObject _lockPanel;
     [SerializeField] private Button _buyButton;
     [SerializeField] private Achivments _ach;
+    [SerializeField] private SliderVolumeController _svc;
 
     private PanelAnimation _panelAnimation;
     private enum _typeOfItem { Car, Location }
@@ -42,6 +43,8 @@ public class ShopItem : MonoBehaviour
 
     public void UnlockItem()
     {
+        if(_svc != null)
+            _svc.BuyButtonSound();
         _lockPanel.SetActive(false);
         PlayerPrefs.SetString(_itemName, "Unlocked");
         garageSetUp.SetLocationByPlayerPrefs();

@@ -1047,6 +1047,7 @@ MonoBehaviour:
   _lockPanel: {fileID: 1607453985}
   _buyButton: {fileID: 866099795}
   _ach: {fileID: 164620601}
+  _svc: {fileID: 1752272787}
 --- !u!1 &54015106
 GameObject:
   m_ObjectHideFlags: 0
@@ -4354,7 +4355,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.65
+  m_fontSize: 56.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5767,6 +5768,7 @@ MonoBehaviour:
   _lockPanel: {fileID: 370115995}
   _buyButton: {fileID: 866099795}
   _ach: {fileID: 164620601}
+  _svc: {fileID: 1752272787}
 --- !u!1 &329946659
 GameObject:
   m_ObjectHideFlags: 0
@@ -6013,8 +6015,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2001408282}
   - {fileID: 1271335792}
+  - {fileID: 2001408282}
   - {fileID: 501949789}
   - {fileID: 2054674933}
   m_Father: {fileID: 186328284}
@@ -6200,7 +6202,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 93.2
+  m_fontSize: 94.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9128,6 +9130,7 @@ MonoBehaviour:
   _lockPanel: {fileID: 1049594239}
   _buyButton: {fileID: 866099795}
   _ach: {fileID: 164620601}
+  _svc: {fileID: 0}
 --- !u!1 &572527684
 GameObject:
   m_ObjectHideFlags: 0
@@ -9550,7 +9553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20251252, y: 0.24945632}
   m_AnchorMax: {x: 0.35276273, y: 0.76000005}
-  m_AnchoredPosition: {x: 2, y: -0.7789993}
+  m_AnchoredPosition: {x: 2, y: -0.7789917}
   m_SizeDelta: {x: -4, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &593443079
@@ -10383,7 +10386,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.5
+  m_fontSize: 43.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11103,7 +11106,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.05
+  m_fontSize: 43.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12257,6 +12260,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1271335795}
+        m_TargetAssemblyTypeName: TaskPanelControll, Assembly-CSharp
+        m_MethodName: ReVisible
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &791963294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13068,7 +13083,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1271335793}
+  m_TargetGraphic: {fileID: 843123095}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -13079,18 +13094,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 805877950}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1271335791}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13749,18 +13752,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1752272787}
         m_TargetAssemblyTypeName: SliderVolumeController, Assembly-CSharp
         m_MethodName: ClickForButtonSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1752272787}
-        m_TargetAssemblyTypeName: SliderVolumeController, Assembly-CSharp
-        m_MethodName: BuyButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14759,6 +14750,7 @@ MonoBehaviour:
   _lockPanel: {fileID: 1265472953}
   _buyButton: {fileID: 866099795}
   _ach: {fileID: 164620601}
+  _svc: {fileID: 1752272787}
 --- !u!1 &923141495
 GameObject:
   m_ObjectHideFlags: 0
@@ -19489,6 +19481,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1271335795}
+        m_TargetAssemblyTypeName: TaskPanelControll, Assembly-CSharp
+        m_MethodName: ReVisible
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1226257154
 GameObject:
   m_ObjectHideFlags: 0
@@ -20866,7 +20870,7 @@ RectTransform:
   m_GameObject: {fileID: 1271335791}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 62}
-  m_LocalScale: {x: 0.9116182, y: 1.5550386, z: 0.9116182}
+  m_LocalScale: {x: 0.91161823, y: 1.5550386, z: 0.91161823}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1606664620}
@@ -22379,7 +22383,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.85
+  m_fontSize: 39.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -25181,6 +25185,7 @@ MonoBehaviour:
   _lockPanel: {fileID: 427851157}
   _buyButton: {fileID: 866099795}
   _ach: {fileID: 164620601}
+  _svc: {fileID: 1752272787}
 --- !u!1 &1479809400
 GameObject:
   m_ObjectHideFlags: 0
@@ -26603,6 +26608,7 @@ MonoBehaviour:
   _lockPanel: {fileID: 849589287}
   _buyButton: {fileID: 866099795}
   _ach: {fileID: 164620601}
+  _svc: {fileID: 0}
 --- !u!1 &1584365383
 GameObject:
   m_ObjectHideFlags: 0
@@ -26948,7 +26954,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.3
+  m_fontSize: 36.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -29541,7 +29547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.26347438, y: 0.28100002}
   m_AnchorMax: {x: 0.7313718, y: 0.734}
-  m_AnchoredPosition: {x: 1.5000305, y: -1}
+  m_AnchoredPosition: {x: 1.5, y: -1}
   m_SizeDelta: {x: 3.4083862, y: 2.239399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1728583216
@@ -29592,7 +29598,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.85
+  m_fontSize: 46.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -32174,7 +32180,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.65
+  m_fontSize: 56.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -32971,6 +32977,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1271335795}
+        m_TargetAssemblyTypeName: TaskPanelControll, Assembly-CSharp
+        m_MethodName: ReVisible
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1912314595
 GameObject:
   m_ObjectHideFlags: 0
@@ -33203,7 +33221,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.1
+  m_fontSize: 45.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -36057,7 +36075,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.009395833, y: 0.17533337}
   m_AnchorMax: {x: 0.27158332, y: 0.87600005}
-  m_AnchoredPosition: {x: -1.505127, y: 3.190796}
+  m_AnchoredPosition: {x: -1.5053711, y: 3.190796}
   m_SizeDelta: {x: -2.9458008, y: 4.0164185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2054674934
@@ -36428,7 +36446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.019000001, y: 0.24945632}
   m_AnchorMax: {x: 0.164, y: 0.76000005}
-  m_AnchoredPosition: {x: -2.5, y: -0.7789993}
+  m_AnchoredPosition: {x: -2.5, y: -0.7789917}
   m_SizeDelta: {x: 8, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2070723076
@@ -36793,6 +36811,7 @@ MonoBehaviour:
   _lockPanel: {fileID: 283683854}
   _buyButton: {fileID: 866099795}
   _ach: {fileID: 164620601}
+  _svc: {fileID: 1752272787}
 --- !u!1 &2077997896
 GameObject:
   m_ObjectHideFlags: 0
@@ -37197,7 +37216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.26347438, y: 0.28100002}
   m_AnchorMax: {x: 0.7313718, y: 0.734}
-  m_AnchoredPosition: {x: 1.5000305, y: -1}
+  m_AnchoredPosition: {x: 1.5, y: -1}
   m_SizeDelta: {x: 3.4083862, y: 2.239399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2085773071
