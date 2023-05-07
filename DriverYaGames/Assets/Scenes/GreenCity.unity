@@ -651,7 +651,6 @@ MonoBehaviour:
   speed: 10
   deadZone: 0.08
   rotateSpeed: 5
-  _value: {fileID: 378557645}
   maxX: 0.936
   minX: -0.936
   _rB: {fileID: 0}
@@ -1637,18 +1636,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1019592763}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &378557645 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 378557645, guid: 5804600525f66de4abf11111389ca287,
-    type: 3}
-  m_PrefabInstance: {fileID: 3468248870135341789}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &394654301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3402,11 +3389,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1149638334}
     m_Modifications:
-    - target: {fileID: 1746315304777859485, guid: 11e0516ca88dd32479f4951fe5583517,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6193427513443417539, guid: 11e0516ca88dd32479f4951fe5583517,
         type: 3}
       propertyPath: m_RootOrder
@@ -3487,11 +3469,6 @@ PrefabInstance:
       propertyPath: _linePoint
       value: 
       objectReference: {fileID: 560263413}
-    - target: {fileID: 7181025179168542684, guid: 11e0516ca88dd32479f4951fe5583517,
-        type: 3}
-      propertyPath: _shieldColl
-      value: 
-      objectReference: {fileID: 8300000, guid: 9a3496ff5cab2714bb3360e764e457e1, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4529,6 +4506,7 @@ MonoBehaviour:
   _auxiliary:
   - {fileID: 4825797502949678827, guid: 4d18b9aff573d1f4f9974ab6da29d9d3, type: 3}
   - {fileID: -2405523579888373959, guid: 9d59b959acecb2c4c8a7c9e7ee95c278, type: 3}
+  - {fileID: 151185970, guid: 7a375182e934d024dbe2d45cc0a867b6, type: 3}
   needSpawnShield: 0
 --- !u!4 &985670610
 Transform:
@@ -5433,11 +5411,7 @@ MonoBehaviour:
   - {fileID: 909842492}
   _sceneType: 1
   pipelineAsset: {fileID: 11400000, guid: d0e2fc18fe036412f8223b3b3d9ad574, type: 2}
-  _mainCamera: {fileID: 0}
   _skyboxes: []
-  _fogStartDistance: 0
-  _fogEndDistance: 65
-  _fogDensity: 0.025
 --- !u!4 &1149218684
 Transform:
   m_ObjectHideFlags: 0
@@ -7170,9 +7144,9 @@ MonoBehaviour:
   _maxSpeed_WhitePoliceCar: 270
   _maxSpeed_SportCar: 300
   _maxSpeed_SciFiCar: 350
-  _distSpeed: 30
-  _rewardedKilometers: 15
-  _moneyForDistance: 20
+  _distSpeed: 50
+  _rewardedKilometers: 20
+  _moneyForDistance: 5
   _shieldActionTime: 5
 --- !u!4 &1458931344
 Transform:
@@ -7203,7 +7177,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _acsController: {fileID: 111393967}
   _swipeDetection: {fileID: 275120864}
-  _activeCar: {fileID: 0}
 --- !u!114 &1458931346
 MonoBehaviour:
   m_ObjectHideFlags: 0

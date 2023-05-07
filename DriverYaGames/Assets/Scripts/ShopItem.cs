@@ -54,14 +54,15 @@ public class ShopItem : MonoBehaviour
         if(PlayerPrefs.GetInt("MoneyNameConst") >= _itemCost && _isLocked)
         {
             PlayerPrefs.SetInt("MoneyNameConst", PlayerPrefs.GetInt("MoneyNameConst") - _itemCost);
-            PlayerPrefs.SetString("ChousenLocation", _itemName);
             UnlockItem();
             if (_ItemType == _typeOfItem.Car)
             {
                 PlayerPrefs.SetInt("CarsCount", PlayerPrefs.GetInt("CarsCount") + 1);
+                PlayerPrefs.SetString("Car", _itemName);
             }
             else
             {
+                PlayerPrefs.SetString("ChousenLocation", _itemName);
                 PlayerPrefs.SetInt("LocationsCount", PlayerPrefs.GetInt("LocationsCount") + 1);
             }
             _buyButton.gameObject.SetActive(false);

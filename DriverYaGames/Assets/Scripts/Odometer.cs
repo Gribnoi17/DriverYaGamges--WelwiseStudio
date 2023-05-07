@@ -8,7 +8,7 @@ public class Odometer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI odomText;
     [SerializeField] private GameObject getterSpeed;
     private float distSpeed;
-    private float kilomOfMoney = 100;
+    private float kilomOfMoney = 10;
     private Speedometer _speedometr;
     private float dist;
     private float kilom;
