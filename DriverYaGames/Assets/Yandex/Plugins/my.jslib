@@ -91,10 +91,10 @@ mergeInto(LibraryManager.library, {
         },
           onRewarded: () => {
             console.log('Rewarded!');
-            myGameInstance.SendMessage("LosePanelActivation", "ReturnToGame");
         },
           onClose: () => {
             console.log('Video ad closed.');
+            myGameInstance.SendMessage("LosePanelActivation", "ReturnToGame");
         }, 
           onError: (e) => {
             console.log('Error while open video ad:', e);

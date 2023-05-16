@@ -1650,9 +1650,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec7a23205880e24cba644d275c493ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 13
   deadZone: 0.08
-  rotateSpeed: 5
   maxX: 0.936
   minX: -0.936
   _rB: {fileID: 0}
@@ -22560,16 +22559,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startSpeed: 50
-  rateOfSpeedGrowth: 10
-  _startCarSpawnPeriod: 2
-  _minCarSpawnPeriod: 0.5
+  rateOfSpeedGrowth: 5
+  _startCarSpawnPeriod: 1.9
+  _minCarSpawnPeriod: 0.35
   _maxSpeed_PoliceCar: 240
   _maxSpeed_WhitePoliceCar: 270
   _maxSpeed_SportCar: 300
   _maxSpeed_SciFiCar: 350
   _distSpeed: 50
-  _rewardedKilometers: 15
-  _moneyForDistance: 5
+  _rewardedKilometers: 25
+  _moneyForDistance: 10
   _shieldActionTime: 5
 --- !u!4 &1429207847
 Transform:

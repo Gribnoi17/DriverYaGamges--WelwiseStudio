@@ -10,7 +10,6 @@ public class AcsController : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float deadZone;
-    [SerializeField] private float rotateSpeed;
 
     [Header("Coordinates")]
     [SerializeField] private float maxX;
