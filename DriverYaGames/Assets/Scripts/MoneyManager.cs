@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Money : MonoBehaviour
+public class MoneyManager : MonoBehaviour
 {
     public const string MoneyNameConst = "money";
 

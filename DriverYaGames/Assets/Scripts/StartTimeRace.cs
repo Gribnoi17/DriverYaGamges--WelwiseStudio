@@ -7,7 +7,7 @@ using TMPro;
 using System.Runtime.InteropServices;
 using UnityEngine.SceneManagement;
 
-public class StartRace : MonoBehaviour
+public class StartTimeRace : MonoBehaviour
 {
     [DllImport("__Internal")]
     private static extern string ShowAdv();
@@ -25,16 +25,18 @@ public class StartRace : MonoBehaviour
     private Speedometer _spd;
     private LosePanelActivation _losePanelScript;
     private PoliceCar _policeCarScript;
-    private SceneController _sceneController;
+    private SceneControllerAnimTime _sceneController;
     private Generator _carGenerator;
     private bool _isTimeCounting = true; 
     void Start()
     {
         _losePanelScript = FindObjectOfType<LosePanelActivation>();
+
         if (PlayerPrefs.GetInt("RegimeRace") == 0)
         {
             StartFreeRace();
         }
+
         else if(PlayerPrefs.GetInt("RegimeRace") == 1)
         {
             Invoke(nameof(StartRaceForTime),4f);
@@ -55,27 +57,29 @@ public class StartRace : MonoBehaviour
 
     void StartRaceForTime()
     {
-        _sceneController = FindObjectOfType<SceneController>();
+        _sceneController = FindObjectOfType<SceneControllerAnimTime>();
         _carGenerator = FindObjectOfType<Generator>();
         _spd = FindObjectOfType<Speedometer>();
         _policeCarScript = FindObjectOfType<PoliceCar>();
         _gen.needSpawnShield = false;
         _timer.transform.parent.gameObject.SetActive(true);
         _timer.gameObject.SetActive(true);
-        print(_gameRuler.Difficult);
-        print(_gameRuler.difficulty[0]);
+
         if (_gameRuler.Difficult == _gameRuler.difficulty[0])
         {
-            _timer.text = "92";
+            _timer.text = "91";
         }
+
         else if (_gameRuler.Difficult == _gameRuler.difficulty[1])
         {
-            _timer.text = "182";
+            _timer.text = "181";
         }
+
         else if (_gameRuler.Difficult == _gameRuler.difficulty[2])
         {
-            _timer.text = "252";
+            _timer.text = "251";
         }
+
         _finalTimeText.text = _timer.text;
         StartCoroutine(Timer());
     }
@@ -118,29 +122,34 @@ public class StartRace : MonoBehaviour
     private IEnumerator Win()
     {
         string nameScene = SceneManager.GetActiveScene().name;
+
         if (nameScene == "NightRoad")
         {
             PlayerPrefs.SetInt("NRDif", PlayerPrefs.GetInt("NRDif") + 1);
             if(PlayerPrefs.GetInt("NRDif") < 4)
                 PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
         }
+
         else if (nameScene == "GreenCity")
         {
             PlayerPrefs.SetInt("GSDif", PlayerPrefs.GetInt("GSDif") + 1);
             if (PlayerPrefs.GetInt("GSDif") < 4)
                 PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
         }
+
         else if (nameScene == "ToxicZone")
         {
             PlayerPrefs.SetInt("TZDif", PlayerPrefs.GetInt("TZDif") + 1);
             if (PlayerPrefs.GetInt("TZDif") < 4)
                 PlayerPrefs.SetInt("CompletedTests", PlayerPrefs.GetInt("CompletedTests") + 1);
         }
+
         _timer.text = "0";
         while (_spd.CurrentSpeed > 0)
         {
             _spd.CurrentSpeed = -1;
         }
+
         _endConfetti.SetActive(true);
         if(_sVC != null)
             _sVC.WinSoundsStart();
@@ -148,6 +157,7 @@ public class StartRace : MonoBehaviour
         _carGenerator.RemoveAllChildren();
         _sceneController.DeatctivateAllControl();
         _policeCarScript.gameObject.GetComponent<BoxCollider>().enabled = false;
+
         yield return new WaitForSeconds(2f);
         _winPanel.SetActive(true);
         _losePanelScript.Pause();

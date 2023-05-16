@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneController : MonoBehaviour
+public class SceneControllerAnimTime : MonoBehaviour
 {
     [SerializeField] private GameObject _acsController;
     [SerializeField] private GameObject _swipeDetection;

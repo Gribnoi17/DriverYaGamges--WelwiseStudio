@@ -17,14 +17,14 @@ public class Achivments : MonoBehaviour
     //MileageOn..., общая сумма пройденных киллометров на указанной локации 
     //PurchasedCars, колличество купленных машин
     //CompletedTests, колличество выполненных испытаний на время
+
+
+
     [SerializeField] private List<Task> _allAchivments;
     [SerializeField] private TaskPanelControll _tPC;
     [SerializeField] private ShopItem _thirdLocation;
     [SerializeField] private TextMeshProUGUI _moneyText;
     [SerializeField] private ShopItem _car;
-
-    [Header("To view")]
-    [SerializeField] private int countNotReceived = 0;
 
     private void Start()
     {

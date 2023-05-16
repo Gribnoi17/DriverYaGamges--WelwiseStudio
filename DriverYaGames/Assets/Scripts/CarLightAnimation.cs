@@ -4,11 +4,10 @@ using UnityEngine;
 using Redcode.Tweens;
 using Redcode.Moroutines;
 
-public class LightAnimation : MonoBehaviour
+public class CarLightAnimation : MonoBehaviour
 {
     [SerializeField] private Light _light;
-    [Tooltip("До какого числа intensity будет идти анимация")]
-    [SerializeField] private float _intensity;
+    [Tooltip("До какого числа intensity будет идти анимация")] [SerializeField] private float _intensity;
 
     private void Start()
     {

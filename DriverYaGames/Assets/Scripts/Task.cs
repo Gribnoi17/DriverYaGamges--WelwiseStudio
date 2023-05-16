@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,8 +10,9 @@ public class Task : MonoBehaviour
     [SerializeField] private GameObject _receivePanel;
     [SerializeField] private TextMeshProUGUI _persent;
     [SerializeField] private int _moneyForReward;
-    [Header("For Watch")]
-    [SerializeField] private bool _completed;
+
+
+    private bool _completed;
     public bool Completed { get { return _completed; } set { _completed = value; } }
 
     private bool _needReceive;

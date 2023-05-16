@@ -60,7 +60,7 @@ public class GameRules : MonoBehaviour
     private int _maxSpeed = 240;
     private Generator _carGenerator;
     private Odometer _odometr;
-    private Money _money;
+    private MoneyManager _money;
     private Shield _shield;
     private PoliceCar _policeCar;
 
@@ -106,12 +106,13 @@ public class GameRules : MonoBehaviour
         {
             return PlayerPrefs.GetInt("TZDif");
         }
+
         return 0;
     }
 
     private void Awake()
     {
-        _money = FindObjectOfType<Money>();
+        _money = FindObjectOfType<MoneyManager>();
         _odometr = FindObjectOfType<Odometer>();
         _carGenerator = FindObjectOfType<Generator>();
         _shield = FindObjectOfType<Shield>();

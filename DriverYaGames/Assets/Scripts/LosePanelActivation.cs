@@ -18,9 +18,9 @@ public class LosePanelActivation : MonoBehaviour
     private Odometer _odometer;
     private Speedometer _speedometer;
     private Animator _anim;
-    private Money _money;
+    private MoneyManager _money;
     private PauseController _pauseController;
-    private StartRace _startRace;
+    private StartTimeRace _startRace;
     private bool _watchedAdv = false;
 
     private void Awake()
@@ -31,16 +31,14 @@ public class LosePanelActivation : MonoBehaviour
     private void Start()
     {
         Invoke(nameof(Initialization), 1.5f);
-        //Initialization();
-        //EventManager.PlayerDied += ShowPanelThroughtTime;
     }
 
     private void Initialization()
     {
-        _startRace = FindObjectOfType<StartRace>();
+        _startRace = FindObjectOfType<StartTimeRace>();
         _audioSources = GameObject.Find("AuduoSources");
         _pauseController = FindObjectOfType<PauseController>();
-        _money = FindObjectOfType<Money>();
+        _money = FindObjectOfType<MoneyManager>();
         _watchedAdv = false;
         _anim = _losePanel.GetComponent<Animator>();
         _speedometer = FindObjectOfType<Speedometer>();

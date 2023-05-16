@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class CarSceneSetter : MonoBehaviour
 {
-    [SerializeField] private GameObject _policeCar;
-    [SerializeField] private GameObject _whitePoliceCar;
-    [SerializeField] private GameObject _sportCar;
-    [SerializeField] private GameObject _sciFiCar;
-    private List<GameObject> _cars;
+    [SerializeField] private GameObject policeCar;
+    [SerializeField] private GameObject whitePoliceCar;
+    [SerializeField] private GameObject sportCar;
+    [SerializeField] private GameObject sciFiCar;
 
     private void Start()
     {
@@ -17,36 +16,46 @@ public class CarSceneSetter : MonoBehaviour
 
     public void SetAndActivateCar()
     {
-        if (PlayerPrefs.GetString("Car") == "PoliceCar")
+        string selectedCar = PlayerPrefs.GetString("Car");
+
+        if (selectedCar == "PoliceCar")
         {
-            _policeCar.gameObject.SetActive(true);
-            Destroy(_sciFiCar);
-            Destroy(_sportCar);
-            Destroy(_whitePoliceCar);
+            ActivateCar(policeCar);
+            DestroyCars(sciFiCar, sportCar, whitePoliceCar);
         }
 
-        if (PlayerPrefs.GetString("Car") == "WhitePoliceCar")
+        if (selectedCar == "WhitePoliceCar")
         {
-            _whitePoliceCar.gameObject.SetActive(true);
-            Destroy(_sciFiCar);
-            Destroy(_sportCar);
-            Destroy(_policeCar);
+            ActivateCar(whitePoliceCar);
+            DestroyCars(sciFiCar, sportCar, policeCar);
         }
 
-        if (PlayerPrefs.GetString("Car") == "SportCar")
+        if (selectedCar == "SportCar")
         {
-            _sportCar.gameObject.SetActive(true);
-            Destroy(_sciFiCar);
-            Destroy(_policeCar);
-            Destroy(_whitePoliceCar);
+            ActivateCar(sportCar);
+            DestroyCars(sciFiCar, policeCar, whitePoliceCar);
         }
 
-        if (PlayerPrefs.GetString("Car") == "SciFiCar")
+        if (selectedCar == "SciFiCar")
         {
-            _sciFiCar.gameObject.SetActive(true);
-            Destroy(_sportCar);
-            Destroy(_policeCar);
-            Destroy(_whitePoliceCar);
+            ActivateCar(sciFiCar);
+            DestroyCars(sportCar, policeCar, whitePoliceCar);
+        }
+    }
+
+    private void ActivateCar(GameObject car)
+    {
+        car.SetActive(true);
+    }
+
+    private void DestroyCars(params GameObject[] cars)
+    {
+        foreach (GameObject car in cars)
+        {
+            if (car != null)
+            {
+                Destroy(car);
+            }
         }
     }
 }

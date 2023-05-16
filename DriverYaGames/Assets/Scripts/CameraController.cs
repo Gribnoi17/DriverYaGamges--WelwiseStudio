@@ -7,9 +7,6 @@ using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private AnimationCurve _curve;
-    [SerializeField] private float _durationShake = 0.5f;
-    [SerializeField] private Image _brokenScreen;
 
     [Header("Camera Y moving effect")]
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
@@ -17,6 +14,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _shoulderOffsetValue = 15f;
 
     [Header("Shaking effect")]
+    [SerializeField] private AnimationCurve _curve;
+    [SerializeField] private Image _brokenScreen;
     [SerializeField] private float _shakeDuration = 0.5f;
     [SerializeField] private float _shakeIntensity = 1f;
     [SerializeField] private float _shakeFrequency = 25f;
@@ -26,10 +25,6 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _nitroEffectDuration = 2f;
     private float _originalShoulderOffset;
     private Transform _followPoint;
-
-
-    private bool _isNitroPlaying = false;
-    // private Booster _booster;
 
     private void Start()
     {
@@ -124,7 +119,6 @@ public class CameraController : MonoBehaviour
 
     private IEnumerator StartCameraZoom()
     {
-        _isNitroPlaying = true;
         float startFov = _virtualCamera.m_Lens.FieldOfView;
         float elapsedTime = 0f;
 
@@ -148,7 +142,6 @@ public class CameraController : MonoBehaviour
 
         // возвращаем значение FieldOfView обратно
         _virtualCamera.m_Lens.FieldOfView = startFov;
-        _isNitroPlaying = false;
     }
 
 
@@ -185,8 +178,6 @@ public class CameraController : MonoBehaviour
 
         // Сохраняем начальное значение ShoulderOffset.x
         var originalOffset = thirdPersonFollow.ShoulderOffset.x;
-
-        print("Трясись, алее");
 
         // Задаем длительность встряски
         var elapsed = 0f;

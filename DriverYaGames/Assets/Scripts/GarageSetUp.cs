@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,10 +9,6 @@ public class GarageSetUp : MonoBehaviour
     [Tooltip("Должны быть расположенны в таком же порядке, что и локации в панели")]
     [SerializeField] private ParticleSystem[] _confettes;
     private Location _chosenLocation = Location.NightRoad;
-
-    /*[Header("Блокираторы режима на время")]
-    [SerializeField] private GameObject _blocForTimeRegime;*/
-
     public enum Location
     {
         NightRoad,
@@ -52,11 +47,6 @@ public class GarageSetUp : MonoBehaviour
         }
         _choiceMarks[0].SetActive(true);
         PlayerPrefs.SetString("ChousenLocation", _chosenLocation.ToString());
-        /*if(PlayerPrefs.GetInt("NRDif") > 3)
-        {
-            _blocForTimeRegime.SetActive(true);
-        }else
-            _blocForTimeRegime.SetActive(false);*/
     }
 
     public void ChooseGreenCity()
@@ -70,11 +60,6 @@ public class GarageSetUp : MonoBehaviour
         }
         _choiceMarks[1].SetActive(true);
         PlayerPrefs.SetString("ChousenLocation", _chosenLocation.ToString());
-       /* if (PlayerPrefs.GetInt("GCDif") > 3)
-        {
-            _blocForTimeRegime.SetActive(true);
-        }else
-            _blocForTimeRegime.SetActive(false);*/
     }
 
     public void ChooseToxicZone()
@@ -88,11 +73,6 @@ public class GarageSetUp : MonoBehaviour
         }
         _choiceMarks[2].SetActive(true);
         PlayerPrefs.SetString("ChousenLocation", _chosenLocation.ToString());
-        /*if (PlayerPrefs.GetInt("TZDif") > 3)
-        {
-            _blocForTimeRegime.SetActive(true);
-        }else
-            _blocForTimeRegime.SetActive(false);*/
     }
 
 
@@ -114,7 +94,6 @@ public class GarageSetUp : MonoBehaviour
         //{ 0, "Eazy" },
         //{ 1, "Normal"},
         //{ 2, "Hard"} - сделать выбор сложности по PlayerPrefs
-
     }
 
 

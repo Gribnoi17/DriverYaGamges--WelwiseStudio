@@ -6,7 +6,6 @@ public class Car : MonoBehaviour
     [SerializeField] private GameObject _explosionParticleSystem;
 
     private bool _isZone;
-
     private ZoneObjectsDetector _detector;
 
 	public float Speed
